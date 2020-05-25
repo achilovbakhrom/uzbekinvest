@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>sale</key>
+		<integer>0</integer>
+		<key>icon</key>
+		<string>car</string>
+		<key>name</key>
+		<string>Страхование \n&quot;ОСГОВТС&quot;</string>
+		<key>description</key>
+		<string>Договор обязательного страхования гражданской ответственности владельцев транспортных средств</string>
+	</dict>
+	<dict>
+		<key>sale</key>
+		<integer>0</integer>
+		<key>description</key>
+		<string>Возмещению вреда имуществу потерпевших</string>
+		<key>name</key>
+		<string>Cтрахование гражданской ответственности водителя</string>
+		<key>icon</key>
+		<string>mandatory-logo</string>
+	</dict>
+	<dict>
+		<key>sale</key>
+		<integer>0</integer>
+		<key>name</key>
+		<string>Мой дом \nМоя Крепость</string>
+		<key>description</key>
+		<string>Страхование квартиры или дома является разумной мерой предосторожности, направленной на смягчение последствий обширного ряда различных неприятных инцидентов</string>
+		<key>icon</key>
+		<string>home</string>
+	</dict>
+	<dict>
+		<key>sale</key>
+		<integer>20</integer>
+		<key>description</key>
+		<string>Это разновидность добровольного страхования транспортного средства от получения…</string>
+		<key>name</key>
+		<string>Страхование 
+&quot;КАСКО&quot;</string>
+		<key>icon</key>
+		<string>kasko</string>
+	</dict>
+	<dict>
+		<key>sale</key>
+		<integer>20</integer>
+		<key>description</key>
+		<string>Ипотечный кредит – это сумма, предоставленная банком или иной кредитной организацией заемщику в целях покупки жилья</string>
+		<key>name</key>
+		<string>Ипотечное 
+страхование</string>
+		<key>icon</key>
+		<string>ipoteka</string>
+	</dict>
+	<dict>
+		<key>sale</key>
+		<integer>0</integer>
+		<key>description</key>
+		<string>Одной из самых распространенных услуг на рынке страхования является страхование от несчастных случаев и других проблем, связанных со здоровьем</string>
+		<key>name</key>
+		<string>Страхование от несчастных случаев</string>
+		<key>icon</key>
+		<string>accident</string>
+	</dict>
+	<dict>
+		<key>sale</key>
+		<integer>10</integer>
+		<key>description</key>
+		<string>Добровольное медицинское страхование (ДМС) предназначено для покрытия расходов страхователя .. направленных на получение консультаций, врачебной помощи и других видов медицинских услуг</string>
+		<key>name</key>
+		<string>Медицинское 
+страхование</string>
+		<key>icon</key>
+		<string>health</string>
+	</dict>
+	<dict>
+		<key>sale</key>
+		<integer>10</integer>
+		<key>description</key>
+		<string>Для лиц, выезжающих за рубеж, туристическая страховка является важной мерой защиты от широкого ряд потенциально возможных неприятных инцидентов</string>
+		<key>name</key>
+		<string>Страхование 
+путешествующих</string>
+		<key>icon</key>
+		<string>health</string>
+	</dict>
+	<dict>
+		<key>sale</key>
+		<integer>10</integer>
+		<key>description</key>
+		<string>Покрытие расходов связанных с …травматическими повреждениями, то есть нарушение анатомической целостности костных и/или мягких тканей, конечностей, либо органов тела, расстройство их функций, которые могут возникнуть вследствие </string>
+		<key>name</key>
+		<string>Страхование спортсменов от несчастных случаев</string>
+		<key>icon</key>
+		<string>sport</string>
+	</dict>
+	<dict>
+		<key>sale</key>
+		<integer>0</integer>
+		<key>description</key>
+		<string>Страхование по оказанию технической помощи на дороге направлено на покрытие расходов в связи с внезапной и непредвиденной остановки или поломки ТС в пути</string>
+		<key>name</key>
+		<string>Страхование технической помощи на дороге</string>
+		<key>icon</key>
+		<string>tow</string>
+	</dict>
+	<dict>
+		<key>sale</key>
+		<integer>10</integer>
+		<key>description</key>
+		<string>Страхование газобаллонного оборудования, используемого в быту направлено на покрытие незаконных действий третьих лиц, возгорание или взрыва газобаллонного оборудования, стихийного бедствия</string>
+		<key>name</key>
+		<string>Страхование газобаллонного оборудования в быту</string>
+		<key>icon</key>
+		<string>gas</string>
+	</dict>
+	<dict>
+		<key>sale</key>
+		<integer>10</integer>
+		<key>description</key>
+		<string>Страхование газобаллонного оборудования, используемого в быту направлено на покрытие незаконных действий третьих лиц, возгорание или взрыва газобаллонного оборудования, стихийного бедствия</string>
+		<key>name</key>
+		<string>Страхование газобаллонного оборудования на транспортном средстве</string>
+		<key>icon</key>
+		<string>gas-equipment</string>
+	</dict>
+	<dict>
+		<key>sale</key>
+		<integer>10</integer>
+		<key>description</key>
+		<string>Страхование от инфекционных заболеваний направлено на покрытие расходов связанных с инфекционными заболеваниями</string>
+		<key>name</key>
+		<string>Страхование от инфекционных заболеваний</string>
+		<key>icon</key>
+		<string>infection</string>
+	</dict>
+	<dict>
+		<key>sale</key>
+		<integer>10</integer>
+		<key>description</key>
+		<string>Компания выплачивает страховое возмещение при физическом повреждении застрахованного мобильного телефона</string>
+		<key>name</key>
+		<string>Страхование мобильных телефонов</string>
+		<key>icon</key>
+		<string>mobilePhone</string>
+	</dict>
+	<dict>
+		<key>sale</key>
+		<integer>10</integer>
+		<key>description</key>
+		<string>Покрытие расходов связанных с полной гибелью, частичным повреждением, пропажей багажа </string>
+		<key>name</key>
+		<string>Страхование багажа при выезде за границу</string>
+		<key>icon</key>
+		<string>luggage</string>
+	</dict>
+</array>
+</plist>

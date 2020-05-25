@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Medium.ttf">
+            <string>Roboto-Medium</string>
+        </array>
+        <array key="Roboto-Regular.ttf">
+            <string>Roboto-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="MyDocumentsView" customModule="iosapp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1aX-Ew-TsJ">
+                    <rect key="frame" x="31" y="84" width="23" height="22"/>
+                    <state key="normal" image="back-arrow"/>
+                    <connections>
+                        <action selector="backButtonAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="w7f-7e-4mC"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Мои документы" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U1t-JX-VRe">
+                    <rect key="frame" x="31" y="124" width="138" height="21.5"/>
+                    <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="18"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f6p-Ml-swY">
+                    <rect key="frame" x="31" y="151.5" width="303" height="56.5"/>
+                    <string key="text">Для удобства все ранее использованные документы сохраняются для дальнейшего использования. В этом разделе вы можете управлять своими документами.</string>
+                    <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="12"/>
+                    <color key="textColor" red="0.51372549020000002" green="0.52549019610000003" blue="0.55294117649999996" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Ucq-uc-zSh">
+                    <rect key="frame" x="0.0" y="214" width="414" height="42"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="42" id="fWu-2M-Tsc"/>
+                    </constraints>
+                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="zil-4G-tV9">
+                        <size key="itemSize" width="128" height="128"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RcK-Rz-mkM">
+                    <rect key="frame" x="0.0" y="256" width="414" height="606"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                </view>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Ucq-uc-zSh" secondAttribute="trailing" id="3cV-Wt-Lre"/>
+                <constraint firstItem="RcK-Rz-mkM" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="CHK-H8-FsV"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="RcK-Rz-mkM" secondAttribute="trailing" id="EZQ-mK-HiT"/>
+                <constraint firstItem="1aX-Ew-TsJ" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="40" id="FHI-la-Vd6"/>
+                <constraint firstItem="Ucq-uc-zSh" firstAttribute="top" secondItem="f6p-Ml-swY" secondAttribute="bottom" constant="6" id="HHd-kq-yFe"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="RcK-Rz-mkM" secondAttribute="bottom" id="Qmt-wa-aW3"/>
+                <constraint firstItem="U1t-JX-VRe" firstAttribute="top" secondItem="1aX-Ew-TsJ" secondAttribute="bottom" constant="18" id="Vcf-Ok-P32"/>
+                <constraint firstItem="Ucq-uc-zSh" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="clr-fH-aZ2"/>
+                <constraint firstItem="1aX-Ew-TsJ" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="31" id="lHz-PO-Nwh"/>
+                <constraint firstItem="U1t-JX-VRe" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="31" id="ppG-iB-WMY"/>
+                <constraint firstItem="f6p-Ml-swY" firstAttribute="top" secondItem="U1t-JX-VRe" secondAttribute="bottom" constant="6" id="ptB-eh-n07"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="f6p-Ml-swY" secondAttribute="trailing" constant="80" id="qst-u2-1zV"/>
+                <constraint firstItem="RcK-Rz-mkM" firstAttribute="top" secondItem="Ucq-uc-zSh" secondAttribute="bottom" id="sR9-xU-FfL"/>
+                <constraint firstItem="f6p-Ml-swY" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="31" id="zph-bm-5w7"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="categoriesCollectionView" destination="Ucq-uc-zSh" id="20b-XY-Nl9"/>
+                <outlet property="contentView" destination="RcK-Rz-mkM" id="ToC-AD-iAQ"/>
+            </connections>
+            <point key="canvasLocation" x="139" y="133"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="back-arrow" width="23" height="16"/>
+    </resources>
+</document>

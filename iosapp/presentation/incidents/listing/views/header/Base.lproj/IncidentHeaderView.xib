@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Light.ttf">
+            <string>Roboto-Light</string>
+        </array>
+        <array key="Roboto-Medium.ttf">
+            <string>Roboto-Medium</string>
+        </array>
+        <array key="Roboto-Regular.ttf">
+            <string>Roboto-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="IncidentHeaderView" customModule="iosapp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cтраховой случай" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6p8-vm-2TR">
+                    <rect key="frame" x="31" y="79" width="153.5" height="21.5"/>
+                    <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="18"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Это событие, при наступлении которого мы выплачиваем вам страховое возмещение" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n9J-M8-Qvh">
+                    <rect key="frame" x="31" y="110.5" width="352" height="33"/>
+                    <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
+                    <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="iWt-F8-MVP">
+                    <rect key="frame" x="20" y="153.5" width="374" height="448"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Ux-Kf-gkc">
+                            <rect key="frame" x="0.0" y="0.0" width="124.5" height="448"/>
+                            <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="support" translatesAutoresizingMaskIntoConstraints="NO" id="dL5-pG-7Jg">
+                                    <rect key="frame" x="25" y="22" width="74.5" height="75"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="dL5-pG-7Jg" secondAttribute="height" multiplier="1:1" id="wnQ-2l-GMn"/>
+                                    </constraints>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I4R-WT-jSx">
+                                    <rect key="frame" x="20" y="107" width="84.5" height="30.5"/>
+                                    <string key="text">Звонок 
+оператору</string>
+                                    <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="13"/>
+                                    <color key="textColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="highlightedColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <constraints>
+                                <constraint firstItem="dL5-pG-7Jg" firstAttribute="centerX" secondItem="4Ux-Kf-gkc" secondAttribute="centerX" id="2h0-pc-lHi"/>
+                                <constraint firstItem="I4R-WT-jSx" firstAttribute="top" secondItem="dL5-pG-7Jg" secondAttribute="bottom" constant="10" id="KQA-Yg-nvO" customClass="LayoutHelper" customModule="iosapp" customModuleProvider="target">
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="iPhoneXOrHigher">
+                                            <real key="value" value="10"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="iPhonePlus">
+                                            <real key="value" value="10"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="iPhoneSE">
+                                            <real key="value" value="8"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="iPhone4OrNewer">
+                                            <real key="value" value="5"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </constraint>
+                                <constraint firstItem="dL5-pG-7Jg" firstAttribute="width" secondItem="4Ux-Kf-gkc" secondAttribute="width" multiplier="0.6" id="L41-Ee-JOi"/>
+                                <constraint firstItem="I4R-WT-jSx" firstAttribute="leading" secondItem="4Ux-Kf-gkc" secondAttribute="leading" constant="20" id="WEM-D7-8Ab"/>
+                                <constraint firstAttribute="trailing" secondItem="I4R-WT-jSx" secondAttribute="trailing" constant="20" id="YW2-uY-Snj"/>
+                                <constraint firstItem="dL5-pG-7Jg" firstAttribute="top" secondItem="4Ux-Kf-gkc" secondAttribute="top" constant="22" id="kJg-MW-1LO" customClass="LayoutHelper" customModule="iosapp" customModuleProvider="target">
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="iPhoneXOrHigher">
+                                            <real key="value" value="22"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="iPhonePlus">
+                                            <real key="value" value="22"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="iPhoneSE">
+                                            <real key="value" value="14"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="iPhone4OrNewer">
+                                            <real key="value" value="4"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </constraint>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l14-mS-0Lr">
+                            <rect key="frame" x="124.5" y="0.0" width="125" height="448"/>
+                            <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="on-time" translatesAutoresizingMaskIntoConstraints="NO" id="Rpy-lo-cmQ">
+                                    <rect key="frame" x="25" y="22" width="75" height="75"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="Rpy-lo-cmQ" secondAttribute="height" multiplier="1:1" id="PWz-uM-4rW"/>
+                                    </constraints>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4p0-FD-ZIP">
+                                    <rect key="frame" x="20" y="107" width="85" height="30.5"/>
+                                    <string key="text">Обратный
+звонок</string>
+                                    <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="13"/>
+                                    <color key="textColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="highlightedColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="4p0-FD-ZIP" secondAttribute="trailing" constant="20" id="S8q-8h-s1v"/>
+                                <constraint firstItem="Rpy-lo-cmQ" firstAttribute="width" secondItem="l14-mS-0Lr" secondAttribute="width" multiplier="0.6" id="U6e-JL-6sN"/>
+                                <constraint firstItem="4p0-FD-ZIP" firstAttribute="top" secondItem="Rpy-lo-cmQ" secondAttribute="bottom" constant="10" id="ZXo-ur-IYa"/>
+                                <constraint firstItem="4p0-FD-ZIP" firstAttribute="leading" secondItem="l14-mS-0Lr" secondAttribute="leading" constant="20" id="cYw-ch-hjg"/>
+                                <constraint firstItem="Rpy-lo-cmQ" firstAttribute="centerX" secondItem="l14-mS-0Lr" secondAttribute="centerX" id="u8F-qr-WwP"/>
+                                <constraint firstItem="Rpy-lo-cmQ" firstAttribute="top" secondItem="l14-mS-0Lr" secondAttribute="top" constant="22" id="vSp-Hg-CBP" customClass="LayoutHelper" customModule="iosapp" customModuleProvider="target">
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="iPhoneXOrHigher">
+                                            <real key="value" value="22"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="iPhonePlus">
+                                            <real key="value" value="22"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="iPhoneSE">
+                                            <real key="value" value="14"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="iPhone4OrNewer">
+                                            <real key="value" value="4"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </constraint>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oi8-3K-AYN">
+                            <rect key="frame" x="249.5" y="0.0" width="124.5" height="448"/>
+                            <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chat" translatesAutoresizingMaskIntoConstraints="NO" id="hRi-yl-fPA">
+                                    <rect key="frame" x="25" y="22" width="74.5" height="75"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="hRi-yl-fPA" secondAttribute="height" multiplier="1:1" id="0BL-dy-IaG"/>
+                                    </constraints>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fe5-Xr-Xim">
+                                    <rect key="frame" x="20" y="107" width="84.5" height="30.5"/>
+                                    <string key="text">Обратный
+звонок</string>
+                                    <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="13"/>
+                                    <color key="textColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="highlightedColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="fe5-Xr-Xim" secondAttribute="trailing" constant="20" id="E7u-41-aDH"/>
+                                <constraint firstItem="hRi-yl-fPA" firstAttribute="width" secondItem="oi8-3K-AYN" secondAttribute="width" multiplier="0.6" id="LB9-ib-8zR"/>
+                                <constraint firstItem="fe5-Xr-Xim" firstAttribute="top" secondItem="hRi-yl-fPA" secondAttribute="bottom" constant="10" id="QWi-TL-irU"/>
+                                <constraint firstItem="hRi-yl-fPA" firstAttribute="top" secondItem="oi8-3K-AYN" secondAttribute="top" constant="22" id="cou-L8-rQc" customClass="LayoutHelper" customModule="iosapp" customModuleProvider="target">
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="iPhoneXOrHigher">
+                                            <real key="value" value="22"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="iPhonePlus">
+                                            <real key="value" value="22"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="iPhoneSE">
+                                            <real key="value" value="14"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="iPhone4OrNewer">
+                                            <real key="value" value="4"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </constraint>
+                                <constraint firstItem="hRi-yl-fPA" firstAttribute="centerX" secondItem="oi8-3K-AYN" secondAttribute="centerX" id="m7T-d0-i1q"/>
+                                <constraint firstItem="fe5-Xr-Xim" firstAttribute="leading" secondItem="oi8-3K-AYN" secondAttribute="leading" constant="20" id="ohJ-hP-M1Q"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="n9J-M8-Qvh" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="31" id="49W-yS-aJs"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="iWt-F8-MVP" secondAttribute="trailing" constant="20" id="5w0-An-Zpn"/>
+                <constraint firstItem="iWt-F8-MVP" firstAttribute="top" secondItem="n9J-M8-Qvh" secondAttribute="bottom" constant="10" id="F1d-Y6-0aE"/>
+                <constraint firstItem="n9J-M8-Qvh" firstAttribute="top" secondItem="6p8-vm-2TR" secondAttribute="bottom" constant="10" id="KzH-Mi-gvd"/>
+                <constraint firstItem="iWt-F8-MVP" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="NbP-Nq-vNi"/>
+                <constraint firstItem="6p8-vm-2TR" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="31" id="YIK-ny-qKl"/>
+                <constraint firstItem="iWt-F8-MVP" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="0.5" id="al0-OQ-fmp"/>
+                <constraint firstItem="n9J-M8-Qvh" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" constant="-31" id="fg0-5i-7zx"/>
+                <constraint firstItem="6p8-vm-2TR" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="35" id="qyf-Kp-tYW"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="callOperatorConstraint" destination="L41-Ee-JOi" id="mMl-cV-i5b"/>
+                <outlet property="callOperatorLabel" destination="I4R-WT-jSx" id="Yoj-Ri-DDJ"/>
+                <outlet property="callbackConstraint" destination="U6e-JL-6sN" id="h5o-Nd-WeM"/>
+                <outlet property="callbackLabel" destination="4p0-FD-ZIP" id="se8-RU-xzt"/>
+                <outlet property="descLabel" destination="n9J-M8-Qvh" id="ue0-ZG-JjM"/>
+                <outlet property="messageConstraint" destination="LB9-ib-8zR" id="aJ3-wM-eZJ"/>
+                <outlet property="messageLabel" destination="fe5-Xr-Xim" id="mBU-4u-YdG"/>
+                <outlet property="titleLabel" destination="6p8-vm-2TR" id="6Cf-q2-0R5"/>
+            </connections>
+            <point key="canvasLocation" x="137.68115942028987" y="130.58035714285714"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="chat" width="69" height="69"/>
+        <image name="on-time" width="69" height="69"/>
+        <image name="support" width="69" height="69"/>
+    </resources>
+</document>

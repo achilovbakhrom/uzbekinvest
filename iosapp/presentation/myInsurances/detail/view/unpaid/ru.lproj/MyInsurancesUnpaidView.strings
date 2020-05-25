@@ -1,0 +1,42 @@
+
+/* Class = "UIButton"; normalTitle = "Выбрать"; ObjectID = "MhR-8h-RS2"; */
+"MhR-8h-RS2.normalTitle" = "Выбрать";
+
+/* Class = "UILabel"; text = "0 сум"; ObjectID = "O73-zd-2t7"; */
+"O73-zd-2t7.text" = "0 сум";
+
+/* Class = "UILabel"; text = "Физическое лицо"; ObjectID = "Rhi-ov-Lur"; */
+"Rhi-ov-Lur.text" = "Физическое лицо";
+
+/* Class = "UILabel"; text = "Субъект деятельности"; ObjectID = "Vle-C6-fED"; */
+"Vle-C6-fED.text" = "Субъект деятельности";
+
+/* Class = "UILabel"; text = "Стоимость страхования"; ObjectID = "Wbl-Au-oLe"; */
+"Wbl-Au-oLe.text" = "Стоимость страхования";
+
+/* Class = "UILabel"; text = "Способ оплаты"; ObjectID = "eAV-h8-yPl"; */
+"eAV-h8-yPl.text" = "Способ оплаты";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "gke-DP-rfa"; */
+"gke-DP-rfa.text" = "0";
+
+/* Class = "UILabel"; text = "0 сум"; ObjectID = "hdv-cD-VgZ"; */
+"hdv-cD-VgZ.text" = "0 сум";
+
+/* Class = "UILabel"; text = "Номер транзакции"; ObjectID = "jnh-DO-ZEd"; */
+"jnh-DO-ZEd.text" = "Номер транзакции";
+
+/* Class = "UILabel"; text = "Не оплачено"; ObjectID = "l8D-sz-jPm"; */
+"l8D-sz-jPm.text" = "Не оплачено";
+
+/* Class = "UILabel"; text = "Сумма полиса"; ObjectID = "lLl-63-0Tm"; */
+"lLl-63-0Tm.text" = "Сумма полиса";
+
+/* Class = "UILabel"; text = "Payme"; ObjectID = "n1U-XY-SFC"; */
+"n1U-XY-SFC.text" = "Payme";
+
+/* Class = "UIButton"; normalTitle = "Оплатить"; ObjectID = "rX5-98-87e"; */
+"rX5-98-87e.normalTitle" = "Оплатить";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "zam-LL-1wE"; */
+"zam-LL-1wE.text" = "Label";

@@ -1,0 +1,9 @@
+
+/* Class = "UIButton"; normalTitle = "По карте"; ObjectID = "PaV-es-mkR"; */
+"PaV-es-mkR.normalTitle" = "Xarita bo'yicha";
+
+/* Class = "UILabel"; text = "Список офисов"; ObjectID = "RUX-zM-Uf5"; */
+"RUX-zM-Uf5.text" = "Ofislar ro'yxati";
+
+/* Class = "UIButton"; normalTitle = "По списку"; ObjectID = "ewP-Pb-7CB"; */
+"ewP-Pb-7CB.normalTitle" = "Qidiruv bo'yicha";

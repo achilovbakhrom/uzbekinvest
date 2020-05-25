@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Bold.ttf">
+            <string>Roboto-Bold</string>
+        </array>
+        <array key="Roboto-Regular.ttf">
+            <string>Roboto-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="NoInternetView" customModule="iosapp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="no-internet" translatesAutoresizingMaskIntoConstraints="NO" id="oGH-eU-cWf">
+                    <rect key="frame" x="155.5" y="221.5" width="103.5" height="103.5"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="oGH-eU-cWf" secondAttribute="height" multiplier="1:1" id="uFC-Uc-7FQ"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Проблема с соединением" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j9R-23-71g">
+                    <rect key="frame" x="73" y="370" width="268.5" height="29.5"/>
+                    <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="22"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Donec et nisl sit amet quam ornare ultricies. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i6n-cv-lAG">
+                    <rect key="frame" x="70" y="429.5" width="274" height="80"/>
+                    <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="17"/>
+                    <color key="textColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uYh-hr-ybk" customClass="Button" customModule="iosapp" customModuleProvider="target">
+                    <rect key="frame" x="232" y="786" width="151" height="45"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="45" id="Yco-7b-URe"/>
+                    </constraints>
+                    <state key="normal" title="Повторить"/>
+                    <connections>
+                        <action selector="onRepeat:" destination="iN0-l3-epB" eventType="touchUpInside" id="bYW-Rh-Z3L"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uKU-BM-4dT">
+                    <rect key="frame" x="42" y="795.5" width="26" height="26"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="26" id="SCd-7e-wo8"/>
+                        <constraint firstAttribute="height" constant="26" id="e96-D8-8ug"/>
+                    </constraints>
+                    <state key="normal" title="0" image="call-support"/>
+                    <connections>
+                        <action selector="onCallSupport:" destination="iN0-l3-epB" eventType="touchUpInside" id="fG6-OR-gg8"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Позвонит Службы поддержки" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W9Z-5c-gpX">
+                    <rect key="frame" x="84" y="794.5" width="118" height="28.5"/>
+                    <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="12"/>
+                    <color key="textColor" red="0.1137254902" green="0.63137254899999995" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <constraints>
+                <constraint firstItem="W9Z-5c-gpX" firstAttribute="leading" secondItem="uKU-BM-4dT" secondAttribute="trailing" constant="16" id="2Bm-32-eId"/>
+                <constraint firstItem="uKU-BM-4dT" firstAttribute="centerY" secondItem="uYh-hr-ybk" secondAttribute="centerY" id="4Bz-Ew-OMJ"/>
+                <constraint firstItem="oGH-eU-cWf" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" constant="-180" id="5Fc-as-1Ml"/>
+                <constraint firstItem="oGH-eU-cWf" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="7fW-Ey-T8a"/>
+                <constraint firstItem="i6n-cv-lAG" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="70" id="Ahq-Mf-555"/>
+                <constraint firstItem="oGH-eU-cWf" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.25" id="Oru-VD-mHG"/>
+                <constraint firstItem="uYh-hr-ybk" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="centerX" constant="25" id="Pt5-nN-m9L"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="uYh-hr-ybk" secondAttribute="trailing" constant="31" id="VmZ-gZ-CGO"/>
+                <constraint firstItem="i6n-cv-lAG" firstAttribute="top" secondItem="j9R-23-71g" secondAttribute="bottom" constant="30" id="WCt-uK-je3"/>
+                <constraint firstItem="j9R-23-71g" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="Wfv-yM-Jnm"/>
+                <constraint firstItem="uYh-hr-ybk" firstAttribute="leading" secondItem="W9Z-5c-gpX" secondAttribute="trailing" constant="30" id="Zzl-WB-4oA"/>
+                <constraint firstItem="j9R-23-71g" firstAttribute="top" secondItem="oGH-eU-cWf" secondAttribute="bottom" constant="45" id="duu-Dj-RGA"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="uYh-hr-ybk" secondAttribute="bottom" constant="31" id="nAG-ve-Sih"/>
+                <constraint firstItem="i6n-cv-lAG" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" constant="-70" id="npZ-8v-Ncg"/>
+                <constraint firstItem="W9Z-5c-gpX" firstAttribute="centerY" secondItem="uYh-hr-ybk" secondAttribute="centerY" id="p4c-e7-okV"/>
+                <constraint firstItem="uKU-BM-4dT" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="42" id="w3l-Wd-85M"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="callSupportLabel" destination="W9Z-5c-gpX" id="aZK-ne-DZr"/>
+            </connections>
+            <point key="canvasLocation" x="139" y="140"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="call-support" width="27" height="26"/>
+        <image name="no-internet" width="101" height="101"/>
+    </resources>
+</document>

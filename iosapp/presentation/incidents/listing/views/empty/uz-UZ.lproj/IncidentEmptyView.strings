@@ -1,0 +1,9 @@
+
+/* Class = "UILabel"; text = "Donec et nisl sit amet quam ornare ultricies. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus"; ObjectID = "5OD-Xx-9uU"; */
+"5OD-Xx-9uU.text" = "Ushbu hodisa sodir bo'lganidan keyin biz sizga sug'urta tovonini to'laymiz";
+
+/* Class = "UILabel"; text = "Произошел инцидент?"; ObjectID = "9ll-Ft-hkD"; */
+"9ll-Ft-hkD.text" = "Xodisa yuz berdimi?";
+
+/* Class = "UIButton"; normalTitle = "Подать заявку"; ObjectID = "Ha4-bz-6af"; */
+"Ha4-bz-6af.normalTitle" = "Ariza topshirish";

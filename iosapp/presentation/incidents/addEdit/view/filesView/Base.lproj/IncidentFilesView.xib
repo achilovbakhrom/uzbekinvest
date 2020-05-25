@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Medium.ttf">
+            <string>Roboto-Medium</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="IncidentFilesView" customModule="iosapp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Картинки страховой случай" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dIO-6a-Zt9">
+                    <rect key="frame" x="31" y="64" width="176" height="40"/>
+                    <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="esB-gF-aWI">
+                    <rect key="frame" x="31" y="124" width="352" height="1"/>
+                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="zAq-DJ-qdd"/>
+                    </constraints>
+                </view>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dQZ-fU-QmA">
+                    <rect key="frame" x="0.0" y="125" width="414" height="737"/>
+                    <color key="backgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </tableView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="12n-07-Amb" customClass="Button" customModule="iosapp" customModuleProvider="target">
+                    <rect key="frame" x="31" y="807" width="352" height="45"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="45" id="8mz-0H-gjL"/>
+                    </constraints>
+                    <state key="normal" title="Далее"/>
+                    <connections>
+                        <action selector="nextButtonClicked:" destination="iN0-l3-epB" eventType="touchUpInside" id="jp4-xm-TG8"/>
+                    </connections>
+                </button>
+            </subviews>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="centerX" secondItem="dIO-6a-Zt9" secondAttribute="trailing" id="3wl-iG-Fea"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="12n-07-Amb" secondAttribute="bottom" constant="10" id="5CN-ej-4q5"/>
+                <constraint firstItem="dQZ-fU-QmA" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="89K-2b-drB"/>
+                <constraint firstItem="esB-gF-aWI" firstAttribute="top" secondItem="dIO-6a-Zt9" secondAttribute="bottom" constant="20" id="DDY-J9-nb9"/>
+                <constraint firstItem="dIO-6a-Zt9" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="31" id="EA2-tH-VyS"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="dQZ-fU-QmA" secondAttribute="trailing" id="H0s-fP-9Hx"/>
+                <constraint firstItem="dQZ-fU-QmA" firstAttribute="top" secondItem="esB-gF-aWI" secondAttribute="bottom" id="Upy-ia-OAz"/>
+                <constraint firstItem="12n-07-Amb" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="31" id="Xoc-nd-xn1"/>
+                <constraint firstItem="dIO-6a-Zt9" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="20" id="Y1W-Lr-k3g"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="esB-gF-aWI" secondAttribute="trailing" constant="31" id="dQ6-wl-gfR"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="dQZ-fU-QmA" secondAttribute="bottom" id="e66-S8-lJP"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="12n-07-Amb" secondAttribute="trailing" constant="31" id="yJe-eo-QHM"/>
+                <constraint firstItem="esB-gF-aWI" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="31" id="zUL-EX-kw3"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="filesTableView" destination="dQZ-fU-QmA" id="pTr-VW-iW4"/>
+                <outlet property="nextButton" destination="12n-07-Amb" id="uFS-mj-XBb"/>
+            </connections>
+            <point key="canvasLocation" x="139" y="143"/>
+        </view>
+    </objects>
+</document>

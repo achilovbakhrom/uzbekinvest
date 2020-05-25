@@ -1,0 +1,12 @@
+
+/* Class = "UITextField"; placeholder = "Номер ПИН ФЛ"; ObjectID = "8Mh-ya-zEx"; */
+"8Mh-ya-zEx.placeholder" = "PIN FL nomer";
+
+/* Class = "UILabel"; text = "Для добавления и мониторинга уже существующих страховых полисов, Вам необходимо ввести персональный идентификационный номер физического лица"; ObjectID = "JZT-Qd-hvD"; */
+"JZT-Qd-hvD.text" = "Mavjud sug'urtani qo'shish va nazorat qilish uchun siz shaxsning shaxsiy identifikatsiya raqamini (PIN FL) kiritishingiz kerak - yuqorida ko'rsatilgan 14 ta raqam va barcha sug'urtalar avtomatik ravishda qo'shiladi";
+
+/* Class = "UIButton"; normalTitle = "Добавить"; ObjectID = "Y4X-1a-NZY"; */
+"Y4X-1a-NZY.normalTitle" = "Qo'shish";
+
+/* Class = "UILabel"; text = "Добавить страховой полис"; ObjectID = "eCV-rZ-pAt"; */
+"eCV-rZ-pAt.text" = "Sug'urta qo'shish";

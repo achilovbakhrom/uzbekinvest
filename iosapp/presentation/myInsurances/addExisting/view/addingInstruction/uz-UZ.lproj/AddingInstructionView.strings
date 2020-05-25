@@ -1,0 +1,12 @@
+
+/* Class = "UILabel"; text = "Для добавления и мониторинга уже существующих страховых полисов, Вам необходимо ввести персональный идентификационный номер физического лица (ПИН ФЛ) - 14 цифр показанных выше, и все Ваши страховые полиса будут добавлены автоматически."; ObjectID = "5f9-ZF-ZHX"; */
+"5f9-ZF-ZHX.text" = "Mavjud sug'urtani qo'shish va nazorat qilish uchun siz shaxsning shaxsiy identifikatsiya raqamini (PIN FL) kiritishingiz kerak - yuqorida ko'rsatilgan 14 ta raqam va barcha sug\'urtalar avtomatik ravishda qo'shiladi";
+
+/* Class = "UILabel"; text = "Как добавить страховой полис?"; ObjectID = "BNZ-dy-d8J"; */
+"BNZ-dy-d8J.text" = "Qanday qilib\nsug'urtani qo'shish mumkin?";
+
+/* Class = "UIButton"; normalTitle = "Понятно"; ObjectID = "Jbc-8l-11I"; */
+"Jbc-8l-11I.normalTitle" = "Tushunarli";
+
+/* Class = "UILabel"; text = "Больше не показывать"; ObjectID = "hTg-ao-lO8"; */
+"hTg-ao-lO8.text" = "Boshqa ko'rsatilmasin";

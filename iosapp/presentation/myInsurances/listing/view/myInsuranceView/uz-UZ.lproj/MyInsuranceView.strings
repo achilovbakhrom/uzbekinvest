@@ -1,0 +1,9 @@
+
+/* Class = "UILabel"; text = "Мои Полиса"; ObjectID = "AKD-fl-WdT"; */
+"AKD-fl-WdT.text" = "Mening Sug'urtalarim";
+
+/* Class = "UILabel"; text = "Список ваших существующих полисв"; ObjectID = "OG3-zr-KC2"; */
+"OG3-zr-KC2.text" = "Sug'urtalar ro'yxati";
+
+/* Class = "UIButton"; normalTitle = "Добавить Полис"; ObjectID = "xXT-No-A2d"; */
+"xXT-No-A2d.normalTitle" = "Sug'urta qo'shish";

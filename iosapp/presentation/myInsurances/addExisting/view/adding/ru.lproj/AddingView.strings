@@ -1,0 +1,12 @@
+
+/* Class = "UITextField"; placeholder = "Номер ПИН ФЛ"; ObjectID = "8Mh-ya-zEx"; */
+"8Mh-ya-zEx.placeholder" = "Номер ПИН ФЛ";
+
+/* Class = "UILabel"; text = "Для добавления и мониторинга уже существующих страховых полисов, Вам необходимо ввести персональный идентификационный номер физического лица"; ObjectID = "JZT-Qd-hvD"; */
+"JZT-Qd-hvD.text" = "Для добавления и мониторинга уже существующих страховых полисов, Вам необходимо ввести персональный идентификационный номер физического лица";
+
+/* Class = "UIButton"; normalTitle = "Добавить"; ObjectID = "Y4X-1a-NZY"; */
+"Y4X-1a-NZY.normalTitle" = "Добавить";
+
+/* Class = "UILabel"; text = "Добавить страховой полис"; ObjectID = "eCV-rZ-pAt"; */
+"eCV-rZ-pAt.text" = "Добавить страховой полис";

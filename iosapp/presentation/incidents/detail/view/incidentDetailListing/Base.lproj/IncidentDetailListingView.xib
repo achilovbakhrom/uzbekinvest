@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Medium.ttf">
+            <string>Roboto-Medium</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="IncidentDetailListingView" customModule="iosapp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h9d-xg-rzY">
+                    <rect key="frame" x="31" y="54" width="175.5" height="47"/>
+                    <string key="text">Страховой случай 
+произошел по</string>
+                    <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="20"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="doU-o4-HtI">
+                    <rect key="frame" x="31" y="109" width="352" height="1"/>
+                    <color key="backgroundColor" red="0.59215686274509804" green="0.59215686274509804" blue="0.59215686274509804" alpha="0.11" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="LJb-UR-ZwI"/>
+                    </constraints>
+                </view>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Xwi-aq-fbA">
+                    <rect key="frame" x="0.0" y="110" width="414" height="752"/>
+                </tableView>
+            </subviews>
+            <constraints>
+                <constraint firstItem="h9d-xg-rzY" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="31" id="7On-3M-Bb6"/>
+                <constraint firstItem="Xwi-aq-fbA" firstAttribute="top" secondItem="doU-o4-HtI" secondAttribute="bottom" id="Oef-9i-r4N"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="doU-o4-HtI" secondAttribute="trailing" constant="31" id="VKy-9Q-9nA"/>
+                <constraint firstItem="doU-o4-HtI" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="31" id="d5y-8g-J7e"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="Xwi-aq-fbA" secondAttribute="bottom" id="ebt-99-78X"/>
+                <constraint firstItem="Xwi-aq-fbA" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="lwd-4q-JhA"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Xwi-aq-fbA" secondAttribute="trailing" id="qRA-mZ-RI7"/>
+                <constraint firstItem="h9d-xg-rzY" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="10" id="uQq-Wg-hVt"/>
+                <constraint firstItem="doU-o4-HtI" firstAttribute="top" secondItem="h9d-xg-rzY" secondAttribute="bottom" constant="8" id="zLY-Dq-6MN"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="incidentsTableView" destination="Xwi-aq-fbA" id="SCY-w8-Ywa"/>
+            </connections>
+            <point key="canvasLocation" x="139" y="153"/>
+        </view>
+    </objects>
+</document>

@@ -1,0 +1,9 @@
+
+/* Class = "UILabel"; text = "Donec et nisl sit amet quam ornare ultricies. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus"; ObjectID = "5OD-Xx-9uU"; */
+"5OD-Xx-9uU.text" = "Мавжуд суғуртани қўшиш ва назорат қилиш учун сиз шахснинг шахсий идентификация рақамини (ПИН ФЛ) киритишингиз керак - юқорида кўрсатилган 14 та рақам ва барча суғурталар автоматик равишда қўшилади";
+
+/* Class = "UILabel"; text = "Произошел инцидент?"; ObjectID = "9ll-Ft-hkD"; */
+"9ll-Ft-hkD.text" = "Ҳодиса юз бердими?";
+
+/* Class = "UIButton"; normalTitle = "Подать заявку"; ObjectID = "Ha4-bz-6af"; */
+"Ha4-bz-6af.normalTitle" = "Ариза топшириш";

@@ -1,0 +1,27 @@
+
+/* Class = "UILabel"; text = "Сумма полиса"; ObjectID = "0TR-OE-gKI"; */
+"0TR-OE-gKI.text" = "Сумма полиса";
+
+/* Class = "UILabel"; text = "-"; ObjectID = "5w5-yZ-meR"; */
+"5w5-yZ-meR.text" = "-";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "E3l-8D-NaN"; */
+"E3l-8D-NaN.text" = "Label";
+
+/* Class = "UILabel"; text = "0 сум"; ObjectID = "RqF-v4-ZNa"; */
+"RqF-v4-ZNa.text" = "0 сум";
+
+/* Class = "UILabel"; text = "Конечный период"; ObjectID = "U8z-kg-hir"; */
+"U8z-kg-hir.text" = "Конечный период";
+
+/* Class = "UILabel"; text = "Начальный период"; ObjectID = "Ukh-Pb-tjr"; */
+"Ukh-Pb-tjr.text" = "Начальный период";
+
+/* Class = "UILabel"; text = "Не оплачено"; ObjectID = "ZgO-BN-oG8"; */
+"ZgO-BN-oG8.text" = "Не оплачено";
+
+/* Class = "UIButton"; normalTitle = "Оплатить"; ObjectID = "trc-D1-cES"; */
+"trc-D1-cES.normalTitle" = "Оплатить";
+
+/* Class = "UILabel"; text = "-"; ObjectID = "wN6-ml-w4W"; */
+"wN6-ml-w4W.text" = "-";

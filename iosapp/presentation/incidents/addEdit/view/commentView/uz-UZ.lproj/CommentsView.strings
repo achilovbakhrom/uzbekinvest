@@ -1,0 +1,9 @@
+
+/* Class = "UILabel"; text = "Комментарий Страховой случай"; ObjectID = "7I6-7p-3V2"; */
+"7I6-7p-3V2.text" = "Komment";
+
+/* Class = "UITextField"; placeholder = "Можете оставить пустым"; ObjectID = "DVl-s0-iD4"; */
+"DVl-s0-iD4.placeholder" = "Bo'sh qoldirsa bo'ladi";
+
+/* Class = "UIButton"; normalTitle = "Подать заявку"; ObjectID = "U5x-gQ-FK8"; */
+"U5x-gQ-FK8.normalTitle" = "Ariza topshirish";

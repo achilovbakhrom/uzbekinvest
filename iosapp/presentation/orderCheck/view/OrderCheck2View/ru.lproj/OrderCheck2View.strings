@@ -1,0 +1,33 @@
+
+/* Class = "UILabel"; text = "0 сум"; ObjectID = "5lL-21-t7x"; */
+"5lL-21-t7x.text" = "0 сум";
+
+/* Class = "UILabel"; text = "Сумма полиса"; ObjectID = "6SE-y1-tvw"; */
+"6SE-y1-tvw.text" = "Сумма полиса";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "DzR-4N-mFe"; */
+"DzR-4N-mFe.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "На главную страницу"; ObjectID = "Pao-8e-0SU"; */
+"Pao-8e-0SU.normalTitle" = "На главную страницу";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "R77-au-HFC"; */
+"R77-au-HFC.text" = "Label";
+
+/* Class = "UILabel"; text = "Физическое лицо"; ObjectID = "WwD-po-kkz"; */
+"WwD-po-kkz.text" = "Физическое лицо";
+
+/* Class = "UILabel"; text = "Субъект деятельности"; ObjectID = "app-gf-5c7"; */
+"app-gf-5c7.text" = "Субъект деятельности";
+
+/* Class = "UILabel"; text = "До окончания полиса"; ObjectID = "crR-dV-WVf"; */
+"crR-dV-WVf.text" = "До окончания полиса";
+
+/* Class = "UILabel"; text = "Стоимость страхования (сум)"; ObjectID = "p79-I9-FNT"; */
+"p79-I9-FNT.text" = "Стоимость страхования (сум)";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "wPg-kn-Elt"; */
+"wPg-kn-Elt.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "wf9-hH-CGA"; */
+"wf9-hH-CGA.text" = "Label";

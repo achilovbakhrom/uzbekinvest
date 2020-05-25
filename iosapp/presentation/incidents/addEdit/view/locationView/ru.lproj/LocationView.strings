@@ -1,0 +1,12 @@
+
+/* Class = "UIButton"; normalTitle = "Указать по адресу"; ObjectID = "0P4-cJ-SHL"; */
+"0P4-cJ-SHL.normalTitle" = "Указать по адресу";
+
+/* Class = "UIButton"; normalTitle = "Далее"; ObjectID = "H4I-37-5qw"; */
+"H4I-37-5qw.normalTitle" = "Далее";
+
+/* Class = "UIButton"; normalTitle = "Указать по карте"; ObjectID = "eBR-LM-md3"; */
+"eBR-LM-md3.normalTitle" = "Указать по карте";
+
+/* Class = "UILabel"; text = "Список офисов"; ObjectID = "u5r-8d-ATA"; */
+"u5r-8d-ATA.text" = "Список офисов";

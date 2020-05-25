@@ -1,0 +1,45 @@
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "57T-R5-oZk"; */
+"57T-R5-oZk.text" = "Label";
+
+/* Class = "UILabel"; text = "Номер транзакции"; ObjectID = "EPL-o1-DcV"; */
+"EPL-o1-DcV.text" = "Транзакция номери";
+
+/* Class = "UILabel"; text = "Сумма полиса"; ObjectID = "G1f-KL-neh"; */
+"G1f-KL-neh.text" = "Суғурта нархи";
+
+/* Class = "UILabel"; text = "Оплачено"; ObjectID = "WeV-Ql-UPL"; */
+"WeV-Ql-UPL.text" = "Тўланган";
+
+/* Class = "UILabel"; text = "125 дней"; ObjectID = "WeX-13-KbJ"; */
+"WeX-13-KbJ.text" = "125 кун";
+
+/* Class = "UILabel"; text = "Способ оплаты"; ObjectID = "XPJ-rA-HiW"; */
+"XPJ-rA-HiW.text" = "Тўлов тури";
+
+/* Class = "UILabel"; text = "Физическое лицо"; ObjectID = "XQ5-am-5BG"; */
+"XQ5-am-5BG.text" = "Жисмоний шахс";
+
+/* Class = "UILabel"; text = "25 000 000 сум"; ObjectID = "atS-y9-FVr"; */
+"atS-y9-FVr.text" = "25 000 000 сум";
+
+/* Class = "UILabel"; text = "Субъект деятельности"; ObjectID = "gOQ-vy-efQ"; */
+"gOQ-vy-efQ.text" = "Фаолият тури";
+
+/* Class = "UILabel"; text = "До окончания полиса"; ObjectID = "h5w-aT-hXm"; */
+"h5w-aT-hXm.text" = "Суғурта охиригача";
+
+/* Class = "UILabel"; text = "160 000 сум"; ObjectID = "kaG-q6-GpR"; */
+"kaG-q6-GpR.text" = "160 000 сум";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "pXX-vh-9eg"; */
+"pXX-vh-9eg.text" = "0";
+
+/* Class = "UIButton"; normalTitle = "Страховой случай"; ObjectID = "rJ2-Fx-dqf"; */
+"rJ2-Fx-dqf.normalTitle" = "Суғурта ходисаси";
+
+/* Class = "UILabel"; text = "Payme"; ObjectID = "yZZ-f3-MLT"; */
+"yZZ-f3-MLT.text" = "Payme";
+
+/* Class = "UILabel"; text = "Стоимость страхования"; ObjectID = "zmI-Cq-Bfp"; */
+"zmI-Cq-Bfp.text" = "Суғурта нархи";

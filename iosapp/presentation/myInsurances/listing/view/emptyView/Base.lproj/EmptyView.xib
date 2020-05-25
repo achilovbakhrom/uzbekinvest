@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Medium.ttf">
+            <string>Roboto-Medium</string>
+        </array>
+        <array key="Roboto-Regular.ttf">
+            <string>Roboto-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="EmptyView" customModule="iosapp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="my-insurances-logo" translatesAutoresizingMaskIntoConstraints="NO" id="lsC-Vw-iFv">
+                    <rect key="frame" x="153" y="109" width="108" height="137.5"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="lsC-Vw-iFv" secondAttribute="height" multiplier="93:119" id="ybt-Av-d8X"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Bk-JX-A74">
+                    <rect key="frame" x="50" y="305" width="314" height="63.5"/>
+                    <string key="text">Хотите добавить существующий полис через ПИН ФЛ или
+купить Полис ?</string>
+                    <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="18"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Donec et nisl sit amet quam ornare ultricies. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j7w-b2-Jf0">
+                    <rect key="frame" x="70" y="388.5" width="274" height="49.5"/>
+                    <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
+                    <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xYL-CA-g7W" customClass="Button" customModule="iosapp" customModuleProvider="target">
+                    <rect key="frame" x="31" y="483" width="352" height="45"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="45" id="ruf-aE-k3w"/>
+                    </constraints>
+                    <state key="normal" title="Добавить существующий"/>
+                    <connections>
+                        <action selector="addButtonClicked:" destination="iN0-l3-epB" eventType="touchUpInside" id="hf2-bc-lHl"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oUZ-Pr-sUP" customClass="Button" customModule="iosapp" customModuleProvider="target">
+                    <rect key="frame" x="31" y="573" width="352" height="45"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="45" id="0cE-mG-YVZ"/>
+                    </constraints>
+                    <state key="normal" title="Купить онлайн"/>
+                    <connections>
+                        <action selector="butButtonClicked:" destination="iN0-l3-epB" eventType="touchUpInside" id="TtI-1F-4FP"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="xYL-CA-g7W" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="31" id="2ZZ-io-J6j"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="oUZ-Pr-sUP" secondAttribute="trailing" constant="31" id="501-jx-jAd"/>
+                <constraint firstItem="8Bk-JX-A74" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="50" id="B7G-iD-HQf"/>
+                <constraint firstItem="lsC-Vw-iFv" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="65" id="Buf-uY-wFY" customClass="NSLayoutHelper" customModule="LayoutHelper">
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="iPhoneSE">
+                            <real key="value" value="20"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="iPhone4s">
+                            <real key="value" value="15"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="iPhone8">
+                            <real key="value" value="45"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="iPhone8Plus">
+                            <real key="value" value="45"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </constraint>
+                <constraint firstItem="8Bk-JX-A74" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" constant="-50" id="C7V-Wq-1zl"/>
+                <constraint firstItem="oUZ-Pr-sUP" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="31" id="GY4-oM-E1f"/>
+                <constraint firstItem="8Bk-JX-A74" firstAttribute="top" secondItem="lsC-Vw-iFv" secondAttribute="bottom" constant="58.5" id="HMX-ne-YSM" customClass="NSLayoutHelper" customModule="LayoutHelper">
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="iPhone4s">
+                            <real key="value" value="15"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="iPhoneSE">
+                            <real key="value" value="20"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="iPhone8">
+                            <real key="value" value="45"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="iPhone8Plus">
+                            <real key="value" value="45"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </constraint>
+                <constraint firstItem="oUZ-Pr-sUP" firstAttribute="top" secondItem="xYL-CA-g7W" secondAttribute="bottom" constant="45" id="IDk-le-nuI" customClass="NSLayoutHelper" customModule="LayoutHelper">
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="iPhone8Plus">
+                            <real key="value" value="45"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="iPhone8">
+                            <real key="value" value="45"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="iPhoneSE">
+                            <real key="value" value="15"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="iPhone4s">
+                            <real key="value" value="10"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </constraint>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="j7w-b2-Jf0" secondAttribute="trailing" constant="70" id="W2j-mq-8vJ"/>
+                <constraint firstItem="j7w-b2-Jf0" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="70" id="XUt-0G-qph"/>
+                <constraint firstItem="xYL-CA-g7W" firstAttribute="top" secondItem="j7w-b2-Jf0" secondAttribute="bottom" constant="45" id="cWM-hd-gBl" customClass="NSLayoutHelper" customModule="LayoutHelper">
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="iPhone8Plus">
+                            <real key="value" value="45"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="iPhone8">
+                            <real key="value" value="45"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="iPhoneSE">
+                            <real key="value" value="25"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="iPhone4s">
+                            <real key="value" value="25"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </constraint>
+                <constraint firstItem="j7w-b2-Jf0" firstAttribute="top" secondItem="8Bk-JX-A74" secondAttribute="bottom" constant="20" id="edq-E1-TBh"/>
+                <constraint firstItem="lsC-Vw-iFv" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.26" id="o8B-Jg-sFr"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="xYL-CA-g7W" secondAttribute="trailing" constant="31" id="vLD-Wj-dh9"/>
+                <constraint firstItem="lsC-Vw-iFv" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="yTH-EG-TnP"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="139" y="150"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="my-insurances-logo" width="93" height="119"/>
+    </resources>
+</document>

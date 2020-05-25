@@ -1,0 +1,12 @@
+
+/* Class = "UILabel"; text = "Хотите добавить существующий полис через ПИН ФЛ или\nкупить Полис ?"; ObjectID = "8Bk-JX-A74"; */
+"8Bk-JX-A74.text" = "Хотите добавить существующий полис через ПИН ФЛ или\nкупить Полис ?";
+
+/* Class = "UILabel"; text = "Donec et nisl sit amet quam ornare ultricies. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus"; ObjectID = "j7w-b2-Jf0"; */
+"j7w-b2-Jf0.text" = "Donec et nisl sit amet quam ornare ultricies. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus";
+
+/* Class = "UIButton"; normalTitle = "Купить онлайн"; ObjectID = "oUZ-Pr-sUP"; */
+"oUZ-Pr-sUP.normalTitle" = "Купить онлайн";
+
+/* Class = "UIButton"; normalTitle = "Добавить существующий"; ObjectID = "xYL-CA-g7W"; */
+"xYL-CA-g7W.normalTitle" = "Добавить существующий";

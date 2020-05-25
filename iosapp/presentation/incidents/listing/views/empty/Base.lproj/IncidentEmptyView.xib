@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Medium.ttf">
+            <string>Roboto-Medium</string>
+        </array>
+        <array key="Roboto-Regular.ttf">
+            <string>Roboto-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="IncidentEmptyView" customModule="iosapp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="crash" translatesAutoresizingMaskIntoConstraints="NO" id="Fc4-et-JDn">
+                    <rect key="frame" x="155.5" y="109" width="103.5" height="92.5"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="Fc4-et-JDn" secondAttribute="height" multiplier="93:83" id="3zH-xN-JQJ"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Произошел инцидент?" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9ll-Ft-hkD">
+                    <rect key="frame" x="31" y="241.5" width="352" height="20"/>
+                    <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Donec et nisl sit amet quam ornare ultricies. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5OD-Xx-9uU">
+                    <rect key="frame" x="31" y="289" width="352" height="53"/>
+                    <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="15"/>
+                    <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ha4-bz-6af" customClass="Button" customModule="iosapp" customModuleProvider="target">
+                    <rect key="frame" x="31" y="382" width="352" height="45"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="45" id="caY-Qz-YXP"/>
+                    </constraints>
+                    <state key="normal" title="Подать заявку"/>
+                    <connections>
+                        <action selector="onAddButtonClicked:" destination="iN0-l3-epB" eventType="touchUpInside" id="6ml-01-Avd"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="0.98431372549019602" green="0.98431372549019602" blue="0.98431372549019602" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="9ll-Ft-hkD" secondAttribute="trailing" constant="31" id="8eF-3y-O0r"/>
+                <constraint firstItem="9ll-Ft-hkD" firstAttribute="top" secondItem="Fc4-et-JDn" secondAttribute="bottom" constant="40" id="DE2-xN-yaX"/>
+                <constraint firstItem="5OD-Xx-9uU" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="31" id="FRB-22-rR1"/>
+                <constraint firstItem="9ll-Ft-hkD" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="31" id="ImU-zo-wbz"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="5OD-Xx-9uU" secondAttribute="trailing" constant="31" id="L1l-u2-crJ"/>
+                <constraint firstItem="Fc4-et-JDn" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="65" id="N6u-GG-ofg" customClass="LayoutHelper" customModule="iosapp" customModuleProvider="target">
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="iPhone4OrNewer">
+                            <real key="value" value="20"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="iPhoneSE">
+                            <real key="value" value="25"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="iPhonePlus">
+                            <real key="value" value="50"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="iPhoneXOrHigher">
+                            <real key="value" value="65"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </constraint>
+                <constraint firstItem="Ha4-bz-6af" firstAttribute="top" secondItem="5OD-Xx-9uU" secondAttribute="bottom" constant="40" id="a6G-Uo-H84"/>
+                <constraint firstItem="5OD-Xx-9uU" firstAttribute="top" secondItem="9ll-Ft-hkD" secondAttribute="bottom" constant="27.5" id="aNk-PA-5a6"/>
+                <constraint firstItem="Ha4-bz-6af" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="31" id="idO-As-Vp0"/>
+                <constraint firstItem="Fc4-et-JDn" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="rtA-ve-Xci"/>
+                <constraint firstItem="Fc4-et-JDn" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.25" id="sdq-RB-cuz"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Ha4-bz-6af" secondAttribute="trailing" constant="31" id="y6N-Gg-UOa"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="139" y="131"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="crash" width="93" height="83"/>
+    </resources>
+</document>

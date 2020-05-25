@@ -1,0 +1,6 @@
+
+/* Class = "UITextField"; placeholder = "Введите адрес"; ObjectID = "O1r-Zl-Mmj"; */
+"O1r-Zl-Mmj.placeholder" = "Manzilni kiriting";
+
+/* Class = "UILabel"; text = "Адрес инцидента"; ObjectID = "Uta-lZ-eyH"; */
+"Uta-lZ-eyH.text" = "Xodisa manzili";

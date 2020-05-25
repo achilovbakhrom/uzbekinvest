@@ -1,0 +1,30 @@
+
+/* Class = "UILabel"; text = "Возмешения оплачено"; ObjectID = "66a-kD-Nec"; */
+"66a-kD-Nec.text" = "Kompensatsiya to'langan";
+
+/* Class = "UILabel"; text = "Решение принято"; ObjectID = "GY6-g9-zhS"; */
+"GY6-g9-zhS.text" = "Qaror qabul qilinadi";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "HhZ-sc-gMT"; */
+"HhZ-sc-gMT.text" = "Label";
+
+/* Class = "UILabel"; text = "Наличие документов"; ObjectID = "Lu3-uS-nku"; */
+"Lu3-uS-nku.text" = "Ariza qabul qilindi";
+
+/* Class = "UILabel"; text = "Стоимость страхования"; ObjectID = "PwN-kn-n7Q"; */
+"PwN-kn-n7Q.text" = "Sug'urta qiymati";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "dUd-oh-iWq"; */
+"dUd-oh-iWq.text" = "Label";
+
+/* Class = "UILabel"; text = "Заявка принята"; ObjectID = "fPr-kg-efh"; */
+"fPr-kg-efh.text" = "Ariza qabul qilindi";
+
+/* Class = "UILabel"; text = "Заявка отправлена"; ObjectID = "m2e-AR-cLg"; */
+"m2e-AR-cLg.text" = "Ariza yuborildi";
+
+/* Class = "UILabel"; text = "Статус"; ObjectID = "sEz-xA-wnz"; */
+"sEz-xA-wnz.text" = "Status";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "zzJ-RF-Dss"; */
+"zzJ-RF-Dss.text" = "Label";

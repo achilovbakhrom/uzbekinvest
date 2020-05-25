@@ -1,0 +1,36 @@
+
+/* Class = "UILabel"; text = "Список офисов"; ObjectID = "1cv-HN-UgF"; */
+"1cv-HN-UgF.text" = "Офислар рўйхати";
+
+/* Class = "UILabel"; text = "Ваши показатели за год"; ObjectID = "1r6-6R-5ym"; */
+"1r6-6R-5ym.text" = "Бир йиллик кўрсаткиларингиз";
+
+/* Class = "UILabel"; text = "Спасибо за ваш выбор"; ObjectID = "2OP-Z5-dsA"; */
+"2OP-Z5-dsA.text" = "Танловингиз учун рахмат";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "4fy-RQ-Asu"; */
+"4fy-RQ-Asu.text" = "Label";
+
+/* Class = "UILabel"; text = "Купленный полисов"; ObjectID = "8YQ-Uq-Wgr"; */
+"8YQ-Uq-Wgr.text" = "Сотиб олинган суғурталар";
+
+/* Class = "UILabel"; text = "Настройки"; ObjectID = "FRs-nr-InE"; */
+"FRs-nr-InE.text" = "Созламалар";
+
+/* Class = "UILabel"; text = "Мои документы"; ObjectID = "LBT-5v-oaw"; */
+"LBT-5v-oaw.text" = "Менинг хужжатларим";
+
+/* Class = "UILabel"; text = "Дней с   нами вместе"; ObjectID = "Nd3-id-0od"; */
+"Nd3-id-0od.text" = "Биз билан бирга";
+
+/* Class = "UILabel"; text = "1000"; ObjectID = "Rvk-Tw-TLZ"; */
+"Rvk-Tw-TLZ.text" = "1000";
+
+/* Class = "UILabel"; text = "1000"; ObjectID = "bFU-Bh-tKL"; */
+"bFU-Bh-tKL.text" = "1000";
+
+/* Class = "UILabel"; text = "1000"; ObjectID = "h3a-hZ-Rzo"; */
+"h3a-hZ-Rzo.text" = "1000";
+
+/* Class = "UILabel"; text = "Заявок на инцидентов"; ObjectID = "nmL-xk-hQi"; */
+"nmL-xk-hQi.text" = "Ходисалар учун аризалар";
