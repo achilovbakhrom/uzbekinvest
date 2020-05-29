@@ -88,7 +88,12 @@ class MyInsuranceVC: BaseViewImpl {
             emptyView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
             emptyView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor)
         ])
-                
+        
+        emptyView.onBuy = {
+            self.myInsurancePresenter?.openInsuranceListVC()
+        }
+        
+        
         myInsuranceView.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(myInsuranceView)
         NSLayoutConstraint.activate([
@@ -98,15 +103,18 @@ class MyInsuranceVC: BaseViewImpl {
             myInsuranceView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor)
         ])
         myInsuranceView.isHidden = true
+        
         myInsuranceView.onCategorySelected = {
             self.myInsurancePresenter?.categorySelected(category: $0)
         }
         myInsuranceView.onInsuranceClicked = { (item, property) in
             self.myInsurancePresenter?.insuranceSelected(myInsurance: item, property: property)
         }
+        
         myInsuranceView.onAdd = {
             self.myInsurancePresenter?.openAddMyInsuranceVC()
         }
+        
         loadingView.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(loadingView)
         NSLayoutConstraint.activate([

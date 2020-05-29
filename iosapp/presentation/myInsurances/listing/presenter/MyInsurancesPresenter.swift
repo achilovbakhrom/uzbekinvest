@@ -20,6 +20,7 @@ protocol MyInsurancesPresenter: BasePresenter {
     func openAddInsurancePage()
     func goBack()
     func openAddMyInsuranceVC()
+    func openInsuranceListVC()
 }
 
 class MyInsurancesPresenterImpl: MyInsurancesPresenter {
@@ -455,5 +456,9 @@ class MyInsurancesPresenterImpl: MyInsurancesPresenter {
     
     func openAddMyInsuranceVC() {
         self.myInsrancesRouter?.openAddMyInsuranceVC()
+    }
+    
+    func openInsuranceListVC() {
+        self.myInsrancesRouter?.openInsuranceListVC()
     }
 }

@@ -183,3 +183,5 @@
 "one_incident" = "Bitta xodisa";
 "two_incidents" = "Ikkita xodisa";
 "three_or_more" = "Uch va undan ortiq xodisalar";
+"notification" = "Уведомление";
+"collapse" = "Свернуть";

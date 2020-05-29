@@ -46,6 +46,9 @@ protocol AssemblyFactoryProtocol: class {
     var myDocumentsModule: MyDocumentsAssembly { get }
     var travelModule: TravelAssembly { get }
     var settingsModule: SettingsAssembly { get }
+    var insuranceListModule: InsuranceListAssembly { get }
+    var notificationModule: NotificationAssembly { get }
+    
 }
 
 class AssemblyFactory: AssemblyFactoryProtocol {
@@ -239,6 +242,16 @@ class AssemblyFactory: AssemblyFactoryProtocol {
     
     lazy var settingsModule: SettingsAssembly = {
         let module = SettingsAssemblyImpl(serviceFactory: self.serviceFactory, assemblyFactory: self)
+        return module
+    }()
+    
+    lazy var insuranceListModule: InsuranceListAssembly = {
+        let module = InsuranceListAssemblyImpl(serviceFactory: self.serviceFactory, storyboard: self.storyboardModule.main, assemblyFactory: self)
+        return module
+    }()
+    
+    lazy var notificationModule: NotificationAssembly = {
+        let module = NotificationAssemblyImpl(serviceFactory: self.serviceFactory, assemblyFactory: self)
         return module
     }()
     

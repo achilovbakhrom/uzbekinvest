@@ -25,7 +25,9 @@ enum UserProvider {
     case fetchOrders
     case addPinfl(pinfl: Pinfl)
     case getPinflList
-    case removePinfl(id: Int)    
+    case removePinfl(id: Int)
+    case fetchNotification
+    case news(lang: String)
 }
 
 extension UserProvider: TargetType {
@@ -70,6 +72,10 @@ extension UserProvider: TargetType {
             return "/api/user/pinfl/\(id)"
         case .getPinflList:
             return "/api/user/pinfl"
+        case .fetchNotification:
+            return "/api/user/notification"
+        case .news:
+            return "/api/news"
         }
     }
     
@@ -108,6 +114,10 @@ extension UserProvider: TargetType {
         case .addPinfl:
             return .post
         case .getPinflList:
+            return .get
+        case .fetchNotification:
+            return .get
+        case .news:
             return .get
         }
     }
@@ -154,6 +164,10 @@ extension UserProvider: TargetType {
             return .requestPlain
         case .addPinfl(let pinfl):
             return .requestParameters(parameters: pinfl.dictionary!, encoding: JSONEncoding.default)
+        case .fetchNotification:
+            return .requestPlain
+        case .news(let lang):
+            return .requestParameters(parameters: ["lang" : lang], encoding: URLEncoding.default)
         }
     }
     

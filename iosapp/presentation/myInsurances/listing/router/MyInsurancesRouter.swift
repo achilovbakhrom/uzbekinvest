@@ -17,6 +17,7 @@ protocol MyInsurancesRouter: BaseRouter {
     func openAddInsurancePage()
     func goBack()
     func openAddMyInsuranceVC()
+    func openInsuranceListVC()
 }
 
 class MyInsrancesRouterImpl: MyInsurancesRouter {
@@ -71,6 +72,12 @@ class MyInsrancesRouterImpl: MyInsurancesRouter {
         let vc = AddMyInsuranceVC()
         vc.presenter = presenter
         self.viewController?.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func openInsuranceListVC() {
+        let vc = self.factory?.insuranceListModule.assembleViewController() ?? UIViewController()
+        self.viewController?.navigationController?.pushViewController(vc, animated: true)
+        
     }
     
 }

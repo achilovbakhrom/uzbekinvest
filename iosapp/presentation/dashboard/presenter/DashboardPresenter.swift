@@ -22,6 +22,7 @@ protocol DashboardPresenter: BasePresenter {
     func openIncidentsVC()
     func openSupportVC()
     func error(msg: String)
+    func openNotifications()
 }
 
 class DashboardPresenterImpl: DashboardPresenter {
@@ -135,5 +136,9 @@ class DashboardPresenterImpl: DashboardPresenter {
     func error(msg: String) {
         let vc = self.view as? DashboardVC
         vc?.showErrorMessage(msg: msg)
+    }
+    
+    func openNotifications() {
+        self.dashboardRouter?.openNotifications()
     }
 }

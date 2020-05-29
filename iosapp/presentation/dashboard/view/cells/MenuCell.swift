@@ -137,8 +137,8 @@ class MenuCell: UICollectionViewCell {
         return view
     }
     
-    public func setData(model: Product, index: Int, isLast: Bool) {
-        if index == 0 || index == 1 {
+    public func setData(model: Product, index: Int, isLast: Bool, isFromDashboard: Bool = true) {
+        if (index == 0 || index == 1) && isFromDashboard {
             if isIPhone4OrNewer() {
                 self.topConstraint.constant = 35
             } else if isIPhoneSE() {

@@ -217,6 +217,18 @@
 		2955F260247B3B7600F217CB /* NoMapView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2955F262247B3B7600F217CB /* NoMapView.xib */; };
 		2955F269247B3BB500F217CB /* MyDocumentsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2955F26B247B3BB500F217CB /* MyDocumentsView.xib */; };
 		2955F275247B3CE400F217CB /* OrderCheck1View.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2955F277247B3CE400F217CB /* OrderCheck1View.xib */; };
+		29567CED247F7C9B001C4E61 /* InsuranceListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29567CEC247F7C9B001C4E61 /* InsuranceListPresenter.swift */; };
+		29567CEF247F7FD1001C4E61 /* InsuranceListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29567CEE247F7FD1001C4E61 /* InsuranceListInteractor.swift */; };
+		29567CF1247F8114001C4E61 /* InsuranceListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29567CF0247F8114001C4E61 /* InsuranceListRouter.swift */; };
+		29567CF3247F8319001C4E61 /* InsuranceListAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29567CF2247F8319001C4E61 /* InsuranceListAssembly.swift */; };
+		29567CFB247FF61C001C4E61 /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29567CFA247FF61C001C4E61 /* NotificationView.swift */; };
+		29567CFD247FF6B0001C4E61 /* NotificationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 29567CFC247FF6B0001C4E61 /* NotificationView.xib */; };
+		29567CFF247FFF7E001C4E61 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29567CFE247FFF7E001C4E61 /* Notification.swift */; };
+		29567D0124803EA1001C4E61 /* NotificationInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29567D0024803EA1001C4E61 /* NotificationInteractor.swift */; };
+		29567D032480405B001C4E61 /* NotificationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29567D022480405B001C4E61 /* NotificationVC.swift */; };
+		29567D052480420D001C4E61 /* NotificationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29567D042480420D001C4E61 /* NotificationPresenter.swift */; };
+		29567D0724804407001C4E61 /* NotificationAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29567D0624804407001C4E61 /* NotificationAssembly.swift */; };
+		29567D0924804474001C4E61 /* NotificationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29567D0824804474001C4E61 /* NotificationRouter.swift */; };
 		295812B32436962900963B3A /* BaseInsurancePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295812B22436962900963B3A /* BaseInsurancePresenter.swift */; };
 		296061542444E2B40024A2D8 /* IncidentsDetailListingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296061532444E2B40024A2D8 /* IncidentsDetailListingVC.swift */; };
 		296061572444E3E70024A2D8 /* IncidentDetailListingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296061562444E3E70024A2D8 /* IncidentDetailListingView.swift */; };
@@ -444,6 +456,10 @@
 		29BB09F5240A9F320000F559 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BB09F4240A9F320000F559 /* String+Extensions.swift */; };
 		29BB09F7240AA2C50000F559 /* LoginAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BB09F6240AA2C50000F559 /* LoginAssembly.swift */; };
 		29BB09F9240AA41E0000F559 /* LoginRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BB09F8240AA41E0000F559 /* LoginRouter.swift */; };
+		29BC1601247EF83C0009BD62 /* InsuranceListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BC1600247EF83C0009BD62 /* InsuranceListVC.swift */; };
+		29BC1603247EF8700009BD62 /* InsuranceListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 29BC1602247EF8700009BD62 /* InsuranceListView.xib */; };
+		29BC1605247EF8860009BD62 /* InsuranceListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BC1604247EF8860009BD62 /* InsuranceListView.swift */; };
+		29BC1607247EFC360009BD62 /* InsuranceListViewPager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BC1606247EFC360009BD62 /* InsuranceListViewPager.swift */; };
 		29BDC4612406EF210015F4E1 /* BaseRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BDC4602406EF210015F4E1 /* BaseRouter.swift */; };
 		29CBABA3245ECA7D004E894C /* OrderCheck2View.xib in Resources */ = {isa = PBXBuildFile; fileRef = 29CBABA5245ECA7D004E894C /* OrderCheck2View.xib */; };
 		29CBABAC245ECE9D004E894C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 29CBABAE245ECE9D004E894C /* Localizable.strings */; };
@@ -802,6 +818,18 @@
 		2955F279247B3CEC00F217CB /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/OrderCheck1View.strings; sourceTree = "<group>"; };
 		2955F27B247B3CEF00F217CB /* uz-Cyrl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "uz-Cyrl"; path = "uz-Cyrl.lproj/OrderCheck1View.strings"; sourceTree = "<group>"; };
 		2955F27D247B3CF100F217CB /* uz-UZ */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "uz-UZ"; path = "uz-UZ.lproj/OrderCheck1View.strings"; sourceTree = "<group>"; };
+		29567CEC247F7C9B001C4E61 /* InsuranceListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsuranceListPresenter.swift; sourceTree = "<group>"; };
+		29567CEE247F7FD1001C4E61 /* InsuranceListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsuranceListInteractor.swift; sourceTree = "<group>"; };
+		29567CF0247F8114001C4E61 /* InsuranceListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsuranceListRouter.swift; sourceTree = "<group>"; };
+		29567CF2247F8319001C4E61 /* InsuranceListAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsuranceListAssembly.swift; sourceTree = "<group>"; };
+		29567CFA247FF61C001C4E61 /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
+		29567CFC247FF6B0001C4E61 /* NotificationView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificationView.xib; sourceTree = "<group>"; };
+		29567CFE247FFF7E001C4E61 /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
+		29567D0024803EA1001C4E61 /* NotificationInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationInteractor.swift; sourceTree = "<group>"; };
+		29567D022480405B001C4E61 /* NotificationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationVC.swift; sourceTree = "<group>"; };
+		29567D042480420D001C4E61 /* NotificationPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationPresenter.swift; sourceTree = "<group>"; };
+		29567D0624804407001C4E61 /* NotificationAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationAssembly.swift; sourceTree = "<group>"; };
+		29567D0824804474001C4E61 /* NotificationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationRouter.swift; sourceTree = "<group>"; };
 		295812B22436962900963B3A /* BaseInsurancePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseInsurancePresenter.swift; sourceTree = "<group>"; };
 		296061532444E2B40024A2D8 /* IncidentsDetailListingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncidentsDetailListingVC.swift; sourceTree = "<group>"; };
 		296061562444E3E70024A2D8 /* IncidentDetailListingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncidentDetailListingView.swift; sourceTree = "<group>"; };
@@ -1036,6 +1064,10 @@
 		29BB09F4240A9F320000F559 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		29BB09F6240AA2C50000F559 /* LoginAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAssembly.swift; sourceTree = "<group>"; };
 		29BB09F8240AA41E0000F559 /* LoginRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRouter.swift; sourceTree = "<group>"; };
+		29BC1600247EF83C0009BD62 /* InsuranceListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsuranceListVC.swift; sourceTree = "<group>"; };
+		29BC1602247EF8700009BD62 /* InsuranceListView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InsuranceListView.xib; sourceTree = "<group>"; };
+		29BC1604247EF8860009BD62 /* InsuranceListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsuranceListView.swift; sourceTree = "<group>"; };
+		29BC1606247EFC360009BD62 /* InsuranceListViewPager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsuranceListViewPager.swift; sourceTree = "<group>"; };
 		29BDC4602406EF210015F4E1 /* BaseRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRouter.swift; sourceTree = "<group>"; };
 		29C03C5424655608008226CB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/IncidentHeaderView.xib; sourceTree = "<group>"; };
 		29C03C5524655746008226CB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/IncidentEmptyView.xib; sourceTree = "<group>"; };
@@ -2144,6 +2176,60 @@
 			path = language;
 			sourceTree = "<group>";
 		};
+		29567CF4247FF58F001C4E61 /* notification */ = {
+			isa = PBXGroup;
+			children = (
+				29567CF9247FF5A9001C4E61 /* assembly */,
+				29567CF8247FF5A4001C4E61 /* router */,
+				29567CF7247FF59E001C4E61 /* interactor */,
+				29567CF6247FF59A001C4E61 /* presenter */,
+				29567CF5247FF594001C4E61 /* view */,
+			);
+			path = notification;
+			sourceTree = "<group>";
+		};
+		29567CF5247FF594001C4E61 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				29567CFA247FF61C001C4E61 /* NotificationView.swift */,
+				29567CFC247FF6B0001C4E61 /* NotificationView.xib */,
+				29567D022480405B001C4E61 /* NotificationVC.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		29567CF6247FF59A001C4E61 /* presenter */ = {
+			isa = PBXGroup;
+			children = (
+				29567D042480420D001C4E61 /* NotificationPresenter.swift */,
+			);
+			path = presenter;
+			sourceTree = "<group>";
+		};
+		29567CF7247FF59E001C4E61 /* interactor */ = {
+			isa = PBXGroup;
+			children = (
+				29567D0024803EA1001C4E61 /* NotificationInteractor.swift */,
+			);
+			path = interactor;
+			sourceTree = "<group>";
+		};
+		29567CF8247FF5A4001C4E61 /* router */ = {
+			isa = PBXGroup;
+			children = (
+				29567D0824804474001C4E61 /* NotificationRouter.swift */,
+			);
+			path = router;
+			sourceTree = "<group>";
+		};
+		29567CF9247FF5A9001C4E61 /* assembly */ = {
+			isa = PBXGroup;
+			children = (
+				29567D0624804407001C4E61 /* NotificationAssembly.swift */,
+			);
+			path = assembly;
+			sourceTree = "<group>";
+		};
 		2960614F2444E1E70024A2D8 /* listing */ = {
 			isa = PBXGroup;
 			children = (
@@ -2671,6 +2757,8 @@
 		299B524423FBBF790072ABD6 /* presentation */ = {
 			isa = PBXGroup;
 			children = (
+				29567CF4247FF58F001C4E61 /* notification */,
+				29BC15FA247EF5490009BD62 /* insuraceList */,
 				29846C61247629F500287817 /* settings */,
 				29C342472452175700C00363 /* orderCheck */,
 				297FA5922448DDE70079A72D /* profile */,
@@ -2776,6 +2864,7 @@
 				29846BE924724F8F00287817 /* Work.swift */,
 				29846BF32473931800287817 /* Tourist.swift */,
 				29846C5F247627ED00287817 /* Pinfl.swift */,
+				29567CFE247FFF7E001C4E61 /* Notification.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -3422,6 +3511,61 @@
 			path = router;
 			sourceTree = "<group>";
 		};
+		29BC15FA247EF5490009BD62 /* insuraceList */ = {
+			isa = PBXGroup;
+			children = (
+				29BC15FF247EF5730009BD62 /* interactor */,
+				29BC15FE247EF56B0009BD62 /* presenter */,
+				29BC15FD247EF5640009BD62 /* router */,
+				29BC15FC247EF55F0009BD62 /* assembly */,
+				29BC15FB247EF55B0009BD62 /* view */,
+			);
+			path = insuraceList;
+			sourceTree = "<group>";
+		};
+		29BC15FB247EF55B0009BD62 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				29BC1600247EF83C0009BD62 /* InsuranceListVC.swift */,
+				29BC1602247EF8700009BD62 /* InsuranceListView.xib */,
+				29BC1604247EF8860009BD62 /* InsuranceListView.swift */,
+				29BC1606247EFC360009BD62 /* InsuranceListViewPager.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		29BC15FC247EF55F0009BD62 /* assembly */ = {
+			isa = PBXGroup;
+			children = (
+				29567CF2247F8319001C4E61 /* InsuranceListAssembly.swift */,
+			);
+			path = assembly;
+			sourceTree = "<group>";
+		};
+		29BC15FD247EF5640009BD62 /* router */ = {
+			isa = PBXGroup;
+			children = (
+				29567CF0247F8114001C4E61 /* InsuranceListRouter.swift */,
+			);
+			path = router;
+			sourceTree = "<group>";
+		};
+		29BC15FE247EF56B0009BD62 /* presenter */ = {
+			isa = PBXGroup;
+			children = (
+				29567CEC247F7C9B001C4E61 /* InsuranceListPresenter.swift */,
+			);
+			path = presenter;
+			sourceTree = "<group>";
+		};
+		29BC15FF247EF5730009BD62 /* interactor */ = {
+			isa = PBXGroup;
+			children = (
+				29567CEE247F7FD1001C4E61 /* InsuranceListInteractor.swift */,
+			);
+			path = interactor;
+			sourceTree = "<group>";
+		};
 		29C342472452175700C00363 /* orderCheck */ = {
 			isa = PBXGroup;
 			children = (
@@ -3963,6 +4107,7 @@
 				299B52BF23FBED4D0072ABD6 /* Roboto-Medium.ttf in Resources */,
 				2955F1DA247AB9D200F217CB /* PinflView.xib in Resources */,
 				29025A9A24633F1F005323FD /* IncidentsListView.xib in Resources */,
+				29BC1603247EF8700009BD62 /* InsuranceListView.xib in Resources */,
 				29025AA824633F4F005323FD /* IncidentHeaderView.xib in Resources */,
 				299B522023FBBB440072ABD6 /* LaunchScreen.storyboard in Resources */,
 				2955F269247B3BB500F217CB /* MyDocumentsView.xib in Resources */,
@@ -3987,6 +4132,7 @@
 				2955F218247B35DC00F217CB /* AddingInstructionView.xib in Resources */,
 				2955F275247B3CE400F217CB /* OrderCheck1View.xib in Resources */,
 				299B52BB23FBED4D0072ABD6 /* Roboto-LightItalic.ttf in Resources */,
+				29567CFD247FF6B0001C4E61 /* NotificationView.xib in Resources */,
 				29025A7724633E62005323FD /* LocationView.xib in Resources */,
 				299B52BC23FBED4D0072ABD6 /* Roboto-MediumItalic.ttf in Resources */,
 				29A845C8245F5DA3004A76C4 /* MyInsurancesPaidView.xib in Resources */,
@@ -4138,6 +4284,7 @@
 				2950F689242FC52700DFD78B /* MobilePhone.swift in Sources */,
 				2950F687242FC40F00DFD78B /* MobilePhoneRouter.swift in Sources */,
 				29A5F1FD241F513B0049F35B /* ConfirmAssembly.swift in Sources */,
+				29BC1605247EF8860009BD62 /* InsuranceListView.swift in Sources */,
 				297654D12459F406005C52EF /* IncidentsAddEditInteractor.swift in Sources */,
 				299B526B23FBC16F0072ABD6 /* NetworkManager.swift in Sources */,
 				2920E8CB246C870E00A808B6 /* MyInsuranceDetailInteractor.swift in Sources */,
@@ -4221,6 +4368,7 @@
 				29133921244CD27500A26D5F /* OfficesRouter.swift in Sources */,
 				290D5155240A0A2300483561 /* AKMaskFieldPatternCharacter.swift in Sources */,
 				299B52C523FBF6870072ABD6 /* styles.swift in Sources */,
+				29BC1607247EFC360009BD62 /* InsuranceListViewPager.swift in Sources */,
 				2973FF88243518CA00EC2C39 /* UserFilesPicker.swift in Sources */,
 				29BB09F1240A95270000F559 /* ValidatorService.swift in Sources */,
 				2950F663242E9EDC00DFD78B /* GasPresenter.swift in Sources */,
@@ -4273,6 +4421,7 @@
 				299B528B23FBC2E90072ABD6 /* Clonable.swift in Sources */,
 				292650DB2468A3BD00E1326D /* Travel3VC.swift in Sources */,
 				297CB46C2403917A001CAD02 /* MainSliderVC.swift in Sources */,
+				29567D032480405B001C4E61 /* NotificationVC.swift in Sources */,
 				297E4A01242075C40044CA3B /* DashboardPresenter.swift in Sources */,
 				299EE13E241117CD00C50593 /* RoadTechSupportConfirm.swift in Sources */,
 				299B528E23FBC3080072ABD6 /* Service.swift in Sources */,
@@ -4280,6 +4429,8 @@
 				293AB04A24102BBC00030506 /* KaskoConfirmVC.swift in Sources */,
 				290D514A240A087E00483561 /* AKMaskField.swift in Sources */,
 				29175D702450C1CA00790444 /* Carousel.swift in Sources */,
+				29567CF3247F8319001C4E61 /* InsuranceListAssembly.swift in Sources */,
+				29567D0924804474001C4E61 /* NotificationRouter.swift in Sources */,
 				299B529C23FBE3AC0072ABD6 /* RootVC.swift in Sources */,
 				292714F3242B678A00641FEB /* KaskoRouter.swift in Sources */,
 				298CD9EA241BC6140033865C /* Decodable+Extensions.swift in Sources */,
@@ -4307,8 +4458,10 @@
 				299B526023FBC0F10072ABD6 /* News.swift in Sources */,
 				299EE15C24117A1800C50593 /* Infection2VC.swift in Sources */,
 				29AEEF9324384B5C00617CE2 /* BaseInsuranceInteractor.swift in Sources */,
+				29567CFB247FF61C001C4E61 /* NotificationView.swift in Sources */,
 				293E42EE240B79910090E8AE /* Registration1VC.swift in Sources */,
 				299B529623FBC3470072ABD6 /* BasicFactory.swift in Sources */,
+				29567CED247F7C9B001C4E61 /* InsuranceListPresenter.swift in Sources */,
 				297CB46624037127001CAD02 /* SecondVC.swift in Sources */,
 				297FA54C244511890079A72D /* IncidentsListingRouter.swift in Sources */,
 				29101BE8240E525D00C0FFD6 /* OsagoConfirm.swift in Sources */,
@@ -4339,6 +4492,7 @@
 				2950F68F242FC88100DFD78B /* MobilePhoneAssembly.swift in Sources */,
 				292714F5242B679500641FEB /* KaskoAssembly.swift in Sources */,
 				293AF8D9242C90FB00F4D8AF /* MyHealth.swift in Sources */,
+				29BC1601247EF83C0009BD62 /* InsuranceListVC.swift in Sources */,
 				2955F1C92476918F00F217CB /* SettingsRouter.swift in Sources */,
 				299EE1312410F8D400C50593 /* Sport1VC.swift in Sources */,
 				2950CE202432593E0083DAD7 /* SimpleTextField.swift in Sources */,
@@ -4352,6 +4506,7 @@
 				299B524C23FBBFD90072ABD6 /* Region.swift in Sources */,
 				297E4A092420AFC50044CA3B /* OsagoRouter.swift in Sources */,
 				29846C6D247631B900287817 /* SettingsVC.swift in Sources */,
+				29567CF1247F8114001C4E61 /* InsuranceListRouter.swift in Sources */,
 				2950F657242E90A400DFD78B /* TechnicalSupport.swift in Sources */,
 				297FA5A02448EAB40079A72D /* MainProfileAssembly.swift in Sources */,
 				2970FA5424543F6100DAE605 /* OrderCheckInteractor.swift in Sources */,
@@ -4434,6 +4589,7 @@
 				290D51482409A4C200483561 /* TextField.swift in Sources */,
 				299B526423FBC1130072ABD6 /* Click.swift in Sources */,
 				291C7032245B6B0300E49D9A /* IncidentsInteractor.swift in Sources */,
+				29567D052480420D001C4E61 /* NotificationPresenter.swift in Sources */,
 				29850482243C65B1004FDC77 /* LuggageInteractor.swift in Sources */,
 				29CE46332454008700D0818F /* OrderCheck2View.swift in Sources */,
 				293AB032240FD8FF00030506 /* MandatoryVC.swift in Sources */,
@@ -4443,6 +4599,7 @@
 				299B52C823FBF8120072ABD6 /* CAGradientLayer+extensions.swift in Sources */,
 				292714FD242C6B2900641FEB /* HomeVC.swift in Sources */,
 				2985047A243C5FFE004FDC77 /* GasEquipmentAssembly.swift in Sources */,
+				29567CFF247FFF7E001C4E61 /* Notification.swift in Sources */,
 				29BB09EF240A94760000F559 /* LoginInteractor.swift in Sources */,
 				2967EF42243E506400102142 /* MyInsurancesInteractor.swift in Sources */,
 				2913391A244C726B00A26D5F /* OfficesAssembly.swift in Sources */,
@@ -4460,6 +4617,7 @@
 				29E22E8E2440BB7200A80E3F /* MyInsurancesDetailVC.swift in Sources */,
 				292714FF242C6C1B00641FEB /* HomePresenter.swift in Sources */,
 				292714E7242B074400641FEB /* MandatoryPresenter.swift in Sources */,
+				29567D0124803EA1001C4E61 /* NotificationInteractor.swift in Sources */,
 				29AAD78C245E8D0300725887 /* CheckOrder.swift in Sources */,
 				297CE0C6246683A30052166F /* ErrorEntity.swift in Sources */,
 				29E3CFDD2457EE15002C6F8E /* IncidentsAddEditAssembly.swift in Sources */,
@@ -4541,6 +4699,7 @@
 				293A24B5240513D300072340 /* WhiteBorderedTextButton.swift in Sources */,
 				2930B1C62407975600673D82 /* RootPresenter.swift in Sources */,
 				29B5C2B22425C0E200706AB4 /* Int+Extensions.swift in Sources */,
+				29567CEF247F7FD1001C4E61 /* InsuranceListInteractor.swift in Sources */,
 				292714E3242B062400641FEB /* MandatoryRouter.swift in Sources */,
 				299B529F23FBE4300072ABD6 /* BasePresenter.swift in Sources */,
 				293AF8C5242C732300F4D8AF /* HomeRouter.swift in Sources */,
@@ -4562,6 +4721,7 @@
 				2930B1E42407C89900673D82 /* WelcomeAssembly.swift in Sources */,
 				29A2A1702402D2440032F2E9 /* WelcomeVC.swift in Sources */,
 				299B529023FBC3170072ABD6 /* Factory.swift in Sources */,
+				29567D0724804407001C4E61 /* NotificationAssembly.swift in Sources */,
 				29D1E1BD2427E3AB008071AF /* MainAssembly.swift in Sources */,
 				299B52A623FBE6D40072ABD6 /* Button.swift in Sources */,
 				295039A6243BBA050048A829 /* GasEquipmentInteractor.swift in Sources */,

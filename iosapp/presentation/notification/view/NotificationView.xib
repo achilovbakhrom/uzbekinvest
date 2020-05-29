@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="NotificationView" customModule="iosapp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h8t-DO-Ykw">
+                    <rect key="frame" x="31" y="89" width="23" height="22"/>
+                    <state key="normal" image="back-arrow"/>
+                    <connections>
+                        <action selector="backButtonAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="VP9-R4-svL"/>
+                    </connections>
+                </button>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="PBO-VI-4Kf">
+                    <rect key="frame" x="0.0" y="119" width="414" height="743"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <constraints>
+                <constraint firstItem="h8t-DO-Ykw" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="31" id="NQz-di-Beq"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="PBO-VI-4Kf" secondAttribute="trailing" id="PJc-4b-ltK"/>
+                <constraint firstItem="PBO-VI-4Kf" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="ZRR-I9-aPl"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="PBO-VI-4Kf" secondAttribute="bottom" id="lmW-KT-HPE"/>
+                <constraint firstItem="h8t-DO-Ykw" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="45" id="yXP-8c-xGi"/>
+                <constraint firstItem="PBO-VI-4Kf" firstAttribute="top" secondItem="h8t-DO-Ykw" secondAttribute="bottom" constant="8" id="yY0-Lc-qih"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="tableView" destination="PBO-VI-4Kf" id="EHN-9j-60T"/>
+            </connections>
+            <point key="canvasLocation" x="139" y="144"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="back-arrow" width="23" height="16"/>
+    </resources>
+</document>

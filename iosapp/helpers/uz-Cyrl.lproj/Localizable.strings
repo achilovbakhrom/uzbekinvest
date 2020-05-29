@@ -184,3 +184,5 @@
 "one_incident" = "Битта ходиса";
 "two_incidents" = "Иккита ходиса";
 "three_or_more" = "Уч ва ундан ортиқ ходисалар";
+"notification" = "Уведомление";
+"collapse" = "Свернуть";

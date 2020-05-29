@@ -24,6 +24,16 @@ class TopViewController: UIViewController {
         return imageView
     }()
     
+    private lazy var bellButton: UIButton = {
+        let button = UIButton.init()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setImage(UIImage.init(named: "bell"), for: .normal)
+        return button
+        
+    }()
+    
+    var onBell: (() -> Void)? = nil
+    
     private lazy var loadingView: LoadingView = LoadingView.fromNib()
     
     private lazy var pageControl: CHIPageControlAleppo = {
@@ -59,8 +69,7 @@ class TopViewController: UIViewController {
         if grandient != nil {
             UIView.animate(withDuration: 0.0) {
                 self.grandient.frame = self.view.bounds
-            }
-            
+            }            
         }
     }
     
@@ -130,11 +139,23 @@ class TopViewController: UIViewController {
             self.pageControl.heightAnchor.constraint(equalToConstant: 10.0)
         ])
         
+        
+        self.view.addSubview(bellButton)
+        NSLayoutConstraint.activate([
+            self.bellButton.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -31),
+            self.bellButton.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 45)
+        ])
+        bellButton.addTarget(self, action: #selector(onBellAction(_:)), for: .touchUpInside)
         self.carousel.onPageChanged = { page in
             self.pageControl.set(progress: page, animated: true)
         }
         
         self.loadingView.startAnimating()
+    }
+    
+    @objc
+    private func onBellAction(_ sender: Any) {
+        self.onBell?()
     }
     
     func setLoading(isLoading: Bool) {

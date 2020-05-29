@@ -1,33 +1,34 @@
 //
-//  DashboardInteractor.swift
+//  InsuranceListInteractor.swift
 //  iosapp
 //
-//  Created by Bakhrom Achilov on 3/17/20.
+//  Created by Bakhrom Achilov on 5/28/20.
 //  Copyright © 2020 Bakhrom Achilov. All rights reserved.
 //
 
 import Foundation
 
-protocol DashboardInteractor: BaseInteractor {
+protocol InsuranceListInteractor: BaseInteractor {
     var assemblyFactory: AssemblyFactoryProtocol { get set }
     var serviceFactory: ServiceFactoryProtocol { get set }
-    init(serviceFactory: ServiceFactoryProtocol, assembly: AssemblyFactoryProtocol)
+    init(serviceFactory: ServiceFactoryProtocol, assembly: AssemblyFactoryProtocol, presenter: BasePresenter)
     func fetchCategoryList(showLoading: Bool)
-    func fetchCarouselData()
-    
 }
 
-class DashboardInteractorImpl: DashboardInteractor {
+
+
+class InsuranceListInteractorImpl: InsuranceListInteractor {
     
     var presenter: BasePresenter?
     var assemblyFactory: AssemblyFactoryProtocol
     var serviceFactory: ServiceFactoryProtocol
     
-    private lazy var dashboardPresenter = self.presenter as? DashboardPresenter
+    private lazy var insuranceListPresenter = self.presenter as? InsuranceListPresenter
     
-    required init(serviceFactory: ServiceFactoryProtocol, assembly: AssemblyFactoryProtocol) {
+    required init(serviceFactory: ServiceFactoryProtocol, assembly: AssemblyFactoryProtocol, presenter: BasePresenter) {
         self.assemblyFactory = assembly
         self.serviceFactory = serviceFactory
+        self.presenter = presenter
     }
     
     private func fetchProductList(showLoading: Bool) {
@@ -38,22 +39,22 @@ class DashboardInteractorImpl: DashboardInteractor {
                 switch result {
                 case .success(let res):
                     if showLoading {
-                        self.dashboardPresenter?.setLoading(isLoading: false)
+                        self.insuranceListPresenter?.setLoading(isLoading: false)
                     }
                     let decoder = JSONDecoder()
                     do {
                         let json = try decoder.decode(ArrayResponse<Product>.self, from: res.data)
-                        self.dashboardPresenter?.setProductList(productList: json.data ?? [])   
+                        self.insuranceListPresenter?.setProductList(productList: json.data ?? [])
                     } catch(let error) {
-                        self.dashboardPresenter?.error(msg: error.localizedDescription)
+                        self.insuranceListPresenter?.error(msg: error.localizedDescription)
                         debugPrint(error.localizedDescription)
                     }
                     break
                 case .failure(let error):
                     debugPrint(error.localizedDescription)
-                    self.dashboardPresenter?.error(msg: error.localizedDescription)
+                    self.insuranceListPresenter?.error(msg: error.localizedDescription)
                     if showLoading {
-                        self.dashboardPresenter?.setLoading(isLoading: false)
+                        self.insuranceListPresenter?.setLoading(isLoading: false)
                     }
                     break
                 }
@@ -62,7 +63,7 @@ class DashboardInteractorImpl: DashboardInteractor {
     
     func fetchCategoryList(showLoading: Bool = true) {
         if showLoading {
-            self.dashboardPresenter?.setLoading(isLoading: true)
+            self.insuranceListPresenter?.setLoading(isLoading: true)
         }
         self
             .serviceFactory
@@ -84,46 +85,19 @@ class DashboardInteractorImpl: DashboardInteractor {
                             Translate(name: "Барча булимлар", lang: "", text: nil, description: nil)
                         ]
                         categoryList.insert(allCats, at: 0)
-                        self.dashboardPresenter?.setCategoryList(categoryList: categoryList)
+                        self.insuranceListPresenter?.setCategoryList(categoryList: categoryList)
                         self.fetchProductList(showLoading: showLoading)
                     } catch (let error) {
-                        if showLoading { self.dashboardPresenter?.setLoading(isLoading: false) }
+                        if showLoading { self.insuranceListPresenter?.setLoading(isLoading: false) }
                         debugPrint(error.localizedDescription)
                     }
                     break
                 case .failure(let error):
-                    if showLoading { self.dashboardPresenter?.setLoading(isLoading: false) }
+                    if showLoading { self.insuranceListPresenter?.setLoading(isLoading: false) }
                     debugPrint(error.localizedDescription)
                     break
                 }
         }
-        
     }
     
-    func fetchCarouselData() {
-        self.dashboardPresenter?.setCarouselLoading(isLoading: true)
-        self
-            .serviceFactory
-            .networkManager
-            .others
-            .request(.fetchCarouselData) { result in
-                switch result {
-                case .success(let response):
-                    self.dashboardPresenter?.setCarouselLoading(isLoading: false)
-                    do {
-                        let decoder = JSONDecoder()
-                        let r = try decoder.decode(ArrayResponse<Carousel>.self, from: response.data)
-                        self.dashboardPresenter?.setCarouselList(carouselList: r.data ?? [])
-                    } catch (let error) {
-                        debugPrint(error.localizedDescription)
-                    }
-                    break
-                case .failure(let error):
-                    self.dashboardPresenter?.setCarouselLoading(isLoading: false)
-                    debugPrint(error.localizedDescription)
-                    break
-                }
-            }
-        
-    }
 }

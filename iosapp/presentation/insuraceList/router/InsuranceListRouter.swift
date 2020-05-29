@@ -1,16 +1,15 @@
 //
-//  DashboardRouter.swift
+//  InsuranceListRouter.swift
 //  iosapp
 //
-//  Created by Bakhrom Achilov on 3/17/20.
+//  Created by Bakhrom Achilov on 5/28/20.
 //  Copyright © 2020 Bakhrom Achilov. All rights reserved.
 //
 
 import Foundation
 import UIKit
 
-protocol DashboardRouter: BaseRouter {
-    
+protocol InsuranceListRouter: BaseRouter {
     func openOsago(product: Product)
     func openMandatory(product: Product)
     func openHome(product: Product)
@@ -26,14 +25,11 @@ protocol DashboardRouter: BaseRouter {
     func openMobilePhone(product: Product)
     func openLuggage(product: Product)
     func openTravel(product: Product)
-    func openCheckOrderVC()
-    func openIncidentsVC()
-    func openSupportVC()
-    func openNotifications()
+    func goBack()
     init(factory: AssemblyFactoryProtocol, viewController: UIViewController)
 }
 
-class DashboardRouterImpl: DashboardRouter {
+class InsuranceListRouterImpl: InsuranceListRouter {
     
     var factory: AssemblyFactoryProtocol?
     
@@ -47,7 +43,7 @@ class DashboardRouterImpl: DashboardRouter {
     func openOsago(product: Product) {
         let vc = factory?.osagoModule.assembleViewController() ?? UIViewController()
         (vc as? OsagoVC)?.product = product
-        self.viewController?.navigationController?.pushViewController(vc, animated: true)        
+        self.viewController?.navigationController?.pushViewController(vc, animated: true)
     }
     func openMandatory(product: Product) {
         let vc = (factory?.pledgedTransportModule.assembleViewController() ?? UIViewController()) as! MandatoryVC
@@ -127,25 +123,13 @@ class DashboardRouterImpl: DashboardRouter {
         self.viewController?.navigationController?.pushViewController(vc, animated: true)
     }
     
-    func openCheckOrderVC() {
-        let vc = factory?.orderCheckModule.assembleViewController() ?? UIViewController()
-        self.viewController?.navigationController?.pushViewController(vc, animated: true)
-    }
-    
     func openTravel(product: Product) {
         let vc = (factory?.travelModule.assembleViewController() ?? UIViewController()) as! TravelVC
         vc.product = product
         self.viewController?.navigationController?.pushViewController(vc, animated: true)
     }
     
-    func openIncidentsVC() {
-        self.viewController?.tabBarController?.selectedIndex = 1
-    }
-    
-    func openSupportVC() {}
-    
-    func openNotifications() {
-        let vc = self.factory?.notificationModule.assembleViewController()
-        self.viewController?.navigationController?.pushViewController(vc!, animated: true)
+    func goBack() {
+        self.viewController?.navigationController?.popViewController(animated: true)
     }
 }

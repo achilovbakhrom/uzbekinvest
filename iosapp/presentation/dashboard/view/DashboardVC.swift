@@ -89,6 +89,10 @@ class DashboardVC: BaseViewImpl, BottomViewControllerScrollDelegate, UICollectio
         
         addViewController(bottomViewController, frame: CGRect(x: 0, y: topMenuHeight, width: view.frame.size.width, height: view.frame.size.height - topMenuHeight), completion: nil)
         addViewController(topViewController, frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: topViewHeight + topMenuHeight), completion: nil)
+        
+        topViewController.onBell = {
+            self.dashboardPresenter?.openNotifications()
+        }
         self.setupTopMenu()
         self.setupCenterMenu()
         self.setupLoadingView()
@@ -436,10 +440,12 @@ class BottomViewController: UIViewController, UICollectionViewDataSource, UIColl
             self.productList = productList.filter({ ($0.category?.id ?? 0) == c.id })
         } else {
             self.productList = productList
-        }        
-        self.collectionView.reloadData()
-        self.collectionView.collectionViewLayout.invalidateLayout()
-        self.collectionView.layoutSubviews()
+        }
+        if collectionView != nil {
+            self.collectionView.reloadData()
+            self.collectionView.collectionViewLayout.invalidateLayout()
+            self.collectionView.layoutSubviews()
+        }
     }
     
     override func viewDidLoad() {
