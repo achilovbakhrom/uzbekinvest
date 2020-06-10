@@ -61,6 +61,9 @@ struct Incident: Codable {
     var images: Array<IncidentImage?>?
     var startDate: String?
     var endDate: String?
+    var type: IncidentTypeItem?
+    var happenedAt: String?
+    var isOffline: Int?
     
     init() {
         id = nil
@@ -75,6 +78,9 @@ struct Incident: Codable {
         paidAmount = nil
         createdAt = nil
         images = nil
+        type = nil
+        happenedAt = nil
+        isOffline = 0
     }
     
     enum CodingKeys: String, CodingKey {
@@ -93,6 +99,9 @@ struct Incident: Codable {
         case order
         case startDate = "start_date"
         case endDate = "end_date"
+        case type
+        case happenedAt = "happened_at"
+        case isOffline = "is_offline"
     }
     
 }

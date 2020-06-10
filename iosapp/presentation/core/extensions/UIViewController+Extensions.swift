@@ -13,7 +13,7 @@ extension UIViewController {
 
     func addViewController(_ viewController: UIViewController, frame: CGRect, completion: (() -> Void)?) {
         viewController.willMove(toParent: self)
-        viewController.beginAppearanceTransition(true, animated: false)
+        viewController.beginAppearanceTransition(true, animated: true)
         addChild(viewController)
         viewController.view.frame = frame
         viewController.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]

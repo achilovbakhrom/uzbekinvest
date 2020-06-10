@@ -27,6 +27,7 @@ target 'iosapp' do
   pod 'ObjectMapper', '~> 3.5'
   pod "Agrume"
   pod 'TagListView', '~> 1.0'
+  pod 'MessengerKit', :git => 'https://github.com/steve228uk/MessengerKit.git'
   
   target 'iosappTests' do
     inherit! :search_paths

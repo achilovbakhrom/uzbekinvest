@@ -95,3 +95,6 @@ class L102Language {
         userdef.synchronize()
     }
 }
+
+let phoneNumber = "712076000"
+

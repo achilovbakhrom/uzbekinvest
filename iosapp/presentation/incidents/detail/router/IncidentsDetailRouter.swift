@@ -11,7 +11,7 @@ protocol IncidentsDetailRouter: BaseRouter {
     init(factory: AssemblyFactoryProtocol, viewController: UIViewController)
     func goBack()
     func openLoginVC(phone: String)
-    func openAddEditVC(orderId: Int)
+    func openAddEditVC(orderId: Int, productCode: String, isOffline: Int)
 }
 
 class IncidentsDetailRouterImpl: IncidentsDetailRouter {
@@ -35,9 +35,11 @@ class IncidentsDetailRouterImpl: IncidentsDetailRouter {
         appDelegate.window!.rootViewController = navigation
     }
     
-    func openAddEditVC(orderId: Int) {
+    func openAddEditVC(orderId: Int, productCode: String, isOffline: Int) {
         let vc = (self.factory?.incidentsAddEditModule.assembleViewController() ?? UIViewController()) as! LocationVC
         vc.orderId = orderId
+        vc.productCode = productCode
+        vc.isOffline = isOffline
         self.viewController?.navigationController?.pushViewController(vc, animated: true)
     }
     

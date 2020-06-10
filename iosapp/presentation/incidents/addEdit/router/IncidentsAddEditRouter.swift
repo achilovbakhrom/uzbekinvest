@@ -15,6 +15,7 @@ protocol IncidentsAddEditRouter: BaseRouter {
     func openFilesVC()
     func openCommentVC()
     func openAndUpdateIncidents()
+    func openReasonVC()
 }
 
 class IncidentsAddEditRouterImpl: IncidentsAddEditRouter {
@@ -65,5 +66,12 @@ class IncidentsAddEditRouterImpl: IncidentsAddEditRouter {
         vc.phone = phone
         let navigation = UINavigationController(rootViewController: vc)
         appDelegate.window!.rootViewController = navigation
+    }
+    
+    func openReasonVC() {
+        let vc = ReasonVC()
+        vc.presenter = self.presenter
+        self.presenter.view = vc        
+        self.viewController?.navigationController?.pushViewController(vc, animated: true)
     }
 }

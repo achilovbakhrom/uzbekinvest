@@ -13,6 +13,8 @@ class MyInsuranceCategoryCell: UICollectionViewCell {
     private lazy var button: OrangeButton = {
         let button = OrangeButton(frame: .zero)
         button.translatesAutoresizingMaskIntoConstraints = false
+        button.titleLabel?.numberOfLines = 0
+        button.titleLabel?.lineBreakMode = .byWordWrapping
         return button
     }()
     

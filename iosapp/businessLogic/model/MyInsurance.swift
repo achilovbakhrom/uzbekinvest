@@ -21,10 +21,12 @@ struct MyInsurance: Codable {
     var startDate: String?
     var endDate: String?
     var premiumAmount: Int
-    var totalAmount: Int
+    var totalAmount: Int?
     var insuranceAmount: Int?
-    var membersCount: Int
-    var createdAt: String
+    var membersCount: Int?
+    var createdAt: String?
+    var seria: String?
+    var number: String?
     
     enum CodingKeys: String, CodingKey {
         case id
@@ -41,6 +43,8 @@ struct MyInsurance: Codable {
         case insuranceAmount = "insurance_amount"
         case membersCount = "members_count"
         case createdAt = "created_at"
+        case seria
+        case number
     }
     
 }

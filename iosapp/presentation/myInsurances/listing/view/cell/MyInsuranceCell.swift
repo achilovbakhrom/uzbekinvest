@@ -169,13 +169,13 @@ class MyInsuranceCell: UITableViewCell {
         let (title, color) = getTitleForStatus(status: data.status ?? "")
         self.statusContainer.backgroundColor = color
         self.statusLabel.text = title
-        self.amountLabel.text = "\(data.totalAmount.toDecimalFormat()) \("sum".localized())"
+        self.amountLabel.text = "\(data.seria == nil ? (data.totalAmount ?? 0).toDecimalFormat() : data.premiumAmount.toDecimalFormat()) \("sum".localized())"
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSSSS'Z'"
-        let date = formatter.date(from: data.createdAt)
+        let date = formatter.date(from: data.createdAt ?? "")
         formatter.dateFormat = "dd.MM.yyyy"
         
-        self.dateLabel.text = formatter.string(from: date!)
+        self.dateLabel.text = formatter.string(from: date ?? Date())
         if isLast {
             bottomConstraint.constant = -100.0
         } else {
@@ -194,6 +194,8 @@ class MyInsuranceCell: UITableViewCell {
         case "paid":
             return ("paid".localized(), Colors.primaryGreen)
         case "my_paid":
+            return ("completed".localized(), Colors.primaryGreen)
+        case "completed":
             return ("completed".localized(), Colors.primaryGreen)
         default:
             return ("", .black)

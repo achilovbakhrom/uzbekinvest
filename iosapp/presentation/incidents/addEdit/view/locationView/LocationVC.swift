@@ -19,6 +19,8 @@ class LocationVC: BaseViewImpl {
     }
     
     var orderId: Int = 0
+    var productCode: String = ""
+    var isOffline: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,7 +37,7 @@ class LocationVC: BaseViewImpl {
         }
         self.locationView.nextButton.isEnabled = false
         self.locationView.onNext = {
-            self.incdidentPresenter?.openFilesVC()
+            self.incdidentPresenter?.openReasonVC()
         }
         pagerVC = LocationPagerVC(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)
         
@@ -72,7 +74,8 @@ class LocationVC: BaseViewImpl {
         }
         
         self.incdidentPresenter?.orderId = orderId
-        
+        self.incdidentPresenter?.productCode = productCode
+        self.incdidentPresenter?.setIsOffline(isOffline: self.isOffline)
         self.locationView.setMode(isMapMode: true)
         self.incdidentPresenter?.setMode(isMapMode: true)
         

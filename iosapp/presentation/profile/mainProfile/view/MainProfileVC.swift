@@ -39,12 +39,14 @@ class MainProfileVC: BaseViewImpl {
         }
         
         self.view.addSubview(loadingView)
+        loadingView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             self.loadingView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
             self.loadingView.topAnchor.constraint(equalTo: self.view.topAnchor),
             self.loadingView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
             self.loadingView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor)
         ])
+        
         self.mainProfilePresenter?.fetchMe()
     }
     

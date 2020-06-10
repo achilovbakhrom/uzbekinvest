@@ -10,6 +10,7 @@ import UIKit
 
 protocol IncidentsAddEditPresenter: BasePresenter {
     var orderId: Int { get set }
+    var productCode: String { get set }
     var incident: Incident? { get set }
     func goBack()
     func setLongLat(long: Double, lat: Double)
@@ -25,6 +26,14 @@ protocol IncidentsAddEditPresenter: BasePresenter {
     func createIncident()
     func openAndUpdateIncidents()
     func openLoginVC(phone: String)
+    func fetchIncidentMetaData()
+    func setIncidentMetaItemList(list: IncidentMetaItem)
+    func openReasonVC()
+    func setDate(date: String)
+    func setTime(time: String)
+    func setType(type: String)
+    func setIsOffline(isOffline: Int)
+    func createIncidentFromFilesVC()
 }
 
 class IncidentsAddEditPresenterImpl: IncidentsAddEditPresenter {
@@ -37,6 +46,11 @@ class IncidentsAddEditPresenterImpl: IncidentsAddEditPresenter {
     var incident: Incident? = nil
     var isMapMode = true
     var index = 0
+    var productCode: String = ""
+    
+    var date: String? = nil
+    var time: String? = nil
+    var type: String? = nil
     
     private lazy var incidentsAddEditRouter = self.router as? IncidentsAddEditRouter
     private lazy var incidentsAddEditInteractor = self.interactor as? IncidentsAddEditInteractor
@@ -108,14 +122,82 @@ class IncidentsAddEditPresenterImpl: IncidentsAddEditPresenter {
     }
     
     func createIncident() {
-        self.incident?.orderId = orderId
-        self.incidentsAddEditInteractor?.createIncident(incident: self.incident!, files: files)
+        if productCode == "osago" || productCode == "kasko" || productCode == "my-family" || productCode == "technical-help" || productCode == "mobile-phone" {
+            self.incidentsAddEditRouter?.openFilesVC()
+        } else {
+            self.incident?.orderId = orderId
+            self.incidentsAddEditInteractor?.createIncident(incident: self.incident!, type: type ?? "", files: files)
+        }
     }
+    
+    func createIncidentFromFilesVC() {
+        self.incident?.orderId = orderId
+        self.incidentsAddEditInteractor?.createIncident(incident: self.incident!, type: type ?? "", files: files)
+    }
+    
     func openAndUpdateIncidents() {
         self.incidentsAddEditRouter?.openAndUpdateIncidents()
     }
     
     func openLoginVC(phone: String) {
         self.incidentsAddEditRouter?.openLoginVC(phone: phone)
+    }
+    
+    func fetchIncidentMetaData() {
+        self.incidentsAddEditInteractor?.fetchIncidentMetadata(productCode: productCode)
+    }
+    
+    func setIncidentMetaItemList(list: IncidentMetaItem) {
+        if let vc = self.view as? ReasonVC {
+            vc.setIncidentMetaData(list: list)
+        }
+    }
+    
+    func openReasonVC() {
+        self.incidentsAddEditRouter?.openReasonVC()
+    }
+    
+    func setDate(date: String) {
+        self.date = date
+        if time != nil {
+            self.incident?.happenedAt = "\(self.date ?? "") \(self.time ?? "")"
+            if let vc = self.view as? ReasonVC {
+                vc.setEnabled(isEnabled: true)
+            }
+        } else {
+            if let vc = self.view as? ReasonVC {
+                vc.setEnabled(isEnabled: false)
+            }
+        }
+    }
+    
+    func setTime(time: String) {
+        self.time = time
+        if date != nil {
+            self.incident?.happenedAt = "\(self.date ?? "") \(self.time ?? "")"
+            if let vc = self.view as? ReasonVC {
+                vc.setEnabled(isEnabled: true)
+            }
+        } else {
+            if let vc = self.view as? ReasonVC {
+                vc.setEnabled(isEnabled: false)
+            }
+        }
+    }
+    
+    func setType(type: String) {
+        if date == nil && time == nil {
+            if let vc = self.view as? ReasonVC {
+                vc.showErrorMessage(msg: "Выберите дату и время")
+            }
+        } else {
+            self.incident?.happenedAt = "\(date ?? "") \(time ?? "")"
+            self.type = type
+            self.openCommentVC()
+        }
+    }
+    
+    func setIsOffline(isOffline: Int) {
+        self.incident?.isOffline = isOffline
     }
 }

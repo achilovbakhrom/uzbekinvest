@@ -14,6 +14,8 @@ class IncidentsDetailListingVC: BaseWithLeftCirclesVC {
     private lazy var incidentsDetailPresenter = self.presenter as? IncidentsDetailPresenter
     private lazy var noInternetView: NoInternetView = NoInternetView.fromNib()
     
+    var isOffline = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .white
@@ -28,11 +30,37 @@ class IncidentsDetailListingVC: BaseWithLeftCirclesVC {
         ])
         
         incidentListingView.onAddNewPolis = {
-            print("sss")
 //            self.incidentsDetailPresenter?.openAddEditVC(orderId: )
         }
         
-        incidentListingView.onPolisItemClicked = { self.incidentsDetailPresenter?.openAddEditVC(orderId: $0)            
+        incidentListingView.onPolisItemClicked = {
+            self.incidentsDetailPresenter?.openAddEditVC(orderId: $0, productCode: $1, isOffline: self.isOffline)
+        }
+        
+        incidentListingView.onAllButton = {
+            self.isOffline = 0
+            let status = self.appDelegate.reach.connectionStatus()
+            switch status {
+            case .unknown, .offline:
+                self.showNoInternetView(show: true)
+                break
+            case .online(.wwan), .online(.wiFi):
+                self.incidentsDetailPresenter?.fetchIncidents()
+                break
+            }
+        }
+        
+        incidentListingView.onPinflButton = {
+            self.isOffline = 1
+            let status = self.appDelegate.reach.connectionStatus()
+            switch status {
+            case .unknown, .offline:
+                self.showNoInternetView(show: true)
+                break
+            case .online(.wwan), .online(.wiFi):
+                self.incidentsDetailPresenter?.fetchPinflOrders()
+                break
+            }
         }
         
         self.view.addSubview(self.noInternetView)

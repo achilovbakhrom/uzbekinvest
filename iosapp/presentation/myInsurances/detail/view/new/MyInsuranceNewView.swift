@@ -109,7 +109,7 @@ class MyInsuranceNewView: UIView, UICollectionViewDataSource, UISearchController
         
     }
     
-    private var selected: Int = 0
+    var selected: Int = 0
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 3

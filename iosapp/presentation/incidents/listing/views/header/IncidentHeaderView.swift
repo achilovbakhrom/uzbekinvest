@@ -22,6 +22,13 @@ class IncidentHeaderView: UIView {
     @IBOutlet weak var callbackLabel: UILabel!
     @IBOutlet weak var messageLabel: UILabel!
     
+    @IBOutlet weak var supportCallImageView: UIImageView!
+    @IBOutlet weak var callBackImageView: UIImageView!
+    @IBOutlet weak var chatImageView: UIImageView!
+    
+    var onSupportCall: (() -> Void)? = nil
+    var onCallback: (() -> Void)? = nil
+    var onChat: (() -> Void)? = nil
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -62,5 +69,27 @@ class IncidentHeaderView: UIView {
             callbackLabel.fontSize = 13.0
             messageLabel.fontSize = 13.0
         }
+        
+        
+        supportCallImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.supportCallAction(_:))))
+        
+        callBackImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(callbackAction(_:))))
+        
+        chatImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(chatAction(_:))))
+    }
+    
+    @objc
+    private func supportCallAction(_ gesture: UITapGestureRecognizer) {
+        onSupportCall?()
+    }
+    
+    @objc
+    private func callbackAction(_ gesture: UITapGestureRecognizer) {
+        onCallback?()
+    }
+    
+    @objc
+    private func chatAction(_ gesture: UITapGestureRecognizer) {
+        onChat?()
     }
 }

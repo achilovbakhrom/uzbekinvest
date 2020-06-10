@@ -10,7 +10,8 @@ import Foundation
 
 protocol IncidentsAddEditInteractor: BaseInteractor {
     init(serviceFactory: ServiceFactoryProtocol, presenter: BasePresenter)
-    func createIncident(incident: Incident, files: [Int: [String: Data]])
+    func createIncident(incident: Incident, type: String, files: [Int: [String: Data]])
+    func fetchIncidentMetadata(productCode: String)
 }
 
 
@@ -25,7 +26,7 @@ class IncidentsAddEditInteractorImpl: IncidentsAddEditInteractor {
         self.serviceFactory = serviceFactory
     }
     
-    func createIncident(incident: Incident, files: [Int : [String : Data]]) {
+    func createIncident(incident: Incident, type: String, files: [Int : [String : Data]]) {
         var index = 0
         var r: [String: Data] = [:]
         for key in files.keys {
@@ -43,7 +44,7 @@ class IncidentsAddEditInteractorImpl: IncidentsAddEditInteractor {
             .serviceFactory
             .networkManager
             .incident
-            .request(.createIncident(incident: incident, files: r)) { result in
+            .request(.createIncident(incident: incident, type: type, files: r)) { result in
                 self.incidentsPresenter?.setLoading(isLoading: true)
                 switch result {
                 case .success(let response):
@@ -65,7 +66,28 @@ class IncidentsAddEditInteractorImpl: IncidentsAddEditInteractor {
         }
     }
     
-    
+    func fetchIncidentMetadata(productCode: String) {
+        self
+        .serviceFactory
+        .networkManager
+        .incident
+            .request(.fetchIncidentMeta(productCode: productCode)) { result in
+                switch result {
+                case .success(let response):
+                    do {
+                        let decoder = JSONDecoder.init()
+                        let r = try decoder.decode(Response<IncidentMetaItem>.self, from: response.data)
+                        self.incidentsPresenter?.setIncidentMetaItemList(list: r.data!)
+                    } catch (let error) {
+                        debugPrint(error.localizedDescription)
+                    }
+                    break
+                case .failure(let error):
+                    debugPrint(error.localizedDescription)
+                    break
+                }
+        }
+    }
     
     
 }

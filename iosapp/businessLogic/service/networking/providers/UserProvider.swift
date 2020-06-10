@@ -28,6 +28,8 @@ enum UserProvider {
     case removePinfl(id: Int)
     case fetchNotification
     case news(lang: String)
+    case updatePaymentType(orderId: Int, paymentType: String)
+    case call(phone: String)
 }
 
 extension UserProvider: TargetType {
@@ -76,6 +78,10 @@ extension UserProvider: TargetType {
             return "/api/user/notification"
         case .news:
             return "/api/news"
+        case .updatePaymentType(let orderId, _):
+            return "/api/user/order/\(orderId)/payment"
+        case .call:
+            return "/api/call"
         }
     }
     
@@ -119,6 +125,10 @@ extension UserProvider: TargetType {
             return .get
         case .news:
             return .get
+        case .updatePaymentType:
+            return .put
+        case .call:
+            return .post
         }
     }
     
@@ -168,6 +178,10 @@ extension UserProvider: TargetType {
             return .requestPlain
         case .news(let lang):
             return .requestParameters(parameters: ["lang" : lang], encoding: URLEncoding.default)
+        case .updatePaymentType(_, let paymentType):
+            return .requestParameters(parameters: ["payment_method" : paymentType], encoding: JSONEncoding.default)
+        case .call(let phone):
+            return .requestParameters(parameters: ["phone" : phone], encoding: JSONEncoding.default)
         }
     }
     

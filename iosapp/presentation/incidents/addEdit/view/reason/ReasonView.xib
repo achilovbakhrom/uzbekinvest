@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Bold.ttf">
+            <string>Roboto-Bold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ReasonView" customModule="iosapp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NSv-11-PLM">
+                    <rect key="frame" x="31" y="89" width="23" height="22"/>
+                    <state key="normal" image="back-arrow"/>
+                    <connections>
+                        <action selector="backActtion:" destination="iN0-l3-epB" eventType="touchUpInside" id="q2x-eA-vHu"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Введите ниже следующие данные" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AGV-T4-yoC">
+                    <rect key="frame" x="31" y="121" width="352" height="20"/>
+                    <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="o6d-z6-1lx" customClass="DatePicker" customModule="iosapp" customModuleProvider="target">
+                    <rect key="frame" x="31" y="171" width="352" height="34"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="floatText" value="Дата"/>
+                    </userDefinedRuntimeAttributes>
+                </textField>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="a4s-ms-AeU" customClass="TimePicker" customModule="iosapp" customModuleProvider="target">
+                    <rect key="frame" x="31" y="239" width="352" height="34"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="floatText" value="Время"/>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isDateMode" value="NO"/>
+                    </userDefinedRuntimeAttributes>
+                </textField>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="pVc-8a-5wm">
+                    <rect key="frame" x="0.0" y="323" width="414" height="539"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                </tableView>
+                <button hidden="YES" opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AYF-V6-YoW" customClass="Button" customModule="iosapp" customModuleProvider="target">
+                    <rect key="frame" x="31" y="786" width="352" height="45"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="45" id="VXK-g0-pjE"/>
+                    </constraints>
+                    <state key="normal" title="Далее"/>
+                    <connections>
+                        <action selector="onNextAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="6PC-V7-XgW"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Обстоятельства события" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hln-mD-vew">
+                    <rect key="frame" x="31" y="293" width="352" height="20"/>
+                    <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="AGV-T4-yoC" secondAttribute="trailing" constant="31" id="4lq-FV-vpk"/>
+                <constraint firstItem="a4s-ms-AeU" firstAttribute="top" secondItem="o6d-z6-1lx" secondAttribute="bottom" constant="34" id="6BK-gi-ph0"/>
+                <constraint firstItem="Hln-mD-vew" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="31" id="79D-lw-biZ"/>
+                <constraint firstItem="NSv-11-PLM" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="31" id="DEd-6P-CGg"/>
+                <constraint firstItem="o6d-z6-1lx" firstAttribute="top" secondItem="AGV-T4-yoC" secondAttribute="bottom" constant="30" id="EGe-eK-jW0"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Hln-mD-vew" secondAttribute="trailing" constant="31" id="GYR-RW-vdD"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="AYF-V6-YoW" secondAttribute="bottom" constant="31" id="I6V-iM-GcS"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="a4s-ms-AeU" secondAttribute="trailing" constant="31" id="IUk-bi-8oM"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="pVc-8a-5wm" secondAttribute="trailing" id="M9a-bi-50d"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="pVc-8a-5wm" secondAttribute="bottom" id="ONT-Vs-xgT"/>
+                <constraint firstItem="o6d-z6-1lx" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="31" id="PF0-UC-32h"/>
+                <constraint firstItem="NSv-11-PLM" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="45" id="QwE-Fe-d0i"/>
+                <constraint firstItem="pVc-8a-5wm" firstAttribute="top" secondItem="Hln-mD-vew" secondAttribute="bottom" constant="10" id="VlX-FO-Btu"/>
+                <constraint firstItem="AGV-T4-yoC" firstAttribute="top" secondItem="NSv-11-PLM" secondAttribute="bottom" constant="10" id="Z1T-LJ-Jsh"/>
+                <constraint firstItem="AYF-V6-YoW" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="31" id="cnd-gB-BWw"/>
+                <constraint firstItem="AGV-T4-yoC" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="31" id="f9O-fZ-OTc"/>
+                <constraint firstItem="pVc-8a-5wm" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="m4N-Bh-asO"/>
+                <constraint firstItem="Hln-mD-vew" firstAttribute="top" secondItem="a4s-ms-AeU" secondAttribute="bottom" constant="20" id="nmV-Oq-dx9"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="o6d-z6-1lx" secondAttribute="trailing" constant="31" id="vOX-o8-kZP"/>
+                <constraint firstItem="a4s-ms-AeU" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="31" id="yR5-jm-1Ui"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="AYF-V6-YoW" secondAttribute="trailing" constant="31" id="ymI-jt-inr"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="datePicker" destination="o6d-z6-1lx" id="HzK-Ws-HxQ"/>
+                <outlet property="onNextButton" destination="AYF-V6-YoW" id="OIa-Ou-UAI"/>
+                <outlet property="reasonLabel" destination="Hln-mD-vew" id="8cU-sN-zdw"/>
+                <outlet property="reasonTableViewe" destination="pVc-8a-5wm" id="L8t-Oa-VeT"/>
+                <outlet property="timePicker" destination="a4s-ms-AeU" id="HAK-EE-0ZH"/>
+            </connections>
+            <point key="canvasLocation" x="139" y="153"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="back-arrow" width="23" height="16"/>
+    </resources>
+</document>

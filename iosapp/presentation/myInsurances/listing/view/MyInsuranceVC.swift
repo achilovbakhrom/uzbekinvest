@@ -14,9 +14,7 @@ class MyInsuranceVC: BaseViewImpl {
     private lazy var emptyView: EmptyView = EmptyView.fromNib()
     private lazy var myInsuranceView: MyInsuranceView = MyInsuranceView.fromNib()
     private lazy var loadingView: LoadingView = LoadingView.fromNib()
-    
-    private lazy var myInsurancePresenter = self.presenter as? MyInsurancesPresenter
-    
+    private lazy var myInsurancePresenter = self.presenter as? MyInsurancesPresenter    
     private lazy var noInternetView: NoInternetView = NoInternetView.fromNib()
     
     override func viewDidLoad() {
@@ -46,9 +44,7 @@ class MyInsuranceVC: BaseViewImpl {
                 self.reloadList()
             }
         }
-        
         self.reloadList()
-        
     }
     
     func showNoInternetView(show: Bool) {
@@ -60,15 +56,17 @@ class MyInsuranceVC: BaseViewImpl {
         }
     }
     
-    func reloadList() {
-        let status = appDelegate.reach.connectionStatus()
-        switch status {
-        case .unknown, .offline:
-            self.myInsurancePresenter?.fetchMyInsurances()
-            break
-        case .online(.wwan), .online(.wiFi):
-            self.myInsurancePresenter?.fetchMyInsurances()
-            break
+    func reloadList() {        
+        DispatchQueue.main.async {
+            let status = self.appDelegate.reach.connectionStatus()
+            switch status {
+            case .unknown, .offline:
+                self.showNoInternetView(show: true)
+                break
+            case .online(.wwan), .online(.wiFi):
+                self.myInsurancePresenter?.fetchMyInsurances()
+                break
+            }
         }
     }
     
@@ -81,6 +79,7 @@ class MyInsuranceVC: BaseViewImpl {
                 self.setTabBarHidden(true)
             }
         }
+        
         self.view.addSubview(emptyView)
         NSLayoutConstraint.activate([
             emptyView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
@@ -92,7 +91,6 @@ class MyInsuranceVC: BaseViewImpl {
         emptyView.onBuy = {
             self.myInsurancePresenter?.openInsuranceListVC()
         }
-        
         
         myInsuranceView.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(myInsuranceView)
@@ -107,6 +105,7 @@ class MyInsuranceVC: BaseViewImpl {
         myInsuranceView.onCategorySelected = {
             self.myInsurancePresenter?.categorySelected(category: $0)
         }
+        
         myInsuranceView.onInsuranceClicked = { (item, property) in
             self.myInsurancePresenter?.insuranceSelected(myInsurance: item, property: property)
         }
@@ -155,11 +154,9 @@ class MyInsuranceVC: BaseViewImpl {
     
     private func setupFirstTab() {
         let vc = self.tabBarController?.viewControllers?[0] as? UINavigationController
-        
         while (vc?.viewControllers.count ?? 0 > 1) {
             vc?.popViewController(animated: false)
         }
-
     }
     
     func setMyInsurancesList(myInsurancesList: [MyInsurance], properties: [MyInsuranceProperties]) {

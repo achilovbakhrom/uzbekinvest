@@ -71,8 +71,7 @@ class CommentsVC: BaseWithLeftCirclesVC {
             case .online(.wiFi):
                 self.incidentsPresenter?.createIncident()
             }
-        }
-        
+        }        
     }
     
     func showNoInternetView(show: Bool) {

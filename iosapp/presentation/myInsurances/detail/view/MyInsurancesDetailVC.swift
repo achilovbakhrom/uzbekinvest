@@ -24,6 +24,19 @@ class MyInsurancesDetailVC: BaseViewImpl {
         super.viewDidLoad()
         self.myInsurancePresenter?.setMyInsuance(myInsurance: self.myInsurance)
         if myInsurance.status == "new" {
+            switch myInsurance.paymentMethod {
+            case "online":
+                self.new.selected = 0
+                break
+            case "cash":
+                self.new.selected = 1
+                break
+            case "terminal":
+                self.new.selected = 2
+                break
+            default:
+                break
+            }
             self.setNewMode()
         } else if myInsurance.status == "confirmed" {
             self.setUnpaidMode()
@@ -33,10 +46,23 @@ class MyInsurancesDetailVC: BaseViewImpl {
         paid.onBackClicked = { self.myInsurancePresenter?.goBack() }
         unpaid.onBackButton = { self.myInsurancePresenter?.goBack() }
         new.onBack = { self.myInsurancePresenter?.goBack() }
-        new.onPaymentTypeSelected = { _ in
+        new.onPaymentTypeSelected = { type in
             // 0 - "online"
             // 1 - "cash"
             // 2 - "terminal"
+            switch type {
+            case 0:
+                self.myInsurancePresenter?.setPaymentType(paymentType: "online")
+                break
+            case 1:
+                self.myInsurancePresenter?.setPaymentType(paymentType: "cash")
+                break
+            case 2:
+                self.myInsurancePresenter?.setPaymentType(paymentType: "terminal")
+                break
+            default:
+                break
+            }
         }
     }
     

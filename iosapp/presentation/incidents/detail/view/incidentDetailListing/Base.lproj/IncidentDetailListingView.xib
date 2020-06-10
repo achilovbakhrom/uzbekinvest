@@ -11,6 +11,9 @@
         <array key="Roboto-Medium.ttf">
             <string>Roboto-Medium</string>
         </array>
+        <array key="Roboto-Regular.ttf">
+            <string>Roboto-Regular</string>
+        </array>
     </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -27,31 +30,58 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fuz-Xg-pm1">
+                    <rect key="frame" x="31" y="111" width="69" height="36"/>
+                    <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="17"/>
+                    <inset key="contentEdgeInsets" minX="20" minY="8" maxX="20" maxY="8"/>
+                    <state key="normal" title="Все">
+                        <color key="titleColor" red="0.24313725489999999" green="0.86274509799999999" blue="0.63529411759999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    </state>
+                    <connections>
+                        <action selector="allButtonAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="YXc-Hb-gGd"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sae-zG-F8s">
+                    <rect key="frame" x="115" y="112" width="196" height="34"/>
+                    <inset key="contentEdgeInsets" minX="20" minY="8" maxX="20" maxY="8"/>
+                    <state key="normal" title="Все ранее купленные">
+                        <color key="titleColor" red="0.24313725489999999" green="0.86274509799999999" blue="0.63529411759999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    </state>
+                    <connections>
+                        <action selector="pinflButtonAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="dCK-zG-xIL"/>
+                    </connections>
+                </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="doU-o4-HtI">
-                    <rect key="frame" x="31" y="109" width="352" height="1"/>
+                    <rect key="frame" x="31" y="157" width="352" height="1"/>
                     <color key="backgroundColor" red="0.59215686274509804" green="0.59215686274509804" blue="0.59215686274509804" alpha="0.11" colorSpace="custom" customColorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="1" id="LJb-UR-ZwI"/>
                     </constraints>
                 </view>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Xwi-aq-fbA">
-                    <rect key="frame" x="0.0" y="110" width="414" height="752"/>
+                    <rect key="frame" x="0.0" y="158" width="414" height="704"/>
                 </tableView>
             </subviews>
             <constraints>
                 <constraint firstItem="h9d-xg-rzY" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="31" id="7On-3M-Bb6"/>
+                <constraint firstItem="Sae-zG-F8s" firstAttribute="centerY" secondItem="fuz-Xg-pm1" secondAttribute="centerY" id="G5i-WS-eKm"/>
+                <constraint firstItem="fuz-Xg-pm1" firstAttribute="top" secondItem="h9d-xg-rzY" secondAttribute="bottom" constant="10" id="NXv-83-EHq"/>
+                <constraint firstItem="fuz-Xg-pm1" firstAttribute="bottom" secondItem="doU-o4-HtI" secondAttribute="top" constant="-10" id="OKR-Vu-pcf"/>
                 <constraint firstItem="Xwi-aq-fbA" firstAttribute="top" secondItem="doU-o4-HtI" secondAttribute="bottom" id="Oef-9i-r4N"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="doU-o4-HtI" secondAttribute="trailing" constant="31" id="VKy-9Q-9nA"/>
                 <constraint firstItem="doU-o4-HtI" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="31" id="d5y-8g-J7e"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="Xwi-aq-fbA" secondAttribute="bottom" id="ebt-99-78X"/>
+                <constraint firstItem="Sae-zG-F8s" firstAttribute="leading" secondItem="fuz-Xg-pm1" secondAttribute="trailing" constant="15" id="lWp-BG-UyZ"/>
                 <constraint firstItem="Xwi-aq-fbA" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="lwd-4q-JhA"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Xwi-aq-fbA" secondAttribute="trailing" id="qRA-mZ-RI7"/>
                 <constraint firstItem="h9d-xg-rzY" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="10" id="uQq-Wg-hVt"/>
-                <constraint firstItem="doU-o4-HtI" firstAttribute="top" secondItem="h9d-xg-rzY" secondAttribute="bottom" constant="8" id="zLY-Dq-6MN"/>
+                <constraint firstItem="fuz-Xg-pm1" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="31" id="wS6-VA-Blb"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
+                <outlet property="allButton" destination="fuz-Xg-pm1" id="Yqj-9Z-Qbo"/>
                 <outlet property="incidentsTableView" destination="Xwi-aq-fbA" id="SCY-w8-Ywa"/>
+                <outlet property="pinflButton" destination="Sae-zG-F8s" id="3X2-pb-Rk7"/>
             </connections>
             <point key="canvasLocation" x="139" y="153"/>
         </view>

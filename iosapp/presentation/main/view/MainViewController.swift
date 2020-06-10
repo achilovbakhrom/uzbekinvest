@@ -52,7 +52,7 @@ class MainViewController: UITabBarController {
         let mainProfileNavigationController = UINavigationController(rootViewController: mainProfileVC)
         mainProfileNavigationController.view.backgroundColor = .white
         self.viewControllers = [dashboardNavigatonController, incidentsNavigationController, myInsuranceNavigationController, mainProfileNavigationController]
-        self.tabBarController?.hidesBottomBarWhenPushed = true
+//        self.tabBarController?.hidesBottomBarWhenPushed = true
     }
 }
 

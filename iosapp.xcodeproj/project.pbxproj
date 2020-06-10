@@ -165,6 +165,7 @@
 		294ED26D241B3020001B9293 /* menus-ru.plist in Resources */ = {isa = PBXBuildFile; fileRef = 294ED26C241B3020001B9293 /* menus-ru.plist */; };
 		295039A3243B9A0B0048A829 /* GasEquipmentRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295039A2243B9A0B0048A829 /* GasEquipmentRouter.swift */; };
 		295039A6243BBA050048A829 /* GasEquipmentInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295039A5243BBA050048A829 /* GasEquipmentInteractor.swift */; };
+		2950AB0A248F5FD800CD9B26 /* ChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2950AB09248F5FD800CD9B26 /* ChatVC.swift */; };
 		2950CE202432593E0083DAD7 /* SimpleTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2950CE1F2432593E0083DAD7 /* SimpleTextField.swift */; };
 		2950F657242E90A400DFD78B /* TechnicalSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2950F656242E90A400DFD78B /* TechnicalSupport.swift */; };
 		2950F65A242E932500DFD78B /* RoadTechRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2950F659242E932500DFD78B /* RoadTechRouter.swift */; };
@@ -319,6 +320,10 @@
 		29874D422441A4F0003F3BBA /* AddingInstructionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29874D412441A4F0003F3BBA /* AddingInstructionVC.swift */; };
 		29874D462441ABE6003F3BBA /* AddingInstructionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29874D452441ABE6003F3BBA /* AddingInstructionView.swift */; };
 		29874D4B2441AF2B003F3BBA /* AddingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29874D4A2441AF2B003F3BBA /* AddingView.swift */; };
+		2987C465248AEA7C00F07923 /* ReasonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2987C464248AEA7C00F07923 /* ReasonView.swift */; };
+		2987C467248AEA8C00F07923 /* ReasonView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2987C466248AEA8C00F07923 /* ReasonView.xib */; };
+		2987C469248AEF0C00F07923 /* IncidentMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2987C468248AEF0C00F07923 /* IncidentMetadata.swift */; };
+		2987C46B248AF19800F07923 /* ReasonVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2987C46A248AF19800F07923 /* ReasonVC.swift */; };
 		298CD9EA241BC6140033865C /* Decodable+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298CD9E9241BC6140033865C /* Decodable+Extensions.swift */; };
 		2994A5E12419552500D5CDD0 /* TopMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2994A5E02419552500D5CDD0 /* TopMenuCell.swift */; };
 		299B521123FBBB430072ABD6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299B521023FBBB430072ABD6 /* AppDelegate.swift */; };
@@ -685,6 +690,7 @@
 		294ED26C241B3020001B9293 /* menus-ru.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "menus-ru.plist"; sourceTree = "<group>"; };
 		295039A2243B9A0B0048A829 /* GasEquipmentRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GasEquipmentRouter.swift; sourceTree = "<group>"; };
 		295039A5243BBA050048A829 /* GasEquipmentInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GasEquipmentInteractor.swift; sourceTree = "<group>"; };
+		2950AB09248F5FD800CD9B26 /* ChatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatVC.swift; sourceTree = "<group>"; };
 		2950CE1F2432593E0083DAD7 /* SimpleTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleTextField.swift; sourceTree = "<group>"; };
 		2950F656242E90A400DFD78B /* TechnicalSupport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TechnicalSupport.swift; sourceTree = "<group>"; };
 		2950F659242E932500DFD78B /* RoadTechRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoadTechRouter.swift; sourceTree = "<group>"; };
@@ -921,6 +927,10 @@
 		29874D412441A4F0003F3BBA /* AddingInstructionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddingInstructionVC.swift; sourceTree = "<group>"; };
 		29874D452441ABE6003F3BBA /* AddingInstructionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddingInstructionView.swift; sourceTree = "<group>"; };
 		29874D4A2441AF2B003F3BBA /* AddingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddingView.swift; sourceTree = "<group>"; };
+		2987C464248AEA7C00F07923 /* ReasonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReasonView.swift; sourceTree = "<group>"; };
+		2987C466248AEA8C00F07923 /* ReasonView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReasonView.xib; sourceTree = "<group>"; };
+		2987C468248AEF0C00F07923 /* IncidentMetadata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncidentMetadata.swift; sourceTree = "<group>"; };
+		2987C46A248AF19800F07923 /* ReasonVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReasonVC.swift; sourceTree = "<group>"; };
 		298CD9E9241BC6140033865C /* Decodable+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Decodable+Extensions.swift"; sourceTree = "<group>"; };
 		2994A5E02419552500D5CDD0 /* TopMenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopMenuCell.swift; sourceTree = "<group>"; };
 		299B520D23FBBB430072ABD6 /* iosapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iosapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -2020,6 +2030,22 @@
 			path = interactor;
 			sourceTree = "<group>";
 		};
+		2950AB07248F5FBD00CD9B26 /* chat */ = {
+			isa = PBXGroup;
+			children = (
+				2950AB08248F5FCE00CD9B26 /* view */,
+			);
+			path = chat;
+			sourceTree = "<group>";
+		};
+		2950AB08248F5FCE00CD9B26 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				2950AB09248F5FD800CD9B26 /* ChatVC.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
 		2950F658242E931A00DFD78B /* router */ = {
 			isa = PBXGroup;
 			children = (
@@ -2677,6 +2703,16 @@
 			path = adding;
 			sourceTree = "<group>";
 		};
+		2987C463248AEA6800F07923 /* reason */ = {
+			isa = PBXGroup;
+			children = (
+				2987C464248AEA7C00F07923 /* ReasonView.swift */,
+				2987C466248AEA8C00F07923 /* ReasonView.xib */,
+				2987C46A248AF19800F07923 /* ReasonVC.swift */,
+			);
+			path = reason;
+			sourceTree = "<group>";
+		};
 		2994A5DF2419533900D5CDD0 /* topMenu */ = {
 			isa = PBXGroup;
 			children = (
@@ -2757,6 +2793,7 @@
 		299B524423FBBF790072ABD6 /* presentation */ = {
 			isa = PBXGroup;
 			children = (
+				2950AB07248F5FBD00CD9B26 /* chat */,
 				29567CF4247FF58F001C4E61 /* notification */,
 				29BC15FA247EF5490009BD62 /* insuraceList */,
 				29846C61247629F500287817 /* settings */,
@@ -2865,6 +2902,7 @@
 				29846BF32473931800287817 /* Tourist.swift */,
 				29846C5F247627ED00287817 /* Pinfl.swift */,
 				29567CFE247FFF7E001C4E61 /* Notification.swift */,
+				2987C468248AEF0C00F07923 /* IncidentMetadata.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -3788,6 +3826,7 @@
 		29E3CFCC245764B7002C6F8E /* view */ = {
 			isa = PBXGroup;
 			children = (
+				2987C463248AEA6800F07923 /* reason */,
 				29E3CFD32457656E002C6F8E /* commentView */,
 				29E3CFD224576569002C6F8E /* filesView */,
 				29E3CFD124576557002C6F8E /* locationView */,
@@ -4124,6 +4163,7 @@
 				29CBABA3245ECA7D004E894C /* OrderCheck2View.xib in Resources */,
 				299B52C123FBED4D0072ABD6 /* Roboto-BlackItalic.ttf in Resources */,
 				292E51B22467B5BB00465A1B /* NoInternetView.xib in Resources */,
+				2987C467248AEA8C00F07923 /* ReasonView.xib in Resources */,
 				2955F1F7247B2F1800F217CB /* MyInsuranceView.xib in Resources */,
 				2955F245247B399800F217CB /* MainProfileView.xib in Resources */,
 				2955F1EE247B2E0800F217CB /* EmptyView.xib in Resources */,
@@ -4578,6 +4618,7 @@
 				29102864244378AE00E3E16C /* AddInsuranceInteractor.swift in Sources */,
 				299B527623FBC1E40072ABD6 /* IncidentsProvider.swift in Sources */,
 				29E3CFE92457FC45002C6F8E /* IncidentsAddEditRouter.swift in Sources */,
+				2987C46B248AF19800F07923 /* ReasonVC.swift in Sources */,
 				2955F1CC247871C100F217CB /* PinflView.swift in Sources */,
 				29E3CFD92457690D002C6F8E /* LocationVC.swift in Sources */,
 				292E51AD2467388600465A1B /* Reachability.swift in Sources */,
@@ -4586,6 +4627,7 @@
 				293AF8E1242CD2A200F4D8AF /* AccidentInteractor.swift in Sources */,
 				29F64BAE243FB67500E49E4B /* IncidentHeaderView.swift in Sources */,
 				29F64B9D243F44CF00E49E4B /* MyInsuranceCell.swift in Sources */,
+				2987C465248AEA7C00F07923 /* ReasonView.swift in Sources */,
 				290D51482409A4C200483561 /* TextField.swift in Sources */,
 				299B526423FBC1130072ABD6 /* Click.swift in Sources */,
 				291C7032245B6B0300E49D9A /* IncidentsInteractor.swift in Sources */,
@@ -4633,6 +4675,7 @@
 				29850499243E4AF4004FDC77 /* MyInsuranceVC.swift in Sources */,
 				297FA54E244512260079A72D /* IncidentsListingPresenter.swift in Sources */,
 				293E42F2240B823E0090E8AE /* UITextField+Extensions.swift in Sources */,
+				2950AB0A248F5FD800CD9B26 /* ChatVC.swift in Sources */,
 				299B527423FBC1CF0072ABD6 /* UserProvider.swift in Sources */,
 				29A5F1F9241F50E20049F35B /* ConfirmInteractor.swift in Sources */,
 				2967EF48243E5AEC00102142 /* MyInsurance.swift in Sources */,
@@ -4700,6 +4743,7 @@
 				2930B1C62407975600673D82 /* RootPresenter.swift in Sources */,
 				29B5C2B22425C0E200706AB4 /* Int+Extensions.swift in Sources */,
 				29567CEF247F7FD1001C4E61 /* InsuranceListInteractor.swift in Sources */,
+				2987C469248AEF0C00F07923 /* IncidentMetadata.swift in Sources */,
 				292714E3242B062400641FEB /* MandatoryRouter.swift in Sources */,
 				299B529F23FBE4300072ABD6 /* BasePresenter.swift in Sources */,
 				293AF8C5242C732300F4D8AF /* HomeRouter.swift in Sources */,

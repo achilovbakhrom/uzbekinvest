@@ -15,21 +15,25 @@ protocol MyInsurancesPresenter: BasePresenter {
     func setLoading(isLoading: Bool)
     func setCategoryList(categoryList: [Category])
     func setMyInsurances(myInsuranceList: [MyInsurance], properties: [MyInsuranceProperties])
+    func setPinflOrders(pinflOrders: [MyInsurance])
     func categorySelected(category: Category)
     func insuranceSelected(myInsurance: MyInsurance, property: MyInsuranceProperties)
     func openAddInsurancePage()
     func goBack()
     func openAddMyInsuranceVC()
     func openInsuranceListVC()
+    
 }
 
 class MyInsurancesPresenterImpl: MyInsurancesPresenter {
+    
     
     var interactor: BaseInteractor?
     var router: BaseRouter?
     var view: UIViewController?
     
     private var myInsuranceList = [MyInsurance]()
+    private var pinflOrders = [MyInsurance]()
     private var categoryList = [Category]()
     private var myInsurance: MyInsurance!
     private var properties: [MyInsuranceProperties] = []
@@ -74,6 +78,8 @@ class MyInsurancesPresenterImpl: MyInsurancesPresenter {
     func categorySelected(category: Category) {
         if category.id == -1 {
             self.myInsrancesView?.setMyInsurancesList(myInsurancesList: myInsuranceList, properties: properties)
+        } else if category.id == -2 {
+            self.myInsrancesView?.setMyInsurancesList(myInsurancesList: pinflOrders, properties: [])
         } else {
             let p = properties.filter { prop in
                 let index = self.properties.firstIndex(of: prop)
@@ -448,6 +454,10 @@ class MyInsurancesPresenterImpl: MyInsurancesPresenter {
 //        } else {
 //            self.myInsrancesRouter?.openAddInsuranceInstructionPage()
 //        }
+    }
+    
+    func setPinflOrders(pinflOrders: [MyInsurance]) {
+        self.pinflOrders = pinflOrders
     }
     
     func goBack() {

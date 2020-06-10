@@ -56,8 +56,7 @@ class IncidentFilesVC: BaseWithLeftCirclesVC {
         }
         
         filesView.onNext = {
-            self.incidentsPresenter?.openCommentVC()
+            self.incidentsPresenter?.createIncidentFromFilesVC()
         }
     }
-    
 }

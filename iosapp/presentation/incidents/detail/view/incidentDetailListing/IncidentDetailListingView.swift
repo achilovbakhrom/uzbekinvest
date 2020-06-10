@@ -44,9 +44,14 @@ class FooterView: UITableViewHeaderFooterView {
 class IncidentDetailListingView: UIView, UITableViewDelegate, UITableViewDataSource {
     
     var onAddNewPolis: (() -> Void)? = nil
-    var onPolisItemClicked: ((Int) -> Void)? = nil
+    var onPolisItemClicked: ((Int, String) -> Void)? = nil
+    
+    var onAllButton: (() -> Void)? = nil
+    var onPinflButton: (() -> Void)? = nil
     
     @IBOutlet weak var incidentsTableView: UITableView!
+    @IBOutlet weak var allButton: UIButton!
+    @IBOutlet weak var pinflButton: UIButton!
     
     var insurances: [MyInsurance] = [] {
         didSet {
@@ -56,8 +61,19 @@ class IncidentDetailListingView: UIView, UITableViewDelegate, UITableViewDataSou
             }, completion: nil)
         }
     }
-    
-    var isLoading: Bool = false
+    var loadingView: LoadingView = LoadingView.fromNib()
+    var isLoading: Bool = false {
+        didSet {
+            UIView.animate(withDuration: 0.2) {
+                if self.isLoading {
+                    self.loadingView.startAnimating()
+                } else {
+                    self.loadingView.stopAnimating()
+                }
+                self.loadingView.layer.opacity = self.isLoading ? 1.0 : 0.0
+            }
+        }
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -77,6 +93,17 @@ class IncidentDetailListingView: UIView, UITableViewDelegate, UITableViewDataSou
         self.incidentsTableView.delegate = self
         self.incidentsTableView.dataSource = self
         self.incidentsTableView.allowsSelection = true
+        
+        self.loadingView.translatesAutoresizingMaskIntoConstraints = false
+        self.addSubview(loadingView)
+        NSLayoutConstraint.activate([
+            self.loadingView.leadingAnchor.constraint(equalTo: incidentsTableView.leadingAnchor),
+            self.loadingView.topAnchor.constraint(equalTo: incidentsTableView.topAnchor),
+            self.loadingView.trailingAnchor.constraint(equalTo: incidentsTableView.trailingAnchor),
+            self.loadingView.bottomAnchor.constraint(equalTo: incidentsTableView.bottomAnchor)
+        ])
+        self.loadingView.layer.opacity = 0.0
+        self.allButtonActivate()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -92,7 +119,7 @@ class IncidentDetailListingView: UIView, UITableViewDelegate, UITableViewDataSou
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        onPolisItemClicked?(insurances[indexPath.row].id)
+        onPolisItemClicked?(insurances[indexPath.row].id, insurances[indexPath.row].product?.name ?? "osago")
     }
     
     @objc
@@ -104,6 +131,53 @@ class IncidentDetailListingView: UIView, UITableViewDelegate, UITableViewDataSou
         let footer = tableView.dequeueReusableHeaderFooterView(withIdentifier: String(describing: FooterView.self)) as! FooterView
         footer.footerButton.addTarget(self, action: #selector(onAddButtonClicked), for: .touchUpInside)
         return footer
+    }
+    
+    private func allButtonActivate() {
+        
+        UIView.animate(withDuration: 0.2) {
+            self.allButton.layer.borderWidth = 1.0
+            self.allButton.layer.borderColor = Colors.primaryGreen.cgColor
+            self.allButton.layer.cornerRadius = self.allButton.bounds.height/2.0
+            self.allButton.layer.masksToBounds = true
+            self.allButton.setTitleColor(Colors.primaryGreen, for: .normal)
+            
+            self.pinflButton.layer.borderWidth = 1.0
+            self.pinflButton.layer.borderColor = Colors.pageIndicatorGray.cgColor
+            self.pinflButton.layer.cornerRadius = self.pinflButton.bounds.height/2.0
+            self.pinflButton.layer.masksToBounds = true
+            self.pinflButton.setTitleColor(Colors.pageIndicatorGray, for: .normal)      
+        }
+    }
+    
+    private func pinflButtonActivate() {
+        UIView.animate(withDuration: 0.2) {
+            self.pinflButton.layer.borderWidth = 1.0
+            self.pinflButton.layer.borderColor = Colors.primaryGreen.cgColor
+            self.pinflButton.layer.cornerRadius = self.pinflButton.bounds.height/2.0
+            self.pinflButton.layer.masksToBounds = true
+            self.pinflButton.setTitleColor(Colors.primaryGreen, for: .normal)
+                
+            self.allButton.layer.borderWidth = 1.0
+            self.allButton.layer.borderColor = Colors.pageIndicatorGray.cgColor
+            self.allButton.layer.cornerRadius = self.allButton.bounds.height/2.0
+            self.allButton.layer.masksToBounds = true
+            self.allButton.setTitleColor(Colors.pageIndicatorGray, for: .normal)
+        }
+    }
+    
+    @IBAction func allButtonAction(_ sender: Any) {
+        if !isLoading {
+            allButtonActivate()
+            onAllButton?()
+        }
+    }
+    
+    @IBAction func pinflButtonAction(_ sender: Any) {
+        if !isLoading {
+            pinflButtonActivate()
+            onPinflButton?()
+        }
     }
     
     

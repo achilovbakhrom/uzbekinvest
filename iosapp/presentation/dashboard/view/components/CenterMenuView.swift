@@ -191,7 +191,8 @@ class CenterMenuView: UIView {
             }
             label3.textAlignment = .center
             label3.isUserInteractionEnabled = true
-            label3.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(onSupportAction(gesture:))))
+            view3.isUserInteractionEnabled = true
+            view3.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(onSupportAction(gesture:))))
             view3.addSubview(label3)
             NSLayoutConstraint.activate([
                 label3.centerXAnchor.constraint(equalTo: view3.centerXAnchor),

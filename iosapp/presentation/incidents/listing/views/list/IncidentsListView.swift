@@ -89,7 +89,6 @@ class IncidentsListHeaderView: UITableViewHeaderFooterView {
             titleLabel.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -31)
         ])
         
-        
         let subTitle = UILabel(frame: .zero)
         subTitle.text = "Orci varius natoque penatibus"
         subTitle.font = UIFont.init(name: "Roboto-Regular", size: 12)

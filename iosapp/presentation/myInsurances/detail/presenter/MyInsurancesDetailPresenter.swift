@@ -19,6 +19,7 @@ protocol MyInsurancesDetailPresenter: BasePresenter {
     func openLoginVC(phone: String)
     func openUrl(urlString: String)
     func showError(msg: String)
+    func updateList()
 }
 
 class MyInsurancesDetailPresenterImpl: MyInsurancesDetailPresenter {
@@ -56,7 +57,8 @@ class MyInsurancesDetailPresenterImpl: MyInsurancesDetailPresenter {
     }
     
     func setPaymentType(paymentType: String) {
-        
+        self.myInsurance.paymentMethod = paymentType
+        self.myInsuranceDetailInteractor?.updateMyInsurance(orderId: self.myInsurance.id, paymentType: paymentType)
     }
     
     
@@ -70,6 +72,13 @@ class MyInsurancesDetailPresenterImpl: MyInsurancesDetailPresenter {
     
     func showError(msg: String) {
         self.myInsuranceDetailView?.showErrorMessage(msg: msg)
+    }
+    
+    func updateList() {
+        let nc = self.view?.navigationController
+        if let n = nc?.viewControllers[0] as? MyInsuranceVC {
+            n.reloadList()
+        }
     }
 }
 

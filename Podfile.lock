@@ -32,6 +32,7 @@ PODS:
     - Material/Core (= 3.1.8)
   - Material/Core (3.1.8):
     - Motion (~> 3.1.1)
+  - MessengerKit (1.0.5)
   - Motion (3.1.3):
     - Motion/Core (= 3.1.3)
   - Motion/Core (3.1.3)
@@ -73,6 +74,7 @@ DEPENDENCIES:
   - LayoutHelper
   - LocationPicker
   - Material (~> 3.1.0)
+  - MessengerKit (from `https://github.com/steve228uk/MessengerKit.git`)
   - Moya (~> 13.0)
   - NVActivityIndicatorView
   - ObjectMapper (~> 3.5)
@@ -113,6 +115,15 @@ SPEC REPOS:
     - TagListView
     - TTGSnackbar
 
+EXTERNAL SOURCES:
+  MessengerKit:
+    :git: https://github.com/steve228uk/MessengerKit.git
+
+CHECKOUT OPTIONS:
+  MessengerKit:
+    :commit: fc7551889d2dae84b0b50c8f00b6daccaff6fa26
+    :git: https://github.com/steve228uk/MessengerKit.git
+
 SPEC CHECKSUMS:
   Agrume: 53c2be9b06caef4b4996a2886a56b9e901bcc6c0
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
@@ -125,6 +136,7 @@ SPEC CHECKSUMS:
   LayoutHelper: 89385ca8de2464665b777265da86c84c1a28a128
   LocationPicker: 9af49409ec3ca13fdf4bf6b39e1a3c7dec029f4a
   Material: a2a3f400a3b549d53ef89e56c58c4535b29db387
+  MessengerKit: 26dbfa81b76b22b7891028fb9a2cefdf4e86236f
   Motion: cf1e060e489f6661126374d5c60dbd2ed991605c
   Moya: f4a4b80ff2f8a4ffc208dfb31cd91636622fee6e
   NVActivityIndicatorView: d24b7ebcf80af5dcd994adb650e2b6c93379270f
@@ -141,6 +153,6 @@ SPEC CHECKSUMS:
   TagListView: 987b0bdbb16cd9d9e7c0e2ec32aff37ecba8b173
   TTGSnackbar: fc26ad27ae180f4045b03ba19defdc57238e9215
 
-PODFILE CHECKSUM: 3d0acca9a5608559ce69f99184689f22feef0790
+PODFILE CHECKSUM: d7d35925e6659ca259f70f108ab10bc4acefe011
 
 COCOAPODS: 1.8.4

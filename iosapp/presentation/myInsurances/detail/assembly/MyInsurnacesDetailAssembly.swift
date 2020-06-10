@@ -23,6 +23,8 @@ class MyInsurnacesDetailAssembly: BaseAssemblyProtocol {
         let vc = MyInsurancesDetailVC()
         let presenter = MyInsurancesDetailPresenterImpl()
         let router = MyInsuranceDetailRouterImpl(factory: self.assemblyFactory, viewController: vc)
+        let interactor = MyInsuranceDetailInteractorImpl(serviceFactory: self.serviceFactory, presenter: presenter)
+        presenter.interactor = interactor
         presenter.router = router
         presenter.view = vc
         vc.presenter = presenter

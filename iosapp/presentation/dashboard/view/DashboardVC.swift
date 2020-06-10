@@ -77,7 +77,7 @@ class DashboardVC: BaseViewImpl, BottomViewControllerScrollDelegate, UICollectio
         vc.onPageChange = {
             self.topMenuList.scrollToItem(at: IndexPath(item: $0, section: 0), at: .centeredHorizontally, animated: true)
             self.selected = $0
-            UIView.transition(with: self.topMenuList, duration: 0.2, options: .curveEaseInOut, animations: {
+            UIView.transition(with: self.topMenuList, duration: 0.2, options: .transitionCrossDissolve, animations: {
                 self.topMenuList.reloadData()
             }, completion: nil)
         }
@@ -89,7 +89,6 @@ class DashboardVC: BaseViewImpl, BottomViewControllerScrollDelegate, UICollectio
         
         addViewController(bottomViewController, frame: CGRect(x: 0, y: topMenuHeight, width: view.frame.size.width, height: view.frame.size.height - topMenuHeight), completion: nil)
         addViewController(topViewController, frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: topViewHeight + topMenuHeight), completion: nil)
-        
         topViewController.onBell = {
             self.dashboardPresenter?.openNotifications()
         }
@@ -226,10 +225,20 @@ class DashboardVC: BaseViewImpl, BottomViewControllerScrollDelegate, UICollectio
         ])
         self.centerMenuView.onCheckOrder = { self.dashboardPresenter?.openCheckOrderVC() }
         self.centerMenuView.onIncident = { self.dashboardPresenter?.openIncidentsVC() }
-        self.centerMenuView.onSupport = { self.dashboardPresenter?.openSupportVC() }
+        self.centerMenuView.onSupport = {
+            if let url = URL(string: "tel://\(phoneNumber)"), UIApplication.shared.canOpenURL(url) {
+                if #available(iOS 10, *) {
+                    UIApplication.shared.open(url)
+                } else {
+                    UIApplication.shared.openURL(url)
+                }
+            }
+        }
         self.view.bringSubviewToFront(self.centerMenuView)
     }
+    
     var centerMenuTopContraint: NSLayoutConstraint? = nil
+    
     func setupTopMenu() {
         self.view.addSubview(topMenu)
         self.topMenu.addSubview(self.topMenuList)
@@ -283,19 +292,24 @@ class DashboardVC: BaseViewImpl, BottomViewControllerScrollDelegate, UICollectio
         
         if scrollView.contentOffset.y < 0 && abs(scrollView.contentOffset.y) < 25 {
             let opacity = (25.0 - abs(scrollView.contentOffset.y))/25.0
-            UIView.animate(withDuration: 0.01) { self.topMenu.layer.opacity = Float(opacity) }
+            self.topMenu.layer.opacity = Float(opacity)
+//            UIView.animate(withDuration: 0.01) { self.topMenu.layer.opacity = Float(opacity) }
         } else if scrollView.contentOffset.y >= 0 {
-            UIView.animate(withDuration: 0.01) { self.topMenu.layer.opacity = Float(1) }
+            self.topMenu.layer.opacity = Float(1)
+//            UIView.animate(withDuration: 0.01) { self.topMenu.layer.opacity = Float(1) }
         } else {
-            UIView.animate(withDuration: 0.01) { self.topMenu.layer.opacity = Float(0) }
+            self.topMenu.layer.opacity = Float(0)
+//            UIView.animate(withDuration: 0.01) { self.topMenu.layer.opacity = Float(0) }
         }
-        
+        debugPrint(offset)
         if offset < 0 {
             topViewController.view.frame.origin.y = 0
-            topViewController.view.frame.size.height = topViewHeight + topMenuHeight - offset
+            self.topViewController.view.frame.size.height = topViewHeight + self.topMenuHeight - offset
+            self.topViewController.view.layoutIfNeeded()
         } else {
             topViewController.view.frame.origin.y = -(scrollView.contentOffset.y + topViewHeight)
-            topViewController.view.frame.size.height = topViewHeight + topMenuHeight
+            self.topViewController.view.frame.size.height = topViewHeight + self.topMenuHeight
+            self.topViewController.view.layoutIfNeeded()
         }
     }
     

@@ -64,7 +64,11 @@ class MyInsuranceView: UIView, UITableViewDelegate, UITableViewDataSource, UICol
         let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: MyInsuranceCell.self)) as! MyInsuranceCell
         cell.setData(data: data[indexPath.row], isLast: indexPath.row == data.count - 1)
         cell.onItemClick = { item in
-            self.onInsuranceClicked?(item, self.properties[indexPath.row])
+            if self.properties.count > indexPath.row {
+                self.onInsuranceClicked?(item, self.properties[indexPath.row])
+            } else {
+                self.onInsuranceClicked?(item, MyInsuranceProperties())
+            }
         }
         return cell
     }
@@ -92,6 +96,5 @@ class MyInsuranceView: UIView, UITableViewDelegate, UITableViewDataSource, UICol
     @IBAction func onAddClicked(_ sender: Any) {
         onAdd?()
     }
-    
     
 }

@@ -12,6 +12,7 @@ protocol MyInsuranceDetailInteractor: BaseInteractor {
     init(serviceFactory: ServiceFactoryProtocol, presenter: BasePresenter)
     func getClickData(orderId: Int)
     func getPaymeData(orderId: Int)
+    func updateMyInsurance(orderId: Int, paymentType: String)
 }
 
 class MyInsuranceDetailInteractorImpl: MyInsuranceDetailInteractor {
@@ -92,7 +93,22 @@ class MyInsuranceDetailInteractorImpl: MyInsuranceDetailInteractor {
         }
     }
     
-    func updatePaymentType() {}
+    func updateMyInsurance(orderId: Int, paymentType: String) {
+        self
+        .serviceFactory
+        .networkManager
+            .user
+            .request(.updatePaymentType(orderId: orderId, paymentType: paymentType)) { result in
+                switch result {
+                case .success:
+                    self.insurancePresenter?.updateList()
+                    break
+                case .failure(let error):
+                    debugPrint(error.localizedDescription)
+                    break
+                }
+        }
+    }
     
     
 }

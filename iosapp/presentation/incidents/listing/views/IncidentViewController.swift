@@ -20,7 +20,7 @@ class IncidentViewController: BaseViewImpl {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tabBarController?.tabBar.isTranslucent = false
+//        self.tabBarController?.tabBar.isTranslucent = false
         self.view.addSubview(header)
         header.translatesAutoresizingMaskIntoConstraints = false
         
@@ -41,7 +41,24 @@ class IncidentViewController: BaseViewImpl {
             header.topAnchor.constraint(equalTo: self.view.topAnchor),
             header.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
             header.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: multiplayer)
-        ])
+        ])        
+        self.header.onSupportCall = {
+            if let url = URL(string: "tel://\(phoneNumber)"), UIApplication.shared.canOpenURL(url) {
+                if #available(iOS 10, *) {
+                    UIApplication.shared.open(url)
+                } else {
+                    UIApplication.shared.openURL(url)
+                }
+            }
+        }
+        
+        self.header.onCallback = {
+            
+        }
+        
+        self.header.onChat = {
+            self.navigationController?.pushViewController(ChatVC(), animated: true)
+        }
         
         self.view.addSubview(empty)
         empty.translatesAutoresizingMaskIntoConstraints = false

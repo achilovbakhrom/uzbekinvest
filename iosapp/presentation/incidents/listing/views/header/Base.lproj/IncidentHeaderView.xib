@@ -43,7 +43,7 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Ux-Kf-gkc">
                             <rect key="frame" x="0.0" y="0.0" width="124.5" height="448"/>
                             <subviews>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="support" translatesAutoresizingMaskIntoConstraints="NO" id="dL5-pG-7Jg">
+                                <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="support" translatesAutoresizingMaskIntoConstraints="NO" id="dL5-pG-7Jg">
                                     <rect key="frame" x="25" y="22" width="74.5" height="75"/>
                                     <constraints>
                                         <constraint firstAttribute="width" secondItem="dL5-pG-7Jg" secondAttribute="height" multiplier="1:1" id="wnQ-2l-GMn"/>
@@ -101,7 +101,7 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l14-mS-0Lr">
                             <rect key="frame" x="124.5" y="0.0" width="125" height="448"/>
                             <subviews>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="on-time" translatesAutoresizingMaskIntoConstraints="NO" id="Rpy-lo-cmQ">
+                                <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="on-time" translatesAutoresizingMaskIntoConstraints="NO" id="Rpy-lo-cmQ">
                                     <rect key="frame" x="25" y="22" width="75" height="75"/>
                                     <constraints>
                                         <constraint firstAttribute="width" secondItem="Rpy-lo-cmQ" secondAttribute="height" multiplier="1:1" id="PWz-uM-4rW"/>
@@ -144,16 +144,14 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oi8-3K-AYN">
                             <rect key="frame" x="249.5" y="0.0" width="124.5" height="448"/>
                             <subviews>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chat" translatesAutoresizingMaskIntoConstraints="NO" id="hRi-yl-fPA">
+                                <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chat" translatesAutoresizingMaskIntoConstraints="NO" id="hRi-yl-fPA">
                                     <rect key="frame" x="25" y="22" width="74.5" height="75"/>
                                     <constraints>
                                         <constraint firstAttribute="width" secondItem="hRi-yl-fPA" secondAttribute="height" multiplier="1:1" id="0BL-dy-IaG"/>
                                     </constraints>
                                 </imageView>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fe5-Xr-Xim">
-                                    <rect key="frame" x="20" y="107" width="84.5" height="30.5"/>
-                                    <string key="text">Обратный
-звонок</string>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="В Чат" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fe5-Xr-Xim">
+                                    <rect key="frame" x="20" y="107" width="84.5" height="15.5"/>
                                     <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="13"/>
                                     <color key="textColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <color key="highlightedColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -201,13 +199,16 @@
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
+                <outlet property="callBackImageView" destination="Rpy-lo-cmQ" id="ewX-Rb-ITQ"/>
                 <outlet property="callOperatorConstraint" destination="L41-Ee-JOi" id="mMl-cV-i5b"/>
                 <outlet property="callOperatorLabel" destination="I4R-WT-jSx" id="Yoj-Ri-DDJ"/>
                 <outlet property="callbackConstraint" destination="U6e-JL-6sN" id="h5o-Nd-WeM"/>
                 <outlet property="callbackLabel" destination="4p0-FD-ZIP" id="se8-RU-xzt"/>
+                <outlet property="chatImageView" destination="hRi-yl-fPA" id="H1I-xA-NUG"/>
                 <outlet property="descLabel" destination="n9J-M8-Qvh" id="ue0-ZG-JjM"/>
                 <outlet property="messageConstraint" destination="LB9-ib-8zR" id="aJ3-wM-eZJ"/>
                 <outlet property="messageLabel" destination="fe5-Xr-Xim" id="mBU-4u-YdG"/>
+                <outlet property="supportCallImageView" destination="dL5-pG-7Jg" id="0jP-Gl-PGL"/>
                 <outlet property="titleLabel" destination="6p8-vm-2TR" id="6Cf-q2-0R5"/>
             </connections>
             <point key="canvasLocation" x="137.68115942028987" y="130.58035714285714"/>

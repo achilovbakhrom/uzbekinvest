@@ -15,7 +15,9 @@ protocol IncidentsDetailPresenter: BasePresenter {
     func setEnabled(isEnabled: Bool)
     func openLoginVC(phone: String)
     func fetchIncidents()
-    func openAddEditVC(orderId: Int)
+    func fetchPinflOrders()
+    func openAddEditVC(orderId: Int, productCode: String, isOffline: Int)
+    
 }
 
 class IncidentsDetailPresenterImpl: IncidentsDetailPresenter {
@@ -57,7 +59,11 @@ class IncidentsDetailPresenterImpl: IncidentsDetailPresenter {
         self.incidentsRouter?.openLoginVC(phone: phone)
     }
     
-    func openAddEditVC(orderId: Int) {
-        self.incidentsRouter?.openAddEditVC(orderId: orderId)
+    func openAddEditVC(orderId: Int, productCode: String, isOffline: Int) {
+        self.incidentsRouter?.openAddEditVC(orderId: orderId, productCode: productCode, isOffline: isOffline)
+    }
+    
+    func fetchPinflOrders() {
+        self.incidentsInteractor?.fetchPinflOrders()
     }
 }

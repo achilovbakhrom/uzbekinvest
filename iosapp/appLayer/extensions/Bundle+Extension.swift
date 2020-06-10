@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 
 extension Bundle {
+    
     static func swizzleLocalization() {
         let orginalSelector = #selector(localizedString(forKey:value:table:))
         guard let orginalMethod = class_getInstanceMethod(self, orginalSelector) else { return }
@@ -32,4 +33,5 @@ extension Bundle {
         }
         return bundle.myLocaLizedString(forKey: key, value: value, table: table)
     }
+    
 }

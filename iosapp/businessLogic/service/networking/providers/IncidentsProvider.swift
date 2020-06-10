@@ -11,7 +11,8 @@ import Moya
 enum IncidentsProvider {
     case incidents(incident: Incident)
     case fetchAllIncidents
-    case createIncident(incident: Incident, files: [String: Data])
+    case createIncident(incident: Incident, type: String, files: [String: Data])
+    case fetchIncidentMeta(productCode: String)
 }
 
 extension IncidentsProvider: TargetType {
@@ -27,6 +28,8 @@ extension IncidentsProvider: TargetType {
             return "/api/user/incident"
         case .createIncident:
             return "/api/incident"
+        case .fetchIncidentMeta:
+            return "/api/incident/metadata"
         }
         
         
@@ -40,6 +43,8 @@ extension IncidentsProvider: TargetType {
             return .get
         case .createIncident:
             return .post
+        case .fetchIncidentMeta:
+            return .get
         }
         
     }
@@ -54,19 +59,28 @@ extension IncidentsProvider: TargetType {
             return .requestParameters(parameters: incident.dictionary!, encoding: JSONEncoding.default)
         case .fetchAllIncidents:
             return .requestPlain
-        case .createIncident(let incident, let files):
+        case .fetchIncidentMeta(let productCode):
+            return .requestParameters(parameters: ["product_code" : productCode], encoding: URLEncoding.default)
+        case .createIncident(let incident, let type, let files):
             var p: [MultipartFormData] = []
-            let inc = incident.dictionary!
+            var inc = incident.dictionary!
+            if !type.isEmpty {
+                inc["type"] = type
+            }
+            
             for key in inc.keys {
                 p.append(
                     MultipartFormData(provider: .data(String(describing: inc[key]!).data(using: .utf8)!), name: key)
                 )
             }
             
-            
-            for key in files.keys {
-                p.append(MultipartFormData(provider: .data(files[key]!), name: key, fileName: "file.jpeg", mimeType: "image/png"))
+            if !files.isEmpty {
+                for key in files.keys {
+                    p.append(MultipartFormData(provider: .data(files[key]!), name: key, fileName: "file.jpeg", mimeType: "image/png"))
+                }
+                
             }
+            
             
             return .uploadCompositeMultipart(p, urlParameters: incident.dictionary!)
         }
