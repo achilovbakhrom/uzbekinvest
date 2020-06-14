@@ -54,7 +54,7 @@ class IncidentsAddEditInteractorImpl: IncidentsAddEditInteractor {
                         self.serviceFactory.storage.removeKey(key: "profile")
                         self.serviceFactory.tokenFactory.removeToken()
                         self.incidentsPresenter?.openLoginVC(phone: "\(profile?.phone ?? 0)")
-                    } else {
+                    } else if response.statusCode < 300 {                        
                         self.incidentsPresenter?.openAndUpdateIncidents()
                     }
                     break

@@ -27,6 +27,7 @@ class WelcomeInteractor: WelcomeInteractorProtocol {
     }
     
     func setLanguage(lang: String) {
+        self.storage.save(key: "welcome", value: true)        
         self.storage.save(key: "language", value: lang)
     }
     

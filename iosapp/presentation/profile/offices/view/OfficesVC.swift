@@ -17,6 +17,8 @@ class OfficesVC: BaseViewImpl {
     
     private var pagerVC: OfficesViewPagerVC!
     
+    private lazy var noInternetView: NoInternetView = NoInternetView.fromNib()
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.setTabBarHidden(true)
@@ -68,8 +70,50 @@ class OfficesVC: BaseViewImpl {
             loadingView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
             loadingView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor)
         ])
+        self.setupNoInternetView()
         self.officesView.setMode(isListMode: true)
-        self.officesPresenter?.fetchOfficesList()
+        
+        let status = appDelegate.reach.connectionStatus()
+        switch status {
+        case .unknown, .offline:
+            self.showNoInternetView(show: true)
+            break
+        case .online(.wwan), .online(.wiFi):
+            self.officesPresenter?.fetchOfficesList()
+            break
+        }
+    }
+    
+    func setupNoInternetView() {
+        self.view.addSubview(self.noInternetView)
+        self.noInternetView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            self.noInternetView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
+            self.noInternetView.topAnchor.constraint(equalTo: self.view.topAnchor),
+            self.noInternetView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
+            self.noInternetView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor)
+        ])
+        self.view.bringSubviewToFront(self.noInternetView)
+        self.noInternetView.layer.opacity = 0.0
+        self.noInternetView.onRepeatClicked = {
+            self.showNoInternetView(show: false)
+            let status = self.appDelegate.reach.connectionStatus()
+            switch status {
+            case .unknown, .offline:
+                self.showNoInternetView(show: true)
+            case .online(.wwan):
+                self.officesPresenter?.fetchOfficesList()
+            case .online(.wiFi):
+                self.officesPresenter?.fetchOfficesList()
+            }
+        }
+        
+    }
+    
+    func showNoInternetView(show: Bool) {
+        UIView.animate(withDuration: 0.2) {
+            self.noInternetView.layer.opacity = show ? 1.0 : 0.0
+        }
     }
     
     func setOfficesList(officesList: Array<Office>) {

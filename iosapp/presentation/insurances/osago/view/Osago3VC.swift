@@ -30,9 +30,9 @@ class Osage3VC: BaseWithLeftCirclesVC {
             if id == 0 {
                 self.conditionsDropDown.isHidden = true
                 self.osagoPresenter.setIsUnlim(isUnlim: true)
-                
             } else {
                 self.conditionsDropDown.isHidden = false
+                self.conditionsDropDown.text = "no_incident".localized()
                 self.osagoPresenter.setIsUnlim(isUnlim: false)
                 self.osagoPresenter.setMembersCount(membersCount: id, membersCountString: name)
                 self.osagoPresenter.setAccident(accident: 0)

@@ -15,10 +15,18 @@ class ConfirmVC: BaseWithLeftCirclesVC {
     @IBOutlet weak var phoneTextField: PhoneTextField!
     @IBOutlet weak var confirmTextField: TextField!
     @IBOutlet weak var confirmButton: Button!
+    @IBOutlet weak var resendButton: UIButton!
+    @IBOutlet weak var timerLabel: UILabel!
     
     private lazy var confirmPresenter = self.presenter as? ConfirmPresenter
     
     var phone: String = ""
+    
+    var timer: Timer!
+    
+    var hasStarted = false
+    
+    var remainingSeconds = 30
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,10 +43,34 @@ class ConfirmVC: BaseWithLeftCirclesVC {
         self.phoneTextField.keyboardType = .phonePad
         confirmButton.isEnabled = false
         backButton.isHidden = true
+        if hasStarted {
+            self.startTimer()
+        }
+    }
+    
+    private func startTimer()  {
+        self.remainingSeconds = 30
+        self.timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true, block: { _ in
+            if self.remainingSeconds > 0 {
+                self.timerLabel.isHidden = false
+                self.resendButton.isHidden = true
+                self.remainingSeconds = self.remainingSeconds - 1
+                self.timerLabel.text = "\(self.remainingSeconds)"
+            } else {
+                self.timerLabel.isHidden = true
+                self.resendButton.isHidden = false
+                self.remainingSeconds = 0
+                self.timerLabel.text = "\(self.remainingSeconds)"
+                self.timer.invalidate()
+                self.timer = nil
+            }
+        })
+        self.timer.fire()
     }
     
     @IBAction func resendButtonClicked(_ sender: Any) {
         self.confirmPresenter?.resendCode()
+        self.startTimer()
     }
     
     

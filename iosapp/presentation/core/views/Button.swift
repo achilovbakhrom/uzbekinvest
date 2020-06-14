@@ -88,7 +88,12 @@ class Button: UIButton {
     }
     
     func makeRedColor() {
-        self.layer.insertSublayer(Colors().gr, at: 0)
+        let gr = Colors().gr
+        gr?.frame = self.bounds;
+        gr?.cornerRadius = self.frame.height/2
+        gr?.masksToBounds = true
+        
+        self.layer.insertSublayer(gr!, at: 1)
     }
     
     private func handleLoading() {

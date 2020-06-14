@@ -34,6 +34,8 @@ class RootPresenter: RootPresenterProtocol {
     func initialCheck() {
         if (!(self.rootInteractor?.hasLanguageSelected() ?? false)) {
             self.rootRouter?.openStartPage()
+        } else if (self.rootInteractor?.languageSelectedFromWelcome() ?? false) {
+            self.rootRouter?.openSlider()
         } else if (self.rootInteractor?.hasToken() ?? false) {
             self.rootRouter?.openMainPage()
         } else {

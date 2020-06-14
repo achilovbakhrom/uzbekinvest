@@ -16,6 +16,11 @@ protocol IncidentsListingPresenter: BasePresenter {
     func openLoginVC(phone: String)
     func openIncidentInfo(incident: Incident)
     func showError(msg: String)
+    func showSuccess(msg: String)
+    func callback(phone: String)
+    func setCallbackLoading(isLoading: Bool)
+    func dismissCallbackAlert(completed: @escaping () -> Void)
+    func openChatVC()
 }
 
 class IncidentsListingPresenterImpl: IncidentsListingPresenter {
@@ -55,6 +60,29 @@ class IncidentsListingPresenterImpl: IncidentsListingPresenter {
     
     func showError(msg: String) {
         self.view?.showSuccessMessage(msg: msg)
+    }
+    
+    func showSuccess(msg: String) {
+        self.view?.showSuccessMessage(msg: msg)
+    }
+    
+    func callback(phone: String) {
+        self.incidentsListingInteractor?.callback(phone: phone)
+    }
+    
+    func setCallbackLoading(isLoading: Bool) {
+        if let v = self.view as? IncidentViewController {
+            v.setCallbackLoading(isLoading: isLoading)
+        }
+    }
+    func dismissCallbackAlert(completed: @escaping () -> Void) {
+        if let v = self.view as? IncidentViewController {
+            v.dissmissAlert(completion: completed)
+        }
+    }
+    
+    func openChatVC() {
+        self.incidentsListingRouter?.openChatVC()
     }
 }
 

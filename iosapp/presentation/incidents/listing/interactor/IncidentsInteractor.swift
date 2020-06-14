@@ -11,6 +11,7 @@ import Foundation
 protocol IncidentsInteractor: BaseInteractor {
     init(serviceFactory: ServiceFactoryProtocol, presenter: BasePresenter)
     func fetchIncidents()
+    func callback(phone: String)
 }
 
 class IncidentsInteractorImpl: IncidentsInteractor {
@@ -62,7 +63,32 @@ class IncidentsInteractorImpl: IncidentsInteractor {
         }
     }
     
-    
+    func callback(phone: String) {
+        self.incidentsPresenter?.setCallbackLoading(isLoading: true)
+        self
+            .serviceFactory
+            .networkManager
+            .user.request(.call(phone: phone)) { result in
+                switch result {
+                case .success(let response):
+                    self.incidentsPresenter?.setCallbackLoading(isLoading: false)
+                    self.incidentsPresenter?.dismissCallbackAlert {
+                        if response.statusCode < 300 {
+                            self.incidentsPresenter?.showSuccess(msg: "Успешно!")
+                        } else {
+                            self.incidentsPresenter?.showError(msg: "Не удалость отправить запрос на обратный звонок!")
+                        }
+                    }                    
+                    break
+                case .failure(let error):
+                    self.incidentsPresenter?.setCallbackLoading(isLoading: true)
+                    self.incidentsPresenter?.dismissCallbackAlert {
+                        self.incidentsPresenter?.showError(msg: error.localizedDescription)
+                    }
+                    break
+                }
+        }
+    }
     
     
 }

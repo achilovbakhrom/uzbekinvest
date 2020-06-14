@@ -41,10 +41,9 @@ class ReasonVC: BaseViewImpl {
         }
         
         self.reasonView.onNext = {
+            
             self.incidentAddEditPresenter?.openCommentVC()
         }
-        
-        
         
         self.incidentAddEditPresenter?.fetchIncidentMetaData()
     }

@@ -76,7 +76,7 @@ extension IncidentsProvider: TargetType {
             
             if !files.isEmpty {
                 for key in files.keys {
-                    p.append(MultipartFormData(provider: .data(files[key]!), name: key, fileName: "file.jpeg", mimeType: "image/png"))
+                    p.append(MultipartFormData(provider: .data(files[key]!), name: key, fileName: "file\(key).jpeg", mimeType: "image/png"))
                 }
                 
             }

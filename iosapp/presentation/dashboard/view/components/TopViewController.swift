@@ -34,6 +34,7 @@ class TopViewController: UIViewController {
     private lazy var carouselBgImageView: UIImageView = {
         let imageView = UIImageView.init(frame: .zero)
         imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.contentMode = .scaleAspectFill
         return imageView
     }()
     
@@ -81,36 +82,18 @@ class TopViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.addSubview(self.carouselBigImageView)
+        self.view.addSubview(self.carouselBgImageView)
         NSLayoutConstraint.activate([
             self.carouselBgImageView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
             self.carouselBgImageView.topAnchor.constraint(equalTo: self.view.topAnchor),
             self.carouselBgImageView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
             self.carouselBgImageView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor)
         ])
-        self.carouselBgImageView.backgroundColor = .red
+        self.carouselBgImageView.backgroundColor = Colors.primaryGreen
         
         grandient = CAGradientLayer()
-        grandient.makeGreenGradient()
-        grandient.opacity = 0.3
+        grandient.makeGray()
         self.view.layer.addSublayer(grandient)
-        
-//        self.view.backgroundColor = .red
-        self.view.addSubview(carouselBigImageView)
-        NSLayoutConstraint.activate([
-            self.carouselBigImageView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
-            self.carouselBigImageView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor),
-            self.carouselBigImageView.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 0.3),
-            self.carouselBigImageView.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.55),
-        ])
-
-        self.view.addSubview(carouselSmallImageView)
-        NSLayoutConstraint.activate([
-            self.carouselSmallImageView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -68),
-            self.carouselSmallImageView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -147),
-            self.carouselSmallImageView.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 0.17),
-            self.carouselSmallImageView.heightAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 0.17),
-        ])
         
         self.addChild(carousel)
         self.view.addSubview(carousel.view)
@@ -164,8 +147,14 @@ class TopViewController: UIViewController {
         bellButton.addTarget(self, action: #selector(onBellAction(_:)), for: .touchUpInside)
         self.carousel.onPageChanged = { page in
             self.pageControl.set(progress: page, animated: true)
+            if let url = URL(string: "\(BASE_URL)\(self.carouselList[page].image ?? "")") {
+                self.carouselBgImageView.kf.setImage(with: url, placeholder: nil, options: [
+                    .transition(.fade(0.2)),
+                    .cacheOriginalImage,
+                    .forceTransition
+                ])
+            }
         }
-        
         self.loadingView.startAnimating()
     }
     
@@ -185,6 +174,13 @@ class TopViewController: UIViewController {
     
     func setCarouselList(carouselList: [Carousel]) {
         self.carouselList = carouselList
+        if let url = URL(string: "\(BASE_URL)\(self.carouselList[0].image ?? "")") {
+            self.carouselBgImageView.kf.setImage(with: url, placeholder: nil, options: [
+                .transition(.fade(0.3)),
+                .cacheOriginalImage,
+                .forceTransition
+            ])
+        }
         self.carousel.setCarouselList(carouselList: carouselList)
         self.pageControl.numberOfPages = carouselList.count
     }

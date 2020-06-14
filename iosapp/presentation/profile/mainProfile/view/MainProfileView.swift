@@ -23,10 +23,18 @@ class MainProfileView: UIView {
     @IBOutlet weak var branchesLabel: UILabel!
     @IBOutlet weak var settingsImage: UIImageView!
     @IBOutlet weak var settingsLabel: UILabel!
-        
+    @IBOutlet weak var faqImageView: UIImageView!
+    @IBOutlet weak var faqLabel: UILabel!
+    @IBOutlet weak var aboutImageView: UIImageView!
+    @IBOutlet weak var aboutLabel: UILabel!
+    
+    
+    
     var onMyDocs: (() -> Void)? = nil
     var onBranchesList: (() -> Void)? = nil
     var onSettings: (() -> Void)? = nil
+    var onFaq: (() -> Void)? = nil
+    var onAbout: (() -> Void)? = nil
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -53,6 +61,20 @@ class MainProfileView: UIView {
         incidentsView.layer.cornerRadius = radius
         incidentsView.layer.borderWidth = 2.0
         incidentsView.layer.borderColor = UIColor.init(red: 255.0/255.0, green: 197.0/255.0, blue: 47.0/255.0, alpha: 1.0).cgColor
+        
+        self.faqImageView.isUserInteractionEnabled = true
+        self.faqImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(onFaqAction(gesture:))))
+        
+        self.faqLabel.isUserInteractionEnabled = true
+        self.faqLabel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(onFaqAction(gesture:))))
+        self.faqLabel.text = "faq".localized()
+        
+        self.aboutImageView.isUserInteractionEnabled = true
+        self.aboutImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(onAboutAction(gesture:))))
+        
+        self.aboutLabel.isUserInteractionEnabled = true
+        self.aboutLabel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(onAboutAction(gesture:))))
+        self.aboutLabel.text = "about_us".localized();
     }
     
     
@@ -71,6 +93,15 @@ class MainProfileView: UIView {
         self.onSettings?()
     }
     
+    @objc
+    private func onFaqAction(gesture: UITapGestureRecognizer) {
+        self.onFaq?()
+    }
+    
+    @objc
+    private func onAboutAction(gesture: UITapGestureRecognizer) {
+        self.onAbout?()
+    }
     
 }
 

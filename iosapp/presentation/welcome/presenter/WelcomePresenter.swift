@@ -29,7 +29,7 @@ class WelcomePresenter: WelcomePresenterProtocol {
     }()
     
     func languageSelected(lang: String) {
-        self.welcomeInteractor?.setLanguage(lang: lang)
+        self.welcomeInteractor?.setLanguage(lang: lang)        
     }
     
     func nextButtonClicked() {

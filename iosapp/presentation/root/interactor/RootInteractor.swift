@@ -11,6 +11,7 @@ import Foundation
 protocol RootInteractorProtocol: BaseInteractor {
     func hasToken() -> Bool
     func hasLanguageSelected() -> Bool
+    func languageSelectedFromWelcome() -> Bool
 }
 
 class RootInteractor: RootInteractorProtocol {
@@ -35,7 +36,12 @@ class RootInteractor: RootInteractorProtocol {
         return tokenFactory.getToken() != nil
     }
     
-    
-    
+    func languageSelectedFromWelcome() -> Bool {
+        if let _ = self.storage?.fetch(key: "welcome", type: Bool.self) {
+            self.storage?.removeKey(key: "welcome")
+            return true
+        }
+        return false
+    }
     
 }

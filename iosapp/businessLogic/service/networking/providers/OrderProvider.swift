@@ -80,7 +80,13 @@ extension OrderProvider: TargetType {
         }
     }
     var method: Method {
-        return .post
+        switch self {
+        case .payme, .click:
+            return .get
+        default:
+            return .post
+        }
+        
     }
     
     var sampleData: Data {

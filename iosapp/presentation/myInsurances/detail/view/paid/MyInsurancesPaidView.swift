@@ -17,10 +17,15 @@ class MyInsurancesPaidView: UIView {
     @IBOutlet weak var leftDays: UILabel!
     @IBOutlet weak var paymentType: UILabel!
     @IBOutlet weak var transactionNumber: UILabel!
-    @IBOutlet weak var insuranceCost: UILabel!
+    
     @IBOutlet weak var incidentsButton: Button!
     @IBOutlet weak var insuranceName: UILabel!
     @IBOutlet weak var propertiesView: UIView!
+    @IBOutlet weak var statusLabel: UILabel!
+    @IBOutlet weak var startDateLabel: UILabel!
+    @IBOutlet weak var endDateLabel: UILabel!
+    
+    
     
     var onBackClicked: (() -> Void)? = nil
     var onIncidentsClicked: (() -> Void)? = nil
@@ -74,7 +79,7 @@ class MyInsurancesPaidView: UIView {
         return view
     }
     
-    func setProperties(property: [String: String]) {
+    func setProperties(property: [String: String]) {        
         var index = 0
         for key in property.keys {
             let row = createRow(title: key, value: property[key] ?? "")

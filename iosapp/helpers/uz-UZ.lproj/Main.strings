@@ -1021,3 +1021,9 @@
 
 /* Class = "UILabel"; text = "10 000 000 сум"; ObjectID = "zkk-Gu-9jO"; */
 "zkk-Gu-9jO.text" = "10 000 000 sum";
+
+/* Class = "UILabel"; text = "24/7 Qo'llab-quvvatlash"; ObjectID = "ZtD-kz-lu4"; */
+"ZtD-kz-lu4.text" = "24/7 Qo'llab-quvvatlash";
+
+/* Class = "UILabel"; text = "Sug'urta 5 daqiqada"; ObjectID = "fxI-k3-JLd"; */
+"fxI-k3-JLd.text" =  "Sug'urta 5 daqiqada";

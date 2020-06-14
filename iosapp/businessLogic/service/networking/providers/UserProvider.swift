@@ -30,6 +30,9 @@ enum UserProvider {
     case news(lang: String)
     case updatePaymentType(orderId: Int, paymentType: String)
     case call(phone: String)
+    case createChat
+    case createMessage(chatId: String, message: String)
+    case fetchChatList(chatId: String)
 }
 
 extension UserProvider: TargetType {
@@ -82,6 +85,12 @@ extension UserProvider: TargetType {
             return "/api/user/order/\(orderId)/payment"
         case .call:
             return "/api/call"
+        case .createChat:
+            return "/api/chat"
+        case .createMessage:
+            return "/api/chat/send"
+        case .fetchChatList:            
+            return "/api/chat/messages"
         }
     }
     
@@ -128,6 +137,12 @@ extension UserProvider: TargetType {
         case .updatePaymentType:
             return .put
         case .call:
+            return .post
+        case .createChat:
+            return .post
+        case .createMessage:
+            return .post
+        case .fetchChatList:
             return .post
         }
     }
@@ -182,6 +197,27 @@ extension UserProvider: TargetType {
             return .requestParameters(parameters: ["payment_method" : paymentType], encoding: JSONEncoding.default)
         case .call(let phone):
             return .requestParameters(parameters: ["phone" : phone], encoding: JSONEncoding.default)
+        case .createChat:
+            return .requestPlain
+        case .fetchChatList(let chatId):
+            var lang = "ru"
+            switch translatePosition {
+            case 0:
+                lang = "ru"
+                break
+            case 1:
+                lang = "uz"
+                break
+            case 2:
+                lang = "oz"
+                break
+            default:
+                lang = "ru"
+                break
+            }
+            return .requestCompositeParameters(bodyParameters: ["chat_id" : chatId], bodyEncoding: JSONEncoding.default, urlParameters: ["page" : 1, "lang": lang])
+        case .createMessage(let chatId, let message):
+            return .requestParameters(parameters: ["chat_id" : chatId, "message": message], encoding: JSONEncoding.default)
         }
     }
     

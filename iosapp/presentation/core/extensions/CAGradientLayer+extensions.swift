@@ -34,6 +34,16 @@ extension CAGradientLayer {
         self.locations = [0.0, 1.0]        
     }
     
+    func makeGray() {
+        let leftColor = UIColor.init(red: 68.0/255.0, green: 68.0/255.0, blue: 68.0/255.0, alpha: 0.65)
+        let rightColor
+            = UIColor.init(red: 68.0/255.0, green: 68.0/255.0, blue: 68.0/255.0, alpha: 0.65)
+        self.colors = [leftColor.cgColor, rightColor.cgColor]
+        self.startPoint = CGPoint(x: 0, y: 0)
+        self.endPoint = CGPoint(x: 1, y: 0)
+        self.locations = [0.0, 1.0]
+    }
+    
     func makeOrangeGrandient() {
         let leftColor = UIColor(red: 255.0 / 255.0, green: 203.0 / 255.0, blue: 45.0 / 255.0, alpha: 1.0)
         let rightColor

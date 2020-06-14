@@ -12,6 +12,7 @@ class MyDocumentsVC: BaseViewImpl {
     let myDocumentsView: MyDocumentsView = MyDocumentsView.fromNib()
     let loadingView: LoadingView = LoadingView.fromNib()
     
+    private lazy var noInternetView: NoInternetView = NoInternetView.fromNib()
     private lazy var myDocumentsPresenter = self.presenter as? MyDocumentsPrsenter
     lazy var imagePickerManager: ImagePickerManager = ImagePickerManager()
     
@@ -34,6 +35,7 @@ class MyDocumentsVC: BaseViewImpl {
             self.loadingView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor)
         ])
         loadingView.layer.opacity = 0.0
+        
         myDocumentsView.onBack = {
             self.myDocumentsPresenter?.goBack()
         }
@@ -48,7 +50,48 @@ class MyDocumentsVC: BaseViewImpl {
             }
         }
         self.setTabBarHidden(true)
-        self.myDocumentsPresenter?.loadDocuments()
+        self.setupNoInternetView()
+        
+        let status = appDelegate.reach.connectionStatus()
+        switch status {
+        case .unknown, .offline:
+            self.showNoInternetView(show: true)
+            break
+        case .online(.wwan), .online(.wiFi):
+            self.myDocumentsPresenter?.loadDocuments()
+            break
+        }
+    }
+    
+    func setupNoInternetView() {
+        self.view.addSubview(self.noInternetView)
+        self.noInternetView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            self.noInternetView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
+            self.noInternetView.topAnchor.constraint(equalTo: self.view.topAnchor),
+            self.noInternetView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
+            self.noInternetView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor)
+        ])
+        self.view.bringSubviewToFront(self.noInternetView)
+        self.noInternetView.layer.opacity = 0.0
+        self.noInternetView.onRepeatClicked = {
+            self.showNoInternetView(show: false)
+            let status = self.appDelegate.reach.connectionStatus()
+            switch status {
+            case .unknown, .offline:
+                self.showNoInternetView(show: true)
+            case .online(.wwan):
+                self.myDocumentsPresenter?.loadDocuments()
+            case .online(.wiFi):
+                self.myDocumentsPresenter?.loadDocuments()
+            }
+        }
+    }
+    
+    func showNoInternetView(show: Bool) {
+        UIView.animate(withDuration: 0.2) {
+            self.noInternetView.layer.opacity = show ? 1.0 : 0.0
+        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {

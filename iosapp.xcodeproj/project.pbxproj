@@ -95,6 +95,8 @@
 		292E51B02467B5A400465A1B /* NoInternetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292E51AF2467B5A400465A1B /* NoInternetView.swift */; };
 		292E51B22467B5BB00465A1B /* NoInternetView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 292E51B12467B5BB00465A1B /* NoInternetView.xib */; };
 		292E51B42467EC6800465A1B /* UILabel+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292E51B32467EC6800465A1B /* UILabel+Extensions.swift */; };
+		292ED15324967E9800D4E3AE /* LoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 292ED15524967E9800D4E3AE /* LoadingView.xib */; };
+		292ED15E24968CA800D4E3AE /* SettingsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 292ED16024968CA800D4E3AE /* SettingsView.xib */; };
 		2930B1B7240780EA00673D82 /* BaseAssemblyProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2930B1B6240780EA00673D82 /* BaseAssemblyProtocol.swift */; };
 		2930B1B9240783A400673D82 /* ServiceFactoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2930B1B8240783A400673D82 /* ServiceFactoryProtocol.swift */; };
 		2930B1BB240783B600673D82 /* ServiceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2930B1BA240783B600673D82 /* ServiceFactory.swift */; };
@@ -162,6 +164,11 @@
 		293FA4FB2430BC0300D84EE3 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293FA4FA2430BC0300D84EE3 /* UIViewController+Extensions.swift */; };
 		293FA4FD2431000700D84EE3 /* CenterMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293FA4FC2431000700D84EE3 /* CenterMenuView.swift */; };
 		293FA501243117E300D84EE3 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293FA500243117E300D84EE3 /* UIView+Extensions.swift */; };
+		29490F0124938825008F5ABA /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29490F0024938825008F5ABA /* Question.swift */; };
+		29490F0924938E00008F5ABA /* FaqVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29490F0824938E00008F5ABA /* FaqVC.swift */; };
+		29490F0B24938E28008F5ABA /* FaqView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29490F0A24938E28008F5ABA /* FaqView.swift */; };
+		29490F0D24938E3D008F5ABA /* FaqView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 29490F0C24938E3D008F5ABA /* FaqView.xib */; };
+		29490F0F24939826008F5ABA /* FaqPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29490F0E24939826008F5ABA /* FaqPresenter.swift */; };
 		294ED26D241B3020001B9293 /* menus-ru.plist in Resources */ = {isa = PBXBuildFile; fileRef = 294ED26C241B3020001B9293 /* menus-ru.plist */; };
 		295039A3243B9A0B0048A829 /* GasEquipmentRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295039A2243B9A0B0048A829 /* GasEquipmentRouter.swift */; };
 		295039A6243BBA050048A829 /* GasEquipmentInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295039A5243BBA050048A829 /* GasEquipmentInteractor.swift */; };
@@ -237,6 +244,12 @@
 		2963E1A12471946000255BF7 /* TravelAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2963E1A02471946000255BF7 /* TravelAssembly.swift */; };
 		2963E1A5247194E600255BF7 /* TravelInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2963E1A4247194E600255BF7 /* TravelInteractor.swift */; };
 		2963E1A72471BDCF00255BF7 /* TravelRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2963E1A62471BDCF00255BF7 /* TravelRouter.swift */; };
+		29652F1524924E0C00580FCD /* CallbackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29652F1424924E0C00580FCD /* CallbackView.swift */; };
+		29652F1B249297EC00580FCD /* ChatPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29652F1A249297EC00580FCD /* ChatPresenter.swift */; };
+		29652F1D24929B7700580FCD /* ChatMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29652F1C24929B7700580FCD /* ChatMessage.swift */; };
+		29652F1F24929DC700580FCD /* ChatInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29652F1E24929DC700580FCD /* ChatInteractor.swift */; };
+		29652F21249320A800580FCD /* Chat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29652F20249320A800580FCD /* Chat.swift */; };
+		29652F23249337E900580FCD /* ChatAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29652F22249337E900580FCD /* ChatAssembly.swift */; };
 		2967EF42243E506400102142 /* MyInsurancesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2967EF41243E506400102142 /* MyInsurancesInteractor.swift */; };
 		2967EF44243E50BD00102142 /* MyInsurancesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2967EF43243E50BD00102142 /* MyInsurancesRouter.swift */; };
 		2967EF46243E510D00102142 /* MyInsurancesAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2967EF45243E510D00102142 /* MyInsurancesAssembly.swift */; };
@@ -302,7 +315,6 @@
 		29846BF224738D9700287817 /* TravelConfirm2VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29846BF124738D9700287817 /* TravelConfirm2VC.swift */; };
 		29846BF42473931800287817 /* Tourist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29846BF32473931800287817 /* Tourist.swift */; };
 		29846C60247627ED00287817 /* Pinfl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29846C5F247627ED00287817 /* Pinfl.swift */; };
-		29846C6924762A5200287817 /* SettingsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 29846C6824762A5200287817 /* SettingsView.xib */; };
 		29846C6B24762B0E00287817 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29846C6A24762B0E00287817 /* SettingsView.swift */; };
 		29846C6D247631B900287817 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29846C6C247631B900287817 /* SettingsVC.swift */; };
 		29846C6F247634E800287817 /* SettingsAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29846C6E247634E800287817 /* SettingsAssembly.swift */; };
@@ -390,7 +402,6 @@
 		299B52C823FBF8120072ABD6 /* CAGradientLayer+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299B52C723FBF8120072ABD6 /* CAGradientLayer+extensions.swift */; };
 		299B52CA23FC10060072ABD6 /* UIButton+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299B52C923FC10060072ABD6 /* UIButton+extensions.swift */; };
 		299B52CC240013FD0072ABD6 /* BaseViewImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299B52CB240013FD0072ABD6 /* BaseViewImpl.swift */; };
-		299B52CF240014990072ABD6 /* LoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 299B52CE240014990072ABD6 /* LoadingView.xib */; };
 		299B52D1240016530072ABD6 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299B52D0240016530072ABD6 /* LoadingView.swift */; };
 		299D859624706FB50016057B /* MyDocumentsAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299D859524706FB50016057B /* MyDocumentsAssembly.swift */; };
 		299D8598247103720016057B /* MyDocumentsViewPager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299D8597247103720016057B /* MyDocumentsViewPager.swift */; };
@@ -466,6 +477,16 @@
 		29BC1605247EF8860009BD62 /* InsuranceListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BC1604247EF8860009BD62 /* InsuranceListView.swift */; };
 		29BC1607247EFC360009BD62 /* InsuranceListViewPager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BC1606247EFC360009BD62 /* InsuranceListViewPager.swift */; };
 		29BDC4612406EF210015F4E1 /* BaseRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BDC4602406EF210015F4E1 /* BaseRouter.swift */; };
+		29C3A1C824949BA2006E4CE7 /* FaqInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C3A1C724949BA2006E4CE7 /* FaqInteractor.swift */; };
+		29C3A1CA24949DD2006E4CE7 /* FaqRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C3A1C924949DD2006E4CE7 /* FaqRouter.swift */; };
+		29C3A1CC24949ED6006E4CE7 /* FaqAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C3A1CB24949ED6006E4CE7 /* FaqAssembly.swift */; };
+		29C3A1D42494FC0C006E4CE7 /* AboutUsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C3A1D32494FC0C006E4CE7 /* AboutUsRouter.swift */; };
+		29C3A1D62494FC19006E4CE7 /* AboutUsAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C3A1D52494FC19006E4CE7 /* AboutUsAssembly.swift */; };
+		29C3A1D82494FC27006E4CE7 /* AboutUsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C3A1D72494FC27006E4CE7 /* AboutUsInteractor.swift */; };
+		29C3A1DA2494FC33006E4CE7 /* AboutUsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C3A1D92494FC33006E4CE7 /* AboutUsPresenter.swift */; };
+		29C3A1DC2494FC3F006E4CE7 /* AboutUsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C3A1DB2494FC3F006E4CE7 /* AboutUsVC.swift */; };
+		29C3A1DE2494FD4F006E4CE7 /* AboutUsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 29C3A1DD2494FD4F006E4CE7 /* AboutUsView.xib */; };
+		29C3A1E024950137006E4CE7 /* AboutUsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C3A1DF24950137006E4CE7 /* AboutUsView.swift */; };
 		29CBABA3245ECA7D004E894C /* OrderCheck2View.xib in Resources */ = {isa = PBXBuildFile; fileRef = 29CBABA5245ECA7D004E894C /* OrderCheck2View.xib */; };
 		29CBABAC245ECE9D004E894C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 29CBABAE245ECE9D004E894C /* Localizable.strings */; };
 		29CE46332454008700D0818F /* OrderCheck2View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29CE46322454008700D0818F /* OrderCheck2View.swift */; };
@@ -620,6 +641,14 @@
 		292E51AF2467B5A400465A1B /* NoInternetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoInternetView.swift; sourceTree = "<group>"; };
 		292E51B12467B5BB00465A1B /* NoInternetView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoInternetView.xib; sourceTree = "<group>"; };
 		292E51B32467EC6800465A1B /* UILabel+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extensions.swift"; sourceTree = "<group>"; };
+		292ED15424967E9800D4E3AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LoadingView.xib; sourceTree = "<group>"; };
+		292ED15924967EA000D4E3AE /* uz-Cyrl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "uz-Cyrl"; path = "uz-Cyrl.lproj/LoadingView.strings"; sourceTree = "<group>"; };
+		292ED15B24967EA200D4E3AE /* uz-UZ */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "uz-UZ"; path = "uz-UZ.lproj/LoadingView.strings"; sourceTree = "<group>"; };
+		292ED15D24967EAC00D4E3AE /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LoadingView.strings; sourceTree = "<group>"; };
+		292ED15F24968CA800D4E3AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SettingsView.xib; sourceTree = "<group>"; };
+		292ED16224968CAF00D4E3AE /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/SettingsView.strings; sourceTree = "<group>"; };
+		292ED16424968CB000D4E3AE /* uz-Cyrl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "uz-Cyrl"; path = "uz-Cyrl.lproj/SettingsView.strings"; sourceTree = "<group>"; };
+		292ED16624968CB300D4E3AE /* uz-UZ */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "uz-UZ"; path = "uz-UZ.lproj/SettingsView.strings"; sourceTree = "<group>"; };
 		2930B1B6240780EA00673D82 /* BaseAssemblyProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseAssemblyProtocol.swift; sourceTree = "<group>"; };
 		2930B1B8240783A400673D82 /* ServiceFactoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceFactoryProtocol.swift; sourceTree = "<group>"; };
 		2930B1BA240783B600673D82 /* ServiceFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceFactory.swift; sourceTree = "<group>"; };
@@ -687,6 +716,11 @@
 		293FA4FA2430BC0300D84EE3 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		293FA4FC2431000700D84EE3 /* CenterMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterMenuView.swift; sourceTree = "<group>"; };
 		293FA500243117E300D84EE3 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
+		29490F0024938825008F5ABA /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
+		29490F0824938E00008F5ABA /* FaqVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaqVC.swift; sourceTree = "<group>"; };
+		29490F0A24938E28008F5ABA /* FaqView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaqView.swift; sourceTree = "<group>"; };
+		29490F0C24938E3D008F5ABA /* FaqView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FaqView.xib; sourceTree = "<group>"; };
+		29490F0E24939826008F5ABA /* FaqPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaqPresenter.swift; sourceTree = "<group>"; };
 		294ED26C241B3020001B9293 /* menus-ru.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "menus-ru.plist"; sourceTree = "<group>"; };
 		295039A2243B9A0B0048A829 /* GasEquipmentRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GasEquipmentRouter.swift; sourceTree = "<group>"; };
 		295039A5243BBA050048A829 /* GasEquipmentInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GasEquipmentInteractor.swift; sourceTree = "<group>"; };
@@ -843,6 +877,12 @@
 		2963E1A02471946000255BF7 /* TravelAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelAssembly.swift; sourceTree = "<group>"; };
 		2963E1A4247194E600255BF7 /* TravelInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelInteractor.swift; sourceTree = "<group>"; };
 		2963E1A62471BDCF00255BF7 /* TravelRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelRouter.swift; sourceTree = "<group>"; };
+		29652F1424924E0C00580FCD /* CallbackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallbackView.swift; sourceTree = "<group>"; };
+		29652F1A249297EC00580FCD /* ChatPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatPresenter.swift; sourceTree = "<group>"; };
+		29652F1C24929B7700580FCD /* ChatMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessage.swift; sourceTree = "<group>"; };
+		29652F1E24929DC700580FCD /* ChatInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatInteractor.swift; sourceTree = "<group>"; };
+		29652F20249320A800580FCD /* Chat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chat.swift; sourceTree = "<group>"; };
+		29652F22249337E900580FCD /* ChatAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatAssembly.swift; sourceTree = "<group>"; };
 		2967EF41243E506400102142 /* MyInsurancesInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyInsurancesInteractor.swift; sourceTree = "<group>"; };
 		2967EF43243E50BD00102142 /* MyInsurancesRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyInsurancesRouter.swift; sourceTree = "<group>"; };
 		2967EF45243E510D00102142 /* MyInsurancesAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyInsurancesAssembly.swift; sourceTree = "<group>"; };
@@ -909,7 +949,6 @@
 		29846BF124738D9700287817 /* TravelConfirm2VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelConfirm2VC.swift; sourceTree = "<group>"; };
 		29846BF32473931800287817 /* Tourist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tourist.swift; sourceTree = "<group>"; };
 		29846C5F247627ED00287817 /* Pinfl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pinfl.swift; sourceTree = "<group>"; };
-		29846C6824762A5200287817 /* SettingsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsView.xib; sourceTree = "<group>"; };
 		29846C6A24762B0E00287817 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		29846C6C247631B900287817 /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
 		29846C6E247634E800287817 /* SettingsAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsAssembly.swift; sourceTree = "<group>"; };
@@ -1003,7 +1042,6 @@
 		299B52C723FBF8120072ABD6 /* CAGradientLayer+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CAGradientLayer+extensions.swift"; sourceTree = "<group>"; };
 		299B52C923FC10060072ABD6 /* UIButton+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+extensions.swift"; sourceTree = "<group>"; };
 		299B52CB240013FD0072ABD6 /* BaseViewImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewImpl.swift; sourceTree = "<group>"; };
-		299B52CE240014990072ABD6 /* LoadingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingView.xib; sourceTree = "<group>"; };
 		299B52D0240016530072ABD6 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		299D859524706FB50016057B /* MyDocumentsAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDocumentsAssembly.swift; sourceTree = "<group>"; };
 		299D8597247103720016057B /* MyDocumentsViewPager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDocumentsViewPager.swift; sourceTree = "<group>"; };
@@ -1082,6 +1120,16 @@
 		29C03C5424655608008226CB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/IncidentHeaderView.xib; sourceTree = "<group>"; };
 		29C03C5524655746008226CB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/IncidentEmptyView.xib; sourceTree = "<group>"; };
 		29C03C5624655750008226CB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/IncidentsListView.xib; sourceTree = "<group>"; };
+		29C3A1C724949BA2006E4CE7 /* FaqInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaqInteractor.swift; sourceTree = "<group>"; };
+		29C3A1C924949DD2006E4CE7 /* FaqRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaqRouter.swift; sourceTree = "<group>"; };
+		29C3A1CB24949ED6006E4CE7 /* FaqAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaqAssembly.swift; sourceTree = "<group>"; };
+		29C3A1D32494FC0C006E4CE7 /* AboutUsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsRouter.swift; sourceTree = "<group>"; };
+		29C3A1D52494FC19006E4CE7 /* AboutUsAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsAssembly.swift; sourceTree = "<group>"; };
+		29C3A1D72494FC27006E4CE7 /* AboutUsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsInteractor.swift; sourceTree = "<group>"; };
+		29C3A1D92494FC33006E4CE7 /* AboutUsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsPresenter.swift; sourceTree = "<group>"; };
+		29C3A1DB2494FC3F006E4CE7 /* AboutUsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsVC.swift; sourceTree = "<group>"; };
+		29C3A1DD2494FD4F006E4CE7 /* AboutUsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AboutUsView.xib; sourceTree = "<group>"; };
+		29C3A1DF24950137006E4CE7 /* AboutUsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsView.swift; sourceTree = "<group>"; };
 		29CBAB9E245ECA2E004E894C /* uz-UZ */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "uz-UZ"; path = "uz-UZ.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		29CBABA0245ECA48004E894C /* uz-Cyrl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "uz-Cyrl"; path = "uz-Cyrl.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		29CBABA2245ECA5A004E894C /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
@@ -1997,6 +2045,60 @@
 			path = router;
 			sourceTree = "<group>";
 		};
+		29490F0224938B81008F5ABA /* faq */ = {
+			isa = PBXGroup;
+			children = (
+				29490F0724938D3B008F5ABA /* router */,
+				29490F0624938D35008F5ABA /* view */,
+				29490F0524938D2E008F5ABA /* interactor */,
+				29490F0424938D29008F5ABA /* presenter */,
+				29490F0324938B86008F5ABA /* assembly */,
+			);
+			path = faq;
+			sourceTree = "<group>";
+		};
+		29490F0324938B86008F5ABA /* assembly */ = {
+			isa = PBXGroup;
+			children = (
+				29C3A1CB24949ED6006E4CE7 /* FaqAssembly.swift */,
+			);
+			path = assembly;
+			sourceTree = "<group>";
+		};
+		29490F0424938D29008F5ABA /* presenter */ = {
+			isa = PBXGroup;
+			children = (
+				29490F0E24939826008F5ABA /* FaqPresenter.swift */,
+			);
+			path = presenter;
+			sourceTree = "<group>";
+		};
+		29490F0524938D2E008F5ABA /* interactor */ = {
+			isa = PBXGroup;
+			children = (
+				29C3A1C724949BA2006E4CE7 /* FaqInteractor.swift */,
+			);
+			path = interactor;
+			sourceTree = "<group>";
+		};
+		29490F0624938D35008F5ABA /* view */ = {
+			isa = PBXGroup;
+			children = (
+				29490F0824938E00008F5ABA /* FaqVC.swift */,
+				29490F0A24938E28008F5ABA /* FaqView.swift */,
+				29490F0C24938E3D008F5ABA /* FaqView.xib */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		29490F0724938D3B008F5ABA /* router */ = {
+			isa = PBXGroup;
+			children = (
+				29C3A1C924949DD2006E4CE7 /* FaqRouter.swift */,
+			);
+			path = router;
+			sourceTree = "<group>";
+		};
 		294ED268241B2BFD001B9293 /* cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -2033,6 +2135,10 @@
 		2950AB07248F5FBD00CD9B26 /* chat */ = {
 			isa = PBXGroup;
 			children = (
+				29652F192492904300580FCD /* router */,
+				29652F182492903C00580FCD /* assembly */,
+				29652F172492903700580FCD /* interactor */,
+				29652F162492903200580FCD /* presenter */,
 				2950AB08248F5FCE00CD9B26 /* view */,
 			);
 			path = chat;
@@ -2323,6 +2429,45 @@
 			path = router;
 			sourceTree = "<group>";
 		};
+		29652F1324924DFC00580FCD /* callback */ = {
+			isa = PBXGroup;
+			children = (
+				29652F1424924E0C00580FCD /* CallbackView.swift */,
+			);
+			path = callback;
+			sourceTree = "<group>";
+		};
+		29652F162492903200580FCD /* presenter */ = {
+			isa = PBXGroup;
+			children = (
+				29652F1A249297EC00580FCD /* ChatPresenter.swift */,
+			);
+			path = presenter;
+			sourceTree = "<group>";
+		};
+		29652F172492903700580FCD /* interactor */ = {
+			isa = PBXGroup;
+			children = (
+				29652F1E24929DC700580FCD /* ChatInteractor.swift */,
+			);
+			path = interactor;
+			sourceTree = "<group>";
+		};
+		29652F182492903C00580FCD /* assembly */ = {
+			isa = PBXGroup;
+			children = (
+				29652F22249337E900580FCD /* ChatAssembly.swift */,
+			);
+			path = assembly;
+			sourceTree = "<group>";
+		};
+		29652F192492904300580FCD /* router */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = router;
+			sourceTree = "<group>";
+		};
 		296CBDAD2463333D00C55C0A /* helpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -2441,6 +2586,8 @@
 		297FA5922448DDE70079A72D /* profile */ = {
 			isa = PBXGroup;
 			children = (
+				29C3A1CD2494CCE4006E4CE7 /* aboutUs */,
+				29490F0224938B81008F5ABA /* faq */,
 				290D800E24703BC2001FD129 /* documents */,
 				29AA590F244B020100304E05 /* offices */,
 				297FA5932448DDED0079A72D /* mainProfile */,
@@ -2520,7 +2667,7 @@
 				2955F1D5247A493200F217CB /* language */,
 				2955F1CA247871AE00F217CB /* pinfl */,
 				2955F1BD247679FE00F217CB /* editProfile */,
-				29846C6824762A5200287817 /* SettingsView.xib */,
+				292ED16024968CA800D4E3AE /* SettingsView.xib */,
 				29846C6A24762B0E00287817 /* SettingsView.swift */,
 				29846C6C247631B900287817 /* SettingsVC.swift */,
 			);
@@ -2903,6 +3050,9 @@
 				29846C5F247627ED00287817 /* Pinfl.swift */,
 				29567CFE247FFF7E001C4E61 /* Notification.swift */,
 				2987C468248AEF0C00F07923 /* IncidentMetadata.swift */,
+				29652F1C24929B7700580FCD /* ChatMessage.swift */,
+				29652F20249320A800580FCD /* Chat.swift */,
+				29490F0024938825008F5ABA /* Question.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -3106,7 +3256,7 @@
 		299B52CD2400148B0072ABD6 /* loadingDialog */ = {
 			isa = PBXGroup;
 			children = (
-				299B52CE240014990072ABD6 /* LoadingView.xib */,
+				292ED15524967E9800D4E3AE /* LoadingView.xib */,
 				299B52D0240016530072ABD6 /* LoadingView.swift */,
 			);
 			path = loadingDialog;
@@ -3625,6 +3775,60 @@
 			path = view;
 			sourceTree = "<group>";
 		};
+		29C3A1CD2494CCE4006E4CE7 /* aboutUs */ = {
+			isa = PBXGroup;
+			children = (
+				29C3A1D22494D7C9006E4CE7 /* router */,
+				29C3A1D12494D7BB006E4CE7 /* assembly */,
+				29C3A1D02494D7B5006E4CE7 /* interactor */,
+				29C3A1CF2494D7AE006E4CE7 /* presenter */,
+				29C3A1CE2494D7A6006E4CE7 /* view */,
+			);
+			path = aboutUs;
+			sourceTree = "<group>";
+		};
+		29C3A1CE2494D7A6006E4CE7 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				29C3A1DB2494FC3F006E4CE7 /* AboutUsVC.swift */,
+				29C3A1DD2494FD4F006E4CE7 /* AboutUsView.xib */,
+				29C3A1DF24950137006E4CE7 /* AboutUsView.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		29C3A1CF2494D7AE006E4CE7 /* presenter */ = {
+			isa = PBXGroup;
+			children = (
+				29C3A1D92494FC33006E4CE7 /* AboutUsPresenter.swift */,
+			);
+			path = presenter;
+			sourceTree = "<group>";
+		};
+		29C3A1D02494D7B5006E4CE7 /* interactor */ = {
+			isa = PBXGroup;
+			children = (
+				29C3A1D72494FC27006E4CE7 /* AboutUsInteractor.swift */,
+			);
+			path = interactor;
+			sourceTree = "<group>";
+		};
+		29C3A1D12494D7BB006E4CE7 /* assembly */ = {
+			isa = PBXGroup;
+			children = (
+				29C3A1D52494FC19006E4CE7 /* AboutUsAssembly.swift */,
+			);
+			path = assembly;
+			sourceTree = "<group>";
+		};
+		29C3A1D22494D7C9006E4CE7 /* router */ = {
+			isa = PBXGroup;
+			children = (
+				29C3A1D32494FC0C006E4CE7 /* AboutUsRouter.swift */,
+			);
+			path = router;
+			sourceTree = "<group>";
+		};
 		29CE462F2454006300D0818F /* OrderCheck2View */ = {
 			isa = PBXGroup;
 			children = (
@@ -3941,6 +4145,7 @@
 		29F64BA4243FB02C00E49E4B /* views */ = {
 			isa = PBXGroup;
 			children = (
+				29652F1324924DFC00580FCD /* callback */,
 				291C702C245AA42100E49D9A /* list */,
 				29F64BA8243FB48C00E49E4B /* empty */,
 				29F64BA5243FB03500E49E4B /* header */,
@@ -4152,15 +4357,17 @@
 				2955F269247B3BB500F217CB /* MyDocumentsView.xib in Resources */,
 				29525BCC2464867700ACA50C /* Main.storyboard in Resources */,
 				299B52BD23FBED4D0072ABD6 /* Roboto-Regular.ttf in Resources */,
-				299B52CF240014990072ABD6 /* LoadingView.xib in Resources */,
-				29846C6924762A5200287817 /* SettingsView.xib in Resources */,
+				292ED15324967E9800D4E3AE /* LoadingView.xib in Resources */,
+				292ED15E24968CA800D4E3AE /* SettingsView.xib in Resources */,
 				299B521D23FBBB440072ABD6 /* Assets.xcassets in Resources */,
+				29C3A1DE2494FD4F006E4CE7 /* AboutUsView.xib in Resources */,
 				299B52B723FBED4D0072ABD6 /* Roboto-Light.ttf in Resources */,
 				29025A9324633EFB005323FD /* IncidentDetailListingView.xib in Resources */,
 				294ED26D241B3020001B9293 /* menus-ru.plist in Resources */,
 				2955F260247B3B7600F217CB /* NoMapView.xib in Resources */,
 				2955F257247B3B2100F217CB /* MapListDialogView.xib in Resources */,
 				29CBABA3245ECA7D004E894C /* OrderCheck2View.xib in Resources */,
+				29490F0D24938E3D008F5ABA /* FaqView.xib in Resources */,
 				299B52C123FBED4D0072ABD6 /* Roboto-BlackItalic.ttf in Resources */,
 				292E51B22467B5BB00465A1B /* NoInternetView.xib in Resources */,
 				2987C467248AEA8C00F07923 /* ReasonView.xib in Resources */,
@@ -4329,6 +4536,7 @@
 				299B526B23FBC16F0072ABD6 /* NetworkManager.swift in Sources */,
 				2920E8CB246C870E00A808B6 /* MyInsuranceDetailInteractor.swift in Sources */,
 				299B52CA23FC10060072ABD6 /* UIButton+extensions.swift in Sources */,
+				29490F0F24939826008F5ABA /* FaqPresenter.swift in Sources */,
 				29AA590C244ADBC800304E05 /* MainProfileInteractor.swift in Sources */,
 				299B527C23FBC21F0072ABD6 /* InsuranceReminderProvider.swift in Sources */,
 				2930B1E02407C65900673D82 /* WelcomeInteractor.swift in Sources */,
@@ -4338,6 +4546,7 @@
 				290D802124705290001FD129 /* MyDocumentsRouter.swift in Sources */,
 				297654CF2459F172005C52EF /* CommentsVC.swift in Sources */,
 				299B524A23FBBFC30072ABD6 /* User.swift in Sources */,
+				29C3A1D62494FC19006E4CE7 /* AboutUsAssembly.swift in Sources */,
 				29335E7F242D48F80074658A /* MedicalInsurance.swift in Sources */,
 				2955F1C324767A4A00F217CB /* EditProfileView.swift in Sources */,
 				29E3CFD724576681002C6F8E /* LocationView.swift in Sources */,
@@ -4352,6 +4561,7 @@
 				295812B32436962900963B3A /* BaseInsurancePresenter.swift in Sources */,
 				293FA4FD2431000700D84EE3 /* CenterMenuView.swift in Sources */,
 				297FA547244510640079A72D /* IncidentsDetailAssembly.swift in Sources */,
+				29C3A1DC2494FC3F006E4CE7 /* AboutUsVC.swift in Sources */,
 				29AA5916244B054D00304E05 /* OfficesVC.swift in Sources */,
 				2950F65D242E954600DFD78B /* RoadTechInteractor.swift in Sources */,
 				299EE146241119AC00C50593 /* Gas2VC.swift in Sources */,
@@ -4384,6 +4594,7 @@
 				292714D62428785B00641FEB /* ProductProvider.swift in Sources */,
 				299EE1352410FC6900C50593 /* Sport3VC.swift in Sources */,
 				29E126DD241647F2003954AE /* MobilePhoneConfirmVC.swift in Sources */,
+				29C3A1C824949BA2006E4CE7 /* FaqInteractor.swift in Sources */,
 				29AA590A244AD9EA00304E05 /* MainProfileRouter.swift in Sources */,
 				295277B724334F04007E9844 /* AuthResult.swift in Sources */,
 				299B528023FBC2420072ABD6 /* OthersProvider.swift in Sources */,
@@ -4409,6 +4620,7 @@
 				290D5155240A0A2300483561 /* AKMaskFieldPatternCharacter.swift in Sources */,
 				299B52C523FBF6870072ABD6 /* styles.swift in Sources */,
 				29BC1607247EFC360009BD62 /* InsuranceListViewPager.swift in Sources */,
+				29652F1D24929B7700580FCD /* ChatMessage.swift in Sources */,
 				2973FF88243518CA00EC2C39 /* UserFilesPicker.swift in Sources */,
 				29BB09F1240A95270000F559 /* ValidatorService.swift in Sources */,
 				2950F663242E9EDC00DFD78B /* GasPresenter.swift in Sources */,
@@ -4418,6 +4630,7 @@
 				2910285F24422C9900E3E16C /* AddingInsurancePresenter.swift in Sources */,
 				29101BE0240E2A0600C0FFD6 /* Osago1VC.swift in Sources */,
 				29335E9B242E7D8B0074658A /* SportAssembly.swift in Sources */,
+				29C3A1DA2494FC33006E4CE7 /* AboutUsPresenter.swift in Sources */,
 				29D0AE55241EA6E50055689E /* RegistrationInteractor.swift in Sources */,
 				299EE11D2410D6FA00C50593 /* AccidentVC.swift in Sources */,
 				2955F1ED247B2B3300F217CB /* Bundle+Extension.swift in Sources */,
@@ -4433,7 +4646,9 @@
 				299B526223FBC1030072ABD6 /* Payme.swift in Sources */,
 				29133926244CDE2B00A26D5F /* OfficesMapView.swift in Sources */,
 				299EE1372410FD6100C50593 /* SportConfirmVC.swift in Sources */,
+				29C3A1CA24949DD2006E4CE7 /* FaqRouter.swift in Sources */,
 				2950F681242FB4C700DFD78B /* InfectionAssembly.swift in Sources */,
+				29490F0B24938E28008F5ABA /* FaqView.swift in Sources */,
 				29A5F1EB241F208B0049F35B /* UserAuthState.swift in Sources */,
 				293AF8D5242C8AC300F4D8AF /* IpotekaRouter.swift in Sources */,
 				297E4A112420E26C0044CA3B /* Osago.swift in Sources */,
@@ -4465,12 +4680,14 @@
 				297E4A01242075C40044CA3B /* DashboardPresenter.swift in Sources */,
 				299EE13E241117CD00C50593 /* RoadTechSupportConfirm.swift in Sources */,
 				299B528E23FBC3080072ABD6 /* Service.swift in Sources */,
+				29652F1524924E0C00580FCD /* CallbackView.swift in Sources */,
 				2930B1B7240780EA00673D82 /* BaseAssemblyProtocol.swift in Sources */,
 				293AB04A24102BBC00030506 /* KaskoConfirmVC.swift in Sources */,
 				290D514A240A087E00483561 /* AKMaskField.swift in Sources */,
 				29175D702450C1CA00790444 /* Carousel.swift in Sources */,
 				29567CF3247F8319001C4E61 /* InsuranceListAssembly.swift in Sources */,
 				29567D0924804474001C4E61 /* NotificationRouter.swift in Sources */,
+				29652F1F24929DC700580FCD /* ChatInteractor.swift in Sources */,
 				299B529C23FBE3AC0072ABD6 /* RootVC.swift in Sources */,
 				292714F3242B678A00641FEB /* KaskoRouter.swift in Sources */,
 				298CD9EA241BC6140033865C /* Decodable+Extensions.swift in Sources */,
@@ -4486,6 +4703,7 @@
 				29846BEA24724F8F00287817 /* Work.swift in Sources */,
 				297654CD2459EF02005C52EF /* CommentsView.swift in Sources */,
 				293AF8CF242C841B00F4D8AF /* PledgedProperty.swift in Sources */,
+				29C3A1D82494FC27006E4CE7 /* AboutUsInteractor.swift in Sources */,
 				296061572444E3E70024A2D8 /* IncidentDetailListingView.swift in Sources */,
 				299B526823FBC14B0072ABD6 /* TokenProvider.swift in Sources */,
 				2955F1D224787B8800F217CB /* PinflVC.swift in Sources */,
@@ -4570,6 +4788,7 @@
 				2973FF842434F63E00EC2C39 /* LocationManager+Extensions.swift in Sources */,
 				299B525C23FBC0CC0072ABD6 /* InsuranceReminder.swift in Sources */,
 				29E126E12416497D003954AE /* LuggageVC.swift in Sources */,
+				29C3A1D42494FC0C006E4CE7 /* AboutUsRouter.swift in Sources */,
 				2973FF822434E8A600EC2C39 /* LocationPickerViewController+Extension.swift in Sources */,
 				2913391F244CCEDE00A26D5F /* OfficesInteractor.swift in Sources */,
 				29A5F1ED241F26AD0049F35B /* Response.swift in Sources */,
@@ -4657,17 +4876,20 @@
 				297E4A152421397E0044CA3B /* PaymentTypeCell.swift in Sources */,
 				2970FA5624546B8400DAE605 /* Order.swift in Sources */,
 				29E22E8E2440BB7200A80E3F /* MyInsurancesDetailVC.swift in Sources */,
+				29490F0924938E00008F5ABA /* FaqVC.swift in Sources */,
 				292714FF242C6C1B00641FEB /* HomePresenter.swift in Sources */,
 				292714E7242B074400641FEB /* MandatoryPresenter.swift in Sources */,
 				29567D0124803EA1001C4E61 /* NotificationInteractor.swift in Sources */,
 				29AAD78C245E8D0300725887 /* CheckOrder.swift in Sources */,
 				297CE0C6246683A30052166F /* ErrorEntity.swift in Sources */,
+				29C3A1CC24949ED6006E4CE7 /* FaqAssembly.swift in Sources */,
 				29E3CFDD2457EE15002C6F8E /* IncidentsAddEditAssembly.swift in Sources */,
 				299B529223FBC3290072ABD6 /* Container.swift in Sources */,
 				29335E87242DC02F0074658A /* HealthRouter.swift in Sources */,
 				29E3CFDF2457F3BA002C6F8E /* IncidentLocationMapVC.swift in Sources */,
 				2950F660242E96E700DFD78B /* RoadTechAssembly.swift in Sources */,
 				299EE12B2410DB5C00C50593 /* HealthConfirmVC.swift in Sources */,
+				29652F23249337E900580FCD /* ChatAssembly.swift in Sources */,
 				29175D62244F6C2100790444 /* DirectionsVC.swift in Sources */,
 				299B525A23FBC0B90072ABD6 /* ExportOperation.swift in Sources */,
 				297CB468240374C6001CAD02 /* ThirdVC.swift in Sources */,
@@ -4709,6 +4931,7 @@
 				297E4A05242076270044CA3B /* DashboardRouter.swift in Sources */,
 				29AEEF982438B06E00617CE2 /* Popover.swift in Sources */,
 				29E3CFE52457F892002C6F8E /* IncidentsLocationMapView.swift in Sources */,
+				29490F0124938825008F5ABA /* Question.swift in Sources */,
 				293AB03E2410287D00030506 /* Home1VC.swift in Sources */,
 				29335E85242D4BCC0074658A /* HealthPresenter.swift in Sources */,
 				290D801724703EC1001FD129 /* MyDocumentsView.swift in Sources */,
@@ -4733,6 +4956,7 @@
 				292714F7242B6A3200641FEB /* Kasko.swift in Sources */,
 				29F64BA1243F9B1600E49E4B /* MyInsuranceCategoryCell.swift in Sources */,
 				292650E52469685400E1326D /* MyInsuranceNewView.swift in Sources */,
+				29652F1B249297EC00580FCD /* ChatPresenter.swift in Sources */,
 				29846BE62472468F00287817 /* TravelSelectTypeVC.swift in Sources */,
 				299EE148241119B600C50593 /* Gas3VC.swift in Sources */,
 				29E22E8C24408B6A00A80E3F /* MyInsurancesUnpaidView.swift in Sources */,
@@ -4749,6 +4973,7 @@
 				293AF8C5242C732300F4D8AF /* HomeRouter.swift in Sources */,
 				299EE14A241119C100C50593 /* GasConfirmVC.swift in Sources */,
 				29A5F1FB241F510C0049F35B /* ConfirmRouter.swift in Sources */,
+				29652F21249320A800580FCD /* Chat.swift in Sources */,
 				29846BF42473931800287817 /* Tourist.swift in Sources */,
 				299B525623FBC09A0072ABD6 /* Incident.swift in Sources */,
 				290D801B24704D20001FD129 /* MyDocumentsVC.swift in Sources */,
@@ -4768,6 +4993,7 @@
 				29567D0724804407001C4E61 /* NotificationAssembly.swift in Sources */,
 				29D1E1BD2427E3AB008071AF /* MainAssembly.swift in Sources */,
 				299B52A623FBE6D40072ABD6 /* Button.swift in Sources */,
+				29C3A1E024950137006E4CE7 /* AboutUsView.swift in Sources */,
 				295039A6243BBA050048A829 /* GasEquipmentInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -4903,6 +5129,28 @@
 				2955F208247B319400F217CB /* uz-UZ */,
 			);
 			name = IncidentHeaderView.xib;
+			sourceTree = "<group>";
+		};
+		292ED15524967E9800D4E3AE /* LoadingView.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				292ED15424967E9800D4E3AE /* Base */,
+				292ED15924967EA000D4E3AE /* uz-Cyrl */,
+				292ED15B24967EA200D4E3AE /* uz-UZ */,
+				292ED15D24967EAC00D4E3AE /* ru */,
+			);
+			name = LoadingView.xib;
+			sourceTree = "<group>";
+		};
+		292ED16024968CA800D4E3AE /* SettingsView.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				292ED15F24968CA800D4E3AE /* Base */,
+				292ED16224968CAF00D4E3AE /* ru */,
+				292ED16424968CB000D4E3AE /* uz-Cyrl */,
+				292ED16624968CB300D4E3AE /* uz-UZ */,
+			);
+			name = SettingsView.xib;
 			sourceTree = "<group>";
 		};
 		29525BCE2464867700ACA50C /* Main.storyboard */ = {

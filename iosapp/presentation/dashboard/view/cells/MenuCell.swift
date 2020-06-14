@@ -34,6 +34,20 @@ class MenuCell: UICollectionViewCell {
         return label
     }()
     
+    private lazy var saleLabel: UILabel = {
+        let label = UILabel(frame: .zero)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = UIFont.init(name: "Roboto-Medium", size: 13)
+        label.textColor = UIColor.white
+        label.backgroundColor = UIColor(red: 253.0 / 255.0, green: 121.0 / 255.0, blue: 100.0 / 255.0, alpha: 1.0)
+        label.layer.cornerRadius = 4
+        label.layer.masksToBounds = true
+//        label.textAlignment = .center
+        return label
+    }()
+    
+    
+    
     private lazy var modelDescription: UILabel = {
         let label = UILabel(frame: .zero)
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -56,8 +70,9 @@ class MenuCell: UICollectionViewCell {
     
     private var topConstraint: NSLayoutConstraint!
     private var bottomConstraint: NSLayoutConstraint!
+    private var moreButtonTopConstraint: NSLayoutConstraint! = nil
     private var product: Product? = nil
-    
+    private var more: UILabel!
     var cellClicked: ((Product?) -> Void)? = nil
     
     private func setupView() {
@@ -104,15 +119,27 @@ class MenuCell: UICollectionViewCell {
             self.modelDescription.trailingAnchor.constraint(equalTo: self.cView.trailingAnchor, constant: -28)
         ])
 
-        let more = UILabel(frame: .zero)
+        self.cView.addSubview(self.saleLabel)
+        NSLayoutConstraint.activate([
+            self.saleLabel.leadingAnchor.constraint(equalTo: self.modelDescription.leadingAnchor),
+            self.saleLabel.topAnchor.constraint(equalTo: self.modelDescription.bottomAnchor, constant: 10),
+            self.saleLabel.trailingAnchor.constraint(equalTo: self.modelDescription.trailingAnchor),
+            self.saleLabel.heightAnchor.constraint(equalToConstant: 24.0)
+            
+        ])
+        
+        more = UILabel(frame: .zero)
         more.font = UIFont.init(name: "Roboto-Medium", size: 15)
         more.translatesAutoresizingMaskIntoConstraints = false
         more.text = "detail".localized()
         more.textColor = Colors.primaryGreen
         self.cView.addSubview(more)
+        
+        moreButtonTopConstraint = more.topAnchor.constraint(equalTo: self.saleLabel.bottomAnchor, constant: 18)
+        
         NSLayoutConstraint.activate([
             more.leadingAnchor.constraint(equalTo: self.cView.leadingAnchor, constant: 28),
-            more.topAnchor.constraint(equalTo: self.modelDescription.bottomAnchor, constant: 18),
+            moreButtonTopConstraint,
             more.bottomAnchor.constraint(equalTo: self.cView.bottomAnchor, constant: 10)
         ])
         self.bottomConstraint = more.bottomAnchor.constraint(equalTo: self.cView.bottomAnchor, constant: -20)
@@ -122,6 +149,8 @@ class MenuCell: UICollectionViewCell {
         
         self.contentView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(cellTapped)))
     }
+    
+
     
     @objc
     private func cellTapped() {
@@ -211,7 +240,16 @@ class MenuCell: UICollectionViewCell {
             self.bottomConstraint.constant = isLast ? -135 : -15
         } else if isIPhoneXOrHigher() {
             self.bottomConstraint.constant = isLast ? -205 : -15
-        }        
+        }
+        
+        if let discount = product?.discount, discount > 0 {
+            self.saleLabel.isHidden = false
+            self.saleLabel.text = "  \("sale".localized()) - \(discount)%"
+        } else {
+//            self.cView.removeConstraint(moreButtonTopConstraint)
+            self.saleLabel.isHidden = true
+//            self.moreButtonTopConstraint = self.more.topAnchor.constraint(equalTo: self.modelDescription.bottomAnchor, constant: 10)
+        }
     }
     
     

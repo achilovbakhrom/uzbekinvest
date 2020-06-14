@@ -30,7 +30,7 @@ class DashboardInteractorImpl: DashboardInteractor {
         self.serviceFactory = serviceFactory
     }
     
-    private func fetchProductList(showLoading: Bool) {
+    private func fetchProductList(showLoading: Bool) {        
         self
             .serviceFactory
             .networkManager

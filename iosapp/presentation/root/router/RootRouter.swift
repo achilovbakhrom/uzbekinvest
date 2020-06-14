@@ -14,6 +14,7 @@ protocol RootRouterProtocol: BaseRouter {
     func openStartPage()
     func openMainPage()
     func openLoginPage()
+    func openSlider()
 }
 
 class RootRouter: RootRouterProtocol {
@@ -38,6 +39,11 @@ class RootRouter: RootRouterProtocol {
     
     func openLoginPage() {
         guard let vc = factory?.loginModule.assembleViewController()! else { return  }
+        self.viewController?.navigationController?.setViewControllers([vc], animated: false)
+    }
+    
+    func openSlider() {
+        guard let vc = factory?.sliderModule.assembleViewController()! else { return  }
         self.viewController?.navigationController?.setViewControllers([vc], animated: false)
     }
     

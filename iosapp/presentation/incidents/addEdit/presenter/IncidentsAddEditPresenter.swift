@@ -191,7 +191,11 @@ class IncidentsAddEditPresenterImpl: IncidentsAddEditPresenter {
                 vc.showErrorMessage(msg: "Выберите дату и время")
             }
         } else {
-            self.incident?.happenedAt = "\(date ?? "") \(time ?? "")"
+            let formatter = DateFormatter.init()
+            formatter.dateFormat = "dd.MM.yyyy"
+            let date = formatter.date(from: self.date ?? "")
+            formatter.dateFormat = "yyyy-MM-dd"
+            self.incident?.happenedAt = "\(formatter.string(from: date ?? Date())) \(time ?? "")"
             self.type = type
             self.openCommentVC()
         }

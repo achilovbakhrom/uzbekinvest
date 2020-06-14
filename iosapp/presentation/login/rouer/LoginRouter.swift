@@ -39,6 +39,7 @@ class LoginRouter: LoginRouterProtocol {
     func openConfirm(phone: String) {
         let vc = (factory?.confirmModule.assembleViewController() ?? UIViewController()) as! ConfirmVC
         vc.phone = phone
+        vc.hasStarted = true
         self.viewController?.navigationController?.setViewControllers([vc], animated: true)
     }
     

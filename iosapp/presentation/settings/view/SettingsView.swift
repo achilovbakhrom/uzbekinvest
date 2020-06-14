@@ -30,6 +30,7 @@ class SettingsView: UIView {
     override func awakeFromNib() {
         super.awakeFromNib()
         arrow.transform = CGAffineTransform(rotationAngle: -(.pi/2))
+        languageButton.isUserInteractionEnabled = false
         languageContainer.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(onLanguageAction(gesture:))))
     }
     

@@ -31,6 +31,7 @@ class FirstVC: WhiteCircledBackVC {
             titleLabel.fontSize = 20.0
             descriptionLabel.fontSize = 17.0
         }
+        titleLabel.text = "slider_first".localized()
     }
     
 }

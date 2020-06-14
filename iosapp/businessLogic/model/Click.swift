@@ -9,12 +9,12 @@
 import Foundation
 
 public struct Click: Codable {
-    var merchantId: Int?
-    var merchantServiceId: Int?
+    var merchantId: String?
+    var merchantServiceId: String?
     var merchantTransAmount: Int?
     var merchantTransId: Int?
     var merchantTransNote: String?
-    var merchantUserId: Int?
+    var merchantUserId: String?
     var signString: String?
     var signTime: String?
     

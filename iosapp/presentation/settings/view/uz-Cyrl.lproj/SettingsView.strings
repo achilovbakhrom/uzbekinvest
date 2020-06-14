@@ -1,0 +1,18 @@
+
+/* Class = "UIButton"; normalTitle = "Редактировать профиль"; ObjectID = "7uZ-nf-5bE"; */
+"7uZ-nf-5bE.normalTitle" = "Профилни таҳрирлаш";
+
+/* Class = "UIButton"; normalTitle = "Выйти"; ObjectID = "QKz-Af-CQ6"; */
+"QKz-Af-CQ6.normalTitle" = "Чиқиш";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "dWj-i0-CkL"; */
+"dWj-i0-CkL.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Настройки"; ObjectID = "gIw-ZL-20g"; */
+"gIw-ZL-20g.text" = "Созламалар";
+
+/* Class = "UIButton"; normalTitle = "ПИН ФЛ"; ObjectID = "w8R-3l-13b"; */
+"w8R-3l-13b.normalTitle" = "ПИН ФЛ";
+
+/* Class = "UILabel"; text = "Язык"; ObjectID = "wp5-zv-kCc"; */
+"wp5-zv-kCc.text" = "Тил";

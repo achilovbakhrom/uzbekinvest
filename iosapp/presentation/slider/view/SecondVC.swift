@@ -33,6 +33,7 @@ class SecondVC: WhiteCircledBackVC {
             descriptionLabel.fontSize = 17.0
         }
         circleView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(onBackPressed)))
+        titleLabel.text = "slider_second".localized()
     
     }
     

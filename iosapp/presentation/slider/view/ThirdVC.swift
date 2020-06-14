@@ -30,7 +30,8 @@ class ThirdVC: WhiteCircledBackVC {
             titleLabel.fontSize = 20.0
             descriptionLabel.fontSize = 17.0
         }
-        circleView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(onBackPressed)))        
+        circleView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(onBackPressed)))
+        titleLabel.text = "slider_third".localized()
     }
     
     @objc

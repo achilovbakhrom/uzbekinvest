@@ -58,21 +58,36 @@ class WelcomeVC: BaseGreenVC {
         russianButton.unselect()
         englishButton.unselect()
         uzbekButton.select()
+        UserDefaults.standard.set([Languages.uz.rawValue], forKey: "AppleLanguages")
+        UserDefaults.standard.synchronize()
+        self.appDelegate.currentLanguage = Languages.uz.rawValue
+        Bundle.swizzleLocalization()
         self.welcomePresenter?.languageSelected(lang: Languages.uz.rawValue)
+        self.appDelegate.restartApp()
     }
     
     @IBAction func russianClicked(_ sender: Any) {
         uzbekButton.unselect()
         englishButton.unselect()
         russianButton.select()
+        UserDefaults.standard.set([Languages.ru.rawValue], forKey: "AppleLanguages")
+        UserDefaults.standard.synchronize()
+        self.appDelegate.currentLanguage = Languages.ru.rawValue
+        Bundle.swizzleLocalization()
         self.welcomePresenter?.languageSelected(lang: Languages.ru.rawValue)
+        self.appDelegate.restartApp()
     }
     
     @IBAction func englishClicked(_ sender: Any) {
         uzbekButton.unselect()
         russianButton.unselect()
         englishButton.select()
+        UserDefaults.standard.set([Languages.uzCyrl.rawValue], forKey: "AppleLanguages")
+        UserDefaults.standard.synchronize()
+        self.appDelegate.currentLanguage = Languages.uzCyrl.rawValue
+        Bundle.swizzleLocalization()
         self.welcomePresenter?.languageSelected(lang: Languages.uzCyrl.rawValue)
+        self.appDelegate.restartApp()
     }
     
     @objc

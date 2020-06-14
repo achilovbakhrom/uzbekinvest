@@ -14,6 +14,7 @@ class EditProfileVC: BaseViewImpl {
     
     
     private lazy var settingsPresenter = self.presenter as? SettingsPresenter
+    private lazy var noInternetView: NoInternetView = NoInternetView.fromNib()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,6 +37,7 @@ class EditProfileVC: BaseViewImpl {
             self.loadingView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor)
         ])
         loadingView.layer.opacity = 0.0
+        self.setupNoInternetView()
         editProfileView.nameLabel.onChange = {
             self.settingsPresenter?.setName(name: $0)
         }
@@ -54,7 +56,47 @@ class EditProfileVC: BaseViewImpl {
         editProfileView.onChange = {
             self.settingsPresenter?.updateUser()
         }
-        self.settingsPresenter?.fetchMe()
+        
+        let status = appDelegate.reach.connectionStatus()
+        switch status {
+        case .unknown, .offline:
+            self.showNoInternetView(show: true)
+            break
+        case .online(.wwan), .online(.wiFi):
+            self.settingsPresenter?.fetchMe()
+            break
+        }
+    }
+    
+    func setupNoInternetView() {
+        self.view.addSubview(self.noInternetView)
+        self.noInternetView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            self.noInternetView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
+            self.noInternetView.topAnchor.constraint(equalTo: self.view.topAnchor),
+            self.noInternetView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
+            self.noInternetView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor)
+        ])
+        self.view.bringSubviewToFront(self.noInternetView)
+        self.noInternetView.layer.opacity = 0.0
+        self.noInternetView.onRepeatClicked = {
+            self.showNoInternetView(show: false)
+            let status = self.appDelegate.reach.connectionStatus()
+            switch status {
+            case .unknown, .offline:
+                self.showNoInternetView(show: true)
+            case .online(.wwan):
+                self.settingsPresenter?.fetchMe()
+            case .online(.wiFi):
+                self.settingsPresenter?.fetchMe()
+            }
+        }
+    }
+    
+    func showNoInternetView(show: Bool) {
+        UIView.animate(withDuration: 0.2) {
+            self.noInternetView.layer.opacity = show ? 1.0 : 0.0
+        }
     }
     
     func setLoading(isLoading: Bool) {

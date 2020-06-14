@@ -43,13 +43,19 @@ class MyInsurancesDetailVC: BaseViewImpl {
         } else {
             self.setPaidMode()
         }
-        paid.onBackClicked = { self.myInsurancePresenter?.goBack() }
-        unpaid.onBackButton = { self.myInsurancePresenter?.goBack() }
-        new.onBack = { self.myInsurancePresenter?.goBack() }
+        paid.onBackClicked = {
+            self.myInsurancePresenter?.goBack()
+            self.setTabBarHidden(false)
+        }
+        unpaid.onBackButton = {
+            self.myInsurancePresenter?.goBack()
+            self.setTabBarHidden(false)
+        }
+        new.onBack = {
+            self.myInsurancePresenter?.goBack()
+            self.setTabBarHidden(false)
+        }
         new.onPaymentTypeSelected = { type in
-            // 0 - "online"
-            // 1 - "cash"
-            // 2 - "terminal"
             switch type {
             case 0:
                 self.myInsurancePresenter?.setPaymentType(paymentType: "online")
@@ -64,6 +70,13 @@ class MyInsurancesDetailVC: BaseViewImpl {
                 break
             }
         }
+        NotificationCenter.default.addObserver(self, selector: #selector(willEnterForeground), name: UIApplication.willEnterForegroundNotification, object: nil)
+
+    }
+    
+    // my selector that was defined above
+    @objc func willEnterForeground() {
+        self.setTabBarHidden(true)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -72,10 +85,6 @@ class MyInsurancesDetailVC: BaseViewImpl {
         self.view.backgroundColor = .white
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        self.setTabBarHidden(false)
-    }
     
     func setNewMode() {
         let scrollView = UIScrollView()
@@ -122,11 +131,23 @@ class MyInsurancesDetailVC: BaseViewImpl {
             self.paid.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
             self.paid.widthAnchor.constraint(equalTo: scrollView.widthAnchor)
         ])
+        self.paid.statusLabel.text = myInsurance.status == "canceled" ? "my_canceled".localized() : "paid".localized()
+        self.paid.statusContainer.backgroundColor = myInsurance.status == "canceled" ? UIColor.init(red: 255.0/255.0, green: 140.0/255.0, blue: 140.0/255.0, alpha: 1.0) : Colors.primaryGreen
         self.paid.insuranceName.text = myInsurance.product?.translates?[0]?.name
-        self.paid.insuranceAmount.text = "\(myInsurance.insuranceAmount?.toDecimalFormat() ?? "0") \("sum".localized())"
+        self.paid.insuranceAmount.text = "\(myInsurance.premiumAmount.toDecimalFormat()) \("sum".localized())"
+        let formatter = DateFormatter.init()
+        formatter.dateFormat = "yyyy-MM-dd"
+        let date = formatter.date(from: myInsurance.endDate ?? "") ?? Date()
+        let now = Date()
+        var diff = Int((date.timeIntervalSince1970 - now.timeIntervalSince1970)/86400)
+        if diff < 0 { diff = 0 }
+        self.paid.leftDays.text = "\(diff) \("days".localized())"
+        self.paid.startDateLabel.text = self.myInsurance.startDate
+        self.paid.endDateLabel.text = self.myInsurance.endDate
         self.paid.setProperties(property: self.properties)
+        self.paid.incidentsButton.isHidden = myInsurance.status == "canceled"
     }
-    
+    var pt = 0
     func setUnpaidMode() {
         let scrollView = UIScrollView()
         scrollView.translatesAutoresizingMaskIntoConstraints = false
@@ -153,8 +174,12 @@ class MyInsurancesDetailVC: BaseViewImpl {
         
         self.unpaid.subject.text = myInsurance.endDate
         self.unpaid.setProperties(property: self.properties)
+        self.unpaid.paymentTypeChange = { pt in
+            self.myInsurancePresenter?.setPaymentMode(mode: pt)
+        }
+        
         self.unpaid.onPay = {
-            
+            self.myInsurancePresenter?.pay()
         }
     }
     

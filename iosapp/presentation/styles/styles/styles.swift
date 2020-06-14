@@ -23,8 +23,8 @@ class Colors {
         self.gb = CAGradientLayer()
         self.gb.makeHorizontalGradinet(leftColor: gColorLeft, rightColor: gColorRight)
         
-        let rColorLeft = UIColor(red: 65.0 / 255.0, green: 228.0 / 255.0, blue: 153.0 / 255.0, alpha: 1.0)
-        let rColorRight = UIColor(red: 53.0 / 255.0, green: 197.0 / 255.0, blue: 186.0 / 255.0, alpha: 1.0)
+        let rColorLeft = UIColor(red: 255.0 / 255.0, green: 164.0 / 255.0, blue: 164.0 / 255.0, alpha: 1.0)
+        let rColorRight = UIColor(red: 255.0 / 255.0, green: 116.0 / 255.0, blue: 118.0 / 255.0, alpha: 1.0)
         self.gr = CAGradientLayer()
         self.gr.makeHorizontalGradinet(leftColor: rColorLeft, rightColor: rColorRight)
         

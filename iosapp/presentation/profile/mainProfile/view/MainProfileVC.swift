@@ -15,6 +15,8 @@ class MainProfileVC: BaseViewImpl {
     
     private lazy var mainProfilePresenter = self.presenter as? MainProfilePresenter
     
+    private lazy var noInternetView: NoInternetView = NoInternetView.fromNib()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         mainProfileView.translatesAutoresizingMaskIntoConstraints = false
@@ -38,6 +40,14 @@ class MainProfileVC: BaseViewImpl {
             self.mainProfilePresenter?.openSettings()
         }
         
+        self.mainProfileView.onFaq = {
+            self.mainProfilePresenter?.openFaq()
+        }
+        
+        self.mainProfileView.onAbout = {
+            self.mainProfilePresenter?.openAboutUs()
+        }
+        
         self.view.addSubview(loadingView)
         loadingView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
@@ -47,7 +57,51 @@ class MainProfileVC: BaseViewImpl {
             self.loadingView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor)
         ])
         
-        self.mainProfilePresenter?.fetchMe()
+        self.setupNoInternetView()
+        
+        let status = appDelegate.reach.connectionStatus()
+        switch status {
+        case .unknown, .offline:
+            self.showNoInternetView(show: true)
+            break
+        case .online(.wwan), .online(.wiFi):
+            self.mainProfilePresenter?.fetchMe()
+            break
+        }
+        
+        
+    }
+    
+    func showNoInternetView(show: Bool) {
+        UIView.animate(withDuration: 0.2) {
+            self.noInternetView.layer.opacity = show ? 1.0 : 0.0
+        }
+    }
+    
+    func setupNoInternetView() {
+        self.view.addSubview(self.noInternetView)
+        self.noInternetView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            self.noInternetView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
+            self.noInternetView.topAnchor.constraint(equalTo: self.view.topAnchor),
+            self.noInternetView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
+            self.noInternetView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor)
+        ])
+        self.view.bringSubviewToFront(self.noInternetView)
+        self.noInternetView.layer.opacity = 0.0
+        self.noInternetView.onRepeatClicked = {
+            self.showNoInternetView(show: false)
+            let status = self.appDelegate.reach.connectionStatus()
+            switch status {
+            case .unknown, .offline:
+                self.showNoInternetView(show: true)
+            case .online(.wwan):
+                self.mainProfilePresenter?.fetchMe()
+            case .online(.wiFi):
+                self.mainProfilePresenter?.fetchMe()
+            }
+        }
+        
     }
     
     func reloadData() {

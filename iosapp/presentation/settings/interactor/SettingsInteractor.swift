@@ -159,6 +159,9 @@ class SettingsInteractorImpl: SettingsInteractor {
     }
     
     func setLanguage(lang: String) {
+        UserDefaults.standard.set([lang], forKey: "AppleLanguages")
+        UserDefaults.standard.synchronize()        
+        Bundle.swizzleLocalization()
         self.serviceFactory?.storage.save(key: "language", value: lang)
     }
     

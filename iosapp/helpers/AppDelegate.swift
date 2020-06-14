@@ -9,6 +9,7 @@
 import UIKit
 import CoreData
 import IQKeyboardManager
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -18,6 +19,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var currentLanguage = "ru"
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        
+        currentLanguage = UserDefaults.standard.string(forKey: "language") ?? "ru"
+        UserDefaults.standard.set(currentLanguage, forKey: "AppleLanguage")
+        UserDefaults.standard.synchronize()
+        Bundle.swizzleLocalization()
+        
         let serviceFactory = ServiceFactory()
         let assemblyFactory = AssemblyFactory(serviceFactory: serviceFactory)
         self.window = UIWindow(frame: UIScreen.main.bounds)
@@ -25,9 +32,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window?.rootViewController = rootVC
         self.window?.makeKeyAndVisible()
         IQKeyboardManager.shared().isEnabled = true
-        currentLanguage = UserDefaults.standard.string(forKey: "language") ?? "ru"
-        UserDefaults.standard.set(currentLanguage, forKey: "AppleLanguage")
-        Bundle.swizzleLocalization()
+        
+        FirebaseApp.configure()
+        
+        if #available(iOS 10.0, *) {
+          // For iOS 10 display notification (sent via APNS)
+          UNUserNotificationCenter.current().delegate = self
+
+          let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]
+          UNUserNotificationCenter.current().requestAuthorization(
+            options: authOptions,
+            completionHandler: {_, _ in })
+        } else {
+          let settings: UIUserNotificationSettings =
+          UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil)
+          application.registerUserNotificationSettings(settings)
+        }
+
+        application.registerForRemoteNotifications()
+        
         return true
     }
     
@@ -61,9 +84,24 @@ extension AppDelegate {
     func restartApp() {
         let serviceFactory = ServiceFactory()
         let assemblyFactory = AssemblyFactory(serviceFactory: serviceFactory)
-        
         let rootVC = UINavigationController(rootViewController: assemblyFactory.rootModule.assembleViewController()!)
-        self.window?.rootViewController = rootVC
+//        UIApplication.shared.keyWindow?.rootViewController = rootVC
+        
+
+        guard
+                let window = UIApplication.shared.keyWindow,
+                let _ = window.rootViewController
+                else {
+            return
+        }
+
+//        rootVC.view.frame = rootViewController.view.frame
+//        rootVC.view.layoutIfNeeded()
+        Bundle.swizzleLocalization()
+        window.rootViewController = rootVC
+//        UIView.transition(with: window, duration: 0.3, options: .transitionCrossDissolve, animations: {
+//
+//        })
     }
     
 }

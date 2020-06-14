@@ -48,6 +48,8 @@ protocol AssemblyFactoryProtocol: class {
     var settingsModule: SettingsAssembly { get }
     var insuranceListModule: InsuranceListAssembly { get }
     var notificationModule: NotificationAssembly { get }
+    var chatModule: ChatAssembly { get }
+    var faqModule: FaqAssembly { get }
     
 }
 
@@ -252,6 +254,16 @@ class AssemblyFactory: AssemblyFactoryProtocol {
     
     lazy var notificationModule: NotificationAssembly = {
         let module = NotificationAssemblyImpl(serviceFactory: self.serviceFactory, assemblyFactory: self)
+        return module
+    }()
+    
+    lazy var chatModule: ChatAssembly = {
+        let module = ChatAssemblyImpl(serviceFactory: self.serviceFactory, assemblyFactory: self)
+        return module
+    }()
+    
+    lazy var faqModule: FaqAssembly = {
+        let module = FaqAssemblyImpl(serviceFactory: self.serviceFactory, mainStoryboard: self.storyboardModule.main, assemblyFactory: self)
         return module
     }()
     

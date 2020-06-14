@@ -12,6 +12,8 @@ class SettingsVC: BaseViewImpl {
     
     let settingsView: SettingsView = SettingsView.fromNib()
     lazy var settingsPresenter = self.presenter as? SettingsPresenter
+    private lazy var noInternetView: NoInternetView = NoInternetView.fromNib()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,7 +57,9 @@ class SettingsVC: BaseViewImpl {
             ])
             
             languageView.onRussian = {
-                
+                UserDefaults.standard.set([Languages.ru.rawValue], forKey: "AppleLanguages")
+                UserDefaults.standard.synchronize()
+                self.appDelegate.currentLanguage = Languages.ru.rawValue
                 Bundle.swizzleLocalization()
                 self.settingsPresenter?.setLanguage(language: "ru")
                 self.appDelegate.restartApp()
@@ -63,24 +67,24 @@ class SettingsVC: BaseViewImpl {
             }
             
             languageView.onUzbek = {
-//                self.appDelegate.currentLanguage = "uz-UZ"
-//                UserDefaults.standard.set(self.appDelegate.currentLanguage, forKey: "AppleLanguage")
-//                Bundle.swizzleLocalization()
-//                L102Language.setAppleLAnguageTo(lang: "uz-UZ")
+                UserDefaults.standard.set([Languages.uz.rawValue], forKey: "AppleLanguages")
+                UserDefaults.standard.synchronize()
+                self.appDelegate.currentLanguage = Languages.uz.rawValue
+                Bundle.swizzleLocalization()
                 self.settingsPresenter?.setLanguage(language: "uz-UZ")
+                
                 self.appDelegate.restartApp()
                 self.dismiss(animated: true, completion: nil)
             }
             
             languageView.onUzbekCyrl = {
-//                self.appDelegate.currentLanguage = "uz-Cyrl"
-//                UserDefaults.standard.set(self.appDelegate.currentLanguage, forKey: "AppleLanguage")
-//                Bundle.swizzleLocalization()
-//                L102Language.setAppleLAnguageTo(lang: "uz-Cyrl")
+                UserDefaults.standard.set([Languages.uzCyrl.rawValue], forKey: "AppleLanguages")
+                UserDefaults.standard.synchronize()
+                self.appDelegate.currentLanguage = Languages.uzCyrl.rawValue
+                Bundle.swizzleLocalization()
                 self.settingsPresenter?.setLanguage(language: "uz-Cyrl")
                 self.appDelegate.restartApp()
                 self.dismiss(animated: true, completion: nil)
-                
             }
             
             self.present(alertC, animated: true, completion: {
@@ -106,6 +110,7 @@ class SettingsVC: BaseViewImpl {
         }
         self.setTabBarHidden(true)
     }
+    
     @objc func alertControllerBackgroundTapped(tapGesture: UITapGestureRecognizer) {
         self.dismiss(animated: true, completion: nil)
     }

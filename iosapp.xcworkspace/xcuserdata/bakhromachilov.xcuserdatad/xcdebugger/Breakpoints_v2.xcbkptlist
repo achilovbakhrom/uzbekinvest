@@ -23,22 +23,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "3236E95D-6464-4E43-A9B8-0C1553F95C04"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "iosapp/presentation/insurances/travel/view/TravelVC.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "30"
-            endingLineNumber = "30"
-            landmarkName = "nextButtonAction(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "BE0C21AC-862A-4A94-AB7F-945B4A0CFE9C"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -55,16 +39,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "A26E8346-FCBE-423A-A767-880AC20B14D1"
+            uuid = "C93B14D0-8DB4-4EAE-8DBC-9EFAE9AFB467"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "iosapp/presentation/incidents/addEdit/interactor/IncidentsAddEditInteractor.swift"
+            filePath = "iosapp/presentation/myInsurances/detail/interactor/MyInsuranceDetailInteractor.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "58"
-            endingLineNumber = "58"
-            landmarkName = "createIncident(incident:type:files:)"
+            startingLineNumber = "90"
+            endingLineNumber = "90"
+            landmarkName = "getPaymeData(orderId:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

@@ -16,6 +16,8 @@ protocol MainProfilePresenter: BasePresenter {
     func openLoginVC(phone: String)
     func openMyDocs()
     func openSettings()
+    func openFaq()
+    func openAboutUs()
 }
 
 
@@ -56,5 +58,13 @@ class MainProfilePresenterImpl: MainProfilePresenter {
     
     func openSettings() {
         self.mainProfileRouter?.openSettings()
+    }
+    
+    func openFaq() {
+        self.mainProfileRouter?.openFaq()
+    }
+    
+    func openAboutUs() {
+        self.mainProfileRouter?.openAboutUs()
     }
 }

@@ -13,6 +13,7 @@ protocol IncidentsListingRouter: BaseRouter {
     func openDetailPage()
     func openLoginVC(phone: String)
     func openIncidentInfo(incident: Incident)
+    func openChatVC()
 }
 
 class IncidentsListingRouterImpl: IncidentsListingRouter {
@@ -43,5 +44,11 @@ class IncidentsListingRouterImpl: IncidentsListingRouter {
         vc.phone = phone
         let navigation = UINavigationController(rootViewController: vc)
         appDelegate.window!.rootViewController = navigation
+    }
+    
+    func openChatVC() {
+        let vc = self.factory?.chatModule.assembleViewController() ?? UIViewController()
+//        vc.hidesBottomBarWhenPushed = true
+        self.viewController?.navigationController?.pushViewController(vc, animated: true)
     }
 }

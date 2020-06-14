@@ -293,15 +293,11 @@ class DashboardVC: BaseViewImpl, BottomViewControllerScrollDelegate, UICollectio
         if scrollView.contentOffset.y < 0 && abs(scrollView.contentOffset.y) < 25 {
             let opacity = (25.0 - abs(scrollView.contentOffset.y))/25.0
             self.topMenu.layer.opacity = Float(opacity)
-//            UIView.animate(withDuration: 0.01) { self.topMenu.layer.opacity = Float(opacity) }
         } else if scrollView.contentOffset.y >= 0 {
             self.topMenu.layer.opacity = Float(1)
-//            UIView.animate(withDuration: 0.01) { self.topMenu.layer.opacity = Float(1) }
         } else {
             self.topMenu.layer.opacity = Float(0)
-//            UIView.animate(withDuration: 0.01) { self.topMenu.layer.opacity = Float(0) }
         }
-        debugPrint(offset)
         if offset < 0 {
             topViewController.view.frame.origin.y = 0
             self.topViewController.view.frame.size.height = topViewHeight + self.topMenuHeight - offset

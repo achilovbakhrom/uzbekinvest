@@ -9,16 +9,16 @@
 import Foundation
 
 struct AuthResult: Codable {
-    var id: Int
+    var id: Int?
     var name: String?
-    var phone: Int
+    var phone: Int?
     var address: String?
     var dob: String?
-    var isActive: Int
+    var isActive: Int?
     var region: Region?
-    var token: String
-    var createdAt: String
-    var expires: Int
+    var token: String?
+    var createdAt: String?
+    var expires: Int?
     
     enum CodingKeys: String, CodingKey {
         case id

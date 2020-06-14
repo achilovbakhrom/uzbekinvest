@@ -113,6 +113,7 @@ class MyInsurancesPresenterImpl: MyInsurancesPresenter {
                     prop["periods_of_insurance".localized()] = ""
                 }
             }
+            
             if let isForeigner = p["is_foreigner"] as? Int {
                 if isForeigner == 1 {
                     prop["citizenship".localized()] = "foreign_citizen".localized()
@@ -123,22 +124,13 @@ class MyInsurancesPresenterImpl: MyInsurancesPresenter {
             if let isUnlim = p["is_unlim"] as? Int {
                 if isUnlim == 1 {
                     prop["authorized_persons_to_control_the_vehicle".localized()] = "unlim".localized()
-                } else {
-                    prop["citizenship".localized()] = "citizen_of_the_republic_of_uzbekistan".localized()
                 }
             }
             
             if let accident = p["accident"] as? Int {
-                prop["authorized_persons_to_control_the_vehicle".localized()] = "\(accident.toDecimalFormat()) \("sum".localized())"
+                prop["accident_title".localized()] = "\(accident.toDecimalFormat())"
             }
             
-            if let isInvalid = p["is_invalid"] as? Int {
-                if isInvalid == 1 {
-                    prop["people_with_disabilities".localized()] = "yes".localized()
-                } else {
-                    prop["people_with_disabilities".localized()] = "no".localized()
-                }
-            }
             
             if let isInvalid = p["is_invalid"] as? Int {
                 if isInvalid == 1 {
@@ -180,19 +172,19 @@ class MyInsurancesPresenterImpl: MyInsurancesPresenter {
                 } else if period == 0.75 {
                     prop["periods_of_insurance".localized()] = "for_9_months".localized()
                 } else if period == 1.0 {
-                    prop["type_of_insurance".localized()] = "for_a_year".localized()
+                    prop["periods_of_insurance".localized()] = "for_a_year".localized()
                 } else if period == 2.0 {
-                    prop["type_of_insurance".localized()] = "for_2_years".localized()
+                    prop["periods_of_insurance".localized()] = "for_2_years".localized()
                 } else if period == 3.0 {
-                    prop["type_of_insurance".localized()] = "for_3_years".localized()
+                    prop["periods_of_insurance".localized()] = "for_3_years".localized()
                 } else if period == 4.0 {
-                    prop["type_of_insurance".localized()] = "for_4_years".localized()
+                    prop["periods_of_insurance".localized()] = "for_4_years".localized()
                 } else if period == 5.0 {
-                    prop["type_of_insurance".localized()] = "for_5_years".localized()
+                    prop["periods_of_insurance".localized()] = "for_5_years".localized()
                 }
             }
             
-            if let carPrice = p["car_price"] as? Int {
+            if let carPrice = p["car_price"] as? Double {
                 prop["amount_of_car".localized()] = "\(carPrice.toDecimalFormat()) \("sum".localized())"
             }
             
@@ -308,9 +300,9 @@ class MyInsurancesPresenterImpl: MyInsurancesPresenter {
             
             if let type = p["type"] as? Int {
                 if type == 0 {
-                    prop["rate".localized()] = "one_time".localized()
+                    prop["type".localized()] = "one_time".localized()
                 } else if type == 1 {
-                    prop["rate".localized()] = "multiple".localized()
+                    prop["type".localized()] = "multiple".localized()
                 }
             }
             
@@ -330,6 +322,8 @@ class MyInsurancesPresenterImpl: MyInsurancesPresenter {
             
             if let c = p["class"] as? String {
                 prop["purpose_of_the_trip".localized()] = "class - \(c)"
+            } else {
+                prop["goal".localized()] = "travels".localized()
             }
             break
         case "sport-accident":
@@ -426,8 +420,8 @@ class MyInsurancesPresenterImpl: MyInsurancesPresenter {
                 prop["\("number_of_participants".localized()) \("up_to_60_years".localized())"] = q60.toDecimalFormat()
             }
             
-            if let qm60 = p["quantity_lt_60"] as? Int {
-                prop["\("number_of_participants".localized()) \("quantity_lt_7".localized())"] = qm60.toDecimalFormat()
+            if let qm60 = p["quantity_mte_60"] as? Int {
+                prop["\("number_of_participants".localized()) \("up_to_100_years".localized())"] = qm60.toDecimalFormat()
             }
             break
         case "mobile-phone":
@@ -437,7 +431,7 @@ class MyInsurancesPresenterImpl: MyInsurancesPresenter {
             break
         case "luggage-out":
             if let days = p["days"] as? Int {
-                prop["mobile_phone_cost".localized()] = days.toDecimalFormat()
+                prop["many_days".localized()] = days.toDecimalFormat()
             }
             break
         default:

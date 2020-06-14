@@ -33,7 +33,7 @@ extension OthersProvider: TargetType {
         case .news:
             return "/api/news"
         case .faq:
-            return "/api/faq"
+            return "/api/question"
         case .carousel:
             return "/api/v2/carousel"
         case .country:
@@ -77,7 +77,22 @@ extension OthersProvider: TargetType {
         case .news:
             return .requestPlain
         case .faq:
-            return .requestPlain
+            var lang = "ru"
+            switch translatePosition {
+            case 0:
+                lang = "ru"
+                break
+            case 1:
+                lang = "uz"
+                break
+            case 2:
+                lang = "oz"
+                break
+            default:
+                lang = "ru"
+                break
+            }
+            return .requestParameters(parameters: ["lang" : lang], encoding: URLEncoding.default)
         case .carousel:
             return .requestPlain
         case .country:

@@ -19,6 +19,9 @@ class MyInsurancesUnpaidView: UIView {
     @IBOutlet weak var propertiesView: UIView!
     @IBOutlet weak var paymeClick: UIView!
     @IBOutlet weak var clickClicked: UIView!
+    @IBOutlet weak var startDate: UILabel!
+    @IBOutlet weak var endDate: UILabel!
+    
     
     
     var onBackButton: (() -> Void)? = nil

@@ -14,6 +14,8 @@ protocol MainProfileRouter: BaseRouter {
     func openLoginVC(phone: String)
     func openMyDocs()
     func openSettings()
+    func openFaq()
+    func openAboutUs()
 }
 
 
@@ -48,5 +50,14 @@ class MainProfileRouterImpl: MainProfileRouter {
     func openSettings() {
         let vc = self.factory?.settingsModule.assembleViewController()
         self.viewController?.navigationController?.pushViewController(vc!, animated: true)
+    }
+    func openFaq() {
+        let vc = self.factory?.faqModule.assembleViewController() ?? UIViewController()
+        self.viewController?.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func openAboutUs() {
+        let vc = AboutUsVC()
+        self.viewController?.navigationController?.pushViewController(vc, animated: true)
     }
 }
