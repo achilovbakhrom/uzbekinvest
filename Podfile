@@ -28,6 +28,7 @@ target 'iosapp' do
   pod "Agrume"
   pod 'TagListView', '~> 1.0'
   pod 'MessengerKit', :git => 'https://github.com/steve228uk/MessengerKit.git'
+  
   pod 'Firebase/Messaging'
   
   target 'iosappTests' do

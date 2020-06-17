@@ -19,7 +19,13 @@ class MainAssembly: BaseAssemblyProtocol {
     }
     
     func assembleViewController() -> UIViewController? {
-        let vc = MainViewController(factory: assemblyFactory)        
+        let vc = MainViewController(factory: assemblyFactory)
+        let presenter = MainPresenterImpl()
+        let interactor = MainInteractorImpl(serviceFactory: self.serviceFactory, presenter: presenter)
+        presenter.interactor = interactor
+        presenter.view  = vc
+        vc.presenter = presenter
+        vc.factory = self.assemblyFactory
         return vc
     }
 }

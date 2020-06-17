@@ -59,6 +59,8 @@ class MainView: UIView {
     }
     
     
+    var onHeaderClick: (() -> Void)? = nil
+    
     private func setup() {
         
         NSLayoutConstraint.activate([
@@ -102,6 +104,13 @@ class MainView: UIView {
             headerContentLabel.topAnchor.constraint(equalTo: self.headerTitleLabel.bottomAnchor, constant: btwMargin),
             headerContentLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -31),
         ])
+        headerContentLabel.isUserInteractionEnabled = true
+        headerContentLabel.addGestureRecognizer(UITapGestureRecognizer.init(target: self, action: #selector(onHeaderContent(_:))))
+    }
+    
+    @objc
+    func onHeaderContent(_ gesture: UITapGestureRecognizer) {
+        self.onHeaderClick?()
     }
     
 }

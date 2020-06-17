@@ -33,6 +33,8 @@ enum UserProvider {
     case createChat
     case createMessage(chatId: String, message: String)
     case fetchChatList(chatId: String)
+    case fetchOrderById(id: String)
+    case sendFCMToken(token: String)
 }
 
 extension UserProvider: TargetType {
@@ -91,6 +93,10 @@ extension UserProvider: TargetType {
             return "/api/chat/send"
         case .fetchChatList:            
             return "/api/chat/messages"
+        case .fetchOrderById(let id):
+            return "/api/user/order/\(id)"
+        case .sendFCMToken:
+            return "/api/user/device"
         }
     }
     
@@ -143,6 +149,10 @@ extension UserProvider: TargetType {
         case .createMessage:
             return .post
         case .fetchChatList:
+            return .post
+        case .fetchOrderById:
+            return .get
+        case .sendFCMToken:
             return .post
         }
     }
@@ -218,6 +228,25 @@ extension UserProvider: TargetType {
             return .requestCompositeParameters(bodyParameters: ["chat_id" : chatId], bodyEncoding: JSONEncoding.default, urlParameters: ["page" : 1, "lang": lang])
         case .createMessage(let chatId, let message):
             return .requestParameters(parameters: ["chat_id" : chatId, "message": message], encoding: JSONEncoding.default)
+        case .fetchOrderById:
+            return .requestPlain
+        case .sendFCMToken(let token):
+            var lang = "ru"
+            switch translatePosition {
+            case 0:
+                lang = "ru"
+                break
+            case 1:
+                lang = "uz"
+                break
+            case 2:
+                lang = "oz"
+                break
+            default:
+                lang = "ru"
+                break
+            }
+            return .requestParameters(parameters: ["token": token, "lang": lang], encoding: JSONEncoding.default)
         }
     }
     

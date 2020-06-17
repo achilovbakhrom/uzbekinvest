@@ -13,6 +13,7 @@ enum IncidentsProvider {
     case fetchAllIncidents
     case createIncident(incident: Incident, type: String, files: [String: Data])
     case fetchIncidentMeta(productCode: String)
+    case fetchIncidentById(id: String)
 }
 
 extension IncidentsProvider: TargetType {
@@ -30,6 +31,8 @@ extension IncidentsProvider: TargetType {
             return "/api/incident"
         case .fetchIncidentMeta:
             return "/api/incident/metadata"
+        case .fetchIncidentById(let id):
+            return "/api/incident/\(id)"
         }
         
         
@@ -44,6 +47,8 @@ extension IncidentsProvider: TargetType {
         case .createIncident:
             return .post
         case .fetchIncidentMeta:
+            return .get
+        case .fetchIncidentById:
             return .get
         }
         
@@ -81,8 +86,9 @@ extension IncidentsProvider: TargetType {
                 
             }
             
-            
             return .uploadCompositeMultipart(p, urlParameters: incident.dictionary!)
+        case .fetchIncidentById:
+            return .requestPlain
         }
     }
     

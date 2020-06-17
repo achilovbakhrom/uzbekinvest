@@ -52,6 +52,7 @@
 		29133928244CDE6E00A26D5F /* OfficesMapView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 29133927244CDE6E00A26D5F /* OfficesMapView.xib */; };
 		2913392C244CDFF300A26D5F /* NoMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2913392B244CDFF300A26D5F /* NoMapView.swift */; };
 		29138A72241BF788006851A3 /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29138A71241BF788006851A3 /* MenuCell.swift */; };
+		291671CC2499F4B800F23D82 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 291671CB2499F4B700F23D82 /* GoogleService-Info.plist */; };
 		29175D5C244F55F500790444 /* UIScrollView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29175D5B244F55F500790444 /* UIScrollView+Extension.swift */; };
 		29175D62244F6C2100790444 /* DirectionsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29175D61244F6C2100790444 /* DirectionsVC.swift */; };
 		29175D64244F6C6200790444 /* DirectionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29175D63244F6C6200790444 /* DirectionsView.swift */; };
@@ -532,6 +533,8 @@
 		29F64BB3243FB7E800E49E4B /* IncidentsAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F64BB2243FB7E800E49E4B /* IncidentsAssembly.swift */; };
 		29F64BBA2440766C00E49E4B /* MyInsurancesPaidView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F64BB92440766C00E49E4B /* MyInsurancesPaidView.swift */; };
 		29F7C54A24190DCB00B589F4 /* Paper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F7C54924190DCB00B589F4 /* Paper.swift */; };
+		29FF4C802498FD3100416881 /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29FF4C7F2498FD3100416881 /* MainPresenter.swift */; };
+		29FF4C822498FD6E00416881 /* MainInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29FF4C812498FD6E00416881 /* MainInteractor.swift */; };
 		46AA525466AA871E39D510D3 /* Pods_iosapp_iosappUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0EC2334450C0E5FFE73D038 /* Pods_iosapp_iosappUITests.framework */; };
 		869ACA6C6211D6362537CF2C /* Pods_iosappTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B5BF9DEA0A2C1BA8F45C050 /* Pods_iosappTests.framework */; };
 		E1262AC9B1B047A82CAB4462 /* Pods_iosapp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFFF284C7B3E36EA07C2A0B3 /* Pods_iosapp.framework */; };
@@ -594,6 +597,7 @@
 		29133927244CDE6E00A26D5F /* OfficesMapView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OfficesMapView.xib; sourceTree = "<group>"; };
 		2913392B244CDFF300A26D5F /* NoMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoMapView.swift; sourceTree = "<group>"; };
 		29138A71241BF788006851A3 /* MenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
+		291671CB2499F4B700F23D82 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		29175D5B244F55F500790444 /* UIScrollView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollView+Extension.swift"; sourceTree = "<group>"; };
 		29175D61244F6C2100790444 /* DirectionsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectionsVC.swift; sourceTree = "<group>"; };
 		29175D63244F6C6200790444 /* DirectionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectionsView.swift; sourceTree = "<group>"; };
@@ -1179,6 +1183,8 @@
 		29F64BB2243FB7E800E49E4B /* IncidentsAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncidentsAssembly.swift; sourceTree = "<group>"; };
 		29F64BB92440766C00E49E4B /* MyInsurancesPaidView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyInsurancesPaidView.swift; sourceTree = "<group>"; };
 		29F7C54924190DCB00B589F4 /* Paper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Paper.swift; sourceTree = "<group>"; };
+		29FF4C7F2498FD3100416881 /* MainPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
+		29FF4C812498FD6E00416881 /* MainInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainInteractor.swift; sourceTree = "<group>"; };
 		3F08E38A99820D39A1A71B8C /* Pods-iosapp-iosappUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iosapp-iosappUITests.debug.xcconfig"; path = "Target Support Files/Pods-iosapp-iosappUITests/Pods-iosapp-iosappUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		6B5BF9DEA0A2C1BA8F45C050 /* Pods_iosappTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iosappTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		754C06511A8217D4B8F143B6 /* Pods-iosappTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iosappTests.release.xcconfig"; path = "Target Support Files/Pods-iosappTests/Pods-iosappTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -2899,6 +2905,7 @@
 				299B524423FBBF790072ABD6 /* presentation */,
 				299B524323FBBF0E0072ABD6 /* helpers */,
 				299B521423FBBB430072ABD6 /* ViewController.swift */,
+				291671CB2499F4B700F23D82 /* GoogleService-Info.plist */,
 			);
 			path = iosapp;
 			sourceTree = "<group>";
@@ -3861,6 +3868,8 @@
 		29D1E1B72427E12E008071AF /* main */ = {
 			isa = PBXGroup;
 			children = (
+				29FF4C7E2498FD1B00416881 /* inteeractor */,
+				29FF4C7D2498FD0F00416881 /* presenter */,
 				29D1E1BB2427E393008071AF /* assembly */,
 				29D1E1BA2427E387008071AF /* view */,
 			);
@@ -4212,6 +4221,22 @@
 			path = paid;
 			sourceTree = "<group>";
 		};
+		29FF4C7D2498FD0F00416881 /* presenter */ = {
+			isa = PBXGroup;
+			children = (
+				29FF4C7F2498FD3100416881 /* MainPresenter.swift */,
+			);
+			path = presenter;
+			sourceTree = "<group>";
+		};
+		29FF4C7E2498FD1B00416881 /* inteeractor */ = {
+			isa = PBXGroup;
+			children = (
+				29FF4C812498FD6E00416881 /* MainInteractor.swift */,
+			);
+			path = inteeractor;
+			sourceTree = "<group>";
+		};
 		5DA19CD3748296636DA4440D /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -4358,6 +4383,7 @@
 				29525BCC2464867700ACA50C /* Main.storyboard in Resources */,
 				299B52BD23FBED4D0072ABD6 /* Roboto-Regular.ttf in Resources */,
 				292ED15324967E9800D4E3AE /* LoadingView.xib in Resources */,
+				291671CC2499F4B800F23D82 /* GoogleService-Info.plist in Resources */,
 				292ED15E24968CA800D4E3AE /* SettingsView.xib in Resources */,
 				299B521D23FBBB440072ABD6 /* Assets.xcassets in Resources */,
 				29C3A1DE2494FD4F006E4CE7 /* AboutUsView.xib in Resources */,
@@ -4730,6 +4756,7 @@
 				29175D6B244F723900790444 /* MapListDialogView.swift in Sources */,
 				29846BEC2472772E00287817 /* Travel5VC.swift in Sources */,
 				299D8598247103720016057B /* MyDocumentsViewPager.swift in Sources */,
+				29FF4C822498FD6E00416881 /* MainInteractor.swift in Sources */,
 				293AF8D3242C881000F4D8AF /* IpotekaInteractor.swift in Sources */,
 				2973FF86243510EC00EC2C39 /* UserFile.swift in Sources */,
 				296B8C812431A7480057E5F8 /* Formatter.swift in Sources */,
@@ -4840,6 +4867,7 @@
 				2987C46B248AF19800F07923 /* ReasonVC.swift in Sources */,
 				2955F1CC247871C100F217CB /* PinflView.swift in Sources */,
 				29E3CFD92457690D002C6F8E /* LocationVC.swift in Sources */,
+				29FF4C802498FD3100416881 /* MainPresenter.swift in Sources */,
 				292E51AD2467388600465A1B /* Reachability.swift in Sources */,
 				299B529423FBC3360072ABD6 /* Resolver.swift in Sources */,
 				29D0AE57241EA72B0055689E /* RegistrationAssembly.swift in Sources */,

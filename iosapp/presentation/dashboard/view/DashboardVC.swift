@@ -107,6 +107,11 @@ class DashboardVC: BaseViewImpl, BottomViewControllerScrollDelegate, UICollectio
             self.dashboardPresenter?.fetchCategoryList()
             break
         }
+        self.topViewController.onHeaderClick = { link in
+            if let m = self.tabBarController as? MainViewController {
+                m.handleLink(link: link, needReload: false)
+            }
+        }
     }
     
     func setupNoInternetView() {

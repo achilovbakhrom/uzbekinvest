@@ -42,6 +42,8 @@ class TopViewController: UIViewController {
     
     var onBell: (() -> Void)? = nil
     
+    var onHeaderClick: ((String) -> Void)? = nil
+    
     private lazy var loadingView: LoadingView = LoadingView.fromNib()
     
     private lazy var pageControl: CHIPageControlAleppo = {
@@ -156,6 +158,7 @@ class TopViewController: UIViewController {
             }
         }
         self.loadingView.startAnimating()
+        carousel.onHeader = { self.onHeaderClick?($0) }
     }
     
     @objc
@@ -193,8 +196,8 @@ class CarouselViewController: UIPageViewController, UIPageViewControllerDelegate
         super.viewDidLoad()
         delegate = self
         dataSource = self
-        
     }
+    var onHeader: ((String) -> Void)? = nil
     
     private(set) var vcs: [UIViewController] = [UIViewController(), UIViewController()]
     
@@ -206,6 +209,16 @@ class CarouselViewController: UIPageViewController, UIPageViewControllerDelegate
             let vc = TopContentViewController()
             vc.topView.headerTitleLabel.text = ($0.translates?.count ?? 0) > 0 ? $0.translates?.reversed()[0]?.title : "-"
             vc.topView.headerContentLabel.text = ($0.translates?.count ?? 0) > 0 ? $0.translates?.reversed()[0]?.description : "-"
+            vc.topView.headerContentLabel.isUserInteractionEnabled = true
+            let t = $0
+            vc.topView.onHeaderClick = {
+                if !(t.translates?.isEmpty ?? true) {
+                    if let t = t.translates?[0], let u = t.url {
+                        self.onHeader?(u)
+                    }
+                }
+                
+            }
             vcs.append(vc)
         }
         

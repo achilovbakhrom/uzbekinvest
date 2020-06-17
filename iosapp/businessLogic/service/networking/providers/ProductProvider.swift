@@ -20,7 +20,7 @@ extension ProductProvider: TargetType {
     var path: String {
         switch self {
         case .fetchAllProduct:
-            return "/api/product/active"
+            return "/api/product/active"        
         }
     }
     
