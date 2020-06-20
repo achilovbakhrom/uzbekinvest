@@ -751,6 +751,7 @@
 		2950F688242FC52700DFD78B /* MobilePhone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobilePhone.swift; sourceTree = "<group>"; };
 		2950F68B242FC65B00DFD78B /* MobilePhoneInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobilePhoneInteractor.swift; sourceTree = "<group>"; };
 		2950F68E242FC88100DFD78B /* MobilePhoneAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobilePhoneAssembly.swift; sourceTree = "<group>"; };
+		2951E36D249D294F008A91FB /* iosappRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iosappRelease.entitlements; sourceTree = "<group>"; };
 		2952267724580B3E00246D97 /* AddressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressView.swift; sourceTree = "<group>"; };
 		295226792458979C00246D97 /* IncidentFilesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncidentFilesView.swift; sourceTree = "<group>"; };
 		2952267D2458A3BC00246D97 /* IncidentFilesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncidentFilesVC.swift; sourceTree = "<group>"; };
@@ -2899,6 +2900,7 @@
 		299B520F23FBBB430072ABD6 /* iosapp */ = {
 			isa = PBXGroup;
 			children = (
+				2951E36D249D294F008A91FB /* iosappRelease.entitlements */,
 				299B529723FBC3640072ABD6 /* config */,
 				299B524623FBBF8B0072ABD6 /* appLayer */,
 				299B524523FBBF820072ABD6 /* businessLogic */,
@@ -5525,7 +5527,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.0.0;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = A5ZV3NG643;
 				INFOPLIST_FILE = iosapp/helpers/Info.plist;
@@ -5534,7 +5536,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1;
+				MARKETING_VERSION = 1.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = uz.einsurance.iosapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -5547,8 +5549,10 @@
 			baseConfigurationReference = 0F2AF7D64DFB67F92FD44A65 /* Pods-iosapp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.0.0;
+				CODE_SIGN_ENTITLEMENTS = iosapp/iosappRelease.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = A5ZV3NG643;
 				INFOPLIST_FILE = iosapp/helpers/Info.plist;
@@ -5557,9 +5561,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1;
+				MARKETING_VERSION = 1.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = uz.einsurance.iosapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "Uzbekinvest-app";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

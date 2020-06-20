@@ -68,9 +68,15 @@ class MyDocumentsContentVC: UIViewController, UICollectionViewDelegate, UICollec
             cell.onClick = {
                 let agrume = Agrume(url: URL(string: "\(BASE_URL)\(self.userFiles[indexPath.row].name)")!, background: .blurred(.light))                
                 agrume.download = { url, completion in
-                    KingfisherManager.shared.retrieveImage(with: url, options: nil, progressBlock: nil, completionHandler: { image, error, cacheType, imageURL in
-                        completion(image)
-                    })
+                    KingfisherManager.shared.retrieveImage(with: url) { (r) in
+                        switch r {
+                        case .success(let r):
+                            completion(r.image)
+                            break
+                        case .failure(let error):
+                            break
+                        }
+                    }
                 }
                 agrume.show(from: self)
             }

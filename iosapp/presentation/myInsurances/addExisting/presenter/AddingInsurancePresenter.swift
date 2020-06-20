@@ -69,13 +69,13 @@ class AddingInsurancePresenterImpl: AddingInsurancePresenter {
     }
     
     func goBack() {
-        var found = false
-        let vcs = self.view?.navigationController?.viewControllers ?? []
-        vcs.forEach { vc in
-            if vc is PinflVC {
-                found = true
-            }
-        }
+//        var found = false
+//        let vcs = self.view?.navigationController?.viewControllers ?? []
+//        vcs.forEach { vc in
+//            if vc is PinflVC {
+//                found = true
+//            }
+//        }
 //        if !found {
 //            self.view?.setTabBarHidden(false)
 //        }

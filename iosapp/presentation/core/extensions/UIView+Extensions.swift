@@ -15,7 +15,7 @@ extension UIView {
     }
     
     class func fromNib<T: UIView>(nibName: String, identifier: String) -> T {
-        let views = Bundle(for: T.self).loadNibNamed(nibName, owner: nil, options: nil)
+        _ = Bundle(for: T.self).loadNibNamed(nibName, owner: nil, options: nil)
         
         return UIView() as! T
     }

@@ -67,7 +67,7 @@ class ConfirmPresenterImpl: ConfirmPresenter {
         self.confirmRouter.openMainPage()
     }
     func showError(msg: String) {
-        let vc = self.confirmView.showErrorMessage(msg: msg)
+        self.confirmView.showErrorMessage(msg: msg)
     }
  
 }
