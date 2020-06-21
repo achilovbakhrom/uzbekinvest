@@ -23,6 +23,7 @@ protocol DashboardPresenter: BasePresenter {
     func openSupportVC()
     func error(msg: String)
     func openNotifications()
+    func setFCMToken(token: String)
 }
 
 class DashboardPresenterImpl: DashboardPresenter {
@@ -110,6 +111,10 @@ class DashboardPresenterImpl: DashboardPresenter {
         default:
             break
         }
+    }
+    
+    func setFCMToken(token: String) {
+        self.dashboardInteractor?.setFCMToken(token: token)
     }
     
     func setCarouselList(carouselList: [Carousel]) {

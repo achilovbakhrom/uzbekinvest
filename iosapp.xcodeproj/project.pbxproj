@@ -170,6 +170,7 @@
 		29490F0B24938E28008F5ABA /* FaqView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29490F0A24938E28008F5ABA /* FaqView.swift */; };
 		29490F0D24938E3D008F5ABA /* FaqView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 29490F0C24938E3D008F5ABA /* FaqView.xib */; };
 		29490F0F24939826008F5ABA /* FaqPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29490F0E24939826008F5ABA /* FaqPresenter.swift */; };
+		29492D66249F822E00FAAAC3 /* OfferPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29492D65249F822E00FAAAC3 /* OfferPresenter.swift */; };
 		294ED26D241B3020001B9293 /* menus-ru.plist in Resources */ = {isa = PBXBuildFile; fileRef = 294ED26C241B3020001B9293 /* menus-ru.plist */; };
 		295039A3243B9A0B0048A829 /* GasEquipmentRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295039A2243B9A0B0048A829 /* GasEquipmentRouter.swift */; };
 		295039A6243BBA050048A829 /* GasEquipmentInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295039A5243BBA050048A829 /* GasEquipmentInteractor.swift */; };
@@ -725,6 +726,7 @@
 		29490F0A24938E28008F5ABA /* FaqView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaqView.swift; sourceTree = "<group>"; };
 		29490F0C24938E3D008F5ABA /* FaqView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FaqView.xib; sourceTree = "<group>"; };
 		29490F0E24939826008F5ABA /* FaqPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaqPresenter.swift; sourceTree = "<group>"; };
+		29492D65249F822E00FAAAC3 /* OfferPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferPresenter.swift; sourceTree = "<group>"; };
 		294ED26C241B3020001B9293 /* menus-ru.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "menus-ru.plist"; sourceTree = "<group>"; };
 		295039A2243B9A0B0048A829 /* GasEquipmentRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GasEquipmentRouter.swift; sourceTree = "<group>"; };
 		295039A5243BBA050048A829 /* GasEquipmentInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GasEquipmentInteractor.swift; sourceTree = "<group>"; };
@@ -2106,6 +2108,55 @@
 			path = router;
 			sourceTree = "<group>";
 		};
+		29492D5D249F7FD300FAAAC3 /* offer */ = {
+			isa = PBXGroup;
+			children = (
+				29492D62249F7FFC00FAAAC3 /* router */,
+				29492D61249F7FF300FAAAC3 /* assembly */,
+				29492D60249F7FEE00FAAAC3 /* interactor */,
+				29492D5F249F7FE800FAAAC3 /* presenter */,
+				29492D5E249F7FDE00FAAAC3 /* view */,
+			);
+			path = offer;
+			sourceTree = "<group>";
+		};
+		29492D5E249F7FDE00FAAAC3 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				293E4307240BA59D0090E8AE /* OfferVC.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		29492D5F249F7FE800FAAAC3 /* presenter */ = {
+			isa = PBXGroup;
+			children = (
+				29492D65249F822E00FAAAC3 /* OfferPresenter.swift */,
+			);
+			path = presenter;
+			sourceTree = "<group>";
+		};
+		29492D60249F7FEE00FAAAC3 /* interactor */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = interactor;
+			sourceTree = "<group>";
+		};
+		29492D61249F7FF300FAAAC3 /* assembly */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = assembly;
+			sourceTree = "<group>";
+		};
+		29492D62249F7FFC00FAAAC3 /* router */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = router;
+			sourceTree = "<group>";
+		};
 		294ED268241B2BFD001B9293 /* cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -2949,6 +3000,7 @@
 		299B524423FBBF790072ABD6 /* presentation */ = {
 			isa = PBXGroup;
 			children = (
+				29492D5D249F7FD300FAAAC3 /* offer */,
 				2950AB07248F5FBD00CD9B26 /* chat */,
 				29567CF4247FF58F001C4E61 /* notification */,
 				29BC15FA247EF5490009BD62 /* insuraceList */,
@@ -3859,7 +3911,6 @@
 		29D0AE4F241EA2450055689E /* view */ = {
 			isa = PBXGroup;
 			children = (
-				293E4307240BA59D0090E8AE /* OfferVC.swift */,
 				293E4301240B8F3F0090E8AE /* Registration3VC.swift */,
 				293E42FD240B8AE60090E8AE /* Registration2VC.swift */,
 				293E42ED240B79910090E8AE /* Registration1VC.swift */,
@@ -4975,6 +5026,7 @@
 				293AF8C7242C753A00F4D8AF /* HomeInteractor.swift in Sources */,
 				2980D64E2421E8C100F7D9C8 /* PropertyRowView.swift in Sources */,
 				297FA59E2448EA330079A72D /* MainProfileVC.swift in Sources */,
+				29492D66249F822E00FAAAC3 /* OfferPresenter.swift in Sources */,
 				29E126D7241647AD003954AE /* MobilePhone1VC.swift in Sources */,
 				29335E98242E754C0074658A /* SportInteractor.swift in Sources */,
 				29335E8B242DCD410074658A /* HealthAssembly.swift in Sources */,

@@ -9,15 +9,15 @@
 import UIKit
 import CoreData
 import IQKeyboardManager
-import Firebase
+
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate, MessagingDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
     var reach: Reach = Reach()
     var currentLanguage = "ru"
-    let gcmMessageIDKey = "gcm.message_id"
+    
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
@@ -34,55 +34,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         self.window?.makeKeyAndVisible()
         IQKeyboardManager.shared().isEnabled = true
         
-        FirebaseApp.configure()
-        Messaging.messaging().delegate = self
-        if #available(iOS 10.0, *) {
-          // For iOS 10 display notification (sent via APNS)
-          UNUserNotificationCenter.current().delegate = self
-          let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]
-          UNUserNotificationCenter.current().requestAuthorization(
-            options: authOptions,
-            completionHandler: {_, _ in })
-        } else {
-          let settings: UIUserNotificationSettings =
-          UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil)
-          application.registerUserNotificationSettings(settings)
-        }
-
-        InstanceID.instanceID().instanceID { (result, error) in
-            if let error = error {
-                print("Error fetching remote instance ID: \(error)")
-            } else if let result = result {
-                serviceFactory.networkManager.user.request(.sendFCMToken(token: result.token)) { result in
-                    switch result {
-                    case .success(let response):
-                        debugPrint(String(data: response.data, encoding: .utf8) ?? "")
-                        break
-                    case .failure(let error):
-                        debugPrint(error)
-                        break
-                    }
-                }
-                print("Remote instance ID token: \(result.token)")
-            }
-        }
+        
         
         application.registerForRemoteNotifications()
         return true
     }
     
-    func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String) {
-        print("Firebase registration token: \(fcmToken)")
-        
-        let dataDict:[String: String] = ["token": fcmToken]
-        NotificationCenter.default.post(name: Notification.Name("FCMToken"), object: nil, userInfo: dataDict)
-        // TODO: If necessary send token to application server.
-        // Note: This callback is fired at each app startup and whenever a new token is generated.
-    }
-     
-    func messaging(_ messaging: Messaging, didReceive remoteMessage: MessagingRemoteMessage) {
-        print("Received data message: \(remoteMessage.appData)")
-    }
+    
     
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
@@ -115,9 +73,6 @@ extension AppDelegate {
         let serviceFactory = ServiceFactory()
         let assemblyFactory = AssemblyFactory(serviceFactory: serviceFactory)
         let rootVC = UINavigationController(rootViewController: assemblyFactory.rootModule.assembleViewController()!)
-//        UIApplication.shared.keyWindow?.rootViewController = rootVC
-        
-
         guard
                 let window = UIApplication.shared.keyWindow,
                 let _ = window.rootViewController
@@ -125,13 +80,8 @@ extension AppDelegate {
             return
         }
 
-//        rootVC.view.frame = rootViewController.view.frame
-//        rootVC.view.layoutIfNeeded()
         Bundle.swizzleLocalization()
         window.rootViewController = rootVC
-//        UIView.transition(with: window, duration: 0.3, options: .transitionCrossDissolve, animations: {
-//
-//        })
     }
     
 }

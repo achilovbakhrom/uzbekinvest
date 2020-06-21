@@ -14,6 +14,7 @@ protocol DashboardInteractor: BaseInteractor {
     init(serviceFactory: ServiceFactoryProtocol, assembly: AssemblyFactoryProtocol)
     func fetchCategoryList(showLoading: Bool)
     func fetchCarouselData()
+    func setFCMToken(token: String)
     
 }
 
@@ -125,5 +126,18 @@ class DashboardInteractorImpl: DashboardInteractor {
                 }
             }
         
+    }
+    
+    func setFCMToken(token: String) {
+        serviceFactory.networkManager.user.request(.sendFCMToken(token: token)) { result in
+            switch result {
+            case .success(let response):
+                debugPrint(String(data: response.data, encoding: .utf8) ?? "")
+                break
+            case .failure(let error):
+                debugPrint(error)
+                break
+            }
+        }
     }
 }

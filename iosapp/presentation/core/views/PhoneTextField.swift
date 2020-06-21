@@ -23,8 +23,8 @@ class PhoneTextField: TextField {
     }
     
     private func setup() {
-        self.maskExpression = "+998 9{d} {ddd}-{dd}-{dd}"
-        self.maskTemplate = "+998 9{d} {ddd}-{dd}-{dd}"
+        self.maskExpression = "+998 9{d} {ddd} {dd} {dd}"
+        self.maskTemplate = " "
         self.keyboardType = .phonePad
     }
     

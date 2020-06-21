@@ -50,7 +50,6 @@ class TextField: AKMaskField, AKMaskFieldDelegate {
     }
     
     func maskField(_ maskField: AKMaskField, didChangedWithEvent event: AKMaskFieldEvent) {
-        print("test")
         if let v = onChange {
             v(maskField.text ?? "")
         }

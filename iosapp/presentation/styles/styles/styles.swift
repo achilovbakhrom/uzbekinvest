@@ -36,7 +36,7 @@ class Colors {
         self.bigGreenBG.makeDiagonalGradient(topLeftColor: gColorLeft, rightBottomColor: gColorRight)
     }
     
-    static let backArrowBgColor = UIColor.init(red: 216.0/255.0, green: 216.0/255.0, blue: 216.0/255.0, alpha: 1)
+    static let backArrowBgColor = UIColor.init(red: 216.0/255.0, green: 216.0/255.0, blue: 216.0/255.0, alpha: 0.3)
     static let pageIndicatorGray = UIColor.init(red: 229.0/255.0, green: 229.0/255.0, blue: 229.0/255.0, alpha: 1)
     static let primaryGreen = UIColor.init(red: 60.0/255.0, green: 214.0/255.0, blue: 168.0/255.0, alpha: 1)
     

@@ -67,8 +67,8 @@ class Button: UIButton {
             shadowLayer.shadowPath = shadowLayer.path
             shadowLayer.shadowColor = UIColor.black.cgColor
             shadowLayer.shadowRadius = CGFloat.init(3.0)
-            shadowLayer.shadowOpacity = Float.init(0.2)
-            shadowLayer.shadowOffset = CGSize.init(width: 0.0, height: 4.0)
+            shadowLayer.shadowOpacity = Float.init(0.1)
+            shadowLayer.shadowOffset = CGSize.init(width: 0.0, height: 3.0)
 
             self.layer.insertSublayer(shadowLayer, at: 0)
         }
@@ -116,14 +116,14 @@ class Button: UIButton {
     private func disable() {
         gradient.removeFromSuperlayer()
         gradient.makeGrayBg();
-        self.layer.insertSublayer(gradient!, at: 0)
+        self.layer.insertSublayer(gradient!, at: 1)
         
     }
     
     private func enable() {
         gradient.removeFromSuperlayer()
         gradient.makeGreenGradient();
-        self.layer.insertSublayer(gradient!, at: 0)
+        self.layer.insertSublayer(gradient!, at: 1)
         
     }
     

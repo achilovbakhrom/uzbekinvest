@@ -368,9 +368,7 @@ open class AKMaskField: UITextField, UITextFieldDelegate  {
     open func textFieldDidBeginEditing(_ textField: UITextField) {
         
         maskDelegate?.maskFieldDidBeginEditing(self)
-        
         if guardMask { return }
-        
         moveCarret()
     }
     

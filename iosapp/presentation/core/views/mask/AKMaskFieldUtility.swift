@@ -54,6 +54,10 @@ public class AKMaskFieldUtility {
         }
         
         maskField.selectedTextRange = maskField.textRange(from: caretPosition, to: caretPosition)
+//        guard let caretPosition = maskField.position(from: maskField.beginningOfDocument, offset: 6) else {
+//            return
+//        }
+//        maskField.selectedTextRange = maskField.textRange(from: caretPosition, to: caretPosition)
     }
     
     public class func matchesInString(_ string: String, pattern: String) -> [NSTextCheckingResult] {

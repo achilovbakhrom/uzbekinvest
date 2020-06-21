@@ -39,6 +39,7 @@ class RootRouter: RootRouterProtocol {
     
     func openLoginPage() {
         guard let vc = factory?.loginModule.assembleViewController()! else { return  }
+//        guard let vc = factory?.sliderModule.assembleViewController()! else { return  }
         self.viewController?.navigationController?.setViewControllers([vc], animated: false)
     }
     
