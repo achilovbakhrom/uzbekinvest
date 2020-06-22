@@ -22,6 +22,7 @@ enum OthersProvider {
     case fetchCategoryList
     case fetchCarouselData
     case work
+    case fetchOffer
 }
 
 extension OthersProvider: TargetType {
@@ -56,6 +57,8 @@ extension OthersProvider: TargetType {
             return "/api/category"
         case .fetchCarouselData:
             return "/api/carousel/active"
+        case .fetchOffer:
+            return "/api/terms-of-use/content"
         }
     }
     
@@ -114,6 +117,8 @@ extension OthersProvider: TargetType {
         case .fetchCategoryList:
             return .requestPlain
         case .fetchCarouselData:
+            return .requestPlain
+        case .fetchOffer:
             return .requestPlain
         }
     }

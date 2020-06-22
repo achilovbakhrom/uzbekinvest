@@ -62,9 +62,7 @@ class RegistrationRouterImpl: RegistrationRouter {
     }
     
     func openOfferVC() {
-        let offerVC = factory?.storyboardModule.main.instantiateViewController(withIdentifier: "OfferVC") as! OfferVC
-        self.presenter?.view = offerVC
-        offerVC.presenter = self.presenter
+        let offerVC = factory?.offerModule.assembleViewController() as! OfferVC
         self.viewController?.navigationController?.pushViewController(offerVC, animated: true)
     }
     

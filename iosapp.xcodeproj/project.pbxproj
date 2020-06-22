@@ -171,6 +171,9 @@
 		29490F0D24938E3D008F5ABA /* FaqView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 29490F0C24938E3D008F5ABA /* FaqView.xib */; };
 		29490F0F24939826008F5ABA /* FaqPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29490F0E24939826008F5ABA /* FaqPresenter.swift */; };
 		29492D66249F822E00FAAAC3 /* OfferPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29492D65249F822E00FAAAC3 /* OfferPresenter.swift */; };
+		29492D68249F85CD00FAAAC3 /* OfferInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29492D67249F85CD00FAAAC3 /* OfferInteractor.swift */; };
+		29492D6A249F88E500FAAAC3 /* OfferRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29492D69249F88E500FAAAC3 /* OfferRouter.swift */; };
+		29492D6C249F899500FAAAC3 /* OfferAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29492D6B249F899500FAAAC3 /* OfferAssembly.swift */; };
 		294ED26D241B3020001B9293 /* menus-ru.plist in Resources */ = {isa = PBXBuildFile; fileRef = 294ED26C241B3020001B9293 /* menus-ru.plist */; };
 		295039A3243B9A0B0048A829 /* GasEquipmentRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295039A2243B9A0B0048A829 /* GasEquipmentRouter.swift */; };
 		295039A6243BBA050048A829 /* GasEquipmentInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295039A5243BBA050048A829 /* GasEquipmentInteractor.swift */; };
@@ -727,6 +730,9 @@
 		29490F0C24938E3D008F5ABA /* FaqView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FaqView.xib; sourceTree = "<group>"; };
 		29490F0E24939826008F5ABA /* FaqPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaqPresenter.swift; sourceTree = "<group>"; };
 		29492D65249F822E00FAAAC3 /* OfferPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferPresenter.swift; sourceTree = "<group>"; };
+		29492D67249F85CD00FAAAC3 /* OfferInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferInteractor.swift; sourceTree = "<group>"; };
+		29492D69249F88E500FAAAC3 /* OfferRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferRouter.swift; sourceTree = "<group>"; };
+		29492D6B249F899500FAAAC3 /* OfferAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferAssembly.swift; sourceTree = "<group>"; };
 		294ED26C241B3020001B9293 /* menus-ru.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "menus-ru.plist"; sourceTree = "<group>"; };
 		295039A2243B9A0B0048A829 /* GasEquipmentRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GasEquipmentRouter.swift; sourceTree = "<group>"; };
 		295039A5243BBA050048A829 /* GasEquipmentInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GasEquipmentInteractor.swift; sourceTree = "<group>"; };
@@ -2139,6 +2145,7 @@
 		29492D60249F7FEE00FAAAC3 /* interactor */ = {
 			isa = PBXGroup;
 			children = (
+				29492D67249F85CD00FAAAC3 /* OfferInteractor.swift */,
 			);
 			path = interactor;
 			sourceTree = "<group>";
@@ -2146,6 +2153,7 @@
 		29492D61249F7FF300FAAAC3 /* assembly */ = {
 			isa = PBXGroup;
 			children = (
+				29492D6B249F899500FAAAC3 /* OfferAssembly.swift */,
 			);
 			path = assembly;
 			sourceTree = "<group>";
@@ -2153,6 +2161,7 @@
 		29492D62249F7FFC00FAAAC3 /* router */ = {
 			isa = PBXGroup;
 			children = (
+				29492D69249F88E500FAAAC3 /* OfferRouter.swift */,
 			);
 			path = router;
 			sourceTree = "<group>";
@@ -4692,6 +4701,7 @@
 				296B8C852431B1D50057E5F8 /* ImagePickerManager.swift in Sources */,
 				299B525223FBC0190072ABD6 /* InsuranceCalculate.swift in Sources */,
 				2950F668242EA1E800DFD78B /* GasRouter.swift in Sources */,
+				29492D6C249F899500FAAAC3 /* OfferAssembly.swift in Sources */,
 				2985048A243D2F1C004FDC77 /* UIScrollView+Extensions.swift in Sources */,
 				29D1E1B92427E19D008071AF /* MainViewController.swift in Sources */,
 				2952267E2458A3BC00246D97 /* IncidentFilesVC.swift in Sources */,
@@ -4731,6 +4741,7 @@
 				29A5F1EB241F208B0049F35B /* UserAuthState.swift in Sources */,
 				293AF8D5242C8AC300F4D8AF /* IpotekaRouter.swift in Sources */,
 				297E4A112420E26C0044CA3B /* Osago.swift in Sources */,
+				29492D68249F85CD00FAAAC3 /* OfferInteractor.swift in Sources */,
 				2950F66B242EA46600DFD78B /* GasInteractor.swift in Sources */,
 				29846C6B24762B0E00287817 /* SettingsView.swift in Sources */,
 				29D0AE51241EA2980055689E /* RegistrationRouter.swift in Sources */,
@@ -4940,6 +4951,7 @@
 				29846BE824724D5000287817 /* Travel.swift in Sources */,
 				299B52C823FBF8120072ABD6 /* CAGradientLayer+extensions.swift in Sources */,
 				292714FD242C6B2900641FEB /* HomeVC.swift in Sources */,
+				29492D6A249F88E500FAAAC3 /* OfferRouter.swift in Sources */,
 				2985047A243C5FFE004FDC77 /* GasEquipmentAssembly.swift in Sources */,
 				29567CFF247FFF7E001C4E61 /* Notification.swift in Sources */,
 				29BB09EF240A94760000F559 /* LoginInteractor.swift in Sources */,
@@ -5579,7 +5591,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = A5ZV3NG643;
 				INFOPLIST_FILE = iosapp/helpers/Info.plist;
@@ -5588,7 +5600,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.2;
+				MARKETING_VERSION = 1.0.3;
 				PRODUCT_BUNDLE_IDENTIFIER = uz.einsurance.iosapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -5604,7 +5616,7 @@
 				CODE_SIGN_ENTITLEMENTS = iosapp/iosappRelease.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = A5ZV3NG643;
 				INFOPLIST_FILE = iosapp/helpers/Info.plist;
@@ -5613,7 +5625,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.2;
+				MARKETING_VERSION = 1.0.3;
 				PRODUCT_BUNDLE_IDENTIFIER = uz.einsurance.iosapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "Uzbekinvest-app";

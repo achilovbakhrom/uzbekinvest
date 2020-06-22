@@ -13,7 +13,9 @@ class OfferVC: BaseWithLeftCirclesVC {
     
     
     @IBOutlet weak var gradient: UIView!
+    
     @IBOutlet weak var nextButton: Button!
+    @IBOutlet weak var text: UILabel!
     
     private lazy var offerPresenter: OfferPresenter = self.presenter as! OfferPresenter
     
@@ -31,7 +33,7 @@ class OfferVC: BaseWithLeftCirclesVC {
         layer.locations = [0.0, 1.0]
         layer.frame = gradient.bounds;
         gradient.layer.insertSublayer(layer, at: 0)
-        self.offerPresenter.fetchOffer()
+
     }
     
     override func viewDidLoad() {
@@ -40,16 +42,21 @@ class OfferVC: BaseWithLeftCirclesVC {
         self.view.addSubview(self.loadingView)
         NSLayoutConstraint.activate([
             self.loadingView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
-            self.loadingView.trailingAnchor.constraint(equalTo: self.view.leadingAnchor),
+            self.loadingView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
             self.loadingView.topAnchor.constraint(equalTo: self.view.topAnchor),
             self.loadingView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor)
         ])
+        self.backButton.isHidden = true
         self.loadingView.layer.opacity = 0.0
+        self.offerPresenter.fetchOffer()
     }
     
-    @IBAction func accept(_ sender: Any) {
-//        self.registrationPresenter.acceptOffer()
-        
+    func setOfferText(text: String) {
+        self.text.text = text
+    }
+    
+    @IBAction func acceptAction(_ sender: Any) {
+        self.offerPresenter.goNext()
     }
     
     func setLoading(isLoading: Bool) {

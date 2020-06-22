@@ -18,8 +18,8 @@ class ConfirmRouterImpl: ConfirmRouter {
     var viewController: UIViewController?
     
     func openMainPage() {
-        let vc = factory?.mainModule.assembleViewController() ?? UIViewController()
-        self.viewController?.navigationController?.setViewControllers([vc], animated: false)
+        let vc = factory?.offerModule.assembleViewController() ?? UIViewController()
+        self.viewController?.navigationController?.pushViewController(vc, animated: true)
     }
     
 }

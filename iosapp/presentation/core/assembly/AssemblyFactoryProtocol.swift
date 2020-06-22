@@ -50,6 +50,7 @@ protocol AssemblyFactoryProtocol: class {
     var notificationModule: NotificationAssembly { get }
     var chatModule: ChatAssembly { get }
     var faqModule: FaqAssembly { get }
+    var offerModule: OfferAssembly { get }
     
 }
 
@@ -264,6 +265,11 @@ class AssemblyFactory: AssemblyFactoryProtocol {
     
     lazy var faqModule: FaqAssembly = {
         let module = FaqAssemblyImpl(serviceFactory: self.serviceFactory, mainStoryboard: self.storyboardModule.main, assemblyFactory: self)
+        return module
+    }()
+    
+    lazy var offerModule: OfferAssembly = {
+        let module = OfferAssemblyImpl(serviceFactory: self.serviceFactory, storyboard: self.storyboardModule.main, assemblyFactory: self)
         return module
     }()
     

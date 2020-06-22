@@ -12,7 +12,7 @@ import Firebase
 
 var topViewHeight: CGFloat = UIScreen.main.bounds.height * 0.3
 
-class DashboardVC: BaseViewImpl, BottomViewControllerScrollDelegate, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UNUserNotificationCenterDelegate, MessagingDelegate {
+class DashboardVC: BaseViewImpl, BottomViewControllerScrollDelegate, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     private lazy var dashboardPresenter = self.presenter as? DashboardPresenter
     
@@ -119,43 +119,20 @@ class DashboardVC: BaseViewImpl, BottomViewControllerScrollDelegate, UICollectio
     }
     
     func setupFirebase() {
-        FirebaseApp.configure()
-        Messaging.messaging().delegate = self
+        
+        
         if #available(iOS 10.0, *) {
           // For iOS 10 display notification (sent via APNS)
-          UNUserNotificationCenter.current().delegate = self
           let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]
           UNUserNotificationCenter.current().requestAuthorization(
             options: authOptions,
             completionHandler: {_, _ in })
-        } else {
-          let settings: UIUserNotificationSettings =
-          UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil)
-          UIApplication.shared.registerUserNotificationSettings(settings)
         }
         
-        InstanceID.instanceID().instanceID { (result, error) in
-            if let error = error {
-                print("Error fetching remote instance ID: \(error)")
-            } else if let result = result {
-                self.dashboardPresenter?.setFCMToken(token: result.token)
-                print("Remote instance ID token: \(result.token)")
-            }
-        }
+        
     }
     
-    func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String) {
-        print("Firebase registration token: \(fcmToken)")
-        
-        let dataDict:[String: String] = ["token": fcmToken]
-        NotificationCenter.default.post(name: Notification.Name("FCMToken"), object: nil, userInfo: dataDict)
-        // TODO: If necessary send token to application server.
-        // Note: This callback is fired at each app startup and whenever a new token is generated.
-    }
-     
-    func messaging(_ messaging: Messaging, didReceive remoteMessage: MessagingRemoteMessage) {
-        print("Received data message: \(remoteMessage.appData)")
-    }
+    
     
     func setupNoInternetView() {
         self.view.addSubview(self.noInternetView)
