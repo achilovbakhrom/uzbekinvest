@@ -494,7 +494,8 @@ class BottomViewController: UIViewController, UICollectionViewDataSource, UIColl
         collectionView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         collectionView.contentInset.top = topViewHeight
         collectionView.scrollIndicatorInsets.top = topViewHeight
-        collectionView.alwaysBounceVertical = true
+        collectionView.alwaysBounceVertical = false
+        collectionView.bounces = false
         collectionView.showsVerticalScrollIndicator = false
         collectionView.backgroundColor = .clear
         collectionView.dataSource = self
