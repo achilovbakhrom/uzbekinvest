@@ -19,6 +19,9 @@ class BaseWithLeftCirclesVC: BaseViewImpl {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        if #available(iOS 13.0, *) {
+            self.overrideUserInterfaceStyle = .light
+        }
         self.navigationController?.setNavigationBarHidden(true, animated: false)
         
         circle1 = UIImageView(image: UIImage(named: "gray-circle-1"))

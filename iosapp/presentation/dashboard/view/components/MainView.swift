@@ -69,25 +69,20 @@ class MainView: UIView {
             headerView.trailingAnchor.constraint(equalTo: trailingAnchor),
             headerView.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
-        var topMargin: CGFloat = 0.0
         var btwMargin: CGFloat = 0.0
         if isIPhone4OrNewer() {
-            topMargin = 20.0
             btwMargin = 10.0
             self.headerTitleLabel.fontSize = 18.0
             self.headerContentLabel.fontSize = 15.0
         } else if isIPhoneSE() {
-            topMargin = 35.0
             btwMargin = 14.0
             self.headerTitleLabel.fontSize = 18.0
             self.headerContentLabel.fontSize = 15.0
         } else if isIPhonePlus() {
-            topMargin = 45.0
             btwMargin = 18.0
             self.headerTitleLabel.fontSize = 21.0
             self.headerContentLabel.fontSize = 17.0
         } else {
-            topMargin = 65.0
             btwMargin = 22.0
             self.headerTitleLabel.fontSize = 22.0
             self.headerContentLabel.fontSize = 18.0
@@ -95,7 +90,7 @@ class MainView: UIView {
         
         NSLayoutConstraint.activate([
             headerTitleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 31),
-            headerTitleLabel.topAnchor.constraint(equalTo: topAnchor, constant: topMargin),
+            headerTitleLabel.topAnchor.constraint(equalTo: topAnchor, constant: 20),
             headerTitleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -31)
         ])
         
@@ -103,9 +98,11 @@ class MainView: UIView {
             headerContentLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 31),
             headerContentLabel.topAnchor.constraint(equalTo: self.headerTitleLabel.bottomAnchor, constant: btwMargin),
             headerContentLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -31),
+            headerContentLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -20)
         ])
         headerContentLabel.isUserInteractionEnabled = true
-        headerContentLabel.addGestureRecognizer(UITapGestureRecognizer.init(target: self, action: #selector(onHeaderContent(_:))))
+        self.isUserInteractionEnabled = true
+        self.addGestureRecognizer(UITapGestureRecognizer.init(target: self, action: #selector(onHeaderContent(_:))))
     }
     
     @objc

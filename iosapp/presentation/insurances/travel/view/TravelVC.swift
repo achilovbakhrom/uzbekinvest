@@ -22,7 +22,8 @@ class TravelVC: BaseWithLeftCirclesVC {
         super.viewDidLoad()
         backButtonClicked = { self.travelPresenter?.goBack() }
         self.titleLabel.text = self.product.translates?[translatePosition]?.name
-        self.descripttionLabel.attributedText = self.product.translates?[translatePosition]?.text?.htmlToAttributedString
+        self.descripttionLabel.text = self.product.translates?[translatePosition]?.text?.htmlToString
+        self.descripttionLabel.textAlignment = .justified
         self.travelPresenter?.setProduct(product: product)
         self.setTabBarHidden(true)
         self.setupNoInternetView()

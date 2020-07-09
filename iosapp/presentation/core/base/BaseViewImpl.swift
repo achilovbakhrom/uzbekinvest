@@ -19,7 +19,7 @@ class BaseViewImpl: UIViewController, BaseView {
     private var messageController: UIAlertController! = nil
     
     override func viewDidLoad() {
-        super.viewDidLoad()
+        super.viewDidLoad()        
 //        self.loadingView = Bundle.main.loadNibNamed("LoadingView", owner: self, options: nil)?[0] as? LoadingView
 //        self.loadingController = UIAlertController(title: nil, message: "\n\n\n\n\n\n\n\n", preferredStyle: .alert)
 //        self.loadingController.view = loadingView

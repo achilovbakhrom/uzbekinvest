@@ -24,7 +24,8 @@ class HomeVC: BaseWithLeftCirclesVC {
             self.homePresenter?.goBack()
         }
         productTitle.text = product?.translates?[0]?.name
-        productDescription.attributedText = product?.translates?[0]?.text?.htmlToAttributedString
+        productDescription.text = product?.translates?[0]?.text?.htmlToString
+        productDescription.textAlignment = .justified
         self.homePresenter?.setProduct(product: product)
         self.setTabBarHidden(true)
         self.setupNoInternetView()
@@ -70,7 +71,7 @@ class HomeVC: BaseWithLeftCirclesVC {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        self.setTabBarHidden(false)
+//        self.setTabBarHidden(false)
     }
     
     @IBAction func nextButtonClicked(_ sender: Any) {

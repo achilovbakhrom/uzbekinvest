@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		29020CAF24A2F12600D886FF /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29020CAE24A2F12600D886FF /* UIImage+Extensions.swift */; };
 		29025A6924633DDC005323FD /* IncidentsInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 29025A6B24633DDC005323FD /* IncidentsInfoView.xib */; };
 		29025A7024633DFE005323FD /* CommentsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 29025A7224633DFE005323FD /* CommentsView.xib */; };
 		29025A7724633E62005323FD /* LocationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 29025A7924633E62005323FD /* LocationView.xib */; };
@@ -563,6 +564,7 @@
 
 /* Begin PBXFileReference section */
 		0F2AF7D64DFB67F92FD44A65 /* Pods-iosapp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iosapp.release.xcconfig"; path = "Target Support Files/Pods-iosapp/Pods-iosapp.release.xcconfig"; sourceTree = "<group>"; };
+		29020CAE24A2F12600D886FF /* UIImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
 		29025AB624634EAE005323FD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/AddressView.xib; sourceTree = "<group>"; };
 		29025ABA24634ED2005323FD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/CommentsView.xib; sourceTree = "<group>"; };
 		290D514524099C8D00483561 /* PhoneTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneTextField.swift; sourceTree = "<group>"; };
@@ -3319,6 +3321,7 @@
 				29850489243D2F1C004FDC77 /* UIScrollView+Extensions.swift */,
 				296CBDAB2463312900C55C0A /* UIDevice+Extensions.swift */,
 				292E51B32467EC6800465A1B /* UILabel+Extensions.swift */,
+				29020CAE24A2F12600D886FF /* UIImage+Extensions.swift */,
 			);
 			path = extensions;
 			sourceTree = "<group>";
@@ -4992,6 +4995,7 @@
 				293E42F2240B823E0090E8AE /* UITextField+Extensions.swift in Sources */,
 				2950AB0A248F5FD800CD9B26 /* ChatVC.swift in Sources */,
 				299B527423FBC1CF0072ABD6 /* UserProvider.swift in Sources */,
+				29020CAF24A2F12600D886FF /* UIImage+Extensions.swift in Sources */,
 				29A5F1F9241F50E20049F35B /* ConfirmInteractor.swift in Sources */,
 				2967EF48243E5AEC00102142 /* MyInsurance.swift in Sources */,
 				292E51B42467EC6800465A1B /* UILabel+Extensions.swift in Sources */,
@@ -5591,7 +5595,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = A5ZV3NG643;
 				INFOPLIST_FILE = iosapp/helpers/Info.plist;
@@ -5600,7 +5604,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.3;
+				MARKETING_VERSION = 1.0.5;
 				PRODUCT_BUNDLE_IDENTIFIER = uz.einsurance.iosapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -5616,7 +5620,7 @@
 				CODE_SIGN_ENTITLEMENTS = iosapp/iosappRelease.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = A5ZV3NG643;
 				INFOPLIST_FILE = iosapp/helpers/Info.plist;
@@ -5625,7 +5629,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.3;
+				MARKETING_VERSION = 1.0.5;
 				PRODUCT_BUNDLE_IDENTIFIER = uz.einsurance.iosapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "Uzbekinvest-app";

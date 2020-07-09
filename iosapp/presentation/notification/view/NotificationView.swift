@@ -167,7 +167,7 @@ class NewsCell: UITableViewCell {
     
     func setNews(news: News, isExpanded: Bool) {
         if let url = URL(string: "\(BASE_URL)\(news.image ?? "")") {
-            imageIV.kf.setImage(with: url, placeholder: UIImage(named: "files-dummy"), options: [
+            imageIV.kf.setImage(with: url, placeholder: UIImage(named: "files-dummy")!.imageWithInsets(insetDimen: 30), options: [
                 .transition(.fade(1)),
                 .cacheOriginalImage]
             )

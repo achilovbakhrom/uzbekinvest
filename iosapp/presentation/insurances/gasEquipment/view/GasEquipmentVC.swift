@@ -23,7 +23,8 @@ class GasEquipmentVC: BaseWithLeftCirclesVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.gasEquipmentTitle.text = product.translates?[translatePosition]?.name
-        self.gasEquipmentDescription.attributedText = product.translates?[translatePosition]?.text?.htmlToAttributedString
+        self.gasEquipmentDescription.text = product.translates?[translatePosition]?.text?.htmlToString
+        self.gasEquipmentDescription.textAlignment = .justified
         backButtonClicked = { self.gasEquipmentPresenter?.goBack() }
         self.gasEquipmentPresenter?.setProduct(product: product)
         self.setTabBarHidden(true)

@@ -27,7 +27,9 @@ class MandatoryVC: BaseWithLeftCirclesVC {
         super.viewDidLoad()
         self.backButtonClicked = { self.mandatoryPresenter?.goBack() }
         self.mandatoryTitle.text = product?.translates?[0]?.name
-        self.mandatoryDescription.attributedText = product?.translates?[0]?.text?.htmlToAttributedString
+        self.mandatoryDescription.textAlignment = .justified
+        self.mandatoryDescription.text = product?.translates?[0]?.text?.htmlToString
+        
         self.mandatoryPresenter?.setProduct(product: product)
         self.setupNoInternetView()
         let status = appDelegate.reach.connectionStatus()

@@ -135,7 +135,7 @@ class IncidentViewController: BaseViewImpl {
             self.updateList()
             break
         }
-           
+        self.view.bringSubviewToFront(self.loadingView)
     }
     
     func setCallbackLoading(isLoading: Bool) {

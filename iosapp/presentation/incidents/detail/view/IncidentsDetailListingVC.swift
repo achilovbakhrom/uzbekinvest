@@ -30,6 +30,7 @@ class IncidentsDetailListingVC: BaseWithLeftCirclesVC {
         ])
         
         incidentListingView.onAddNewPolis = {
+            
 //            self.incidentsDetailPresenter?.openAddEditVC(orderId: )
         }
         

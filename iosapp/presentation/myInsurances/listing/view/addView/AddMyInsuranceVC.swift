@@ -68,7 +68,9 @@ class AddMyInsuranceVC: BaseViewImpl {
                 self.setTabBarHidden(true)
             }
         }
-        emptyView.onBuy = {}
+        emptyView.onBuy = {
+            self.myInsurancePresenter?.openInsuranceListVC()
+        }
     }
     
     @objc

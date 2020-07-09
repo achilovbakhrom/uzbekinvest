@@ -23,8 +23,8 @@ class InfectionVC: BaseWithLeftCirclesVC {
         super.viewDidLoad()
         backButtonClicked = { self.infectionPresenter?.goBack() }
         self.infectionTitle.text = self.product.translates?[translatePosition]?.name
-        self.infectionDescription.attributedText = self.product.translates?[translatePosition]?.text?.htmlToAttributedString
-        
+        self.infectionDescription.text = self.product.translates?[translatePosition]?.text?.htmlToString
+        self.infectionDescription.textAlignment = .justified
         self.infectionPresenter?.setProduct(product: product)
         self.setTabBarHidden(true)
         self.setupNoInternetView()

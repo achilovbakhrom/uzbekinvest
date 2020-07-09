@@ -28,8 +28,8 @@ class RoadTechSupportVC: BaseWithLeftCirclesVC {
         self.setTabBarHidden(true)
         self.roadTechPresenter?.setProduct(product: product)
         techRoadTitle.text = product.translates?[translatePosition]?.name
-        techRoadDescription.attributedText = product.translates?[translatePosition]?.text?.htmlToAttributedString
-        
+        techRoadDescription.text = product.translates?[translatePosition]?.text?.htmlToString
+        techRoadDescription.textAlignment = .justified
         self.setupNoInternetView()
         let status = appDelegate.reach.connectionStatus()
         switch status {

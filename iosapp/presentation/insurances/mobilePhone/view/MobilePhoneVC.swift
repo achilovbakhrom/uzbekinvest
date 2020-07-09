@@ -23,8 +23,8 @@ class MobilePhoneVC: BaseWithLeftCirclesVC {
         super.viewDidLoad()
         self.backButtonClicked = { self.mobilePhonePresenter?.goBack() }
         self.titleLabel.text = product?.translates?[translatePosition]?.name
-        self.descriptionLabel.attributedText = product?.translates?[translatePosition]?.text?.htmlToAttributedString
-        
+        self.descriptionLabel.text = product?.translates?[translatePosition]?.text?.htmlToString
+        self.descriptionLabel.textAlignment = .justified
         self.mobilePhonePresenter?.setProduct(product: product)
         self.setTabBarHidden(true)
         self.setupNoInternetView()

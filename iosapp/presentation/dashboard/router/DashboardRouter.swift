@@ -140,6 +140,8 @@ class DashboardRouterImpl: DashboardRouter {
     
     func openIncidentsVC() {
         self.viewController?.tabBarController?.selectedIndex = 1
+        let vc = self.viewController?.tabBarController?.viewControllers?[1]
+        vc?.navigationController?.pushViewController(factory?.incidentsDetailModule.assembleViewController() ?? UIViewController(), animated: true)
     }
     
     func openSupportVC() {}

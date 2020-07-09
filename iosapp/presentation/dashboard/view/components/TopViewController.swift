@@ -280,12 +280,30 @@ class TopContentViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        var topMargin: CGFloat = 0.0
+        var bottomMargin: CGFloat = 0.0
+        if isIPhone4OrNewer() {
+            topMargin = 20.0
+            bottomMargin = -80
+        } else if isIPhoneSE() {
+            topMargin = 35.0
+            bottomMargin = -100
+        } else if isIPhonePlus() {
+            topMargin = 45.0
+            bottomMargin = -120
+        } else {
+            topMargin = 65.0
+            bottomMargin = -120
+        }
+        
         self.view.addSubview(topView)
         NSLayoutConstraint.activate([
             self.topView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
-            self.topView.topAnchor.constraint(equalTo: self.view.topAnchor),
+            self.topView.topAnchor.constraint(greaterThanOrEqualTo: self.view.topAnchor, constant: topMargin),
             self.topView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
-            self.topView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor)
+            self.topView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor),
+            self.topView.bottomAnchor.constraint(lessThanOrEqualTo: self.view.bottomAnchor, constant: bottomMargin)
         ])
     }
     

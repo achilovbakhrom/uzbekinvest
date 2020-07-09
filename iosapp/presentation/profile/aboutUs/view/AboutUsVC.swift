@@ -28,5 +28,11 @@ class AboutUsVC: BaseViewImpl {
         self.aboutUsView.onBack = {
             self.navigationController?.popViewController(animated: true)
         }
+        self.setTabBarHidden(true)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.setTabBarHidden(false)
     }
 }

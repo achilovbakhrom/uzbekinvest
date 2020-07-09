@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>379128860194-g1lkujrba7joti3f0sdh5emt9u8oh9gt.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.379128860194-g1lkujrba7joti3f0sdh5emt9u8oh9gt</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>379128860194-a7i75pmpvar0rsiv0k2tglt7lnrd2aa0.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCNxf-u96LDbkcCmsVtXyyHTYtkRuSuV9c</string>
+	<key>GCM_SENDER_ID</key>
+	<string>379128860194</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>uz.einsurance.iosapp</string>
+	<key>PROJECT_ID</key>
+	<string>uzbekinvest-7f0c0</string>
+	<key>STORAGE_BUCKET</key>
+	<string>uzbekinvest-7f0c0.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:379128860194:ios:75ae1152d8337a4c08c47b</string>
+	<key>DATABASE_URL</key>
+	<string>https://uzbekinvest-7f0c0.firebaseio.com</string>
+</dict>
+</plist>

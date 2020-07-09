@@ -19,7 +19,16 @@ class TopMenuCell: UICollectionViewCell {
         return label
     }()
     
+    private lazy var cView: UIView = {
+        let view = UIView.init(frame: .zero)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
     public var onCellClick: (() -> Void)? = nil
+    
+    var leadingConstraint: NSLayoutConstraint!
+    var trailingConstraint: NSLayoutConstraint!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -32,14 +41,29 @@ class TopMenuCell: UICollectionViewCell {
     }
     
     private func setup() {
-        self.contentView.addSubview(self.titleLabel)
+        self.contentView.addSubview(cView)
+        self.leadingConstraint = self.cView.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 6)
+        
         NSLayoutConstraint.activate([
             self.contentView.heightAnchor.constraint(equalToConstant: UIScreen.main.bounds.height*0.05),
-            self.titleLabel.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 10),
-            self.titleLabel.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: 10),
-            self.titleLabel.centerYAnchor.constraint(equalTo: self.contentView.centerYAnchor)
+            leadingConstraint,
+            self.cView.heightAnchor.constraint(equalToConstant: 30),
+            self.cView.centerYAnchor.constraint(equalTo: self.contentView.centerYAnchor)
         ])
+        
+        
+        self.cView.addSubview(self.titleLabel)
+        NSLayoutConstraint.activate([
+            self.titleLabel.leadingAnchor.constraint(equalTo: self.cView.leadingAnchor, constant: 24),
+            self.titleLabel.trailingAnchor.constraint(equalTo: self.cView.trailingAnchor, constant: -24),
+            self.titleLabel.centerYAnchor.constraint(equalTo: self.cView.centerYAnchor)
+        ])
+        self.trailingConstraint = self.cView.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -6)
+        self.trailingConstraint.isActive = true
         self.contentView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(clicked)))
+        self.cView.layer.cornerRadius = 15
+        self.cView.layer.masksToBounds = true
+        self.cView.layer.borderWidth = 1.0
     }
     
     @objc
@@ -49,13 +73,25 @@ class TopMenuCell: UICollectionViewCell {
         }
     }
     
-    public func setTitle(title: String) {
+    public func setTitle(title: String, isFirst: Bool, isLast: Bool) {
         self.titleLabel.text = title
+        if isFirst {
+            leadingConstraint.constant = 31
+        } else {
+            leadingConstraint.constant = 6
+        }
+        
+        if isLast {
+            self.trailingConstraint.constant = -31
+        } else {
+            self.trailingConstraint.constant = -6
+        }
     }
     
     public func select() {
         UIView.animate(withDuration: 0.2) {
             self.titleLabel.textColor = Colors.primaryGreen
+            self.cView.layer.borderColor = Colors.primaryGreen.cgColor
         }
         
     }
@@ -63,6 +99,7 @@ class TopMenuCell: UICollectionViewCell {
     public func unselect() {
         UIView.animate(withDuration: 0.2) {
             self.titleLabel.textColor = Colors.pageIndicatorGray
+            self.cView.layer.borderColor = Colors.pageIndicatorGray.cgColor
         }        
     }
     

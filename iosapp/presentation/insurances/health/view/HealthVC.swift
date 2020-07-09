@@ -25,7 +25,8 @@ class HealthVC: BaseWithLeftCirclesVC {
             self.healthPresenter?.goBack()
         }
         healthTitle.text = product?.translates?[translatePosition]?.name
-        healthDescription.attributedText = product?.translates?[translatePosition]?.text?.htmlToAttributedString
+        healthDescription.text = product?.translates?[translatePosition]?.text?.htmlToString
+        healthDescription.textAlignment = .justified
         healthPresenter?.setProduct(product: product)
         self.setTabBarHidden(true)
         self.setupNoInternetView()

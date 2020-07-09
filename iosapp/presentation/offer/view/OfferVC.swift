@@ -22,7 +22,7 @@ class OfferVC: BaseWithLeftCirclesVC {
     private lazy var loadingView: LoadingView = LoadingView.fromNib()
     
     override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
+        super.viewDidLayoutSubviews()        
         let layer = CAGradientLayer()
         layer.colors = [
             UIColor.init(red: 0.93, green: 0.93, blue: 0.93, alpha: 0.0).cgColor,

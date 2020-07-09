@@ -22,7 +22,8 @@ class KaskoVC: BaseWithLeftCirclesVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.titleLabel.text = product?.translates?[0]?.name
-        self.descriptionLabel.attributedText = product.translates?[0]?.text?.htmlToAttributedString
+        self.descriptionLabel.text = product.translates?[0]?.text?.htmlToString
+        self.descriptionLabel.textAlignment = .justified
         backButtonClicked = {
             self.kaskoPresenter?.goBack()
         }

@@ -24,7 +24,8 @@ class LuggageVC: BaseWithLeftCirclesVC {
         
         backButtonClicked = { self.luggagePresenter?.goBack() }
         self.titleLabel.text = self.product.translates?[translatePosition]?.name
-        self.descriptionLabel.attributedText = self.product.translates?[translatePosition]?.text?.htmlToAttributedString
+        self.descriptionLabel.text = self.product.translates?[translatePosition]?.text?.htmlToString
+        self.descriptionLabel.textAlignment = .justified
         self.luggagePresenter?.setProduct(product: product)
         self.setTabBarHidden(true)
         self.setupNoInternetView()

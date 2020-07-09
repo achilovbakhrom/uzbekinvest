@@ -42,11 +42,8 @@ class MenuCell: UICollectionViewCell {
         label.backgroundColor = UIColor(red: 253.0 / 255.0, green: 121.0 / 255.0, blue: 100.0 / 255.0, alpha: 1.0)
         label.layer.cornerRadius = 4
         label.layer.masksToBounds = true
-//        label.textAlignment = .center
         return label
     }()
-    
-    
     
     private lazy var modelDescription: UILabel = {
         let label = UILabel(frame: .zero)
@@ -75,8 +72,20 @@ class MenuCell: UICollectionViewCell {
     private var more: UILabel!
     var cellClicked: ((Product?) -> Void)? = nil
     
+    var iconLeading: NSLayoutConstraint!
+    var titleLeading: NSLayoutConstraint!
+    var divLeading: NSLayoutConstraint!
+    var descLeading: NSLayoutConstraint!
+    var salesLeading: NSLayoutConstraint!
+    var moreLeading: NSLayoutConstraint!
+    
+    
+    var titleTrailing: NSLayoutConstraint!
+    var descTrailing: NSLayoutConstraint!
+    var salesTop: NSLayoutConstraint!
+    
     private func setupView() {
-        let width = UIScreen.main.bounds.width*0.95
+        let width = UIScreen.main.bounds.width*0.96
         
         self.contentView.addSubview(self.cView)
         NSLayoutConstraint.activate([
@@ -87,45 +96,51 @@ class MenuCell: UICollectionViewCell {
         ])
         
         self.cView.addSubview(icon)
-        self.topConstraint = self.icon.topAnchor.constraint(equalTo: self.cView.topAnchor, constant: 28)
+        self.topConstraint = self.icon.topAnchor.constraint(equalTo: self.cView.topAnchor, constant: 15)
+        self.iconLeading = self.icon.leadingAnchor.constraint(equalTo: self.cView.leadingAnchor, constant: 28)
         NSLayoutConstraint.activate([
-            self.icon.leadingAnchor.constraint(equalTo: self.cView.leadingAnchor, constant: 28),
+            iconLeading,
             self.topConstraint,
             self.icon.widthAnchor.constraint(equalTo: self.cView.widthAnchor, multiplier: 0.39),
             self.icon.heightAnchor.constraint(equalTo: self.icon.widthAnchor)
-
         ])
         
         self.cView.addSubview(title)
+        titleLeading = self.title.leadingAnchor.constraint(equalTo: self.cView.leadingAnchor, constant: 28)
+        titleTrailing = self.title.trailingAnchor.constraint(equalTo: self.cView.trailingAnchor, constant: -28)
         NSLayoutConstraint.activate([
-            self.title.leadingAnchor.constraint(equalTo: self.cView.leadingAnchor, constant: 28),
             self.title.topAnchor.constraint(equalTo: self.icon.bottomAnchor, constant: 18),
-            self.title.trailingAnchor.constraint(equalTo: self.cView.trailingAnchor, constant: -28)
+            titleLeading,
+            titleTrailing
         ])
         
         let div = createDiv()
         self.cView.addSubview(div)
+        divLeading = div.leadingAnchor.constraint(equalTo: self.cView.leadingAnchor, constant: 28)
         NSLayoutConstraint.activate([
-            div.leadingAnchor.constraint(equalTo: self.cView.leadingAnchor, constant: 28),
+            divLeading,
             div.topAnchor.constraint(equalTo: self.title.bottomAnchor, constant: 17),
             div.widthAnchor.constraint(equalToConstant: 35),
             div.heightAnchor.constraint(equalToConstant: 2)
         ])
 
         self.cView.addSubview(self.modelDescription)
+        descLeading = self.modelDescription.leadingAnchor.constraint(equalTo: self.cView.leadingAnchor, constant: 28)
+        descTrailing = self.modelDescription.trailingAnchor.constraint(equalTo: self.cView.trailingAnchor, constant: -28)
         NSLayoutConstraint.activate([
-            self.modelDescription.leadingAnchor.constraint(equalTo: self.cView.leadingAnchor, constant: 28),
+            descLeading,
             self.modelDescription.topAnchor.constraint(equalTo: div.bottomAnchor, constant: 18),
-            self.modelDescription.trailingAnchor.constraint(equalTo: self.cView.trailingAnchor, constant: -28)
+            descTrailing
         ])
-
+        
         self.cView.addSubview(self.saleLabel)
+        salesLeading = self.saleLabel.leadingAnchor.constraint(equalTo: self.cView.leadingAnchor, constant: 28)
+        salesTop = self.saleLabel.topAnchor.constraint(equalTo: self.modelDescription.bottomAnchor, constant: 10)
         NSLayoutConstraint.activate([
-            self.saleLabel.leadingAnchor.constraint(equalTo: self.modelDescription.leadingAnchor),
+            salesLeading,
             self.saleLabel.topAnchor.constraint(equalTo: self.modelDescription.bottomAnchor, constant: 10),
-            self.saleLabel.trailingAnchor.constraint(equalTo: self.modelDescription.trailingAnchor),
+            self.saleLabel.trailingAnchor.constraint(lessThanOrEqualTo: self.modelDescription.trailingAnchor, constant: -6),
             self.saleLabel.heightAnchor.constraint(equalToConstant: 24.0)
-            
         ])
         
         more = UILabel(frame: .zero)
@@ -134,23 +149,19 @@ class MenuCell: UICollectionViewCell {
         more.text = "detail".localized()
         more.textColor = Colors.primaryGreen
         self.cView.addSubview(more)
-        
+        moreLeading = more.leadingAnchor.constraint(equalTo: self.cView.leadingAnchor, constant: 28)
         moreButtonTopConstraint = more.topAnchor.constraint(equalTo: self.saleLabel.bottomAnchor, constant: 18)
-        
         NSLayoutConstraint.activate([
-            more.leadingAnchor.constraint(equalTo: self.cView.leadingAnchor, constant: 28),
+            moreLeading,
             moreButtonTopConstraint,
             more.bottomAnchor.constraint(equalTo: self.cView.bottomAnchor, constant: 10)
         ])
+        
         self.bottomConstraint = more.bottomAnchor.constraint(equalTo: self.cView.bottomAnchor, constant: -20)
         self.bottomConstraint.isActive = true
-        
         self.cView.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor).isActive = true
-        
         self.contentView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(cellTapped)))
     }
-    
-
     
     @objc
     private func cellTapped() {
@@ -166,18 +177,9 @@ class MenuCell: UICollectionViewCell {
         return view
     }
     
-    public func setData(model: Product, index: Int, isLast: Bool, isFromDashboard: Bool = true) {
-        if (index == 0 || index == 1) && isFromDashboard {
-            if isIPhone4OrNewer() {
-                self.topConstraint.constant = 35
-            } else if isIPhoneSE() {
-                self.topConstraint.constant = 45
-            } else if isIPhonePlus() {
-                self.topConstraint.constant = 75
-            } else {
-                self.topConstraint.constant = 75
-            }
-        }
+    public func setData(model: Product, index: Int, isLast: Bool, isFromDashboard: Bool = true, isOdd: Bool) {
+        
+
         self.product = model
         
         switch product?.name {
@@ -232,8 +234,49 @@ class MenuCell: UICollectionViewCell {
         default:
             break
         }
+        
         self.title.text = model.translates?[translatePosition]?.name
         self.modelDescription.text = model.translates?[translatePosition]?.description
+        
+        if (index == 0 || index == 1) && isFromDashboard {
+            if isIPhone4OrNewer() {
+                self.topConstraint.constant = 35
+            } else if isIPhoneSE() {
+                self.topConstraint.constant = 45
+            } else if isIPhonePlus() {
+                self.topConstraint.constant = 75
+            } else {
+                self.topConstraint.constant = 75
+            }
+        } else {
+            self.topConstraint.constant = 15
+        }
+        
+        
+        if isOdd {
+//            iconLeading.constant = 28
+            
+//            titleLeading.constant = 28
+//            titleTrailing.constant = -6
+            
+//            divLeading.constant = 28
+//            descLeading.constant = 28
+//            salesLeading.constant = 28
+//            moreLeading.constant = 28
+//            descTrailing.constant = -6
+        } else {
+//            iconLeading.constant = 6
+//            titleLeading.constant = 6
+//            titleTrailing.constant = -28
+            
+//            divLeading.constant = 6
+//            descLeading.constant = 6
+//            salesLeading.constant = 6
+//            moreLeading.constant = 6
+//
+//            descTrailing.constant = -28
+        }
+
         if isIPhone4OrNewer() {
             self.bottomConstraint.constant = isLast ? -110 : -15
         } else if isIPhoneSE() {
@@ -241,15 +284,16 @@ class MenuCell: UICollectionViewCell {
         } else if isIPhoneXOrHigher() {
             self.bottomConstraint.constant = isLast ? -205 : -15
         }
-        
+
         if let discount = product?.discount, discount > 0 {
-            self.saleLabel.isHidden = false
-            self.saleLabel.text = "  \("sale".localized()) - \(discount)%"
+            self.saleLabel.layer.opacity = 1.0
+            self.saleLabel.text = "  \("sale".localized()) - \(discount)%  "
+            self.moreButtonTopConstraint.constant = 10
         } else {
-//            self.cView.removeConstraint(moreButtonTopConstraint)
-            self.saleLabel.isHidden = true
-//            self.moreButtonTopConstraint = self.more.topAnchor.constraint(equalTo: self.modelDescription.bottomAnchor, constant: 10)
+            self.saleLabel.layer.opacity = 0.0
+            self.moreButtonTopConstraint.constant = -15
         }
+        
     }
     
     

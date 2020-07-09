@@ -13,8 +13,7 @@ target 'iosapp' do
   pod 'NVActivityIndicatorView'
   pod 'Material', '~> 3.1.0'
   pod 'CHIPageControl', '~> 0.1.3'
-  pod 'BEMCheckBox'
-  pod 'RealmSwift'
+  pod 'BEMCheckBox'  
   pod 'LocationPicker'
   pod 'DatePickerDialog'
   pod 'Kingfisher', '~> 5.0'
@@ -25,8 +24,7 @@ target 'iosapp' do
   pod 'ObjectMapper', '~> 3.5'
   pod "Agrume"
   pod 'TagListView', '~> 1.0'
-  pod 'MessengerKit', :git => 'https://github.com/steve228uk/MessengerKit.git'
-  
+  pod 'MessengerKit', :git => 'https://github.com/steve228uk/MessengerKit.git'  
   pod 'Firebase/Messaging'
   
   target 'iosappTests' do

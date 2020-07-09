@@ -45,6 +45,7 @@ class DashboardVC: BaseViewImpl, BottomViewControllerScrollDelegate, UICollectio
     
     private lazy var topMenuList: UICollectionView = {
         let flow = UICollectionViewFlowLayout()
+        flow.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
         let collection = UICollectionView(frame: .zero, collectionViewLayout: flow)
         collection.translatesAutoresizingMaskIntoConstraints = false
         collection.backgroundColor = .white
@@ -78,7 +79,7 @@ class DashboardVC: BaseViewImpl, BottomViewControllerScrollDelegate, UICollectio
             self.dashboardPresenter?.openInsurance(product: $0)
         }
         vc.onPageChange = {
-            self.topMenuList.scrollToItem(at: IndexPath(item: $0, section: 0), at: .centeredHorizontally, animated: true)
+            self.topMenuList.scrollToItem(at: IndexPath(item: $0, section: 0), at: .left, animated: true)
             self.selected = $0
             UIView.transition(with: self.topMenuList, duration: 0.2, options: .transitionCrossDissolve, animations: {
                 self.topMenuList.reloadData()
@@ -92,9 +93,7 @@ class DashboardVC: BaseViewImpl, BottomViewControllerScrollDelegate, UICollectio
         
         addViewController(bottomViewController, frame: CGRect(x: 0, y: topMenuHeight, width: view.frame.size.width, height: view.frame.size.height - topMenuHeight), completion: nil)
         addViewController(topViewController, frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: topViewHeight + topMenuHeight), completion: nil)
-        topViewController.onBell = {
-            self.dashboardPresenter?.openNotifications()
-        }
+        topViewController.onBell = { self.dashboardPresenter?.openNotifications() }
         self.setupTopMenu()
         self.setupCenterMenu()
         self.setupLoadingView()
@@ -116,6 +115,24 @@ class DashboardVC: BaseViewImpl, BottomViewControllerScrollDelegate, UICollectio
             }
         }
         self.setupFirebase()
+        self.scrollToTop()
+    }
+    
+    
+    func scrollToTop() {
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
+//            self.bottomViewController.setScrollOffset(offset: CGPoint.init(x: 0.0, y: 0.0))
+//
+//            UIView.animate(withDuration: 0.3, animations: {
+//                self.centerMenuView.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
+//                self.centerMenuView.layer.opacity = 0.0
+//            })
+//            self.topMenu.layer.opacity = Float(1)
+//            self.topViewController.view.frame.origin.y = 0
+//            self.topViewController.view.frame.size.height = topViewHeight + self.topMenuHeight
+//            self.topViewController.view.layoutIfNeeded()
+//        }
+        
     }
     
     func setupFirebase() {
@@ -288,6 +305,7 @@ class DashboardVC: BaseViewImpl, BottomViewControllerScrollDelegate, UICollectio
 
     func bottomViewScrollViewDidScroll(_ scrollView: UIScrollView) {
         self.bottomViewController.setScrollOffset(offset: scrollView.contentOffset)
+        print(scrollView.contentOffset)
         let offset = (scrollView.contentOffset.y + topViewHeight)
         var coeff: CGFloat = 0.0
         
@@ -340,7 +358,7 @@ class DashboardVC: BaseViewImpl, BottomViewControllerScrollDelegate, UICollectio
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TopMenuCell", for: indexPath) as! TopMenuCell
-        cell.setTitle(title: categories[indexPath.item].translates?[translatePosition]?.name ?? "")
+        cell.setTitle(title: categories[indexPath.item].translates?[translatePosition]?.name ?? "", isFirst: indexPath.row == 0, isLast: indexPath.row == categories.count - 1)
         if indexPath.row == selected {
             cell.select()
         } else {
@@ -352,13 +370,13 @@ class DashboardVC: BaseViewImpl, BottomViewControllerScrollDelegate, UICollectio
         }
         return cell
     }    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let label = UILabel(frame: .zero)
-        label.font = UIFont(name: "Roboto-Medium", size: 14)
-        label.text = categories[indexPath.item].translates?[translatePosition]?.name ?? ""
-        label.sizeToFit()
-        return CGSize(width: label.frame.width, height: 0.05*UIScreen.main.bounds.height)
-    }
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+//        let label = UILabel(frame: .zero)
+//        label.font = UIFont(name: "Roboto-Medium", size: 14)
+//        label.text = categories[indexPath.item].translates?[translatePosition]?.name ?? ""
+//        label.sizeToFit()
+//        return CGSize(width: label.frame.width + 44, height: 0.05*UIScreen.main.bounds.height)
+//    }
     
 }
 
@@ -519,7 +537,7 @@ class BottomViewController: UIViewController, UICollectionViewDataSource, UIColl
         
         if productList.count >= 6 || (productList.count < 6 && indexPath.row <= productList.count-1)  {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: MenuCell.self), for: indexPath) as! MenuCell
-            cell.setData(model: self.productList[indexPath.row], index: indexPath.row, isLast: indexPath.row == productList.count - 1)
+            cell.setData(model: self.productList[indexPath.row], index: indexPath.row, isLast: indexPath.row == productList.count - 1 || indexPath.row == productList.count - 2, isOdd: indexPath.row % 2 == 0)
             cell.cellClicked = { self.productSelected?($0) }
             return cell
         } else {

@@ -27,7 +27,8 @@ class GasVC: BaseWithLeftCirclesVC {
         }
         self.gasPresenter?.setProduct(product: product)
         gasHomeTitle.text = product?.translates?[translatePosition]?.name ?? ""
-        gasHomeDescription.attributedText = product?.translates?[0]?.text?.htmlToAttributedString
+        gasHomeDescription.text = product?.translates?[0]?.text?.htmlToString
+        gasHomeDescription.textAlignment = .justified
         self.setTabBarHidden(true)
         self.setupNoInternetView()
         let status = appDelegate.reach.connectionStatus()

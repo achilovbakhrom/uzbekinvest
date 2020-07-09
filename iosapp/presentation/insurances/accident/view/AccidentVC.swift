@@ -27,8 +27,9 @@ class AccidentVC: BaseWithLeftCirclesVC {
             self.setTabBarHidden(false)
         }
         accidentTitle.text = product.translates?[0]?.name
-        accidentDescription.attributedText
-            = product.translates?[0]?.text?.htmlToAttributedString
+        accidentDescription.textAlignment = .justified
+        accidentDescription.text
+            = product.translates?[0]?.text?.htmlToAttributedString?.string
         self.accidentPresenter?.setProduct(product: product)
         self.setTabBarHidden(true)
         self.setupNoInternetView()

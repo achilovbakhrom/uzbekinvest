@@ -159,7 +159,8 @@ class MyDocsUserCell: UICollectionViewCell {
     }
     
     func setData(url: URL) {
-        fileImageView.kf.setImage(with: url, placeholder: UIImage(named: "files-dummy"), options: [
+        let dummy = UIImage(named: "files-dummy")!
+        fileImageView.kf.setImage(with: url, placeholder: dummy.imageWithInsets(insetDimen: 20), options: [
             .transition(.fade(1)),
             .cacheOriginalImage]
         )

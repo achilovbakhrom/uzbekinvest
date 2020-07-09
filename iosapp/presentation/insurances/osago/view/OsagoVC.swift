@@ -24,7 +24,8 @@ class OsagoVC: BaseWithLeftCirclesVC {
         backButtonClicked = { self.osagoPresenter?.goBack() }
         self.setTabBarHidden(true)
         insuranceTitleLabel.text = product?.translates?[0]?.name
-        insuranceContentLabel.attributedText = product?.translates?[0]?.text?.htmlToAttributedString
+        insuranceContentLabel.textAlignment = .justified
+        insuranceContentLabel.text = product?.translates?[0]?.text?.htmlToString
         self.view.bringSubviewToFront(nextButton)
         self.osagoPresenter?.setProduct(product: product!)
         self.setupNoInternetView()
