@@ -74,6 +74,7 @@ class MyDocumentsContentVC: UIViewController, UICollectionViewDelegate, UICollec
                             completion(r.image)
                             break
                         case .failure(let error):
+                            debugPrint(error)
                             break
                         }
                     }
@@ -119,7 +120,7 @@ class MyDocsUserCell: UICollectionViewCell {
         button.titleLabel?.font = UIFont(name: "Roboto-Regular", size: 11)
         button.setTitleColor(.red, for: .normal)
         button.setTitle("Удалить", for: .normal)
-        button.layer.cornerRadius = 5.0
+        button.layer.cornerRadius = 12.5
         button.layer.borderWidth = 1.0
         button.layer.borderColor = UIColor.red.cgColor
         return button
@@ -187,22 +188,41 @@ class AddUserFileCell: UICollectionViewCell {
         return button
     }()
     
+    private lazy var addLabel: UILabel = {
+        let label = UILabel.init(frame: .zero)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = UIFont(name: "Roboto-Medium", size: 14)
+        label.text = "add".localized()
+        label.textColor = Colors.primaryGreen
+        label.textAlignment = .center
+        return label
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.contentView.addSubview(addButton)
         NSLayoutConstraint.activate([
             self.addButton.centerXAnchor.constraint(equalTo: self.contentView.centerXAnchor),
-            self.addButton.centerYAnchor.constraint(equalTo: self.contentView.centerYAnchor),
-            self.addButton.widthAnchor.constraint(equalTo: self.contentView.widthAnchor, multiplier: 0.5),
-            self.addButton.heightAnchor.constraint(equalTo: self.contentView.widthAnchor, multiplier: 0.5)
+            self.addButton.centerYAnchor.constraint(equalTo: self.contentView.centerYAnchor, constant: -30),
+            self.addButton.widthAnchor.constraint(equalTo: self.contentView.widthAnchor, multiplier: 0.16),
+            self.addButton.heightAnchor.constraint(equalTo: self.contentView.widthAnchor, multiplier: 0.16)
         ])
-        self.addButton.layer.cornerRadius = self.contentView.bounds.width/4.0
+        self.addButton.layer.cornerRadius = self.contentView.bounds.width*0.08
         self.addButton.layer.masksToBounds = true
-        self.addButton.addTarget(self, action: #selector(onAddAction(_:)), for: .touchUpInside)
+        
+        self.contentView.addSubview(addLabel)
+        NSLayoutConstraint.activate([
+            self.addLabel.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 8),
+            self.addLabel.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -8),
+            self.addLabel.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor, constant: -20)
+        ])
+        
+        self.contentView.isUserInteractionEnabled = true
+        self.contentView.addGestureRecognizer(UITapGestureRecognizer.init(target: self, action: #selector(onAddAction(_:))))
     }
     
     @objc
-    private func onAddAction(_ sender: Any) {
+    private func onAddAction(_ gesture: UITapGestureRecognizer) {
         self.onAdd?()
     }
     

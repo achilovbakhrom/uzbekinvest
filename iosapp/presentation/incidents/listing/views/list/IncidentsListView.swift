@@ -90,7 +90,7 @@ class IncidentsListHeaderView: UITableViewHeaderFooterView {
         ])
         
         let subTitle = UILabel(frame: .zero)
-        subTitle.text = "Orci varius natoque penatibus"
+        subTitle.text = "my_incidents_sub_desc".localized()
         subTitle.font = UIFont.init(name: "Roboto-Regular", size: 12)
         subTitle.textColor = UIColor.black.withAlphaComponent(0.3)
         subTitle.translatesAutoresizingMaskIntoConstraints = false
@@ -112,7 +112,7 @@ class IncidentsListCell: UITableViewCell {
         let label = UILabel(frame: .zero)
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.init(name: "Roboto-Medium", size: 16)
-        label.textColor = .black
+        label.textColor = UIColor.black.withAlphaComponent(0.6)
         label.numberOfLines = 0
         label.lineBreakMode = .byWordWrapping
         return label
@@ -149,15 +149,15 @@ class IncidentsListCell: UITableViewCell {
     private func setupUI() {
         let statusContainer = UIView(frame: .zero)
         statusContainer.translatesAutoresizingMaskIntoConstraints = false
-        statusContainer.backgroundColor = UIColor.init(red: 77.0/255.0, green: 207.0/255.0, blue: 224.0/255.0, alpha: 1.0)
+        statusContainer.backgroundColor = UIColor.init(red: 120.0/255.0, green: 203.0/255.0, blue: 254.0/255.0, alpha: 1.0)
         self.contentView.addSubview(statusContainer)
         NSLayoutConstraint.activate([
             statusContainer.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -31),
-            statusContainer.heightAnchor.constraint(equalToConstant: 22),
+            statusContainer.heightAnchor.constraint(equalToConstant: 28),
             statusContainer.leadingAnchor.constraint(greaterThanOrEqualTo: self.contentView.centerXAnchor, constant: 10),
             
         ])
-        statusContainer.layer.cornerRadius = 11.0
+        statusContainer.layer.cornerRadius = 14.0
         statusContainer.layer.masksToBounds = true
         
         statusContainer.addSubview(statusLabel)
@@ -185,7 +185,7 @@ class IncidentsListCell: UITableViewCell {
         
         let div = UIView(frame: .zero)
         div.translatesAutoresizingMaskIntoConstraints = false
-        div.backgroundColor = UIColor.black.withAlphaComponent(0.1)
+        div.backgroundColor = UIColor.black.withAlphaComponent(0.05)
         self.contentView.addSubview(div)
         bottomConstraint = div.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor, constant: 0)
         NSLayoutConstraint.activate([
@@ -219,6 +219,6 @@ class IncidentsListCell: UITableViewCell {
             break
         }        
         self.dateLabel.text = "\(incident.order?.startDate ?? "") - \(incident.order?.endDate ?? "")"
-        bottomConstraint.constant = isLast ? 45.0 : 0.0
+        bottomConstraint.constant = isLast ? -75.0 : 0.0
     }
 }

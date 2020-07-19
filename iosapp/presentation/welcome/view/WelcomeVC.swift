@@ -20,8 +20,7 @@ class WelcomeVC: BaseGreenVC {
     @IBOutlet weak var russianButton: WhiteBorderedTextButton!
     @IBOutlet weak var englishButton: WhiteBorderedTextButton!
     @IBOutlet weak var descriptionLabel: UILabel!
-    
-    
+    @IBOutlet weak var bottomViewe: UIView!
     
     lazy var welcomePresenter: WelcomePresenterProtocol? = {
         return self.presenter as? WelcomePresenterProtocol        
@@ -52,6 +51,8 @@ class WelcomeVC: BaseGreenVC {
         russianButton.select()
         uzbekButton.unselect()
         englishButton.unselect()
+        self.bottomViewe.isUserInteractionEnabled = true
+        self.bottomViewe.addGestureRecognizer(UITapGestureRecognizer.init(target: self, action: #selector(goNextBottom(_:))))
     }
     
     @IBAction func uzbekClicked(_ sender: Any) {
@@ -94,4 +95,10 @@ class WelcomeVC: BaseGreenVC {
     private func goNext(_ sender: Any) {        
         self.welcomePresenter?.nextButtonClicked()
     }
+    
+    @objc
+    private func goNextBottom(_ gesture: UITapGestureRecognizer) {
+        self.welcomePresenter?.nextButtonClicked()
+    }
+    
 }

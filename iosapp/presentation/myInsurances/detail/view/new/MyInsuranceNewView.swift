@@ -20,6 +20,7 @@ class MyInsuranceNewView: UIView, UICollectionViewDataSource, UISearchController
     @IBOutlet weak var startDateLabel: UILabel!
     @IBOutlet weak var endDateLabel: UILabel!
     @IBOutlet weak var propertiesView: UIView!
+    @IBOutlet weak var statusName: UILabel!
     
     var onPaymentTypeSelected: ((Int) -> Void)? = nil
     var onBack: (() -> Void)? = nil
@@ -36,6 +37,7 @@ class MyInsuranceNewView: UIView, UICollectionViewDataSource, UISearchController
         backButton.isUserInteractionEnabled = true
         backButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(backButtonAction(_:))))
         self.statusContainer.backgroundColor = UIColor.init(red: 255.0/255.0, green: 197.0/255.0, blue: 47.0/255.0, alpha: 1.0)
+        
     }
     
     @objc

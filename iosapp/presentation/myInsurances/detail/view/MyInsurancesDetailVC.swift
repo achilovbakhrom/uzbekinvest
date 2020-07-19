@@ -70,6 +70,7 @@ class MyInsurancesDetailVC: BaseViewImpl {
                 break
             }
         }
+        
         NotificationCenter.default.addObserver(self, selector: #selector(willEnterForeground), name: UIApplication.willEnterForegroundNotification, object: nil)
 
     }
@@ -110,6 +111,31 @@ class MyInsurancesDetailVC: BaseViewImpl {
         self.new.startDateLabel.text = myInsurance.startDate
         self.new.endDateLabel.text = myInsurance.endDate
         self.new.setProperties(property: self.properties)
+        
+        switch self.myInsurance.status ?? "" {
+        case "new":
+            self.new.statusName.text = "my_new".localized()
+            break
+        case "canceled":
+            self.new.statusName.text = "my_canceled".localized()
+            break
+        case "confirmed":
+            self.new.statusName.text = "my_confirmed".localized()
+            break
+        case "paid":
+            self.new.statusName.text = "paid".localized()
+            break
+        case "my_paid":
+            self.new.statusName.text = "completed".localized()
+            break
+        case "completed":
+            self.new.statusName.text = "completed".localized()
+            break
+        default:
+            self.new.statusName.text = ""
+            break
+        }
+        
     }
     
     func setPaidMode() {
@@ -146,6 +172,30 @@ class MyInsurancesDetailVC: BaseViewImpl {
         self.paid.endDateLabel.text = self.myInsurance.endDate
         self.paid.setProperties(property: self.properties)
         self.paid.incidentsButton.isHidden = myInsurance.status == "canceled"
+        
+        switch self.myInsurance.status ?? "" {
+        case "new":
+            self.paid.statusLabel.text = "my_new".localized()
+            break
+        case "canceled":
+            self.paid.statusLabel.text = "my_canceled".localized()
+            break
+        case "confirmed":
+            self.paid.statusLabel.text = "my_confirmed".localized()
+            break
+        case "paid":
+            self.paid.statusLabel.text = "paid".localized()
+            break
+        case "my_paid":
+            self.paid.statusLabel.text = "completed".localized()
+            break
+        case "completed":
+            self.paid.statusLabel.text = "completed".localized()
+            break
+        default:
+            self.paid.statusLabel.text = ""
+            break
+        }
     }
     var pt = 0
     func setUnpaidMode() {
@@ -180,6 +230,30 @@ class MyInsurancesDetailVC: BaseViewImpl {
         
         self.unpaid.onPay = {
             self.myInsurancePresenter?.pay()
+        }
+        
+        switch self.myInsurance.status ?? "" {
+        case "new":
+            self.unpaid.statusName.text = "my_new".localized()
+            break
+        case "canceled":
+            self.unpaid.statusName.text = "my_canceled".localized()
+            break
+        case "confirmed":
+            self.unpaid.statusName.text = "my_confirmed".localized()
+            break
+        case "paid":
+            self.unpaid.statusName.text = "paid".localized()
+            break
+        case "my_paid":
+            self.unpaid.statusName.text = "completed".localized()
+            break
+        case "completed":
+            self.unpaid.statusName.text = "completed".localized()
+            break
+        default:
+            self.unpaid.statusName.text = ""
+            break
         }
     }
     

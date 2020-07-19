@@ -15,9 +15,11 @@ class LocationView: UIView {
     @IBOutlet weak var byAddressButton: UIButton!
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var nextButton: Button!
+    @IBOutlet weak var infoButton: UIButton!
     var onBackClicked: (() -> Void)? = nil
     var onNext: (() -> Void)? = nil
     var onModeChanged: ((Bool) -> Void)? = nil
+    var onInfo: (() -> Void)? = nil
     private var isMapMode = true
     
     
@@ -42,6 +44,9 @@ class LocationView: UIView {
         self.byAddressButton.setTitleColor(UIColor.black.withAlphaComponent(0.4), for: .normal)
     }
     
+    @IBAction func onInfoAction(_ sender: Any) {
+        self.onInfo?()
+    }
     
     func setMode(isMapMode: Bool) {
         if self.isMapMode != isMapMode {

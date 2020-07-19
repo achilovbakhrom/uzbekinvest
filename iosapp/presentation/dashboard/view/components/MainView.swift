@@ -90,15 +90,14 @@ class MainView: UIView {
         
         NSLayoutConstraint.activate([
             headerTitleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 31),
-            headerTitleLabel.topAnchor.constraint(equalTo: topAnchor, constant: 20),
+            headerTitleLabel.centerYAnchor.constraint(equalTo: centerYAnchor, constant: -30),
             headerTitleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -31)
         ])
         
         NSLayoutConstraint.activate([
             headerContentLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 31),
             headerContentLabel.topAnchor.constraint(equalTo: self.headerTitleLabel.bottomAnchor, constant: btwMargin),
-            headerContentLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -31),
-            headerContentLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -20)
+            headerContentLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -31)            
         ])
         headerContentLabel.isUserInteractionEnabled = true
         self.isUserInteractionEnabled = true

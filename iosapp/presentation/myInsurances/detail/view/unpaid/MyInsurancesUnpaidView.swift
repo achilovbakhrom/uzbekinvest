@@ -21,6 +21,7 @@ class MyInsurancesUnpaidView: UIView {
     @IBOutlet weak var clickClicked: UIView!
     @IBOutlet weak var startDate: UILabel!
     @IBOutlet weak var endDate: UILabel!
+    @IBOutlet weak var statusName: UILabel!
     
     
     

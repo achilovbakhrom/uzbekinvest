@@ -13,6 +13,7 @@ class CommentsView: UIView {
     
     @IBOutlet weak var commentTextField: SimpleTextField!
     @IBOutlet weak var createButton: Button!
+    @IBOutlet weak var descLabel: UILabel!
     
     var onCreateIncident: (() -> Void)? = nil
     var onCommentsChange: ((String) -> Void)? = nil
@@ -20,6 +21,7 @@ class CommentsView: UIView {
     override func awakeFromNib() {
         super.awakeFromNib()
         self.commentTextField.onChange = onCommentsChange
+        descLabel.text = "incident_comment_desc".localized()
     }
     
     @IBAction func createButtonAction(_ sender: Any) {

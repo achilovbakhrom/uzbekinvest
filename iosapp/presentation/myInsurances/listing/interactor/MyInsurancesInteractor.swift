@@ -12,6 +12,7 @@ protocol MyInsurancesInteractor: BaseInteractor {
     init(serviceFactory: ServiceFactoryProtocol, presenter: BasePresenter)
     func fetchMyInsurances()
     func getShowAgainFlag() -> Bool?
+    func fetchPinflList()
 }
 
 class MyInsranceInteractorImpl: MyInsurancesInteractor {
@@ -164,4 +165,27 @@ class MyInsranceInteractorImpl: MyInsurancesInteractor {
         return self.serviceFactory?.storage.fetch(key: "showAgain", type: Bool.self)
     }
     
+    func fetchPinflList() {
+        self.serviceFactory?
+        .networkManager
+        .user
+        .request(.getPinflList, completion: { result in
+            switch result {
+            case .success(let response):
+                
+                do {
+                    let decoder = JSONDecoder.init()
+                    let pinflList = try decoder.decode(ArrayResponse<Pinfl>.self, from: response.data)
+                    self.myInsrancePresenter?.setPinflList(list: pinflList.data ?? [])
+                } catch(let error) {
+                    debugPrint(error.localizedDescription)
+                }
+                
+                break
+            case .failure(let error):
+                debugPrint(error.localizedDescription)
+                break
+            }
+        })
+    }
 }

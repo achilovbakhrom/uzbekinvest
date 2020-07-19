@@ -29,6 +29,8 @@ class IncidentInfoAssemblyImpl: IncidentInfoAssembly {
         let vc = IncidentsInfoVC()
         let presenter = IncidentInfoPresenterImpl()
         let router = IncidentInfoRouterImpl(factory: self.assemblyFactory, viewController: vc)
+        let interactor = IncidentInfoInteractorImpl(serviceFactory: self.serviceFactory, presenter: presenter)
+        presenter.interactor = interactor
         presenter.router = router
         presenter.view = vc
         vc.presenter = presenter

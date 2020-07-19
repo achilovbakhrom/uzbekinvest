@@ -79,7 +79,7 @@ class MyDocumentsView: UIView, UICollectionViewDelegate, UICollectionViewDataSou
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: MyDocumentsCell.self), for: indexPath) as! MyDocumentsCell
-        cell.setData(document: documents[indexPath.row], isFirst: indexPath.row == 0, isSelected: selected == indexPath.row)
+        cell.setData(document: documents[indexPath.row], isFirst: indexPath.row == 0, isSelected: selected == indexPath.row, isLast: indexPath.row == documents.count - 1)
         cell.onDocClick = {
             self.onDocumentChanged?($0, indexPath.row)
             self.selected = indexPath.row
@@ -113,6 +113,7 @@ class MyDocumentsCell: UICollectionViewCell {
     }
     
     var leadingConstraint: NSLayoutConstraint!
+    var bottomConstraint: NSLayoutConstraint!
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
@@ -139,9 +140,9 @@ class MyDocumentsCell: UICollectionViewCell {
             titleLabel.leadingAnchor.constraint(equalTo: self.borderView.leadingAnchor, constant: 15),
             titleLabel.trailingAnchor.constraint(equalTo: self.borderView.trailingAnchor, constant: -15),
             titleLabel.centerYAnchor.constraint(equalTo: self.borderView.centerYAnchor),
-            borderView.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -10)
         ])
-        
+        bottomConstraint = borderView.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor)
+        bottomConstraint.isActive = true
         self.contentView.isUserInteractionEnabled = true
         self.contentView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(onItemClick(gestureRecognizer:))))
     }
@@ -151,13 +152,14 @@ class MyDocumentsCell: UICollectionViewCell {
         onDocClick?(myDocument)
     }
     
-    func setData(document: Document, isFirst: Bool, isSelected: Bool) {
+    func setData(document: Document, isFirst: Bool, isSelected: Bool, isLast: Bool) {
         self.leadingConstraint.constant = isFirst ? 31 : 5
         titleLabel.text = document.translates?[translatePosition]?.name
         self.myDocument = document
         let color: UIColor = isSelected ? Colors.primaryGreen : Colors.pageIndicatorGray
         titleLabel.textColor = color
         self.borderView.layer.borderColor = color.cgColor
+        self.bottomConstraint.constant = isLast ? -31 : 0
     }
     
 }

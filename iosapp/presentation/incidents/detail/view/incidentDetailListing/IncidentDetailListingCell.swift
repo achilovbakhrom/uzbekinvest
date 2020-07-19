@@ -15,6 +15,7 @@ class IncidentDetailListingCell: UITableViewCell {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.numberOfLines = 0
         label.lineBreakMode = .byWordWrapping
+        label.textColor = UIColor.black.withAlphaComponent(0.6)
         label.font = UIFont.init(name: "Roboto-Bold", size: 18.0)
         return label
     }()
@@ -24,6 +25,7 @@ class IncidentDetailListingCell: UITableViewCell {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.init(name: "Roboto-Regular", size: 16.0)
         label.text = "policy_number".localized()
+        label.textColor = UIColor.black.withAlphaComponent(0.6)
         return label
     }()
     
@@ -39,6 +41,7 @@ class IncidentDetailListingCell: UITableViewCell {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.init(name: "Roboto-Regular", size: 16.0)
         label.text = "policy_amount".localized()
+        label.textColor = UIColor.black.withAlphaComponent(0.6)
         return label
     }()
     
@@ -60,7 +63,7 @@ class IncidentDetailListingCell: UITableViewCell {
     private lazy var div: UIView  = {
         let view = UIView(frame: .zero)
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = UIColor.black.withAlphaComponent(0.1)
+        view.backgroundColor = UIColor.black.withAlphaComponent(0.05)
         return view
     }()
     
@@ -68,6 +71,8 @@ class IncidentDetailListingCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         self.setupUI()
     }
+    
+    var bottomConstraint: NSLayoutConstraint!
     
     private func setupUI() {
         self.contentView.addSubview(titleLabel)        
@@ -114,15 +119,18 @@ class IncidentDetailListingCell: UITableViewCell {
             self.div.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 31),
             self.div.topAnchor.constraint(equalTo: self.selectButton.bottomAnchor, constant: 14),
             self.div.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -31),
-            self.div.heightAnchor.constraint(equalToConstant: 1.0),
-            self.div.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor)
+            self.div.heightAnchor.constraint(equalToConstant: 1.0)
+            
         ])
+        bottomConstraint = self.div.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor)
+        bottomConstraint.isActive = true
     }
     
-    func setData(insurance: MyInsurance) {
+    func setData(insurance: MyInsurance, isLast: Bool) {
         self.titleLabel.text = insurance.product?.translates?[0]?.name
         self.polisAmount.text = "\(insurance.id)"
         self.polisSum.text = "\(insurance.insuranceAmount?.toDecimalFormat() ?? "0") \("sum".localized())"
+        bottomConstraint.constant = isLast ? -80 : 0        
     }
     
     required init?(coder: NSCoder) {

@@ -23,6 +23,7 @@ enum OthersProvider {
     case fetchCarouselData
     case work
     case fetchOffer
+    case fetchMetadata(productCode: String)
 }
 
 extension OthersProvider: TargetType {
@@ -59,6 +60,8 @@ extension OthersProvider: TargetType {
             return "/api/carousel/active"
         case .fetchOffer:
             return "/api/terms-of-use/content"
+        case .fetchMetadata:
+            return "/api/incident/metadata"
         }
     }
     
@@ -120,6 +123,8 @@ extension OthersProvider: TargetType {
             return .requestPlain
         case .fetchOffer:
             return .requestPlain
+        case .fetchMetadata(let productCode):
+            return .requestParameters(parameters: ["product_code" : productCode], encoding: URLEncoding.default)
         }
     }
     

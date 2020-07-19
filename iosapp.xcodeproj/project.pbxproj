@@ -132,6 +132,8 @@
 		29335E98242E754C0074658A /* SportInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29335E97242E754C0074658A /* SportInteractor.swift */; };
 		29335E9B242E7D8B0074658A /* SportAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29335E9A242E7D8B0074658A /* SportAssembly.swift */; };
 		29335EA0242E7F7A0074658A /* RoadTechPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29335E9F242E7F7A0074658A /* RoadTechPresenter.swift */; };
+		2938F6F624C3FFF2006EEBB7 /* InfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2938F6F524C3FFF2006EEBB7 /* InfoVC.swift */; };
+		2938F6F724C4131E006EEBB7 /* InsuranceListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2938F6F924C4131E006EEBB7 /* InsuranceListView.xib */; };
 		293A24B5240513D300072340 /* WhiteBorderedTextButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293A24B4240513D300072340 /* WhiteBorderedTextButton.swift */; };
 		293AB032240FD8FF00030506 /* MandatoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293AB031240FD8FF00030506 /* MandatoryVC.swift */; };
 		293AB034240FD97400030506 /* Mandatory1VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293AB033240FD97400030506 /* Mandatory1VC.swift */; };
@@ -467,7 +469,6 @@
 		29BB09F7240AA2C50000F559 /* LoginAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BB09F6240AA2C50000F559 /* LoginAssembly.swift */; };
 		29BB09F9240AA41E0000F559 /* LoginRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BB09F8240AA41E0000F559 /* LoginRouter.swift */; };
 		29BC1601247EF83C0009BD62 /* InsuranceListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BC1600247EF83C0009BD62 /* InsuranceListVC.swift */; };
-		29BC1603247EF8700009BD62 /* InsuranceListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 29BC1602247EF8700009BD62 /* InsuranceListView.xib */; };
 		29BC1605247EF8860009BD62 /* InsuranceListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BC1604247EF8860009BD62 /* InsuranceListView.swift */; };
 		29BC1607247EFC360009BD62 /* InsuranceListViewPager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BC1606247EFC360009BD62 /* InsuranceListViewPager.swift */; };
 		29BDC4612406EF210015F4E1 /* BaseRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BDC4602406EF210015F4E1 /* BaseRouter.swift */; };
@@ -516,6 +517,8 @@
 		29E3CFE12457F40D002C6F8E /* IncidentAddressVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E3CFE02457F40D002C6F8E /* IncidentAddressVC.swift */; };
 		29E3CFE52457F892002C6F8E /* IncidentsLocationMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E3CFE42457F891002C6F8E /* IncidentsLocationMapView.swift */; };
 		29E3CFE92457FC45002C6F8E /* IncidentsAddEditRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E3CFE82457FC45002C6F8E /* IncidentsAddEditRouter.swift */; };
+		29ECA50924C385EC0097EBEE /* IncidentInfoInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29ECA50824C385EC0097EBEE /* IncidentInfoInteractor.swift */; };
+		29ECA50B24C386800097EBEE /* Metadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29ECA50A24C386800097EBEE /* Metadata.swift */; };
 		29F2FE2A24B6C24B003D14BD /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 29F2FE1E24B6C24A003D14BD /* Roboto-Medium.ttf */; };
 		29F2FE2B24B6C24B003D14BD /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 29F2FE1F24B6C24A003D14BD /* Roboto-Regular.ttf */; };
 		29F2FE2C24B6C24B003D14BD /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 29F2FE2024B6C24A003D14BD /* Roboto-Bold.ttf */; };
@@ -692,6 +695,11 @@
 		29335E97242E754C0074658A /* SportInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportInteractor.swift; sourceTree = "<group>"; };
 		29335E9A242E7D8B0074658A /* SportAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportAssembly.swift; sourceTree = "<group>"; };
 		29335E9F242E7F7A0074658A /* RoadTechPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoadTechPresenter.swift; sourceTree = "<group>"; };
+		2938F6F524C3FFF2006EEBB7 /* InfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoVC.swift; sourceTree = "<group>"; };
+		2938F6F824C4131E006EEBB7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/InsuranceListView.xib; sourceTree = "<group>"; };
+		2938F6FB24C41325006EEBB7 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InsuranceListView.strings; sourceTree = "<group>"; };
+		2938F6FD24C41328006EEBB7 /* uz-Cyrl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "uz-Cyrl"; path = "uz-Cyrl.lproj/InsuranceListView.strings"; sourceTree = "<group>"; };
+		2938F6FF24C4132A006EEBB7 /* uz-UZ */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "uz-UZ"; path = "uz-UZ.lproj/InsuranceListView.strings"; sourceTree = "<group>"; };
 		293A24B4240513D300072340 /* WhiteBorderedTextButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhiteBorderedTextButton.swift; sourceTree = "<group>"; };
 		293AB031240FD8FF00030506 /* MandatoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MandatoryVC.swift; sourceTree = "<group>"; };
 		293AB033240FD97400030506 /* Mandatory1VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mandatory1VC.swift; sourceTree = "<group>"; };
@@ -1116,7 +1124,6 @@
 		29BB09F6240AA2C50000F559 /* LoginAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAssembly.swift; sourceTree = "<group>"; };
 		29BB09F8240AA41E0000F559 /* LoginRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRouter.swift; sourceTree = "<group>"; };
 		29BC1600247EF83C0009BD62 /* InsuranceListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsuranceListVC.swift; sourceTree = "<group>"; };
-		29BC1602247EF8700009BD62 /* InsuranceListView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InsuranceListView.xib; sourceTree = "<group>"; };
 		29BC1604247EF8860009BD62 /* InsuranceListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsuranceListView.swift; sourceTree = "<group>"; };
 		29BC1606247EFC360009BD62 /* InsuranceListViewPager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsuranceListViewPager.swift; sourceTree = "<group>"; };
 		29BDC4602406EF210015F4E1 /* BaseRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRouter.swift; sourceTree = "<group>"; };
@@ -1172,6 +1179,8 @@
 		29E3CFE02457F40D002C6F8E /* IncidentAddressVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncidentAddressVC.swift; sourceTree = "<group>"; };
 		29E3CFE42457F891002C6F8E /* IncidentsLocationMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncidentsLocationMapView.swift; sourceTree = "<group>"; };
 		29E3CFE82457FC45002C6F8E /* IncidentsAddEditRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncidentsAddEditRouter.swift; sourceTree = "<group>"; };
+		29ECA50824C385EC0097EBEE /* IncidentInfoInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncidentInfoInteractor.swift; sourceTree = "<group>"; };
+		29ECA50A24C386800097EBEE /* Metadata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Metadata.swift; sourceTree = "<group>"; };
 		29F2FE1E24B6C24A003D14BD /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
 		29F2FE1F24B6C24A003D14BD /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
 		29F2FE2024B6C24A003D14BD /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
@@ -1419,6 +1428,7 @@
 		291C703C245B7A5900E49D9A /* interactor */ = {
 			isa = PBXGroup;
 			children = (
+				29ECA50824C385EC0097EBEE /* IncidentInfoInteractor.swift */,
 			);
 			path = interactor;
 			sourceTree = "<group>";
@@ -3125,6 +3135,7 @@
 				29652F1C24929B7700580FCD /* ChatMessage.swift */,
 				29652F20249320A800580FCD /* Chat.swift */,
 				29490F0024938825008F5ABA /* Question.swift */,
+				29ECA50A24C386800097EBEE /* Metadata.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -3788,7 +3799,7 @@
 			isa = PBXGroup;
 			children = (
 				29BC1600247EF83C0009BD62 /* InsuranceListVC.swift */,
-				29BC1602247EF8700009BD62 /* InsuranceListView.xib */,
+				2938F6F924C4131E006EEBB7 /* InsuranceListView.xib */,
 				29BC1604247EF8860009BD62 /* InsuranceListView.swift */,
 				29BC1606247EFC360009BD62 /* InsuranceListViewPager.swift */,
 			);
@@ -4152,6 +4163,7 @@
 				29025A7924633E62005323FD /* LocationView.xib */,
 				29E3CFD624576681002C6F8E /* LocationView.swift */,
 				29E3CFD82457690D002C6F8E /* LocationVC.swift */,
+				2938F6F524C3FFF2006EEBB7 /* InfoVC.swift */,
 			);
 			path = locationView;
 			sourceTree = "<group>";
@@ -4439,7 +4451,7 @@
 			files = (
 				2955F1DA247AB9D200F217CB /* PinflView.xib in Resources */,
 				29025A9A24633F1F005323FD /* IncidentsListView.xib in Resources */,
-				29BC1603247EF8700009BD62 /* InsuranceListView.xib in Resources */,
+				2938F6F724C4131E006EEBB7 /* InsuranceListView.xib in Resources */,
 				29025AA824633F4F005323FD /* IncidentHeaderView.xib in Resources */,
 				299B522023FBBB440072ABD6 /* LaunchScreen.storyboard in Resources */,
 				2955F269247B3BB500F217CB /* MyDocumentsView.xib in Resources */,
@@ -4880,6 +4892,7 @@
 				29271501242C6CDC00641FEB /* Home.swift in Sources */,
 				2930B1EE2407D3C300673D82 /* SliderAssembly.swift in Sources */,
 				2973FF842434F63E00EC2C39 /* LocationManager+Extensions.swift in Sources */,
+				2938F6F624C3FFF2006EEBB7 /* InfoVC.swift in Sources */,
 				299B525C23FBC0CC0072ABD6 /* InsuranceReminder.swift in Sources */,
 				29E126E12416497D003954AE /* LuggageVC.swift in Sources */,
 				29C3A1D42494FC0C006E4CE7 /* AboutUsRouter.swift in Sources */,
@@ -4922,6 +4935,7 @@
 				299EE1172410D57600C50593 /* Ipoteka1VC.swift in Sources */,
 				291C703A245B797F00E49D9A /* IncidentsInfoVC.swift in Sources */,
 				29846BF024731CFE00287817 /* TravelConfirm1VC.swift in Sources */,
+				29ECA50B24C386800097EBEE /* Metadata.swift in Sources */,
 				29A76AA2244C37DC004CEFA5 /* OfficesView.swift in Sources */,
 				29102866244379E800E3E16C /* AddInsuranceRouter.swift in Sources */,
 				29F64BB0243FB6F800E49E4B /* IncidentViewController.swift in Sources */,
@@ -5054,6 +5068,7 @@
 				292714F7242B6A3200641FEB /* Kasko.swift in Sources */,
 				29F64BA1243F9B1600E49E4B /* MyInsuranceCategoryCell.swift in Sources */,
 				292650E52469685400E1326D /* MyInsuranceNewView.swift in Sources */,
+				29ECA50924C385EC0097EBEE /* IncidentInfoInteractor.swift in Sources */,
 				29652F1B249297EC00580FCD /* ChatPresenter.swift in Sources */,
 				29846BE62472468F00287817 /* TravelSelectTypeVC.swift in Sources */,
 				299EE148241119B600C50593 /* Gas3VC.swift in Sources */,
@@ -5249,6 +5264,17 @@
 				292ED16624968CB300D4E3AE /* uz-UZ */,
 			);
 			name = SettingsView.xib;
+			sourceTree = "<group>";
+		};
+		2938F6F924C4131E006EEBB7 /* InsuranceListView.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2938F6F824C4131E006EEBB7 /* Base */,
+				2938F6FB24C41325006EEBB7 /* ru */,
+				2938F6FD24C41328006EEBB7 /* uz-Cyrl */,
+				2938F6FF24C4132A006EEBB7 /* uz-UZ */,
+			);
+			name = InsuranceListView.xib;
 			sourceTree = "<group>";
 		};
 		29525BCE2464867700ACA50C /* Main.storyboard */ = {

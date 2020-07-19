@@ -17,7 +17,7 @@ protocol IncidentsDetailPresenter: BasePresenter {
     func fetchIncidents()
     func fetchPinflOrders()
     func openAddEditVC(orderId: Int, productCode: String, isOffline: Int)
-    
+    func openInsuranceListVC()
 }
 
 class IncidentsDetailPresenterImpl: IncidentsDetailPresenter {
@@ -65,5 +65,9 @@ class IncidentsDetailPresenterImpl: IncidentsDetailPresenter {
     
     func fetchPinflOrders() {
         self.incidentsInteractor?.fetchPinflOrders()
+    }
+    
+    func openInsuranceListVC() {
+        self.incidentsRouter?.openInsuranceListVC()
     }
 }

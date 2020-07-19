@@ -177,7 +177,7 @@ class MenuCell: UICollectionViewCell {
         return view
     }
     
-    public func setData(model: Product, index: Int, isLast: Bool, isFromDashboard: Bool = true, isOdd: Bool) {
+    public func setData(model: Product, index: Int, isLast: Bool, isFromDashboard: Bool = true) {
         
 
         self.product = model
@@ -253,30 +253,7 @@ class MenuCell: UICollectionViewCell {
         }
         
         
-        if isOdd {
-//            iconLeading.constant = 28
-            
-//            titleLeading.constant = 28
-//            titleTrailing.constant = -6
-            
-//            divLeading.constant = 28
-//            descLeading.constant = 28
-//            salesLeading.constant = 28
-//            moreLeading.constant = 28
-//            descTrailing.constant = -6
-        } else {
-//            iconLeading.constant = 6
-//            titleLeading.constant = 6
-//            titleTrailing.constant = -28
-            
-//            divLeading.constant = 6
-//            descLeading.constant = 6
-//            salesLeading.constant = 6
-//            moreLeading.constant = 6
-//
-//            descTrailing.constant = -28
-        }
-
+        
         if isIPhone4OrNewer() {
             self.bottomConstraint.constant = isLast ? -110 : -15
         } else if isIPhoneSE() {
@@ -286,8 +263,12 @@ class MenuCell: UICollectionViewCell {
         }
 
         if let discount = product?.discount, discount > 0 {
+            let formatter = NumberFormatter()
+            formatter.minimumFractionDigits = 0
+            formatter.maximumFractionDigits = 2
+            
             self.saleLabel.layer.opacity = 1.0
-            self.saleLabel.text = "  \("sale".localized()) - \(discount)%  "
+            self.saleLabel.text = "  \("sale".localized()) - \(formatter.string(from: NSNumber(value: discount)) ?? "0")%  "
             self.moreButtonTopConstraint.constant = 10
         } else {
             self.saleLabel.layer.opacity = 0.0

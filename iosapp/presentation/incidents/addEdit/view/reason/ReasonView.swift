@@ -27,7 +27,7 @@ class ReasonView: UIView, UITableViewDataSource, UITableViewDelegate {
         super.awakeFromNib()
         self.reasonTableViewe.delegate = self
         self.reasonTableViewe.dataSource = self
-        self.reasonTableViewe.rowHeight = 60.0
+        self.reasonTableViewe.rowHeight = 70.0
         self.reasonTableViewe.register(IncidentMetaDataCell.self, forCellReuseIdentifier: String(describing: IncidentMetaDataCell.self))
         
         self.datePicker.onChange = {
@@ -49,13 +49,21 @@ class ReasonView: UIView, UITableViewDataSource, UITableViewDelegate {
     }
     
     @IBAction func onNextAction(_ sender: Any) {
-        self.onNext?()
+        if self.metaDataList.types.isEmpty {
+            self.onNext?()
+        } else {
+            self.onType?(metaDataList.types[self.selected].name)
+        }
     }
+    
+    
     
     func setIncidentMetaData(list: IncidentMetaItem) {
         self.metaDataList = list
-        self.reasonLabel.isHidden = !list.types.isEmpty
-        self.onNextButton.isHidden = !list.types.isEmpty
+        
+        self.reasonLabel.isHidden = list.types.isEmpty
+        self.onNextButton.isEnabled = !list.types.isEmpty && selected != -1
+        
         UIView.transition(with: reasonTableViewe, duration: 0.2, options: .transitionCrossDissolve, animations: {
             self.reasonTableViewe.reloadData()
         }, completion: nil)
@@ -67,35 +75,48 @@ class ReasonView: UIView, UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: IncidentMetaDataCell.self)) as! IncidentMetaDataCell
-        cell.titleLabel.text = metaDataList.types[indexPath.row].translates[translatePosition].name
+        cell.setData(text: metaDataList.types[indexPath.row].translates[translatePosition].name ?? "", isSelected: indexPath.row == self.selected)
+        
         cell.selectionStyle = .none
+        
         return cell
     }
     
+    var selected = -1
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.onType?(metaDataList.types[indexPath.row].name)
+        self.selected = indexPath.row
+        self.onNextButton.isEnabled = self.selected != -1
+        UIView.transition(with: self.reasonTableViewe, duration: 0.3, options: .transitionCrossDissolve, animations: {
+            self.reasonTableViewe.reloadData()
+        }, completion: nil)
+        
+//
     }
 }
 
 class IncidentMetaDataCell: UITableViewCell {
     
-    private lazy var containerView: UIView = {
+    lazy var containerView: UIView = {
         let view = UIView.init(frame: .zero)
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.layer.borderWidth = 1.0
+        view.layer.borderWidth = 0.8
         view.layer.borderColor = UIColor.gray.cgColor
-        view.layer.cornerRadius = 6.0
+        view.layer.cornerRadius = 10.0
         view.layer.masksToBounds = true
         return view
     }()
     
-    lazy var titleLabel: UILabel = {
+    var titleLabel: UILabel = {
         let label = UILabel.init(frame: .zero)
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.init(name: "Roboto-Medium", size: 17)
         label.textColor = .gray
+        
         return label
     }()
+    
+    var bottomConstraint: NSLayoutConstraint!
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -113,16 +134,24 @@ class IncidentMetaDataCell: UITableViewCell {
             self.containerView.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 31),
             self.containerView.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant: 10),
             self.containerView.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -31),
-            self.containerView.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor, constant: -10)
+            self.containerView.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor)
         ])
-        
         self.containerView.addSubview(self.titleLabel)
         NSLayoutConstraint.activate([
-            self.titleLabel.centerXAnchor.constraint(equalTo: self.containerView.centerXAnchor),
+            self.titleLabel.leadingAnchor.constraint(equalTo: self.containerView.leadingAnchor, constant: 10),
+            self.titleLabel.trailingAnchor.constraint(equalTo: self.containerView.trailingAnchor, constant: -10),
             self.titleLabel.centerYAnchor.constraint(equalTo: self.containerView.centerYAnchor)
         ])
         
         
+    }
+    
+    func setData(text: String, isSelected: Bool) {
+        self.titleLabel.text = "   \(text)"
+        UIView.animate(withDuration: 0.2) {
+            self.titleLabel.textColor = isSelected ? UIColor.init(red: 62.0/255.0, green: 220.0/255.0, blue: 162.0/255.0, alpha: 1) : .gray
+            self.containerView.layer.borderColor = isSelected ? UIColor.init(red: 62.0/255.0, green: 220.0/255.0, blue: 162.0/255.0, alpha: 1).cgColor : UIColor.gray.cgColor
+        }
     }
     
 }

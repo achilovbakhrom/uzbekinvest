@@ -305,7 +305,6 @@ class DashboardVC: BaseViewImpl, BottomViewControllerScrollDelegate, UICollectio
 
     func bottomViewScrollViewDidScroll(_ scrollView: UIScrollView) {
         self.bottomViewController.setScrollOffset(offset: scrollView.contentOffset)
-        print(scrollView.contentOffset)
         let offset = (scrollView.contentOffset.y + topViewHeight)
         var coeff: CGFloat = 0.0
         
@@ -503,6 +502,7 @@ class BottomViewController: UIViewController, UICollectionViewDataSource, UIColl
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         view.backgroundColor = UIColor.white
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
@@ -534,10 +534,10 @@ class BottomViewController: UIViewController, UICollectionViewDataSource, UIColl
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
         if productList.count >= 6 || (productList.count < 6 && indexPath.row <= productList.count-1)  {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: MenuCell.self), for: indexPath) as! MenuCell
-            cell.setData(model: self.productList[indexPath.row], index: indexPath.row, isLast: indexPath.row == productList.count - 1 || indexPath.row == productList.count - 2, isOdd: indexPath.row % 2 == 0)
+            let isLast = productList.count%2 == 0 && indexPath.row == productList.count - 2 || indexPath.row == productList.count - 1
+            cell.setData(model: self.productList[indexPath.row], index: indexPath.row, isLast: isLast)
             cell.cellClicked = { self.productSelected?($0) }
             return cell
         } else {

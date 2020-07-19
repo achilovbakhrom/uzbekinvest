@@ -1,15 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
         <array key="Roboto-Medium.ttf">
             <string>Roboto-Medium</string>
+        </array>
+        <array key="Roboto-Regular.ttf">
+            <string>Roboto-Regular</string>
         </array>
     </customFonts>
     <objects>
@@ -40,9 +43,17 @@
                         <action selector="createButtonAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="3eX-ID-9I9"/>
                     </connections>
                 </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Llx-O2-6Ri">
+                    <rect key="frame" x="31" y="191" width="352" height="0.0"/>
+                    <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="12"/>
+                    <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <constraints>
+                <constraint firstItem="Llx-O2-6Ri" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="31" id="5GQ-1b-LA1"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="U5x-gQ-FK8" secondAttribute="bottom" constant="31" id="7Lp-0J-H31"/>
+                <constraint firstItem="Llx-O2-6Ri" firstAttribute="top" secondItem="DVl-s0-iD4" secondAttribute="bottom" constant="8" id="CQV-CK-fDl"/>
                 <constraint firstItem="U5x-gQ-FK8" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="31" id="TQF-QR-EBe"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="DVl-s0-iD4" secondAttribute="trailing" constant="31" id="Uag-Rh-sxF"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="U5x-gQ-FK8" secondAttribute="trailing" constant="31" id="VSi-ad-kOG"/>
@@ -51,11 +62,13 @@
                 <constraint firstItem="7I6-7p-3V2" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="eVm-j1-vXT"/>
                 <constraint firstItem="7I6-7p-3V2" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="20" id="hws-gv-e4C"/>
                 <constraint firstItem="7I6-7p-3V2" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="31" id="pBJ-Sf-O1P"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Llx-O2-6Ri" secondAttribute="trailing" constant="31" id="rvl-OK-OW7"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
                 <outlet property="commentTextField" destination="DVl-s0-iD4" id="CFU-6n-otQ"/>
                 <outlet property="createButton" destination="U5x-gQ-FK8" id="we3-pi-oGf"/>
+                <outlet property="descLabel" destination="Llx-O2-6Ri" id="ztW-DP-EBK"/>
             </connections>
             <point key="canvasLocation" x="139" y="153"/>
         </view>

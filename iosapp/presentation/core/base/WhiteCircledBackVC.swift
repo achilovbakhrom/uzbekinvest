@@ -13,7 +13,7 @@ import UIKit
 class WhiteCircledBackVC: UIViewController {
     
     var circleView: UIView! = nil
-    var imageView: UIImageView! = nil
+    var imageView: UIButton! = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,20 +25,20 @@ class WhiteCircledBackVC: UIViewController {
         
         if isIPhone4OrNewer() {
             circleSide = 30
-            arrowWidth = 16.0
-            arrowHeight = 12.0
+            arrowWidth = 30.0
+            arrowHeight = 30.0
         } else if isIPhoneSE() {
             circleSide = 36
             arrowWidth = 20.0
             arrowHeight = 14.0
         } else if isIPhonePlus() {
             circleSide = 44
-            arrowWidth = 24.0
-            arrowHeight = 16.0
+            arrowWidth = 30.0
+            arrowHeight = 30.0
         } else {
             circleSide = 54
-            arrowWidth = 24.0
-            arrowHeight = 16.0
+            arrowWidth = 30.0
+            arrowHeight = 30.0
         }
         
         circleView = UIView(frame: .zero)
@@ -46,13 +46,12 @@ class WhiteCircledBackVC: UIViewController {
         circleView.backgroundColor = Colors.backArrowBgColor;
         circleView.layer.cornerRadius = circleSide/2.0
         circleView.layer.masksToBounds = true
-        imageView = UIImageView(image: UIImage(named: "back-arrow"))
+        imageView = UIButton.init(frame: .zero)
+        imageView.setImage(UIImage(named: "back-arrow"), for: .normal)
         imageView.translatesAutoresizingMaskIntoConstraints = false
         
         self.view.addSubview(circleView)
         self.view.addSubview(imageView)
-        
-        
         
         NSLayoutConstraint.activate([
             circleView.widthAnchor.constraint(equalToConstant: circleSide),

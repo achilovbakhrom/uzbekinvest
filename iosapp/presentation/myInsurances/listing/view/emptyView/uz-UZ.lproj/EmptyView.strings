@@ -3,7 +3,7 @@
 "8Bk-JX-A74.text" = "Mavjud sug'urtani PIN FL orqali qo'shishni yoki onlayn sotib olishni istaysizmi?";
 
 /* Class = "UILabel"; text = "Donec et nisl sit amet quam ornare ultricies. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus"; ObjectID = "j7w-b2-Jf0"; */
-"j7w-b2-Jf0.text" = "Donec et nisl sit amet quam ornare ultricies. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus";
+"j7w-b2-Jf0.text" = "Agar siz PINFL orqali sug'urtani qo'shsangiz, u \"Mening sug'urtalarim\" bo'limida \"Ilgari sotib olinganlar\" sarlavhasi ostida paydo bo'ladi";
 
 /* Class = "UIButton"; normalTitle = "Купить онлайн"; ObjectID = "oUZ-Pr-sUP"; */
 "oUZ-Pr-sUP.normalTitle" = "Onlayn sotib olish";

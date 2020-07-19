@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -26,28 +26,30 @@
                         <constraint firstAttribute="width" constant="30" id="goP-km-uYf"/>
                     </constraints>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Список офисов" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u5r-8d-ATA">
-                    <rect key="frame" x="31" y="146" width="145" height="23.5"/>
-                    <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="20"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u5r-8d-ATA">
+                    <rect key="frame" x="31" y="146" width="166" height="42.5"/>
+                    <string key="text">Место 
+Страхового Случая</string>
+                    <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="18"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eBR-LM-md3">
-                    <rect key="frame" x="31" y="183.5" width="149" height="28"/>
+                    <rect key="frame" x="31" y="202.5" width="149" height="28"/>
                     <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="12.800000190734863"/>
                     <state key="normal" title="Указать по карте">
                         <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0P4-cJ-SHL">
-                    <rect key="frame" x="194" y="183.5" width="145" height="28"/>
+                    <rect key="frame" x="194" y="202.5" width="145" height="28"/>
                     <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="12.800000190734863"/>
                     <state key="normal" title="Указать по адресу">
                         <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
                 </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iH8-Gv-Ff8">
-                    <rect key="frame" x="0.0" y="223.5" width="414" height="638.5"/>
+                    <rect key="frame" x="0.0" y="242.5" width="414" height="619.5"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H4I-37-5qw" customClass="Button" customModule="iosapp" customModuleProvider="target">
@@ -60,14 +62,27 @@
                         <action selector="nextButtonAction:" destination="dkK-jp-VLe" eventType="touchUpInside" id="qxl-TW-9GD"/>
                     </connections>
                 </button>
+                <button hidden="YES" opaque="NO" alpha="0.40000000000000002" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cdh-EF-f82">
+                    <rect key="frame" x="355" y="85" width="28" height="28"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="28" id="JOR-i5-Ag7"/>
+                        <constraint firstAttribute="width" constant="28" id="RwF-TU-Ujl"/>
+                    </constraints>
+                    <state key="normal" image="about-us"/>
+                    <connections>
+                        <action selector="onInfoAction:" destination="dkK-jp-VLe" eventType="touchUpInside" id="Lki-rw-fSn"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="0P4-cJ-SHL" firstAttribute="width" secondItem="dkK-jp-VLe" secondAttribute="width" multiplier="0.35" id="0z9-8h-u25"/>
+                <constraint firstItem="yE7-lT-Lx2" firstAttribute="trailing" secondItem="Cdh-EF-f82" secondAttribute="trailing" constant="31" id="1IS-vm-QKn"/>
                 <constraint firstItem="u5r-8d-ATA" firstAttribute="leading" secondItem="yE7-lT-Lx2" secondAttribute="leading" constant="31" id="1PM-VG-ZQ2"/>
                 <constraint firstItem="0P4-cJ-SHL" firstAttribute="leading" secondItem="eBR-LM-md3" secondAttribute="trailing" constant="14" id="6xT-25-f1g"/>
                 <constraint firstItem="eBR-LM-md3" firstAttribute="width" secondItem="dkK-jp-VLe" secondAttribute="width" multiplier="0.36" id="8g1-n4-iB5"/>
                 <constraint firstItem="eBR-LM-md3" firstAttribute="top" secondItem="u5r-8d-ATA" secondAttribute="bottom" constant="14" id="BiV-ph-iTn"/>
+                <constraint firstItem="yE7-lT-Lx2" firstAttribute="centerX" secondItem="u5r-8d-ATA" secondAttribute="trailing" constant="10" id="DpK-Wj-hWP"/>
                 <constraint firstItem="0P4-cJ-SHL" firstAttribute="top" secondItem="eBR-LM-md3" secondAttribute="top" id="F7a-Ca-j05"/>
                 <constraint firstItem="eBR-LM-md3" firstAttribute="leading" secondItem="yE7-lT-Lx2" secondAttribute="leading" constant="31" id="LNy-Dp-Oxv"/>
                 <constraint firstItem="yE7-lT-Lx2" firstAttribute="bottom" secondItem="iH8-Gv-Ff8" secondAttribute="bottom" id="Pdp-b8-TIF"/>
@@ -75,6 +90,7 @@
                 <constraint firstItem="yE7-lT-Lx2" firstAttribute="trailing" secondItem="iH8-Gv-Ff8" secondAttribute="trailing" id="Uba-0t-ik9"/>
                 <constraint firstItem="yE7-lT-Lx2" firstAttribute="bottom" secondItem="H4I-37-5qw" secondAttribute="bottom" constant="31" id="W5e-wE-OGz"/>
                 <constraint firstItem="iH8-Gv-Ff8" firstAttribute="leading" secondItem="yE7-lT-Lx2" secondAttribute="leading" id="Xny-AY-V0E"/>
+                <constraint firstItem="Cdh-EF-f82" firstAttribute="centerY" secondItem="9PG-Gb-Jzj" secondAttribute="centerY" id="gJn-sW-1ok"/>
                 <constraint firstItem="u5r-8d-ATA" firstAttribute="top" secondItem="9PG-Gb-Jzj" secondAttribute="bottom" constant="32" id="idt-0g-Yph"/>
                 <constraint firstItem="iH8-Gv-Ff8" firstAttribute="top" secondItem="eBR-LM-md3" secondAttribute="bottom" constant="12" id="kJb-7u-WJm"/>
                 <constraint firstItem="yE7-lT-Lx2" firstAttribute="trailing" secondItem="H4I-37-5qw" secondAttribute="trailing" constant="31" id="rlm-Cj-TyM"/>
@@ -87,12 +103,14 @@
                 <outlet property="byAddressButton" destination="0P4-cJ-SHL" id="hdz-OE-1eT"/>
                 <outlet property="byMapButton" destination="eBR-LM-md3" id="Sv2-lN-OuN"/>
                 <outlet property="contentView" destination="iH8-Gv-Ff8" id="xpr-MF-Bnl"/>
+                <outlet property="infoButton" destination="Cdh-EF-f82" id="7jC-ZN-3DZ"/>
                 <outlet property="nextButton" destination="H4I-37-5qw" id="wK2-Sn-Zqc"/>
             </connections>
             <point key="canvasLocation" x="139" y="153"/>
         </view>
     </objects>
     <resources>
+        <image name="about-us" width="512" height="512"/>
         <image name="back-arrow" width="23" height="16"/>
     </resources>
 </document>

@@ -16,10 +16,17 @@ class OfferVC: BaseWithLeftCirclesVC {
     
     @IBOutlet weak var nextButton: Button!
     @IBOutlet weak var text: UILabel!
+    @IBOutlet weak var check: UIButton!
+    @IBOutlet weak var offerText: UILabel!
+    @IBOutlet weak var bottomView: UIView!
+    
+    
     
     private lazy var offerPresenter: OfferPresenter = self.presenter as! OfferPresenter
     
     private lazy var loadingView: LoadingView = LoadingView.fromNib()
+    
+    
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()        
@@ -49,7 +56,29 @@ class OfferVC: BaseWithLeftCirclesVC {
         self.backButton.isHidden = true
         self.loadingView.layer.opacity = 0.0
         self.offerPresenter.fetchOffer()
+        
+        let underlineAttribute = [NSAttributedString.Key.underlineStyle: NSUnderlineStyle.single.rawValue]
+        let underlineAttributedString = NSAttributedString(string: "offer_text".localized(), attributes: underlineAttribute)
+        self.offerText.attributedText = underlineAttributedString
+        self.nextButton.setTitle("next".localized(), for: .normal)
+        self.nextButton.isEnabled = false
+        
+        let gradient: CAGradientLayer = CAGradientLayer()
+
+        gradient.colors = [UIColor.white.withAlphaComponent(0.7).cgColor, UIColor.white.cgColor]
+        gradient.locations = [0.0 , 1.0]
+        gradient.startPoint = CGPoint(x: 0.0, y: 0.0)
+        gradient.endPoint = CGPoint(x: 0.0, y: 1.0)
+        gradient.frame = self.bottomView.bounds
+
+        self.bottomView.layer.insertSublayer(gradient, at: 0)
     }
+    
+    @IBAction func checkboxAction(_ sender: Any) {
+        self.check.isSelected = !self.check.isSelected
+        self.nextButton.isEnabled = self.check.isSelected
+    }
+    
     
     func setOfferText(text: String) {
         self.text.text = text
@@ -60,7 +89,7 @@ class OfferVC: BaseWithLeftCirclesVC {
     }
     
     func setLoading(isLoading: Bool) {
-        self.nextButton.isLoading = isLoading
+//        self.nextButton.isLoading = isLoading
         if isLoading {
             self.loadingView.startAnimating()
         } else {

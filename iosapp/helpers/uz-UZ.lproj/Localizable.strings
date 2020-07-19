@@ -183,17 +183,17 @@
 "one_incident" = "Bitta xodisa";
 "two_incidents" = "Ikkita xodisa";
 "three_or_more" = "Uch va undan ortiq xodisalar";
-"notification" = "Уведомление";
-"collapse" = "Свернуть";
+"notification" = "Xabarnome";
+"collapse" = "Qisqartirish";
 "about_us_text" = "«O‘zbekinvest» eksport-import milliy sug‘urta kompaniyasi umumiy sug‘urta bozorida o‘z faoliyatini olib boradi va sug‘urta faoliyati klassifikatoriga ko‘ra mavjud 17 turdagi sug‘urtaning barchasi bilan shug‘ullanadi.
 
 \n\nTashkil etilgan sana:
 
 \n\n1994 yil aprel – «O‘zbekinvest» Milliy sug‘urta kompaniyasining tashkil etilishi (O‘zbekiston Respublikasi Vazirlar Mahkamasining 1994 yil 13 apreldagi 206 sonli Qarori)
-1997 yil fevral – Eksport va investisiyalarni sug‘urtalash bo‘yicha mamlakatimizning rasmiy agenti mavqeyi berilib, «O‘zbekinvest» eksport-import milliy sug‘urta kompaniyasi etib qayta tashkil etildi (O‘zbekiston Respublikasi Prezidentining 1997 yil 18 fevral\'dagi PQ-1710 sonli hamda O‘zbekiston Respublikasi Vazirlar Mahkamasining 1997 yil 28 fevral\'dagi 113 sonli Qarori)
+1997 yil fevral – Eksport va investisiyalarni sug‘urtalash bo‘yicha mamlakatimizning rasmiy agenti mavqeyi berilib, «O‘zbekinvest» eksport-import milliy sug‘urta kompaniyasi etib qayta tashkil etildi (O‘zbekiston Respublikasi Prezidentining 1997 yil 18 fevraldagi PQ-1710 sonli hamda O‘zbekiston Respublikasi Vazirlar Mahkamasining 1997 yil 28 fevraldagi 113 sonli Qarori)
 Kompaniya Ustav jamg’armasi: 60 mln. AQSh dollari (ekvivalentida)
 
-\n\nKompaniya ta\'sischilari:
+\n\nKompaniya ta'sischilari:
 
 \nO‘zbekiston Respublikasi Moliya vazirligi - 50 mln. AQSh dollari (ekvivalentida)
 
@@ -272,3 +272,25 @@ Kelajakda rivojlanish strategiyasi - korporativ va xususiy sug‘urta bozorida o
 "faq" = "Savollar va javoblar";
 
 "about_us" = "Biz haqimizda";
+
+"offer_text" = "Oferta shartlariga roziman";
+
+"next" = "Далее";
+
+"my_incidents_sub_desc" = "Sizning sugʻurta hodisalaringiz ro'yxati";
+
+"request_send_desc" = "Hodisa yuzasidan so'rovingiz yuborildi va tez orada ro'yxatdan o'tkaziladi";
+
+"accepted_desc" = "Sizning arizangiz qabul qilindi. Sug\'urta hodisasini ko\'rib chiqish uchun zarur hujjatlarni taqdim etish kutilmoqda";
+
+"document_desc" = "Sug'urta qoplamasini to'lash to'g'risida qaror qabul qilindi, sug'urta hodisasi to'g'risida dalolatnoma imzolanishi kutilmoqda";
+
+"decided_desc" = "Sug'urta tovonini to'lashdan bosh tortish to'g'risidagi qaror";
+
+"done_desc1" = "Sizning bank hisob raqamingizga";
+
+"done_desc2" = "so'm miqdoridagi sug'urta qoplamasi undurildi";
+
+"incident_doc" = "Xujjatlar";
+
+"incident_comment_desc" = "Hodisa sabablarini batafsil bayon qiling";

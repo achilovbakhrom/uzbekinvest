@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -18,7 +18,7 @@
                     <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xcm-QL-pmC">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="226.5"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="249"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TtG-DI-Mi0">
                                     <rect key="frame" x="31" y="31" width="23" height="22"/>
@@ -33,23 +33,31 @@
                                         <constraint firstAttribute="height" constant="80" id="hpF-Ep-TQb"/>
                                     </constraints>
                                 </imageView>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="746-DD-Ebi">
-                                    <rect key="frame" x="31" y="175" width="352" height="20.5"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="746-DD-Ebi">
+                                    <rect key="frame" x="31" y="197.5" width="352" height="20.5"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="v.1.0.5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HW2-9v-tmR">
+                                    <rect key="frame" x="191" y="173" width="32.5" height="12.5"/>
+                                    <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="11"/>
+                                    <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             <constraints>
                                 <constraint firstItem="746-DD-Ebi" firstAttribute="leading" secondItem="Xcm-QL-pmC" secondAttribute="leading" constant="31" id="1uc-5U-xYc"/>
-                                <constraint firstItem="746-DD-Ebi" firstAttribute="top" secondItem="HTc-Gb-0MC" secondAttribute="bottom" constant="10" id="VA7-UR-rwZ"/>
+                                <constraint firstItem="HW2-9v-tmR" firstAttribute="top" secondItem="HTc-Gb-0MC" secondAttribute="bottom" constant="8" id="Nph-Sj-NGP"/>
                                 <constraint firstAttribute="bottom" secondItem="746-DD-Ebi" secondAttribute="bottom" constant="31" id="bKb-6f-hzc"/>
                                 <constraint firstAttribute="trailing" secondItem="HTc-Gb-0MC" secondAttribute="trailing" constant="87" id="csq-K1-DvF"/>
                                 <constraint firstItem="TtG-DI-Mi0" firstAttribute="leading" secondItem="Xcm-QL-pmC" secondAttribute="leading" constant="31" id="cxi-q1-6S5"/>
                                 <constraint firstItem="HTc-Gb-0MC" firstAttribute="top" secondItem="TtG-DI-Mi0" secondAttribute="bottom" constant="32" id="fvN-1S-O4e"/>
                                 <constraint firstItem="HTc-Gb-0MC" firstAttribute="leading" secondItem="Xcm-QL-pmC" secondAttribute="leading" constant="87" id="mW8-Iy-3n6"/>
+                                <constraint firstItem="746-DD-Ebi" firstAttribute="top" secondItem="HW2-9v-tmR" secondAttribute="bottom" constant="12" id="oKF-qB-HHm"/>
                                 <constraint firstItem="TtG-DI-Mi0" firstAttribute="top" secondItem="Xcm-QL-pmC" secondAttribute="top" constant="31" id="rmd-4d-K9K"/>
+                                <constraint firstItem="HW2-9v-tmR" firstAttribute="centerX" secondItem="Xcm-QL-pmC" secondAttribute="centerX" id="w5Z-LV-ZiY"/>
                                 <constraint firstAttribute="trailing" secondItem="746-DD-Ebi" secondAttribute="trailing" constant="31" id="wh6-JP-gd0"/>
                             </constraints>
                         </view>

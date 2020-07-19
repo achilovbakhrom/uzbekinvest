@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         currentLanguage = UserDefaults.standard.string(forKey: "language") ?? "ru"
-        UserDefaults.standard.set(currentLanguage, forKey: "AppleLanguage")
+        UserDefaults.standard.set([currentLanguage], forKey: "AppleLanguage")
         UserDefaults.standard.synchronize()
         Bundle.swizzleLocalization()
         
@@ -117,7 +117,6 @@ extension AppDelegate {
             return
         }
 
-        Bundle.swizzleLocalization()
         window.rootViewController = rootVC
     }
     

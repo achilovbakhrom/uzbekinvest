@@ -34,6 +34,8 @@ protocol IncidentsAddEditPresenter: BasePresenter {
     func setType(type: String)
     func setIsOffline(isOffline: Int)
     func createIncidentFromFilesVC()
+    func fetchIncidentMetaDataForInfo()
+    func setInfo(text: String)
 }
 
 class IncidentsAddEditPresenterImpl: IncidentsAddEditPresenter {
@@ -147,6 +149,11 @@ class IncidentsAddEditPresenterImpl: IncidentsAddEditPresenter {
         self.incidentsAddEditInteractor?.fetchIncidentMetadata(productCode: productCode)
     }
     
+    func fetchIncidentMetaDataForInfo() {
+        self.incidentsAddEditInteractor?.fetchIncidentMetadataInfo(productCode: productCode)
+    }
+    
+    
     func setIncidentMetaItemList(list: IncidentMetaItem) {
         if let vc = self.view as? ReasonVC {
             vc.setIncidentMetaData(list: list)
@@ -155,6 +162,12 @@ class IncidentsAddEditPresenterImpl: IncidentsAddEditPresenter {
     
     func openReasonVC() {
         self.incidentsAddEditRouter?.openReasonVC()
+    }
+    
+    func setInfo(text: String) {
+        if let vc = self.view as? LocationVC {
+            vc.setInfo(text: text)
+        }
     }
     
     func setDate(date: String) {
@@ -204,4 +217,5 @@ class IncidentsAddEditPresenterImpl: IncidentsAddEditPresenter {
     func setIsOffline(isOffline: Int) {
         self.incident?.isOffline = isOffline
     }
+    
 }

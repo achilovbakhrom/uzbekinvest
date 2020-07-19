@@ -29,9 +29,8 @@ class IncidentsDetailListingVC: BaseWithLeftCirclesVC {
             self.incidentListingView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor)
         ])
         
-        incidentListingView.onAddNewPolis = {
-            
-//            self.incidentsDetailPresenter?.openAddEditVC(orderId: )
+        incidentListingView.onAddNewPolis = {            
+            self.incidentsDetailPresenter?.openInsuranceListVC()
         }
         
         incidentListingView.onPolisItemClicked = {

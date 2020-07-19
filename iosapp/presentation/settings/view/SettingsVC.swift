@@ -62,29 +62,31 @@ class SettingsVC: BaseViewImpl {
                 self.appDelegate.currentLanguage = Languages.ru.rawValue
                 Bundle.swizzleLocalization()
                 self.settingsPresenter?.setLanguage(language: "ru")
-                self.appDelegate.restartApp()
                 self.dismiss(animated: true, completion: nil)
+                self.appDelegate.restartApp()
             }
             
             languageView.onUzbek = {
+                            
                 UserDefaults.standard.set([Languages.uz.rawValue], forKey: "AppleLanguages")
                 UserDefaults.standard.synchronize()
                 self.appDelegate.currentLanguage = Languages.uz.rawValue
                 Bundle.swizzleLocalization()
                 self.settingsPresenter?.setLanguage(language: "uz-UZ")
-                
-                self.appDelegate.restartApp()
                 self.dismiss(animated: true, completion: nil)
+                self.appDelegate.restartApp()
             }
             
             languageView.onUzbekCyrl = {
                 UserDefaults.standard.set([Languages.uzCyrl.rawValue], forKey: "AppleLanguages")
                 UserDefaults.standard.synchronize()
+                
                 self.appDelegate.currentLanguage = Languages.uzCyrl.rawValue
                 Bundle.swizzleLocalization()
                 self.settingsPresenter?.setLanguage(language: "uz-Cyrl")
-                self.appDelegate.restartApp()
                 self.dismiss(animated: true, completion: nil)
+                self.appDelegate.restartApp()
+                
             }
             
             self.present(alertC, animated: true, completion: {

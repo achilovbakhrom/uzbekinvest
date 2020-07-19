@@ -53,7 +53,7 @@ class TopViewController: UIViewController {
         control.currentPageTintColor = .white
         control.progress = 0
         control.padding = 10
-        control.radius = 6.0
+        control.radius = 1.0
         return control
     }()
     
@@ -120,15 +120,15 @@ class TopViewController: UIViewController {
             self.pageControl.radius = 3.0
             self.pageControl.padding = 6.0
         } else if isIPhoneSE() {
-            self.pageControl.radius = 4.0
+            self.pageControl.radius = 3.0
             self.pageControl.padding = 8.0
             bottomMargin = -50
         } else if isIPhonePlus() {
-            self.pageControl.radius = 5.0
+            self.pageControl.radius = 3.0
             self.pageControl.padding = 10.0
             bottomMargin = -60.0
         } else {
-            self.pageControl.radius = 6.0
+            self.pageControl.radius = 3.0
             self.pageControl.padding = 10.0
             bottomMargin = -60.0
         }

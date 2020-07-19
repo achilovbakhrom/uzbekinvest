@@ -12,6 +12,7 @@ protocol IncidentsDetailRouter: BaseRouter {
     func goBack()
     func openLoginVC(phone: String)
     func openAddEditVC(orderId: Int, productCode: String, isOffline: Int)
+    func openInsuranceListVC()
 }
 
 class IncidentsDetailRouterImpl: IncidentsDetailRouter {
@@ -43,5 +44,10 @@ class IncidentsDetailRouterImpl: IncidentsDetailRouter {
         self.viewController?.navigationController?.pushViewController(vc, animated: true)
     }
     
+    func openInsuranceListVC() {
+        let vc = self.factory?.insuranceListModule.assembleViewController() ?? UIViewController()
+        self.viewController?.navigationController?.pushViewController(vc, animated: true)
+        
+    }
     
 }

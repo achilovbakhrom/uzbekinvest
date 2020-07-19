@@ -73,8 +73,16 @@ class LocationVC: BaseViewImpl {
             }
         }
         
+        self.locationView.onInfo = {
+            let vc = InfoVC()
+            vc.text = self.instruction
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+        
+        
         self.incdidentPresenter?.orderId = orderId
         self.incdidentPresenter?.productCode = productCode
+        self.incdidentPresenter?.fetchIncidentMetaDataForInfo()
         self.incdidentPresenter?.setIsOffline(isOffline: self.isOffline)
         self.locationView.setMode(isMapMode: true)
         self.incdidentPresenter?.setMode(isMapMode: true)
@@ -83,6 +91,11 @@ class LocationVC: BaseViewImpl {
     
     func setEnabled(isEnabled: Bool) {
         self.locationView.nextButton.isEnabled = isEnabled
+    }
+    var instruction = ""
+    func setInfo(text: String) {
+        self.locationView.infoButton.isHidden = text.isEmpty
+        self.instruction = text        
     }
 }
 

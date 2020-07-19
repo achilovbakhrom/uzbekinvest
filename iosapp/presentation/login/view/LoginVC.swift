@@ -26,6 +26,7 @@ class LoginVC: BaseWithLeftCirclesVC {
         self.phoneTextField.onChange = { self.loginPresenter?.checkPhoneNumber(phoneNumber: $0) }
         self.backButtonClicked = { self.loginPresenter?.backPressed() }
         self.phoneTextField.becomeFirstResponder()
+        self.backButton.isHidden = true
     }
     
     @IBAction

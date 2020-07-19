@@ -32,22 +32,64 @@ class IncidentsInfoVC: BaseViewImpl {
         case "new":
             self.infoView.stepView.currentStep = 1
             self.infoView.statusLabel.text = "incident_new".localized()
+            self.infoView.requestSentDesc.text = "request_send_desc".localized()
+            self.infoView.acceptedDescLabel.text = ""
+            self.infoView.documentsDesc.text = ""
+            self.infoView.decidedDescription.text = ""
+            self.infoView.doneDescription.text = ""
             break
         case "canceled":
             self.infoView.stepView.currentStep = 0
             self.infoView.statusLabel.text = "incident_cancelled".localized()
+            
+            self.infoView.requestSentDesc.text = ""
+            self.infoView.acceptedDescLabel.text = ""
+            self.infoView.documentsDesc.text = ""
+            self.infoView.decidedDescription.text = ""
+            self.infoView.doneDescription.text = ""
+            break
+        case "valid":
+            self.infoView.stepView.currentStep = 3
+            self.infoView.statusLabel.text = "incident_doc".localized()
+            self.infoView.requestSentDesc.text = ""
+            self.infoView.acceptedDescLabel.text = "document_desc".localized()
+            self.infoView.documentsDesc.text = ""
+            self.infoView.decidedDescription.text = ""
+            self.infoView.doneDescription.text = ""            
             break
         case "confirmed":
             self.infoView.stepView.currentStep = 2
             self.infoView.statusLabel.text = "incident_confirmed".localized()
+            
+            self.infoView.requestSentDesc.text = ""
+            self.infoView.acceptedDescLabel.text = "accepted_desc".localized()
+            self.infoView.documentsDesc.text = ""
+            self.infoView.decidedDescription.text = ""
+            self.infoView.doneDescription.text = ""
+            
+            
             break
         case "paid":
             self.infoView.statusLabel.text = "incident_paid".localized()
             self.infoView.stepView.currentStep = 5
+            
+            self.infoView.requestSentDesc.text = ""
+            self.infoView.acceptedDescLabel.text = ""
+            self.infoView.documentsDesc.text = ""
+            self.infoView.decidedDescription.text = ""
+            self.infoView.doneDescription.text = "done_desc1".localized() + " \(incident.order?.totalAmount?.toDecimalFormat() ?? "0") " + "done_desc2".localized()
+            
             break
         case "denied":
             self.infoView.statusLabel.text = "incident_completed".localized()
             self.infoView.stepView.currentStep = 4
+            
+            self.infoView.requestSentDesc.text = ""
+            self.infoView.acceptedDescLabel.text = ""
+            self.infoView.documentsDesc.text = ""
+            self.infoView.decidedDescription.text = "decided_desc".localized()
+            self.infoView.doneDescription.text = ""
+            
             break
         default:
             break
@@ -55,6 +97,7 @@ class IncidentsInfoVC: BaseViewImpl {
         self.infoView.incidentAmount.text = "\(self.incident.order?.premiumAmount?.toDecimalFormat() ?? "0") \("sum".localized())"
         infoView.onBack = { self.infoPresenter?.goBack() }
         self.setTabBarHidden(true)
+        self.infoPresenter?.fetchMetadata(code: incident.order?.product?.name ?? "travel")        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -62,4 +105,10 @@ class IncidentsInfoVC: BaseViewImpl {
         self.setTabBarHidden(false)
     }
     
+    
+    func setDescription(desc: String) {
+        UIView.animate(withDuration: 0.3) {
+            self.infoView.descriptionLabel.text = desc.htmlToString
+        }
+    }
 }

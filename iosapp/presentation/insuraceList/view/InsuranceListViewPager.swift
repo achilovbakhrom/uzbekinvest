@@ -179,7 +179,7 @@ class InsuranceListSingleVC: UIViewController, UICollectionViewDataSource, UICol
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: MenuCell.self), for: indexPath) as! MenuCell
-        cell.setData(model: self.productList[indexPath.row], index: indexPath.row, isLast: indexPath.row == productList.count - 1, isFromDashboard: false, isOdd: indexPath.row % 2 == 0)
+        cell.setData(model: self.productList[indexPath.row], index: indexPath.row, isLast: indexPath.row == productList.count - 1, isFromDashboard: false)
         cell.cellClicked = {
             self.productSelected?($0)
         }

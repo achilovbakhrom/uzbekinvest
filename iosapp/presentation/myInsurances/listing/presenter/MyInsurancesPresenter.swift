@@ -22,7 +22,8 @@ protocol MyInsurancesPresenter: BasePresenter {
     func goBack()
     func openAddMyInsuranceVC()
     func openInsuranceListVC()
-    
+    func setPinflList(list: [Pinfl])
+    func fetchPinflList()
 }
 
 class MyInsurancesPresenterImpl: MyInsurancesPresenter {
@@ -41,6 +42,8 @@ class MyInsurancesPresenterImpl: MyInsurancesPresenter {
     private lazy var myInsrancesInteractor = self.interactor as? MyInsurancesInteractor
     private lazy var myInsrancesRouter = self.router as? MyInsurancesRouter
     private lazy var myInsrancesView = self.view as? MyInsuranceVC
+    
+    var hasPinfl: Bool = false
     
     func fetchMyInsurances() {
         myInsrancesInteractor?.fetchMyInsurances()
@@ -459,10 +462,23 @@ class MyInsurancesPresenterImpl: MyInsurancesPresenter {
     }
     
     func openAddMyInsuranceVC() {
-        self.myInsrancesRouter?.openAddMyInsuranceVC()
+        if hasPinfl {
+            self.myInsrancesRouter?.openInsuranceListVC()
+        } else {
+            self.myInsrancesRouter?.openAddMyInsuranceVC()
+        }
+        
     }
     
     func openInsuranceListVC() {
         self.myInsrancesRouter?.openInsuranceListVC()
+    }
+    
+    func fetchPinflList() {
+        self.myInsrancesInteractor?.fetchPinflList()
+    }
+    
+    func setPinflList(list: [Pinfl]) {
+        self.hasPinfl = !list.isEmpty
     }
 }

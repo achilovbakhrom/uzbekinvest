@@ -45,7 +45,7 @@ class MainProfileInteractorImpl: MainProfileInteractor {
                     } else {
                         do {
                             let decoder = JSONDecoder.init()
-                            let r = try decoder.decode(Response<ProfileUser>.self, from: response.data)
+                            let r = try decoder.decode(Response<ProfileUser>.self, from: response.data)                            
                             self.mainProfilePresenter?.setUser(user: r.data)
                         } catch (let error) {
                             debugPrint(error.localizedDescription)

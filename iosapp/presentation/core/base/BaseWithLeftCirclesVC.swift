@@ -63,8 +63,8 @@ class BaseWithLeftCirclesVC: BaseViewImpl {
         
         self.view.addSubview(backButton)
         NSLayoutConstraint.activate([
-            backButton.heightAnchor.constraint(equalToConstant: 16),
-            backButton.widthAnchor.constraint(equalToConstant: 23),
+            backButton.heightAnchor.constraint(equalToConstant: 30),
+            backButton.widthAnchor.constraint(equalToConstant: 30),
             backButton.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 28),
             backButton.topAnchor.constraint(equalTo: self.view.topAnchor, constant: topMargin)
         ])

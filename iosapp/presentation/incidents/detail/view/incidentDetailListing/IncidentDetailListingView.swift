@@ -52,6 +52,9 @@ class IncidentDetailListingView: UIView, UITableViewDelegate, UITableViewDataSou
     @IBOutlet weak var incidentsTableView: UITableView!
     @IBOutlet weak var allButton: UIButton!
     @IBOutlet weak var pinflButton: UIButton!
+    @IBOutlet weak var addButton: Button!
+    
+    
     
     var insurances: [MyInsurance] = [] {
         didSet {
@@ -83,7 +86,7 @@ class IncidentDetailListingView: UIView, UITableViewDelegate, UITableViewDataSou
     private func setupUI() {
         self.incidentsTableView.backgroundColor = .clear        
         self.incidentsTableView.register(IncidentDetailListingCell.self, forCellReuseIdentifier: String(describing: IncidentDetailListingCell.self))
-        self.incidentsTableView.register(FooterView.self, forHeaderFooterViewReuseIdentifier: String(describing: FooterView.self))
+//        self.incidentsTableView.register(FooterView.self, forHeaderFooterViewReuseIdentifier: String(describing: FooterView.self))
         self.incidentsTableView.separatorStyle = .none
         self.incidentsTableView.backgroundColor = .clear
         self.incidentsTableView.estimatedRowHeight = 44.0
@@ -104,6 +107,7 @@ class IncidentDetailListingView: UIView, UITableViewDelegate, UITableViewDataSou
         ])
         self.loadingView.layer.opacity = 0.0
         self.allButtonActivate()
+        self.addButton.setTitle("add_plicy".localized(), for: .normal)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -112,7 +116,7 @@ class IncidentDetailListingView: UIView, UITableViewDelegate, UITableViewDataSou
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: IncidentDetailListingCell = tableView.dequeueReusableCell(withIdentifier: String(describing: IncidentDetailListingCell.self)) as! IncidentDetailListingCell
-        cell.setData(insurance: insurances[indexPath.row])
+        cell.setData(insurance: insurances[indexPath.row], isLast: indexPath.row == insurances.count - 1)
         cell.backgroundColor = .clear
         cell.selectionStyle = .none
         return cell
@@ -124,14 +128,18 @@ class IncidentDetailListingView: UIView, UITableViewDelegate, UITableViewDataSou
     
     @objc
     private func onAddButtonClicked() {
+        
+    }
+    
+    @IBAction func addButtonActtion(_ sender: Any) {
         self.onAddNewPolis?()
     }
     
-    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        let footer = tableView.dequeueReusableHeaderFooterView(withIdentifier: String(describing: FooterView.self)) as! FooterView
-        footer.footerButton.addTarget(self, action: #selector(onAddButtonClicked), for: .touchUpInside)
-        return footer
-    }
+//    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+//        let footer = tableView.dequeueReusableHeaderFooterView(withIdentifier: String(describing: FooterView.self)) as! FooterView
+//        footer.footerButton.addTarget(self, action: #selector(onAddButtonClicked), for: .touchUpInside)
+//        return footer
+//    }
     
     private func allButtonActivate() {
         

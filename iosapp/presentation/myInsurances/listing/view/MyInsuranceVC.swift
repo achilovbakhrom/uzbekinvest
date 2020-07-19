@@ -39,8 +39,10 @@ class MyInsuranceVC: BaseViewImpl {
             case .unknown, .offline:
                 self.showNoInternetView(show: true)
             case .online(.wwan):
+                self.myInsurancePresenter?.fetchPinflList()
                 self.reloadList()
             case .online(.wiFi):
+                self.myInsurancePresenter?.fetchPinflList()
                 self.reloadList()
             }
         }
@@ -64,6 +66,7 @@ class MyInsuranceVC: BaseViewImpl {
                 self.showNoInternetView(show: true)
                 break
             case .online(.wwan), .online(.wiFi):
+                self.myInsurancePresenter?.fetchPinflList()
                 self.myInsurancePresenter?.fetchMyInsurances()
                 break
             }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -36,10 +36,10 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4ek-RW-XoE">
-                    <rect key="frame" x="31" y="139" width="89.5" height="20"/>
+                    <rect key="frame" x="31" y="139" width="89.5" height="28"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Не оплачено" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZgO-BN-oG8">
-                            <rect key="frame" x="10" y="3" width="69.5" height="14"/>
+                            <rect key="frame" x="10" y="7" width="69.5" height="14"/>
                             <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="11.600000381469727"/>
                             <color key="textColor" red="0.98431372549999996" green="0.98431372549999996" blue="0.98431372549999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <nil key="highlightedColor"/>
@@ -48,51 +48,51 @@
                     <color key="backgroundColor" red="0.30196078430000001" green="0.81176470590000005" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstItem="ZgO-BN-oG8" firstAttribute="centerY" secondItem="4ek-RW-XoE" secondAttribute="centerY" id="6d0-GS-J89"/>
-                        <constraint firstAttribute="height" constant="20" id="qXU-hr-pnM"/>
+                        <constraint firstAttribute="height" constant="28" id="qXU-hr-pnM"/>
                         <constraint firstAttribute="trailing" secondItem="ZgO-BN-oG8" secondAttribute="trailing" constant="10" id="tVe-Xo-tBD"/>
                         <constraint firstItem="ZgO-BN-oG8" firstAttribute="leading" secondItem="4ek-RW-XoE" secondAttribute="leading" constant="10" id="zHU-gW-acK"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9jh-96-pXE">
-                    <rect key="frame" x="0.0" y="184" width="414" height="1"/>
+                    <rect key="frame" x="0.0" y="192" width="414" height="1"/>
                     <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="1" id="IWL-bh-ilv"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Inn-0U-Dl6">
-                    <rect key="frame" x="0.0" y="465.5" width="414" height="1"/>
+                    <rect key="frame" x="0.0" y="468.5" width="414" height="1"/>
                     <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="1" id="JmF-pT-ElV"/>
                     </constraints>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Сумма полиса" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0TR-OE-gKI">
-                    <rect key="frame" x="31" y="208" width="95" height="16.5"/>
+                    <rect key="frame" x="31" y="216" width="95" height="16.5"/>
                     <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
                     <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 сум" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RqF-v4-ZNa">
-                    <rect key="frame" x="31" y="236.5" width="44" height="22.5"/>
+                    <rect key="frame" x="31" y="244.5" width="44" height="20"/>
                     <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wN6-ml-w4W">
-                    <rect key="frame" x="31" y="518" width="7" height="22.5"/>
+                    <rect key="frame" x="31" y="521" width="7" height="20"/>
                     <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5w5-yZ-meR">
-                    <rect key="frame" x="31" y="421" width="7" height="22.5"/>
+                    <rect key="frame" x="31" y="426.5" width="7" height="20"/>
                     <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wuK-oU-Ma0">
-                    <rect key="frame" x="0.0" y="284" width="414" height="1"/>
+                    <rect key="frame" x="0.0" y="289.5" width="414" height="1"/>
                     <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="1" id="XSM-tY-Xeu"/>
@@ -106,7 +106,7 @@
                     <state key="normal" title="Оплатить"/>
                 </button>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" keyboardDismissMode="interactive" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="faO-HU-BZq">
-                    <rect key="frame" x="0.0" y="285" width="414" height="85"/>
+                    <rect key="frame" x="0.0" y="290.5" width="414" height="85"/>
                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="85" id="oFC-oq-yZg"/>
@@ -119,30 +119,30 @@
                     </collectionViewFlowLayout>
                 </collectionView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ePj-7a-2kt">
-                    <rect key="frame" x="0.0" y="368.5" width="414" height="1"/>
+                    <rect key="frame" x="0.0" y="374" width="414" height="1"/>
                     <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="1" id="PuJ-c5-VLt"/>
                     </constraints>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Начальный период" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ukh-Pb-tjr">
-                    <rect key="frame" x="31" y="392.5" width="126.5" height="16.5"/>
+                    <rect key="frame" x="31" y="398" width="126.5" height="16.5"/>
                     <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
                     <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Конечный период" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U8z-kg-hir">
-                    <rect key="frame" x="31" y="489.5" width="118" height="16.5"/>
+                    <rect key="frame" x="31" y="492.5" width="118" height="16.5"/>
                     <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
                     <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EQc-Ne-w7A">
-                    <rect key="frame" x="0.0" y="563.5" width="414" height="212.5"/>
+                    <rect key="frame" x="0.0" y="564" width="414" height="212"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NuQ-9b-Oxy">
-                    <rect key="frame" x="-4" y="562.5" width="414" height="1"/>
+                    <rect key="frame" x="-4" y="563" width="414" height="1"/>
                     <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="1" id="vHP-hc-gv4"/>
@@ -220,6 +220,7 @@
                 <outlet property="propertiesView" destination="EQc-Ne-w7A" id="nX2-Y0-bH2"/>
                 <outlet property="startDateLabel" destination="5w5-yZ-meR" id="3YX-3Z-kqa"/>
                 <outlet property="statusContainer" destination="4ek-RW-XoE" id="Ztk-P5-bAL"/>
+                <outlet property="statusName" destination="ZgO-BN-oG8" id="m7Z-Zy-qVM"/>
             </connections>
             <point key="canvasLocation" x="203" y="-492"/>
         </view>

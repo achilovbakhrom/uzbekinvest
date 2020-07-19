@@ -3,7 +3,7 @@
 "8Bk-JX-A74.text" = "Мавжуд суғуртани ПИН ФЛ орқали қўшишни еки \nонлайн тарзда сотиб олишни истайсизми ?";
 
 /* Class = "UILabel"; text = "Donec et nisl sit amet quam ornare ultricies. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus"; ObjectID = "j7w-b2-Jf0"; */
-"j7w-b2-Jf0.text" = "Donec et nisl sit amet quam ornare ultricies. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus";
+"j7w-b2-Jf0.text" = "Aгар сиз ПИНФЛ орқали суғуртани қўшсангиз, у \"Менинг суғурталарим\" бўлимида \"Илгари сотиб олинганлар\" сарлавҳаси остида пайдо бўлади";
 
 /* Class = "UIButton"; normalTitle = "Купить онлайн"; ObjectID = "oUZ-Pr-sUP"; */
 "oUZ-Pr-sUP.normalTitle" = "Онлайн сотиб олиш";

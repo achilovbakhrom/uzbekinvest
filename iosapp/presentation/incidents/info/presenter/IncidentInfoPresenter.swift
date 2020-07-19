@@ -10,6 +10,8 @@ import UIKit
  
 protocol IncidentInfoPresenter: BasePresenter {
     func goBack()
+    func fetchMetadata(code: String)
+    func setDescription(desc: String)
 }
 
 class IncidentInfoPresenterImpl: IncidentInfoPresenter {
@@ -20,8 +22,17 @@ class IncidentInfoPresenterImpl: IncidentInfoPresenter {
     
     private lazy var infoRouter = self.router as? IncidentInfoRouter
     
+    private lazy var infoInteractor = self.interactor as? IncidentInfoInteractor
+    
     func goBack() {
         self.infoRouter?.goBack()
     }
     
+    func fetchMetadata(code: String) {
+        self.infoInteractor?.fetchMetadata(code: code)
+    }
+    
+    func setDescription(desc: String) {
+        (self.view as? IncidentsInfoVC)?.setDescription(desc: desc)
+    }
 }

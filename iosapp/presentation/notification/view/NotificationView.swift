@@ -84,7 +84,8 @@ class NewsCell: UITableViewCell {
         let imageView = UIImageView(frame: .zero)
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.image = UIImage.init(named: "mobile-chat")
-        imageView.contentMode = .scaleAspectFit
+        imageView.contentMode = .scaleAspectFill
+        
         return imageView
     }()
     
@@ -112,6 +113,7 @@ class NewsCell: UITableViewCell {
         let button = UIButton.init(frame: .zero)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("detail".localized(), for: .normal)
+        button.titleLabel?.font = UIFont.init(name: "Roboto-Medium", size: 14)
         button.setTitleColor(Colors.primaryGreen, for: .normal)
         return button
     }()
@@ -136,6 +138,8 @@ class NewsCell: UITableViewCell {
             self.imageIV.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -31),
             self.imageIV.heightAnchor.constraint(equalToConstant: 250)
         ])
+        imageIV.layer.cornerRadius = 30
+        imageIV.layer.masksToBounds = true
         
         self.contentView.addSubview(titleLabel)
         NSLayoutConstraint.activate([
@@ -174,8 +178,9 @@ class NewsCell: UITableViewCell {
         }
         
         self.titleLabel.text = news.title
-        self.descriptionLabel.text = isExpanded ? news.text : "..."
+        self.descriptionLabel.text = news.text?.htmlToString
         UIView.animate(withDuration: 0.2) {
+            self.descriptionLabel.numberOfLines = isExpanded ? 0 : 5
             self.moreButton.setTitle(isExpanded ? "collapse".localized() : "detail".localized(), for: .normal)
             self.layoutIfNeeded()
         }
@@ -329,7 +334,7 @@ class NotificationCell: UICollectionViewCell {
             self.iconImageView.widthAnchor.constraint(equalToConstant: 25),
             self.iconImageView.heightAnchor.constraint(equalToConstant: 32)
         ])
-        
+
         self.contentView.addSubview(titleLabel)
         NSLayoutConstraint.activate([
             self.titleLabel.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 10),

@@ -74,7 +74,7 @@ class InsuranceListView: UIView, UICollectionViewDelegate, UICollectionViewDataS
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: CategoriesCell.self), for: indexPath) as! CategoriesCell
-        cell.setData(category: categories[indexPath.row], isFirst: indexPath.row == 0, isSelected: selected == indexPath.row)
+        cell.setData(category: categories[indexPath.row], isFirst: indexPath.row == 0, isSelected: selected == indexPath.row, isLast: indexPath.row == categories.count-1)
         cell.onCategoryClick = { cat in
 //            self.onDocumentChanged?($0, indexPath.row)
             self.selected = indexPath.row
@@ -108,6 +108,7 @@ class CategoriesCell: UICollectionViewCell {
     }
     
     var leadingConstraint: NSLayoutConstraint!
+    var trailingConstraint: NSLayoutConstraint!
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
@@ -133,10 +134,11 @@ class CategoriesCell: UICollectionViewCell {
         NSLayoutConstraint.activate([
             titleLabel.leadingAnchor.constraint(equalTo: self.borderView.leadingAnchor, constant: 15),
             titleLabel.trailingAnchor.constraint(equalTo: self.borderView.trailingAnchor, constant: -15),
-            titleLabel.centerYAnchor.constraint(equalTo: self.borderView.centerYAnchor),
-            borderView.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -10)
+            titleLabel.centerYAnchor.constraint(equalTo: self.borderView.centerYAnchor)
+            
         ])
-        
+        trailingConstraint = borderView.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor)
+        trailingConstraint.isActive = true
         self.contentView.isUserInteractionEnabled = true
         self.contentView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(onItemClick(gestureRecognizer:))))
     }
@@ -146,12 +148,13 @@ class CategoriesCell: UICollectionViewCell {
         onCategoryClick?(category)
     }
     
-    func setData(category: Category, isFirst: Bool, isSelected: Bool) {
-        self.leadingConstraint.constant = isFirst ? 31 : 5
+    func setData(category: Category, isFirst: Bool, isSelected: Bool, isLast: Bool) {
+        self.leadingConstraint.constant = isFirst ? 31 : 0
         titleLabel.text = category.translates?[translatePosition]?.name
         self.category = category
         let color: UIColor = isSelected ? Colors.primaryGreen : Colors.pageIndicatorGray
         titleLabel.textColor = color
         self.borderView.layer.borderColor = color.cgColor
+        self.trailingConstraint.constant = isLast ? -31 : 0
     }
 }
