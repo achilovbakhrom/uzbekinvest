@@ -21,7 +21,10 @@ class MobilePhoneVC: BaseWithLeftCirclesVC {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.backButtonClicked = { self.mobilePhonePresenter?.goBack() }
+        self.backButtonClicked = {
+            self.mobilePhonePresenter?.goBack()
+            self.setTabBarHidden(false)
+        }
         self.titleLabel.text = product?.translates?[translatePosition]?.name
         self.descriptionLabel.text = product?.translates?[translatePosition]?.text?.htmlToString
         self.descriptionLabel.textAlignment = .justified

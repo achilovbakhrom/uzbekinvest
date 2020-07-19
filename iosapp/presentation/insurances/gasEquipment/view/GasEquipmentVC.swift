@@ -25,7 +25,10 @@ class GasEquipmentVC: BaseWithLeftCirclesVC {
         self.gasEquipmentTitle.text = product.translates?[translatePosition]?.name
         self.gasEquipmentDescription.text = product.translates?[translatePosition]?.text?.htmlToString
         self.gasEquipmentDescription.textAlignment = .justified
-        backButtonClicked = { self.gasEquipmentPresenter?.goBack() }
+        backButtonClicked = {
+            self.gasEquipmentPresenter?.goBack()
+            self.setTabBarHidden(false)
+        }
         self.gasEquipmentPresenter?.setProduct(product: product)
         self.setTabBarHidden(true)
         self.setupNoInternetView()

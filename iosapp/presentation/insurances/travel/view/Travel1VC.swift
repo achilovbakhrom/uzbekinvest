@@ -14,6 +14,7 @@ class Travel1VC: BaseWithLeftCirclesVC, TagListViewDelegate {
     @IBOutlet weak var countryListDropDown: DDown!
     @IBOutlet weak var nextButton: Button!
     @IBOutlet weak var tagListView: TagListView!
+    @IBOutlet weak var titleLabel: UILabel!
     
     private lazy var travelPresenter = self.presenter as? TravelPresenter
     
@@ -44,6 +45,10 @@ class Travel1VC: BaseWithLeftCirclesVC, TagListViewDelegate {
         }
         self.nextButton.isEnabled = false
         self.travelPresenter?.fetchCountryList()
+        
+        
+        self.titleLabel.text = "travel1_title".localized()
+        self.countryListDropDown.placeholder = "travel1_country".localized()
     }
     
     func tagRemoveButtonPressed(_ title: String, tagView: TagView, sender: TagListView) {

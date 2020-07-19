@@ -25,9 +25,9 @@ extension CAGradientLayer {
     }
     
     func makeGreenGradient() {
-        let leftColor = UIColor(red: 65.0 / 255.0, green: 228.0 / 255.0, blue: 153.0 / 255.0, alpha: 1.0)
+        let leftColor = UIColor(red: 74.0 / 255.0, green: 187.0 / 255.0, blue: 40.0 / 255.0, alpha: 1.0)
         let rightColor
-            = UIColor(red: 53.0 / 255.0, green: 197.0 / 255.0, blue: 186.0 / 255.0, alpha: 1.0)
+            = UIColor(red: 39.0 / 255.0, green: 162.0 / 255.0, blue: 73.0 / 255.0, alpha: 1.0)
         self.colors = [leftColor.cgColor, rightColor.cgColor]
         self.startPoint = CGPoint(x: 0, y: 0)
         self.endPoint = CGPoint(x: 1, y: 0)

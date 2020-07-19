@@ -13,8 +13,7 @@
 "upload" = "Юклаш";
 
 "third_party" = "Учинчи шахс жавобгарлиги";
-"gas_equipment" = "Газ ускуналари";
-"days" = "кун";
+"gas_equipment" = "Газбаллон ускунаси";
 "incorrect_confirm_code" = "Нотўғри тасдиқлаш коди!";
 "my_new" = "Кўриб чиқилмоқда";
 "my_canceled" = "Бекор қилинган";
@@ -49,7 +48,7 @@
 "vehicle_details" = "Автомобил хақида маълумот";
 "authorized_persons_to_control_the_vehicle" = "Фойдаланиш хуқуқига эга шахслар";
 "number" = "Сони";
-"unlim" = "Чекловсиз";
+"unlim" = "Хайдовчилар сони чекланмаган";
 "no_insured_events" = "Ходисасиз";
 "one_insured_event" = "Битта ходиса";
 "two_insured_event" = "Иккита ходиса";
@@ -295,3 +294,72 @@
 "incident_doc" = "Хужжатлар";
 
 "incident_comment_desc" = "Ҳодиса сабабларини батафсил баён қилинг";
+
+"car_price_kasko" = "Автомобилнинг тахминий бозор нархи";
+
+"to_pay" = "Полис нархи";
+
+"form_of_pay" = "Тўлов усули";
+
+"loading_confirm" = "Юкланмокда";
+
+"confirm_button" = "Юлкаш";
+
+"begin_period" = "Бошлаш вакти";
+
+"cancel" = "Бекор килииш";
+
+"online_pay" = "Онлайн \nтўлов";
+
+"cash_pay" = "Нақд пул";
+
+"terminal_pay" = "Карта";
+
+"policy_begin_time" = "Бошлаш вакти";
+
+"checkout" = "Буюртма бермоқ";
+
+"travel1_title" = "Харажатни ҳисобланг";
+
+"travel1_country" = "Каерга саёҳат қилмоқчисиз?";
+
+"travel2_amount_title" = "Қоплаб бериладиган харажатлар ҳажми";
+
+"tarif" = "Суғурта дастури";
+
+"travel3_type" = "Чет давлатларга чиқишлар сони";
+
+"travel3_single" = "Бир марталик";
+"travel3_multiple" = "Кўп марталик";
+
+"multi_type" = "MULTI дастури";
+
+"goal_type" = "Чет давлатга чиқиш мақсад";
+
+"travel_type" = "Саёҳат";
+"work_type" = "Иш";
+"sport_type" = "Спорт";
+"search_field" = "Излаш";
+
+"tourist_count" = "Сайёҳлар сони";
+
+"tourist_count_single" = "Бир киши";
+"tourist_count_family" = "Оилавий";
+
+"tourist_count_group" = "Гуруҳ";
+
+"tourist_list" = "Сайёҳлар рўйхати";
+
+"tourist_country_confirm" = "Белгиланган мамлакатлар";
+
+"ipoteka_years" = "Ипотека даври (йил)";
+
+"ipoteka_amount" = "Ипотека суммаси";
+
+"insurance_amount_title" = "Суғурта қопламаси ҳажми";
+
+"sport_amount" = "Сумма";
+
+"day" = "кун";
+"day_2" = "кун";
+"days" = "кун";

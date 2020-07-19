@@ -21,7 +21,10 @@ class InfectionVC: BaseWithLeftCirclesVC {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        backButtonClicked = { self.infectionPresenter?.goBack() }
+        backButtonClicked = {
+            self.infectionPresenter?.goBack()
+            self.setTabBarHidden(false)
+        }
         self.infectionTitle.text = self.product.translates?[translatePosition]?.name
         self.infectionDescription.text = self.product.translates?[translatePosition]?.text?.htmlToString
         self.infectionDescription.textAlignment = .justified

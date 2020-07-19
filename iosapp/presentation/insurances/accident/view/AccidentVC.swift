@@ -26,10 +26,10 @@ class AccidentVC: BaseWithLeftCirclesVC {
             self.accidentPresenter?.goBack()
             self.setTabBarHidden(false)
         }
-        accidentTitle.text = product.translates?[0]?.name
+        accidentTitle.text = product.translates?[translatePosition]?.name
         accidentDescription.textAlignment = .justified
         accidentDescription.text
-            = product.translates?[0]?.text?.htmlToAttributedString?.string
+            = product.translates?[translatePosition]?.text?.htmlToAttributedString?.string
         self.accidentPresenter?.setProduct(product: product)
         self.setTabBarHidden(true)
         self.setupNoInternetView()

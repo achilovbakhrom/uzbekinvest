@@ -34,6 +34,7 @@ class Kasko2VC: BaseWithLeftCirclesVC {
         }
         self.nextButton.isEnabled = false
         self.backButtonClicked = { self.kaskoPresenter?.goBack() }
+        carPrice.floatText = "car_price_kasko".localized()
     }
     
     func setTitles(titles: [String]) {

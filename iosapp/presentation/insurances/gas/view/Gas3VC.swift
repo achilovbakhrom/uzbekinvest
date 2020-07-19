@@ -21,6 +21,7 @@ class Gas3VC: BaseWithLeftCirclesVC {
         backButtonClicked = { self.gasPresenter?.goBack() }
         nextButton.isEnabled = false
         insuranceAmount.onChange = { self.gasPresenter?.setInsuranceAmount(insuranceAmount: Int($0) ?? 0) }
+        self.insuranceAmount.floatText = "travel2_amount_title".localized()
     }
     
     func setEnabled(isEnabled: Bool) {

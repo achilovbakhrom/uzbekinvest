@@ -12,8 +12,7 @@
 "date" = "kun";
 "upload" = "Yuklash";
 "third_party" = "Uchinchi shaxs javobgarligi";
-"gas_equipment" = "Gaz uskunalari";
-"days" = "кун";
+"gas_equipment" = "Gazballon uskunasi";
 "incorrect_confirm_code" = "Noto'g'ri tasdiqlash kodi!";
 "my_new" = "Ko'rib chiqilmoqda";
 "my_canceled" = "Bekor qilingan";
@@ -48,7 +47,7 @@
 "vehicle_details" = "Avtomobil haqida ma'lumnot";
 "authorized_persons_to_control_the_vehicle" = "Foydalanish huquqiga ega shaxslar";
 "number" = "Soni";
-"unlim" = "Cheklovsiz";
+"unlim" = "Haydochilar soni cheklanmagan";
 "no_insured_events" = "Xodisasiz";
 "one_insured_event" = "Bitta xodisa";
 "two_insured_event" = "Ikkita xodisa";
@@ -294,3 +293,73 @@ Kelajakda rivojlanish strategiyasi - korporativ va xususiy sug‘urta bozorida o
 "incident_doc" = "Xujjatlar";
 
 "incident_comment_desc" = "Hodisa sabablarini batafsil bayon qiling";
+
+"car_price_kasko" = "Avtomobilning taxminiy bozor narxi";
+
+"to_pay" = "Polis narxi";
+
+"form_of_pay" = "To’lov usuli";
+
+"loading_confirm" = "Yuklanmoqda";
+
+"confirm_button" = "Yuklash";
+
+"begin_period" = "Boshlash vaqti";
+
+"cancel" = "Bekor qilish";
+
+"online_pay" = "Onlayn \nto'lov";
+
+"cash_pay" = "Naqd pul";
+
+"terminal_pay" = "Karta";
+
+"policy_begin_time" = "Boshlash vaqti";
+
+"checkout" = "Buyurtma bermoq";
+
+"travel1_title" = "Harajatni hisoblang";
+
+"travel1_country" = "Qayerga sayohat qilmoqchisiz?";
+
+"travel2_amount_title" = "Qoplab beriladigan xarajatlar hajmi";
+
+"tarif" = "Sug’urta dasturi";
+
+"travel3_type" = "Chet davlatlargaga chiqishlar soni";
+
+"travel3_single" = "Bir martalik";
+"travel3_multiple" = "Ko’p martalik";
+
+"multi_type" = "MULTI dasturi";
+
+"goal_type" = "Chet davlatga chiqish maqsad";
+
+"travel_type" = "Sayohat";
+"work_type" = "Ish";
+"sport_type" = "Sport";
+
+"search_field" = "Izlash";
+
+"tourist_count" = "Sayyohlar soni";
+
+"tourist_count_single" = "Bir kishi";
+"tourist_count_family" = "Oilaviy";
+
+"tourist_count_group" = "Guruh";
+
+"tourist_list" = "Sayyohlar ro'yhati";
+
+"tourist_country_confirm" = "Belgilangan mamlakatlar";
+
+"ipoteka_years" = "Ipoteka davri (yil)";
+
+"ipoteka_amount" = "Ipoteka summasi";
+
+"insurance_amount_title" = "Sug’urta qoplamasi hajmi";
+
+"sport_amount" = "Summa";
+
+"day" = "kun";
+"day_2" = "kun";
+"days" = "kun";

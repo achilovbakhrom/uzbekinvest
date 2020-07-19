@@ -36,6 +36,7 @@ class Sport2VC: BaseWithLeftCirclesVC {
         self.insuranceAmount.didSelect {
             self.sportsPresenter?.setInsuranceAmount(insuranceAmount: $2)
         }
+        insuranceAmount.text = "sport_amount".localized()
     }
     
     @IBAction func nextButtonClicked(_ sender: Any) {

@@ -20,6 +20,9 @@ class Travel3VC: BaseWithLeftCirclesVC {
     @IBOutlet weak var endDate: DatePicker!
     @IBOutlet weak var multiDropDown: DDown!
     
+    @IBOutlet weak var travelTitle: UILabel!
+    @IBOutlet weak var typeLabel: UILabel!
+    
     private lazy var multiData: ([Int], [String]) = {
         return (
             [ 0, 1, 2, 3, 4 ],
@@ -51,6 +54,14 @@ class Travel3VC: BaseWithLeftCirclesVC {
         multiDropDown.optionArray = multiData.1
         nextButton.isEnabled = false
         self.selectSingle()
+        
+        self.nextButton.setTitle("next".localized(), for: .normal)
+        self.travelTitle.text = "travel1_title".localized()
+        self.typeLabel.text = "travel3_type".localized()
+        
+        singleButton.setTitle("travel3_single".localized(), for: .normal)
+        multipleButton.setTitle("travel3_multiple".localized(), for: .normal)
+        multiDropDown.placeholder = "multi_type".localized()
     }
     
     func setEnabled(isEnabled: Bool) {

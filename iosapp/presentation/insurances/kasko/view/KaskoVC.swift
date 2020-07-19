@@ -21,11 +21,12 @@ class KaskoVC: BaseWithLeftCirclesVC {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.titleLabel.text = product?.translates?[0]?.name
-        self.descriptionLabel.text = product.translates?[0]?.text?.htmlToString
+        self.titleLabel.text = product?.translates?[translatePosition]?.name
+        self.descriptionLabel.text = product.translates?[translatePosition]?.text?.htmlToString
         self.descriptionLabel.textAlignment = .justified
         backButtonClicked = {
             self.kaskoPresenter?.goBack()
+            self.setTabBarHidden(false)
         }
         self.setTabBarHidden(true)
         self.kaskoPresenter?.setProduct(product: product)
@@ -40,10 +41,6 @@ class KaskoVC: BaseWithLeftCirclesVC {
         }
     }
     
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
-        self.setTabBarHidden(false)
-    }
     
     func setupNoInternetView() {
         self.view.addSubview(self.noInternetView)

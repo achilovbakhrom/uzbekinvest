@@ -12,6 +12,7 @@ class TouristList1VC: BaseWithLeftCirclesVC, UITableViewDelegate, UITableViewDat
     
     @IBOutlet weak var touristListView: UITableView!
     @IBOutlet weak var nextButton: Button!
+    @IBOutlet weak var touristCountLabel: UILabel!
     
     private var members: [Member] = []
     private lazy var travelPresenter = self.presenter as? TravelPresenter
@@ -30,6 +31,8 @@ class TouristList1VC: BaseWithLeftCirclesVC, UITableViewDelegate, UITableViewDat
         backButtonClicked = { self.travelPresenter?.goBack() }
         nextButton.isEnabled = false
         travelPresenter?.initTouristsList1VC()
+        self.nextButton.setTitle("next".localized(), for: .normal)
+        self.touristCountLabel.text = "tourist_list".localized()
     }
     
     func setMembers(members: [Member]) {

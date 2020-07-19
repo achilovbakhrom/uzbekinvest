@@ -19,6 +19,15 @@ class TravelConfirm1VC: BaseWithRightGreenCirclesVC {
     @IBOutlet weak var groupType: UILabel!
     @IBOutlet weak var confirmButton: Button!
     
+    
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var countryLabel: UILabel!
+    @IBOutlet weak var amountLabel: UILabel!
+    @IBOutlet weak var tarifLabel: UILabel!
+    @IBOutlet weak var typeLabel: UILabel!
+    @IBOutlet weak var goalLabel: UILabel!
+    @IBOutlet weak var touristCountLabel: UILabel!
+    
     private lazy var travelPresenter = self.presenter as? TravelPresenter
     
     override func viewDidLoad() {
@@ -26,6 +35,16 @@ class TravelConfirm1VC: BaseWithRightGreenCirclesVC {
         backButtonClicked = { self.travelPresenter?.goBack() }
         self.travelPresenter?.fillConfirm1VC()
         self.travelPresenter?.calculate()
+        
+        self.titleLabel.text = "travel1_title".localized();
+        self.titleLabel.text = "tourist_country_confirm".localized();
+        self.amountLabel.text = "amount_of_covered_cost".localized()
+        self.tariff.text = "program".localized()
+        self.typeLabel.text = "travel3_type".localized()
+        self.goalLabel.text = "goal_type".localized()
+        self.touristCountLabel.text = "tourist_count".localized()
+        
+        self.confirmButton.setTitle("checkout".localized(), for: .normal)
     }
     
     func setTotalAmount(amount: String) {

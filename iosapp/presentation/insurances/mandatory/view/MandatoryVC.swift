@@ -25,10 +25,13 @@ class MandatoryVC: BaseWithLeftCirclesVC {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.backButtonClicked = { self.mandatoryPresenter?.goBack() }
-        self.mandatoryTitle.text = product?.translates?[0]?.name
+        self.backButtonClicked = {
+            self.mandatoryPresenter?.goBack()
+            self.setTabBarHidden(false)
+        }
+        self.mandatoryTitle.text = product?.translates?[translatePosition]?.name
         self.mandatoryDescription.textAlignment = .justified
-        self.mandatoryDescription.text = product?.translates?[0]?.text?.htmlToString
+        self.mandatoryDescription.text = product?.translates?[translatePosition]?.text?.htmlToString
         
         self.mandatoryPresenter?.setProduct(product: product)
         self.setupNoInternetView()

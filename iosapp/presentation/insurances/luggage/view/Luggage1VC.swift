@@ -20,7 +20,17 @@ class Luggage1VC: BaseWithLeftCirclesVC {
         var titles = [String]()
         (1...30).forEach {
             ids.append($0)
-            titles.append("\($0) \("days".localized())")
+            var suffix = ""
+            if (10...20).contains($0) {
+                suffix = "days".localized()
+            } else if 1 < $0%10 && $0%10 < 5   {
+                suffix = "day_2".localized()
+            } else if $0%10 >= 5 || $0%10 == 0 {
+                suffix = "days".localized()
+            } else {
+                suffix = "day".localized()
+            }
+            titles.append("\($0) \(suffix)")
         }
         return (ids, titles)
     }()
@@ -34,7 +44,7 @@ class Luggage1VC: BaseWithLeftCirclesVC {
         self.days.didSelect {
             self.luggagePresenter?.setDay(day: $2, dayString: $0)
         }
-        
+        self.backButtonClicked = { self.luggagePresenter?.goBack() }
     }
     
     func setEnabled(isEnabled: Bool) {

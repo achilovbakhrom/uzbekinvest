@@ -162,7 +162,7 @@
 "9zh-aR-lzG.text" = "18 yilgacha";
 
 /* Class = "UITextField"; placeholder = "Выберите программу"; ObjectID = "A5M-cl-hUl"; */
-"A5M-cl-hUl.placeholder" = "Dasturni tanlash";
+"A5M-cl-hUl.placeholder" = "Nimani sug’urta qilishni istaysiz?";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "AFt-wC-CBv"; */
 "AFt-wC-CBv.text" = "Label";
@@ -213,7 +213,7 @@
 "CyC-mh-Njj.text" = "Franshiza belgilanishini xohlaysizmi?";
 
 /* Class = "UILabel"; text = "Количество участников"; ObjectID = "D9J-XP-dd9"; */
-"D9J-XP-dd9.text" = "Ishtirokchilar soni";
+"D9J-XP-dd9.text" = "Polisga kiritilayotgan shaxslar soni va ularning yoshi";
 
 /* Class = "UIButton"; normalTitle = "Далее"; ObjectID = "DPi-DS-1j9"; */
 "DPi-DS-1j9.normalTitle" = "Keyingi";
@@ -264,7 +264,7 @@
 "Fie-kd-KXq.text" = "100 yilgacha";
 
 /* Class = "UITextField"; placeholder = "Срок страхования"; ObjectID = "FrQ-HD-wMQ"; */
-"FrQ-HD-wMQ.placeholder" = "Sug’urta polisi muddati";
+"FrQ-HD-wMQ.placeholder" = "Sug’urta polisi muddatini tanlang";
 
 /* Class = "UILabel"; text = "10 000 000 сум"; ObjectID = "G5E-a1-jjR"; */
 "G5E-a1-jjR.text" = "10 000 000 sum";
@@ -276,7 +276,7 @@
 "GTN-kP-iMa.text" = "Label";
 
 /* Class = "UILabel"; text = "Количество участников"; ObjectID = "GiQ-Q9-8rv"; */
-"GiQ-Q9-8rv.text" = "Ishtirokchilar soni";
+"GiQ-Q9-8rv.text" = "Sportchilar soni va ularning yoshi";
 
 /* Class = "UIButton"; normalTitle = "Premium"; ObjectID = "GjR-dP-Ohz"; */
 "GjR-dP-Ohz.normalTitle" = "Premium";
@@ -315,7 +315,7 @@
 "IGz-vL-0gl.normalTitle" = "25 000 000 sum";
 
 /* Class = "UILabel"; text = "Тип"; ObjectID = "Ip7-oJ-ap0"; */
-"Ip7-oJ-ap0.text" = "Tur";
+"Ip7-oJ-ap0.text" = "Avtoulov turi";
 
 /* Class = "UITextField"; placeholder = "Сумма"; ObjectID = "JgR-bW-nYc"; */
 "JgR-bW-nYc.placeholder" = "Summa";
@@ -483,7 +483,7 @@
 "Tbc-to-4sa.text" = "Min: 500 000 sum, maks: 5 000 000 sum";
 
 /* Class = "UILabel"; text = "Только в период соревнований?"; ObjectID = "Tm5-Rq-5lC"; */
-"Tm5-Rq-5lC.text" = "Faqat musobaqa davrida";
+"Tm5-Rq-5lC.text" = "Polisni faqat musobaqa uchun rasmiylashtirishni xohlaysizm?";
 
 /* Class = "UILabel"; text = "Стоимость страхования"; ObjectID = "TnB-Nr-NfE"; */
 "TnB-Nr-NfE.text" = "Polis narxi";
@@ -528,7 +528,7 @@
 "WW7-bA-S0x.text" = "Label";
 
 /* Class = "UITextField"; placeholder = "Выберите программу"; ObjectID = "Wfr-Ho-o69"; */
-"Wfr-Ho-o69.placeholder" = "Dasturni tanlash";
+"Wfr-Ho-o69.placeholder" = "Nimani sug’urta qilishni istaysiz?";
 
 /* Class = "UILabel"; text = "5"; ObjectID = "X5c-4q-M6e"; */
 "X5c-4q-M6e.text" = "5";
@@ -573,10 +573,10 @@
 "ZAZ-YS-Yvh.text" = "Sug'urta oxirigacha";
 
 /* Class = "UILabel"; text = "Тип"; ObjectID = "ZM7-Y1-imt"; */
-"ZM7-Y1-imt.text" = "Tur";
+"ZM7-Y1-imt.text" = "Avtoulov turi";
 
 /* Class = "UITextField"; placeholder = "Выберите регион"; ObjectID = "ZNE-W2-eTw"; */
-"ZNE-W2-eTw.placeholder" = "Hudud";
+"ZNE-W2-eTw.placeholder" = "Hududni tanlang";
 
 /* Class = "UILabel"; text = "Возраст"; ObjectID = "ZRT-a3-Ut7"; */
 "ZRT-a3-Ut7.text" = "Yosh";
@@ -618,7 +618,7 @@
 "cXr-3Z-8Ij.text" = "3 yoshdan 7 yoshgacha";
 
 /* Class = "UILabel"; text = "Программа"; ObjectID = "cdl-mY-NG3"; */
-"cdl-mY-NG3.text" = "Sug’urta dasturi";
+"cdl-mY-NG3.text" = "Sug’urta obyekti";
 
 /* Class = "UIButton"; normalTitle = "Рассчитать стоимость"; ObjectID = "chY-eB-HA1"; */
 "chY-eB-HA1.normalTitle" = "Harajatni xisoblash";
@@ -717,7 +717,7 @@
 "iwV-cG-W2F.text" = "Sug’urta qoplamasi hajmi";
 
 /* Class = "UITextField"; placeholder = "Сумма"; ObjectID = "iya-wR-9Jq"; */
-"iya-wR-9Jq.placeholder" = "Summa";
+"iya-wR-9Jq.placeholder" = "Hajmni belgilang";
 
 /* Class = "UILabel"; text = "сум"; ObjectID = "j0x-YT-TCE"; */
 "j0x-YT-TCE.text" = "sum";
@@ -732,7 +732,7 @@
 "jTG-Ow-n7J.normalTitle" = "Harajatni xisoblash";
 
 /* Class = "UITextField"; placeholder = "Выберите автомобиль"; ObjectID = "jqz-B5-OeH"; */
-"jqz-B5-OeH.placeholder" = "Avtomobil";
+"jqz-B5-OeH.placeholder" = "Avtomobil turini tanlang";
 
 /* Class = "UILabel"; text = "До 15 лет"; ObjectID = "jtN-s9-af6"; */
 "jtN-s9-af6.text" = "15 yilgacha";
@@ -756,7 +756,7 @@
 "kWl-b5-UbI.normalTitle" = "Keyingi";
 
 /* Class = "UILabel"; text = "Гражданство"; ObjectID = "kbV-LJ-EQv"; */
-"kbV-LJ-EQv.text" = "Fuqarolik";
+"kbV-LJ-EQv.text" = "Fuqaroligingiz";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "kc0-n3-Tb9"; */
 "kc0-n3-Tb9.text" = "Label";
@@ -789,7 +789,7 @@
 "mEJ-Ej-ia8.text" = "Nogironlar";
 
 /* Class = "UILabel"; text = "Тип страхования"; ObjectID = "mKu-8Y-e5U"; */
-"mKu-8Y-e5U.text" = "Sug’urta dasturi";
+"mKu-8Y-e5U.text" = "Sug’urta dasturini tanlang";
 
 /* Class = "UILabel"; text = "Рассчитать стоимость"; ObjectID = "mke-WK-gF0"; */
 "mke-WK-gF0.text" = "Xarajatni hisoblash";
@@ -801,7 +801,7 @@
 "n2w-En-iwW.normalTitle" = "Prestij plyus";
 
 /* Class = "UILabel"; text = "Стоимость страхования (приблизительно) (сум)"; ObjectID = "nDU-1H-VQt"; */
-"nDU-1H-VQt.text" = "Polis narxi (taxminan) (sum)";
+"nDU-1H-VQt.text" = "Sug’urta qoplamasi hajmi";
 
 /* Class = "UITextField"; placeholder = "0 сум"; ObjectID = "nFO-XG-77U"; */
 "nFO-XG-77U.placeholder" = "0 сум";
@@ -816,7 +816,7 @@
 "npo-tc-LQv.normalTitle" = "Keyingi";
 
 /* Class = "UITextField"; placeholder = "Укажите возраст"; ObjectID = "ntv-Ly-xzn"; */
-"ntv-Ly-xzn.placeholder" = "Yoshni korsatish";
+"ntv-Ly-xzn.placeholder" = "Yosh";
 
 /* Class = "UILabel"; text = "Оплачено"; ObjectID = "nua-lY-md3"; */
 "nua-lY-md3.text" = "To'langan";
@@ -840,7 +840,7 @@
 "oYN-Gs-579.normalTitle" = "Keyingi";
 
 /* Class = "UITextField"; placeholder = "Срок страхования"; ObjectID = "ocR-aw-u1b"; */
-"ocR-aw-u1b.placeholder" = "Sug’urta polisi muddati";
+"ocR-aw-u1b.placeholder" = "Sug’urta polisi muddatini tanlang";
 
 /* Class = "UILabel"; text = "Рассчитать стоимость"; ObjectID = "ofx-UL-8sV"; */
 "ofx-UL-8sV.text" = "Xarajatni hisoblash";
@@ -876,7 +876,7 @@
 "qan-0N-MD2.text" = "2 yildan kam";
 
 /* Class = "UILabel"; text = "Тип услуги"; ObjectID = "qp3-Ej-lVi"; */
-"qp3-Ej-lVi.text" = "Xizmat turi";
+"qp3-Ej-lVi.text" = "Franshiza";
 
 /* Class = "UITextField"; placeholder = "Сумма"; ObjectID = "quV-T5-jMp"; */
 "quV-T5-jMp.placeholder" = "Summa";
@@ -900,7 +900,7 @@
 "rf1-hD-LAt.text" = "Polis narxi";
 
 /* Class = "UITextField"; placeholder = "Сумма"; ObjectID = "s0s-ff-3Ig"; */
-"s0s-ff-3Ig.placeholder" = "Summa";
+"s0s-ff-3Ig.placeholder" = "Kunlar soni";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "sAA-OG-uZm"; */
 "sAA-OG-uZm.text" = "Label";
@@ -951,7 +951,7 @@
 "urO-hr-m6I.text" = "sum";
 
 /* Class = "UILabel"; text = "Количество участников"; ObjectID = "uyn-aD-W9k"; */
-"uyn-aD-W9k.text" = "Polisga kiritiladigan sportchilar soni va ularning yoshi";
+"uyn-aD-W9k.text" = "Polisga kiritilayotgan shaxslar soni va ularning yoshi";
 
 /* Class = "UITextField"; placeholder = "Количество"; ObjectID = "vFH-yI-leH"; */
 "vFH-yI-leH.placeholder" = "Miqdori";
@@ -981,7 +981,7 @@
 "wSP-Mx-d6G.text" = "0";
 
 /* Class = "UILabel"; text = "Программа"; ObjectID = "wWk-PB-NRq"; */
-"wWk-PB-NRq.text" = "Dastur";
+"wWk-PB-NRq.text" = "Sug’urta obyekti";
 
 /* Class = "UIButton"; normalTitle = "Франшиза отсуствует"; ObjectID = "wcJ-DM-H0g"; */
 "wcJ-DM-H0g.normalTitle" = "Franshiza yo'q";

@@ -31,6 +31,8 @@ class Ipoteka1VC: BaseWithLeftCirclesVC {
             self.ipotekaPresenter?.goBack()
         }
         self.nextButton.isEnabled = false
+        self.years.floatText = "ipoteka_years".localized()
+        self.amount.floatText = "ipoteka_amount".localized()
     }
     
     @IBAction func nextButtonClicked(_ sender: Any) {

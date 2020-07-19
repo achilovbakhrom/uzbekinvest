@@ -15,6 +15,9 @@ class Travel5VC: BaseWithLeftCirclesVC {
     @IBOutlet weak var groupButton: UIButton!
     @IBOutlet weak var dobPicker: DatePicker!
     @IBOutlet weak var nextButton: Button!
+    @IBOutlet weak var travelDesc: UILabel!
+    @IBOutlet weak var goalType: UILabel!
+    
     private lazy var travelPresenter = self.presenter as? TravelPresenter
     
     override func viewDidLoad() {
@@ -27,6 +30,15 @@ class Travel5VC: BaseWithLeftCirclesVC {
         backButtonClicked = { self.travelPresenter?.goBack() }
         self.selectIndividual()
         nextButton.isEnabled = false
+        
+        self.nextButton.setTitle("next".localized(), for: .normal)
+        self.goalType.text = "tourist_count".localized()
+        
+        self.individualButton.setTitle("tourist_count_single".localized(), for: .normal)
+        
+        self.familyButton.setTitle("tourist_count_family".localized(), for: .normal)
+        
+        self.groupButton.setTitle("tourist_count_group".localized(), for: .normal)
     }
     
     private func selectIndividual() {

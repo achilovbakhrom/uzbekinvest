@@ -24,6 +24,7 @@ class Health2VC: BaseWithLeftCirclesVC {
         }
         backButtonClicked = { self.healthPresenter?.goBack() }
         nextButton.isEnabled = false
+        insuranceAmount.floatText = "".localized()
     }
     
     func setEnabled(isEnabled: Bool) {

@@ -21,6 +21,7 @@ class Luggage2VC: BaseWithLeftCirclesVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.select500()
+        self.backButtonClicked = { self.luggagePresenter?.goBack() }
     }
     
     @IBAction func fifHundredAction(_ sender: Any) {

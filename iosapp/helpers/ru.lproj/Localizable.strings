@@ -13,8 +13,7 @@
 "upload" = "Загрузить";
 
 "third_party" = "Ответственность перед третьими лицами";
-"gas_equipment" = "Газовые оборудования";
-"days" = "дн.";
+"gas_equipment" = "Газобаллонное оборудование";
 "incorrect_confirm_code" = "Неправильный код подтверждения!";
 "my_new" = "На рассмотрении";
 "my_canceled" = "Отменен";
@@ -50,7 +49,7 @@
 "vehicle_details" = "Сведения о транспортном средстве";
 "authorized_persons_to_control_the_vehicle" = "Допущенных лиц к управлению ТС";
 "number" = "Количество";
-"unlim" = "Без ограничения";
+"unlim" = "Количество водителей не ограничено";
 "no_insured_events" = "Отсутствие страховых случаев";
 "one_insured_event" = "Один страховой случай";
 "two_insured_event" = "Два страховых случая";
@@ -224,3 +223,72 @@
 "done_desc2" = "сум оплачено на Ваш банковский счет";
 
 "incident_comment_desc" = "Подробно опишите обстоятельства произошедшего случая";
+
+"car_price_kasko" = "Приблизительная стоимость авто";
+
+"to_pay" = "Сумма к оплате";
+
+"form_of_pay" = "Способ оплаты";
+
+"loading_confirm" = "Загружается";
+
+"confirm_button" = "Оформить";
+
+"begin_period" = "Выберите дату начала";
+
+"cancel" = "Отмена";
+
+"online_pay" = "Онлайн \nоплата";
+
+"cash_pay" = "Наличными";
+
+"terminal_pay" = "Карта";
+
+"policy_begin_time" = "Дата начала страхования";
+
+"checkout" = "Оформить";
+
+"travel1_title" = "Рассчитать стоимость";
+
+"travel1_country" = "Куда отправляемся?";
+
+"travel2_amount_title" = "Cуммa покрываемых расходов";
+
+"tarif" = "Программа покрываемых расходов";
+
+"travel3_type" = "Kоличество выездов за границу";
+
+"travel3_single" = "Однократная";
+"travel3_multiple" = "Многократная";
+
+"multi_type" = "Программа MULTI";
+
+"goal_type" = "Цель выезда";
+
+"travel_type" = "Путешествие";
+"work_type" = "Работа";
+"sport_type" = "Спорт";
+"search_field" = "Поиск";
+
+"tourist_count" = "Количество туристов";
+
+"tourist_count_single" = "Я еду один";
+"tourist_count_family" = "Семья";
+"tourist_count_group" = "Группа";
+
+"tourist_list" = "Список туристов";
+
+"tourist_country_confirm" = "Страны";
+
+"ipoteka_years" = "Период ипотеки (лет)";
+
+"ipoteka_amount" = "Cуммa ипотеки";
+
+"insurance_amount_title" = "Cуммa страховой компенсации";
+
+"sport_amount" = "Сумма";
+
+"day" = "день";
+"day_2" = "дня";
+"days" = "дней";
+

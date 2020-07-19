@@ -23,6 +23,7 @@ class HealthVC: BaseWithLeftCirclesVC {
         super.viewDidLoad()
         backButtonClicked = {
             self.healthPresenter?.goBack()
+            self.setTabBarHidden(false)
         }
         healthTitle.text = product?.translates?[translatePosition]?.name
         healthDescription.text = product?.translates?[translatePosition]?.text?.htmlToString

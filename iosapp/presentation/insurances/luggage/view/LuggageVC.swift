@@ -22,7 +22,10 @@ class LuggageVC: BaseWithLeftCirclesVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        backButtonClicked = { self.luggagePresenter?.goBack() }
+        backButtonClicked = {
+            self.luggagePresenter?.goBack()
+            self.setTabBarHidden(false)
+        }
         self.titleLabel.text = self.product.translates?[translatePosition]?.name
         self.descriptionLabel.text = self.product.translates?[translatePosition]?.text?.htmlToString
         self.descriptionLabel.textAlignment = .justified

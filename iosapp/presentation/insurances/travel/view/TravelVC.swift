@@ -20,7 +20,10 @@ class TravelVC: BaseWithLeftCirclesVC {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        backButtonClicked = { self.travelPresenter?.goBack() }
+        backButtonClicked = {
+            self.travelPresenter?.goBack()
+            self.setTabBarHidden(false)
+        }
         self.titleLabel.text = self.product.translates?[translatePosition]?.name
         self.descripttionLabel.text = self.product.translates?[translatePosition]?.text?.htmlToString
         self.descripttionLabel.textAlignment = .justified

@@ -23,7 +23,7 @@ class GasVC: BaseWithLeftCirclesVC {
         super.viewDidLoad()
         self.backButtonClicked = {
             self.gasPresenter?.goBack()
-            self.setTabBarHidden(true)
+            self.setTabBarHidden(false)
         }
         self.gasPresenter?.setProduct(product: product)
         gasHomeTitle.text = product?.translates?[translatePosition]?.name ?? ""

@@ -15,6 +15,7 @@ class TravelConfirm2VC: BaseWithLeftCirclesVC, UITableViewDelegate, UITableViewD
     @IBOutlet weak var touristsListView: UITableView!
     @IBOutlet weak var nextButton: Button!
     
+    @IBOutlet weak var titleLabel: UILabel!
     private lazy var travelPresenter = self.presenter as? TravelPresenter
     
     private var touristsList: [Tourist] = []
@@ -31,6 +32,8 @@ class TravelConfirm2VC: BaseWithLeftCirclesVC, UITableViewDelegate, UITableViewD
         touristsListView.dataSource = self
         touristsListView.register(TouristList2Cell.self, forCellReuseIdentifier: String(describing: TouristList2Cell.self))
         self.travelPresenter?.initTravelConfirm2VC()
+        self.titleLabel.text = "tourist_list".localized()
+        self.nextButton.setTitle("checkout".localized(), for: .normal)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

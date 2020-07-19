@@ -37,6 +37,8 @@ class Accident1VC: BaseWithLeftCirclesVC {
         }
         nextButton.isEnabled = false
         backButtonClicked = { self.accidentPresenter?.goBack() }
+        
+        
     }
         
     func setEnabled(isEnabled: Bool) {

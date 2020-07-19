@@ -19,7 +19,11 @@ class Travel2VC: BaseWithLeftCirclesVC {
     @IBOutlet weak var standart1: UIButton!
     @IBOutlet weak var standart2: UIButton!
     @IBOutlet weak var standart3: UIButton!
+    @IBOutlet weak var travel2desc: UILabel!
+    @IBOutlet weak var travel2AmountTitle: UILabel!
+    @IBOutlet weak var tariffTitle: UILabel!
     
+    @IBOutlet weak var nextButton: Button!
     private lazy var travelPresenter = self.presenter as? TravelPresenter
     
     private var amount1: Int = 0
@@ -32,6 +36,10 @@ class Travel2VC: BaseWithLeftCirclesVC {
         self.travelPresenter?.setupTravel2VC()
         self.select25()
         self.selectStandart1()
+        self.travel2desc.text = "travel1_title".localized()
+        self.travel2AmountTitle.text = "travel2_amount_title".localized()
+        self.tariffTitle.text = "tarif".localized()
+        self.nextButton.setTitle("next".localized(), for: .normal)
     }
     
     private func select25() {

@@ -14,6 +14,9 @@ class Travel4VC: BaseWithLeftCirclesVC {
     @IBOutlet weak var travelButton: UIButton!
     @IBOutlet weak var workButton: UIButton!
     @IBOutlet weak var sportButton: UIButton!
+    @IBOutlet weak var travel4Desc: UILabel!
+    @IBOutlet weak var goalType: UILabel!
+    @IBOutlet weak var nextButton: Button!
     
     private lazy var travelPresenter = self.presenter as? TravelPresenter
     
@@ -21,6 +24,15 @@ class Travel4VC: BaseWithLeftCirclesVC {
         super.viewDidLoad()
         backButtonClicked = { self.travelPresenter?.goBack() }
         self.selectTravel()
+        
+        travel4Desc.text = "travel1_title".localized()
+        goalType.text = "goal_type".localized()
+        
+        travelButton.setTitle("travel_type".localized(), for: .normal)
+        workButton.setTitle("work_type".localized(), for: .normal)
+        sportButton.setTitle("sport_type".localized(), for: .normal)
+        
+        nextButton.setTitle("next".localized(), for: .normal)
     }
     
     private func selectTravel() {

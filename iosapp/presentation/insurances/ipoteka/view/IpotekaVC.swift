@@ -21,10 +21,12 @@ class IpotekaVC: BaseWithLeftCirclesVC {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        ipotekaTitle.text = product.translates?[0]?.name
-        ipotekaDescription.text = product.translates?[0]?.text?.htmlToString
+        ipotekaTitle.text = product.translates?[translatePosition]?.name
+        ipotekaDescription.text = product.translates?[translatePosition]?.text?.htmlToString
         ipotekaDescription.textAlignment = .justified
-        backButtonClicked = { self.ipotekaPresenter?.goBack() }
+        backButtonClicked = {
+            self.ipotekaPresenter?.goBack()
+        }
         self.ipotekaPresenter?.setProduct(product: product)
         self.setTabBarHidden(true)
         self.setupNoInternetView()

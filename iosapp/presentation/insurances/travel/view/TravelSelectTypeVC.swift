@@ -30,6 +30,7 @@ class TravelSelectTypeVC: BaseWithLeftCirclesVC, UITableViewDelegate, UITableVie
         typeTableView.register(TravelTypeCellHeader.self, forHeaderFooterViewReuseIdentifier: String(describing: TravelTypeCellHeader.self))
         self.backButtonClicked = { self.travelPresenter?.goBack() }
         travelPresenter?.fetchTypes()
+        self.searchTextField.text = "search_field".localized()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

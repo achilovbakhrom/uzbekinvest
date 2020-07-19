@@ -162,7 +162,7 @@
 "9zh-aR-lzG.text" = "До 18 лет";
 
 /* Class = "UITextField"; placeholder = "Выберите программу"; ObjectID = "A5M-cl-hUl"; */
-"A5M-cl-hUl.placeholder" = "Выберите программу";
+"A5M-cl-hUl.placeholder" = "Что Вы хотите застраховать?";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "AFt-wC-CBv"; */
 "AFt-wC-CBv.text" = "Label";
@@ -213,7 +213,7 @@
 "CyC-mh-Njj.text" = "Включить франшизу в полис?";
 
 /* Class = "UILabel"; text = "Количество участников"; ObjectID = "D9J-XP-dd9"; */
-"D9J-XP-dd9.text" = "Количество участников";
+"D9J-XP-dd9.text" = "Возраст и количество лиц, добавляемых в полис";
 
 /* Class = "UIButton"; normalTitle = "Далее"; ObjectID = "DPi-DS-1j9"; */
 "DPi-DS-1j9.normalTitle" = "Далее";
@@ -264,7 +264,7 @@
 "Fie-kd-KXq.text" = "До 100 лет";
 
 /* Class = "UITextField"; placeholder = "Срок страхования"; ObjectID = "FrQ-HD-wMQ"; */
-"FrQ-HD-wMQ.placeholder" = "Период страхования";
+"FrQ-HD-wMQ.placeholder" = "Укажите период страхования";
 
 /* Class = "UILabel"; text = "10 000 000 сум"; ObjectID = "G5E-a1-jjR"; */
 "G5E-a1-jjR.text" = "10 000 000 сум";
@@ -276,7 +276,7 @@
 "GTN-kP-iMa.text" = "Label";
 
 /* Class = "UILabel"; text = "Количество участников"; ObjectID = "GiQ-Q9-8rv"; */
-"GiQ-Q9-8rv.text" = "Количество участников";
+"GiQ-Q9-8rv.text" = "Возраст и количество спортсменов";
 
 /* Class = "UIButton"; normalTitle = "Premium"; ObjectID = "GjR-dP-Ohz"; */
 "GjR-dP-Ohz.normalTitle" = "Premium";
@@ -315,7 +315,7 @@
 "IGz-vL-0gl.normalTitle" = "25 000 000 сум";
 
 /* Class = "UILabel"; text = "Тип"; ObjectID = "Ip7-oJ-ap0"; */
-"Ip7-oJ-ap0.text" = "Тип";
+"Ip7-oJ-ap0.text" = "Тип авто";
 
 /* Class = "UITextField"; placeholder = "Сумма"; ObjectID = "JgR-bW-nYc"; */
 "JgR-bW-nYc.placeholder" = "Сумма";
@@ -485,7 +485,7 @@
 "Tbc-to-4sa.text" = "Мин: 500 000 сум, макс: 5 000 000 сум";
 
 /* Class = "UILabel"; text = "Только в период соревнований?"; ObjectID = "Tm5-Rq-5lC"; */
-"Tm5-Rq-5lC.text" = "Только в период соревнований?";
+"Tm5-Rq-5lC.text" = "Оформить полис только на период соревнований?";
 
 /* Class = "UILabel"; text = "Стоимость страхования"; ObjectID = "TnB-Nr-NfE"; */
 "TnB-Nr-NfE.text" = "Стоимость полиса";
@@ -530,7 +530,7 @@
 "WW7-bA-S0x.text" = "Label";
 
 /* Class = "UITextField"; placeholder = "Выберите программу"; ObjectID = "Wfr-Ho-o69"; */
-"Wfr-Ho-o69.placeholder" = "Выберите программу";
+"Wfr-Ho-o69.placeholder" = "Что Вы хотите застраховать?";
 
 /* Class = "UILabel"; text = "5"; ObjectID = "X5c-4q-M6e"; */
 "X5c-4q-M6e.text" = "5";
@@ -575,10 +575,10 @@
 "ZAZ-YS-Yvh.text" = "До окончания полиса";
 
 /* Class = "UILabel"; text = "Тип"; ObjectID = "ZM7-Y1-imt"; */
-"ZM7-Y1-imt.text" = "Тип";
+"ZM7-Y1-imt.text" = "Тип авто";
 
 /* Class = "UITextField"; placeholder = "Выберите регион"; ObjectID = "ZNE-W2-eTw"; */
-"ZNE-W2-eTw.placeholder" = "Выберите регион";
+"ZNE-W2-eTw.placeholder" = "Регион доставки";
 
 /* Class = "UILabel"; text = "Возраст"; ObjectID = "ZRT-a3-Ut7"; */
 "ZRT-a3-Ut7.text" = "Возраст";
@@ -620,7 +620,7 @@
 "cXr-3Z-8Ij.text" = "От 3 до 7 лет";
 
 /* Class = "UILabel"; text = "Программа"; ObjectID = "cdl-mY-NG3"; */
-"cdl-mY-NG3.text" = "Программа страхования";
+"cdl-mY-NG3.text" = "Объект страхования";
 
 /* Class = "UIButton"; normalTitle = "Рассчитать стоимость"; ObjectID = "chY-eB-HA1"; */
 "chY-eB-HA1.normalTitle" = "Рассчитать стоимость";
@@ -719,7 +719,7 @@
 "iwV-cG-W2F.text" = "Размер страховой компенсации";
 
 /* Class = "UITextField"; placeholder = "Сумма"; ObjectID = "iya-wR-9Jq"; */
-"iya-wR-9Jq.placeholder" = "Сумма";
+"iya-wR-9Jq.placeholder" = "Выбрать сумму";
 
 /* Class = "UILabel"; text = "сум"; ObjectID = "j0x-YT-TCE"; */
 "j0x-YT-TCE.text" = "сум";
@@ -734,7 +734,7 @@
 "jTG-Ow-n7J.normalTitle" = "Рассчитать стоимость";
 
 /* Class = "UITextField"; placeholder = "Выберите автомобиль"; ObjectID = "jqz-B5-OeH"; */
-"jqz-B5-OeH.placeholder" = "Выберите автомобиль";
+"jqz-B5-OeH.placeholder" = "Выберите тип авто";
 
 /* Class = "UILabel"; text = "До 15 лет"; ObjectID = "jtN-s9-af6"; */
 "jtN-s9-af6.text" = "До 15 лет";
@@ -758,7 +758,7 @@
 "kWl-b5-UbI.normalTitle" = "Далее";
 
 /* Class = "UILabel"; text = "Гражданство"; ObjectID = "kbV-LJ-EQv"; */
-"kbV-LJ-EQv.text" = "Гражданство";
+"kbV-LJ-EQv.text" = "Ваше гражданство";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "kc0-n3-Tb9"; */
 "kc0-n3-Tb9.text" = "Label";
@@ -791,7 +791,7 @@
 "mEJ-Ej-ia8.text" = "Люди с ограниченными возможностями";
 
 /* Class = "UILabel"; text = "Тип страхования"; ObjectID = "mKu-8Y-e5U"; */
-"mKu-8Y-e5U.text" = "Программа страхования";
+"mKu-8Y-e5U.text" = "Выберите программу страхования";
 
 /* Class = "UILabel"; text = "Рассчитать стоимость"; ObjectID = "mke-WK-gF0"; */
 "mke-WK-gF0.text" = "Рассчитать стоимость";
@@ -803,7 +803,7 @@
 "n2w-En-iwW.normalTitle" = "Престиж плюс";
 
 /* Class = "UILabel"; text = "Стоимость страхования (приблизительно) (сум)"; ObjectID = "nDU-1H-VQt"; */
-"nDU-1H-VQt.text" = "Стоимость полиса (приблизительно) (сум)";
+"nDU-1H-VQt.text" = "Cуммa страховой компенсации";
 
 /* Class = "UITextField"; placeholder = "0 сум"; ObjectID = "nFO-XG-77U"; */
 "nFO-XG-77U.placeholder" = "0 сум";
@@ -818,7 +818,7 @@
 "npo-tc-LQv.normalTitle" = "Далее";
 
 /* Class = "UITextField"; placeholder = "Укажите возраст"; ObjectID = "ntv-Ly-xzn"; */
-"ntv-Ly-xzn.placeholder" = "Укажите возраст";
+"ntv-Ly-xzn.placeholder" = "Возраст";
 
 /* Class = "UILabel"; text = "Оплачено"; ObjectID = "nua-lY-md3"; */
 "nua-lY-md3.text" = "Оплачено";
@@ -842,7 +842,7 @@
 "oYN-Gs-579.normalTitle" = "Далее";
 
 /* Class = "UITextField"; placeholder = "Срок страхования"; ObjectID = "ocR-aw-u1b"; */
-"ocR-aw-u1b.placeholder" = "Период страхования";
+"ocR-aw-u1b.placeholder" = "Выберите период страхования";
 
 /* Class = "UILabel"; text = "Рассчитать стоимость"; ObjectID = "ofx-UL-8sV"; */
 "ofx-UL-8sV.text" = "Рассчитать стоимость";
@@ -878,7 +878,7 @@
 "qan-0N-MD2.text" = "Меньше 2х лет";
 
 /* Class = "UILabel"; text = "Тип услуги"; ObjectID = "qp3-Ej-lVi"; */
-"qp3-Ej-lVi.text" = "Тип услуги";
+"qp3-Ej-lVi.text" = "Франшиза";
 
 /* Class = "UITextField"; placeholder = "Сумма"; ObjectID = "quV-T5-jMp"; */
 "quV-T5-jMp.placeholder" = "Сумма";
@@ -902,7 +902,7 @@
 "rf1-hD-LAt.text" = "Стоимость полиса";
 
 /* Class = "UITextField"; placeholder = "Сумма"; ObjectID = "s0s-ff-3Ig"; */
-"s0s-ff-3Ig.placeholder" = "Сумма";
+"s0s-ff-3Ig.placeholder" = "Количество дней";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "sAA-OG-uZm"; */
 "sAA-OG-uZm.text" = "Label";
@@ -953,10 +953,10 @@
 "urO-hr-m6I.text" = "сум";
 
 /* Class = "UILabel"; text = "Количество участников"; ObjectID = "uyn-aD-W9k"; */
-"uyn-aD-W9k.text" = "Возраст и количество спортсменов, добавляемых в полис";
+"uyn-aD-W9k.text" = "Возраст и количество лиц, добавляемых в полис";
 
 /* Class = "UITextField"; placeholder = "Количество"; ObjectID = "vFH-yI-leH"; */
-"vFH-yI-leH.placeholder" = "Количество";
+"vFH-yI-leH.placeholder" = "Период ипотеки (лет)";
 
 /* Class = "UILabel"; text = "0"; ObjectID = "vL5-pQ-yUP"; */
 "vL5-pQ-yUP.text" = "0";
@@ -983,7 +983,7 @@
 "wSP-Mx-d6G.text" = "0";
 
 /* Class = "UILabel"; text = "Программа"; ObjectID = "wWk-PB-NRq"; */
-"wWk-PB-NRq.text" = "Программа";
+"wWk-PB-NRq.text" = "Объект страхования";
 
 /* Class = "UIButton"; normalTitle = "Франшиза отсуствует"; ObjectID = "wcJ-DM-H0g"; */
 "wcJ-DM-H0g.normalTitle" = "Франшиза отсуствует";
@@ -1025,3 +1025,4 @@
 "zkk-Gu-9jO.text" = "10 000 000 сум";
 
 "fxI-k3-JLd.text" =  "Страховой полис за 5 минут";
+

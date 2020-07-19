@@ -24,7 +24,10 @@ class Home1VC: BaseWithRightGreenCirclesVC {
         type2.inactive()
         type3.inactive()
         type4.inactive()
-        backButtonClicked = { self.homePresenter?.goBack() }
+        backButtonClicked = {
+            self.homePresenter?.goBack()
+            self.setTabBarHidden(false)
+        }
         self.homePresenter?.setType(type: 0, typeString: type1.titleLabel?.text ?? "")
         self.setTabBarHidden(true)
     }

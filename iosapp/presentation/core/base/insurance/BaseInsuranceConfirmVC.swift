@@ -39,7 +39,7 @@ class BaseInsuranceConfirmVC: BaseViewImpl, UICollectionViewDelegate, UICollecti
     lazy var confirmButton: Button = {
         let button = Button(frame: .zero)
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("Оформить", for: .normal)
+        button.setTitle("checkout".localized(), for: .normal)
         return button
     }()
     
@@ -64,14 +64,14 @@ class BaseInsuranceConfirmVC: BaseViewImpl, UICollectionViewDelegate, UICollecti
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont(name: "Roboto-Medium", size: 12)
         label.textColor = UIColor.white
-        label.text = "Оформление"
+        label.text = "checkout".localized()
         return label
     }()
     
     lazy var paymentLabel: UILabel = {
         let label = UILabel(frame: .zero)
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "0 сум"
+        label.text = "0 \("sum".localized())"
         label.font = UIFont(name: "Roboto-Bold", size: 24)
         label.textColor = UIColor.init(red: 65.0/255.0, green: 65.0/255.0, blue: 65.0/255.0, alpha: 1.0)
         return label
@@ -79,7 +79,7 @@ class BaseInsuranceConfirmVC: BaseViewImpl, UICollectionViewDelegate, UICollecti
     
     lazy var addressView: PropertyRowView = {
         let view = PropertyRowView()
-        view.titleLabel.text = "Адрес доставки"
+        view.titleLabel.text = "delivery_region".localized()
         view.mode = .info
         view.translatesAutoresizingMaskIntoConstraints = false
         view.contentLabel.text = "-"
@@ -89,7 +89,7 @@ class BaseInsuranceConfirmVC: BaseViewImpl, UICollectionViewDelegate, UICollecti
     
     lazy var startDateView: PropertyRowView = {
         let view = PropertyRowView()
-        view.titleLabel.text = "Дата начала страхования"
+        view.titleLabel.text = "policy_begin_time".localized()
         view.isStatusChecked = true
         view.translatesAutoresizingMaskIntoConstraints = false
         view.contentLabel.text = "02.02.2020"
@@ -99,9 +99,9 @@ class BaseInsuranceConfirmVC: BaseViewImpl, UICollectionViewDelegate, UICollecti
     
     private lazy var paymentTypesList: [PaymentTypeCellModel] = {
         return [
-            PaymentTypeCellModel(icon: "online-pay", title: "Онлайн \nоплата", selected: false, isFirst: true),
-            PaymentTypeCellModel(icon: "cash-pay", title: "Наличные", selected: false, isFirst: false),
-            PaymentTypeCellModel(icon: "card-pay", title: "Карта", selected: false, isFirst: false),
+            PaymentTypeCellModel(icon: "online-pay", title: "online_pay".localized(), selected: false, isFirst: true),
+            PaymentTypeCellModel(icon: "cash-pay", title: "cash_pay".localized(), selected: false, isFirst: false),
+            PaymentTypeCellModel(icon: "card-pay", title: "terminal_pay".localized(), selected: false, isFirst: false),
         ]
     }()
     
@@ -428,9 +428,9 @@ class BaseInsuranceConfirmVC: BaseViewImpl, UICollectionViewDelegate, UICollecti
     func setUploading(isUploading: Bool) {
         self.confirmButton.isLoading = isUploading
         if isUploading {
-            self.confirmButton.setTitle("Загружается...", for: .normal)
+            self.confirmButton.setTitle("\("loading_confirm".localized())...", for: .normal)
         } else {
-            self.confirmButton.setTitle("Оформить", for: .normal)
+            self.confirmButton.setTitle("confirm_button".localized(), for: .normal)
         }
     }
     
@@ -479,14 +479,14 @@ class BaseInsuranceConfirmVC: BaseViewImpl, UICollectionViewDelegate, UICollecti
         self.addressView.onChnageButtonClicked = {
             
             let regionList: [LCTuple<Int>] = self.regions.map { (key: $0.id, value: $0.name) }
-            self.popover = LCPopover<Int>(for: self.addressView.changeButton, title: "Регион") { tuple in
+            self.popover = LCPopover<Int>(for: self.addressView.changeButton, title: "delivery_region".localized()) { tuple in
                 guard let key = tuple?.key else { return }
                 guard let value = tuple?.value else { return }
                 
                 let selectedRegion = self.regions.first { $0.id == key }
                 if selectedRegion?.children != nil && !(selectedRegion?.children?.isEmpty ?? false) {
                     
-                    self.popover = LCPopover<Int>(for: self.addressView.changeButton, title: "Регион") { tuple in
+                    self.popover = LCPopover<Int>(for: self.addressView.changeButton, title: "delivery_region".localized()) { tuple in
                         guard let key = tuple?.key else { return }
                         guard let value = tuple?.value else { return }
                         self.addressView.contentLabel.text = value
@@ -520,7 +520,7 @@ class BaseInsuranceConfirmVC: BaseViewImpl, UICollectionViewDelegate, UICollecti
         self.startDateView.contentLabel.text = d
         
         self.startDateView.onChnageButtonClicked = {
-            DatePickerDialog().show("Выберите дату начала", doneButtonTitle: "ОК", cancelButtonTitle: "Отмена", datePickerMode: .date) {
+            DatePickerDialog().show("begin_period".localized(), doneButtonTitle: "ОК", cancelButtonTitle: "cancel".localized(), datePickerMode: .date) {
                 (date) -> Void in
                 if let dt = date {
                     self.onDateSelected(date: dt)
@@ -607,7 +607,7 @@ class BaseInsuranceConfirmVC: BaseViewImpl, UICollectionViewDelegate, UICollecti
         ])
         
         let paymentTitle = UILabel(frame: .zero)
-        paymentTitle.text = "Сумма к оплате"
+        paymentTitle.text = "to_pay".localized()
         paymentTitle.font = UIFont.init(name: "Roboto-Regular", size: 14)
         paymentTitle.textColor = UIColor.init(red: 65.0/255.0, green: 65.0/255.0, blue: 65.0/255.0, alpha: 0.5)
         paymentTitle.translatesAutoresizingMaskIntoConstraints = false
@@ -637,7 +637,7 @@ class BaseInsuranceConfirmVC: BaseViewImpl, UICollectionViewDelegate, UICollecti
 
         let paymentTypeTitle = UILabel(frame: .zero)
         paymentTypeTitle.translatesAutoresizingMaskIntoConstraints = false
-        paymentTypeTitle.text = "Способ оплаты"
+        paymentTypeTitle.text = "form_of_pay".localized()
         paymentTypeTitle.font = UIFont.init(name: "Roboto-Regular", size: 14)
         paymentTypeTitle.textColor = UIColor.init(red: 65.0/255.0, green: 65.0/255.0, blue: 65.0/255.0, alpha: 0.5)
         self.contentView.addSubview(paymentTypeTitle)

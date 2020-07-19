@@ -24,6 +24,7 @@ class Infection1VC: BaseWithLeftCirclesVC {
         self.insuranceAmount.onChange = {
             self.infectionPresenter?.setInsuranceAmount(insuranceAmount: Int($0) ?? 0)
         }
+        insuranceAmount.floatText = "insurance_amount_title".localized()
     }
     
     func setEnabled(isEnabled: Bool) {

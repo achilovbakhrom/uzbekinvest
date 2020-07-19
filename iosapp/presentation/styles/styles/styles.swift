@@ -18,8 +18,8 @@ class Colors {
     var bigGreenBG: CAGradientLayer!
     
     init() {
-        let gColorLeft = UIColor(red: 65.0 / 255.0, green: 228.0 / 255.0, blue: 153.0 / 255.0, alpha: 1.0)
-        let gColorRight = UIColor(red: 53.0 / 255.0, green: 197.0 / 255.0, blue: 186.0 / 255.0, alpha: 1.0)
+        let gColorLeft = UIColor(red: 74.0 / 255.0, green: 187.0 / 255.0, blue: 40.0 / 255.0, alpha: 1.0)
+        let gColorRight = UIColor(red: 39.0 / 255.0, green: 162.0 / 255.0, blue: 73.0 / 255.0, alpha: 1.0)
         self.gb = CAGradientLayer()
         self.gb.makeHorizontalGradinet(leftColor: gColorLeft, rightColor: gColorRight)
         
@@ -38,7 +38,8 @@ class Colors {
     
     static let backArrowBgColor = UIColor.init(red: 216.0/255.0, green: 216.0/255.0, blue: 216.0/255.0, alpha: 0.3)
     static let pageIndicatorGray = UIColor.init(red: 229.0/255.0, green: 229.0/255.0, blue: 229.0/255.0, alpha: 1)
-    static let primaryGreen = UIColor.init(red: 60.0/255.0, green: 214.0/255.0, blue: 168.0/255.0, alpha: 1)
+    static let primaryGreen = UIColor.init(red: 39.0/255.0, green: 162.0/255.0, blue: 73.0/255.0, alpha: 1)
+    
     
 
 }
