@@ -81,6 +81,8 @@ class IncidentDetailListingView: UIView, UITableViewDelegate, UITableViewDataSou
     override func awakeFromNib() {
         super.awakeFromNib()
         self.setupUI()
+        self.allButton.setTitle("all_button".localized(), for: .normal)
+        self.pinflButton.setTitle("pinfl_button".localized(), for: .normal)
     }
     
     private func setupUI() {

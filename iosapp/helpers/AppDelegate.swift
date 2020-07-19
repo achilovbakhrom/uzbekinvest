@@ -18,7 +18,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     var reach: Reach = Reach()
     var currentLanguage = "ru"
     
-    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         currentLanguage = UserDefaults.standard.string(forKey: "language") ?? "ru"

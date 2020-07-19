@@ -134,6 +134,7 @@
 		29335EA0242E7F7A0074658A /* RoadTechPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29335E9F242E7F7A0074658A /* RoadTechPresenter.swift */; };
 		2938F6F624C3FFF2006EEBB7 /* InfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2938F6F524C3FFF2006EEBB7 /* InfoVC.swift */; };
 		2938F6F724C4131E006EEBB7 /* InsuranceListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2938F6F924C4131E006EEBB7 /* InsuranceListView.xib */; };
+		2938F70424C4F311006EEBB7 /* MyMoyaProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2938F70324C4F311006EEBB7 /* MyMoyaProvider.swift */; };
 		293A24B5240513D300072340 /* WhiteBorderedTextButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293A24B4240513D300072340 /* WhiteBorderedTextButton.swift */; };
 		293AB032240FD8FF00030506 /* MandatoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293AB031240FD8FF00030506 /* MandatoryVC.swift */; };
 		293AB034240FD97400030506 /* Mandatory1VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293AB033240FD97400030506 /* Mandatory1VC.swift */; };
@@ -700,6 +701,7 @@
 		2938F6FB24C41325006EEBB7 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InsuranceListView.strings; sourceTree = "<group>"; };
 		2938F6FD24C41328006EEBB7 /* uz-Cyrl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "uz-Cyrl"; path = "uz-Cyrl.lproj/InsuranceListView.strings"; sourceTree = "<group>"; };
 		2938F6FF24C4132A006EEBB7 /* uz-UZ */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "uz-UZ"; path = "uz-UZ.lproj/InsuranceListView.strings"; sourceTree = "<group>"; };
+		2938F70324C4F311006EEBB7 /* MyMoyaProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMoyaProvider.swift; sourceTree = "<group>"; };
 		293A24B4240513D300072340 /* WhiteBorderedTextButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhiteBorderedTextButton.swift; sourceTree = "<group>"; };
 		293AB031240FD8FF00030506 /* MandatoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MandatoryVC.swift; sourceTree = "<group>"; };
 		293AB033240FD97400030506 /* Mandatory1VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mandatory1VC.swift; sourceTree = "<group>"; };
@@ -3185,6 +3187,7 @@
 				2980D64F242312C900F7D9C8 /* OrderProvider.swift */,
 				2980D657242490DF00F7D9C8 /* TransportProvider.swift */,
 				292714D52428785B00641FEB /* ProductProvider.swift */,
+				2938F70324C4F311006EEBB7 /* MyMoyaProvider.swift */,
 			);
 			path = providers;
 			sourceTree = "<group>";
@@ -5063,6 +5066,7 @@
 				29846BF224738D9700287817 /* TravelConfirm2VC.swift in Sources */,
 				2930B1E92407CD6700673D82 /* SliderRouter.swift in Sources */,
 				29BB09F9240AA41E0000F559 /* LoginRouter.swift in Sources */,
+				2938F70424C4F311006EEBB7 /* MyMoyaProvider.swift in Sources */,
 				29AA590E244AF1A100304E05 /* ProfileUser.swift in Sources */,
 				297E4A0B2420B04D0044CA3B /* OsagoInteractor.swift in Sources */,
 				292714F7242B6A3200641FEB /* Kasko.swift in Sources */,
@@ -5621,7 +5625,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = A5ZV3NG643;
 				INFOPLIST_FILE = iosapp/helpers/Info.plist;
@@ -5630,7 +5634,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.5;
+				MARKETING_VERSION = 1.0.6;
 				PRODUCT_BUNDLE_IDENTIFIER = uz.einsurance.iosapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -5646,7 +5650,7 @@
 				CODE_SIGN_ENTITLEMENTS = iosapp/iosappRelease.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = A5ZV3NG643;
 				INFOPLIST_FILE = iosapp/helpers/Info.plist;
@@ -5655,7 +5659,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.5;
+				MARKETING_VERSION = 1.0.6;
 				PRODUCT_BUNDLE_IDENTIFIER = uz.einsurance.iosapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "Uzbekinvest-app";

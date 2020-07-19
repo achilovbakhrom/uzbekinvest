@@ -39,7 +39,7 @@ class MenuCell: UICollectionViewCell {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.init(name: "Roboto-Medium", size: 13)
         label.textColor = UIColor.white
-        label.backgroundColor = UIColor(red: 253.0 / 255.0, green: 121.0 / 255.0, blue: 100.0 / 255.0, alpha: 1.0)
+        label.backgroundColor = UIColor(red: 238.0 / 255.0, green: 76.0 / 255.0, blue: 79.0 / 255.0, alpha: 1.0)
         label.layer.cornerRadius = 4
         label.layer.masksToBounds = true
         return label

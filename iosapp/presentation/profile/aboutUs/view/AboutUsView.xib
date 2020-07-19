@@ -39,8 +39,8 @@
                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="v.1.0.5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HW2-9v-tmR">
-                                    <rect key="frame" x="191" y="173" width="32.5" height="12.5"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="v1.0.6" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HW2-9v-tmR">
+                                    <rect key="frame" x="192" y="173" width="30" height="12.5"/>
                                     <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="11"/>
                                     <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
@@ -86,7 +86,7 @@
         </view>
     </objects>
     <resources>
-        <image name="app-logo" width="235" height="67"/>
+        <image name="app-logo" width="218.5" height="55.5"/>
         <image name="back-arrow" width="23" height="16"/>
     </resources>
 </document>
