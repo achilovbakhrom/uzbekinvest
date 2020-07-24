@@ -70,6 +70,7 @@ class AccidentPresenterImpl: BaseInsurancePresenter, AccidentPresenter {
     }
     
     func setTotalAmount(amount: String) {
+        self.formatAmount = "\(amount) \("sum".localized())"
         let vc = self.view as? AccidentConfirmVC
         vc?.setTotalAmount(totalAmount: amount)
     }
@@ -82,7 +83,7 @@ class AccidentPresenterImpl: BaseInsurancePresenter, AccidentPresenter {
     }
     
     override func confirmButtonClicked() {
-        self.accidentInteractor?.createInsurance(type: .myHealth, params: myHealth.dictionary!, amount: totalAmount, startDate: startDate, paymentMethod: paymentType, regionId: regionId, mainFiles: mainFiles, membersCount: membersCount, secondaryFils: secondaryFiles)
+        self.accidentInteractor?.createInsurance(type: .myHealth, params: myHealth.dictionary!, amount: totalAmount, startDate: startDate, paymentMethod: paymentType, regionId: regionId, mainFiles: mainFiles, membersCount: membersCount, secondaryFils: secondaryFiles, long: self.longitude, lat: self.lattitude)
     }
     
 }

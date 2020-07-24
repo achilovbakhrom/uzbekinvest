@@ -84,7 +84,11 @@ class LuggagePresenterImpl: BaseInsurancePresenter, LuggagePresenter {
     }
     
     func setTotalAmount(totalAmount: Int) {
+        self.formatAmount = "\(totalAmount.toDecimalFormat()) \("sum".localized())"
         self.totalAmount = totalAmount
+        if let vc = self.view as? LuggageConfirmVC {
+            vc.setTotalAmount(amount: totalAmount.toDecimalFormat())
+        }
     }
     
     func setProduct(product: Product) {
@@ -96,7 +100,7 @@ class LuggagePresenterImpl: BaseInsurancePresenter, LuggagePresenter {
     }
     
     override func confirmButtonClicked() {
-        self.luggageInteractor?.createInsurance(type: .luggage, params: luggage.dictionary!, amount: nil, startDate: startDate, paymentMethod: paymentType, regionId: regionId, mainFiles: mainFiles, membersCount: membersCount, secondaryFils: secondaryFiles)
+        self.luggageInteractor?.createInsurance(type: .luggage, params: luggage.dictionary!, amount: nil, startDate: startDate, paymentMethod: paymentType, regionId: regionId, mainFiles: mainFiles, membersCount: membersCount, secondaryFils: secondaryFiles, long: self.longitude, lat: self.lattitude)
     }
     
     func fillData() {

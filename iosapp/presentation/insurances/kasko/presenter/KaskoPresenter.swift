@@ -20,7 +20,7 @@ protocol KaskoPresenter {
     func setType(type: Int, typeString: String)
     func setCarPrice(price: Int)
     func setPeriod(period: Float, periodString: String)
-    func setTotalAmount(amount: Int)
+    func setTotalAmount(amount: String, amoutnDouble: Double)
     func fillConfirmVC()
     func calculateKasko()
     func applyInsuranceClicked()
@@ -90,11 +90,11 @@ class KaskoPresenterImpl: BaseInsurancePresenter, KaskoPresenter {
         vc?.setEnabled(isEnabled: kasko.carPrice != 0)
     }
     
-    func setTotalAmount(amount: Int) {
+    func setTotalAmount(amount: String, amoutnDouble: Double) {
         let vc = self.view as? KaskoConfirmVC
-        vc?.setTotalAmount(amount: amount.toDecimalFormat())
-        self.totalAmount = amount
-        self.formatAmount = "\(amount.toDecimalFormat()) \("sum".localized())"
+        vc?.setTotalAmount(amount: amount)
+        self.totalAmount = Int(amoutnDouble)
+        self.formatAmount = "\(amount) \("sum".localized())"
     }
     
     func fillConfirmVC() {
@@ -117,7 +117,7 @@ class KaskoPresenterImpl: BaseInsurancePresenter, KaskoPresenter {
     }
     
     override func confirmButtonClicked() {
-        self.kaskoInteractor?.createInsurance(type: .kasko, params: kasko.dictionary!, amount: totalAmount, startDate: startDate, paymentMethod: paymentType, regionId: regionId, mainFiles: mainFiles, membersCount: membersCount, secondaryFils: secondaryFiles)
+        self.kaskoInteractor?.createInsurance(type: .kasko, params: kasko.dictionary!, amount: totalAmount, startDate: startDate, paymentMethod: paymentType, regionId: regionId, mainFiles: mainFiles, membersCount: membersCount, secondaryFils: secondaryFiles, long: self.longitude, lat: self.lattitude)
     }
     
     func setup2VC() {

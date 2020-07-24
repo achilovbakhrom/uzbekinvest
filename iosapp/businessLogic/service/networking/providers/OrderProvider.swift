@@ -24,7 +24,7 @@ enum OrderProvider {
     case phoneCalculate(mobilePhone: MobilePhone)
     case luggageCalculate(luggage: Luggage)
     case checkOrder(seria: String, number: Int)
-    case createInsurance(url: String, params: [String: Any], amount: Int?, startDate: String, paymentType: String, regionId: Int, mainFiles: [Int: UserFile], membersCount: Int, secondaryFils: [Int: [Int: UserFile]]? = nil)
+    case createInsurance(url: String, params: [String: Any], amount: Int?, startDate: String, paymentType: String, regionId: Int, mainFiles: [Int: UserFile], membersCount: Int, secondaryFils: [Int: [Int: UserFile]]? = nil, long: Double, lat: Double)
     case travelCalculate(travel: Travel)
     case payme(orderId: Int)
     case click(orderId: Int)
@@ -68,7 +68,7 @@ extension OrderProvider: TargetType {
             return "api/order/phone/calculate"
         case .luggageCalculate:
             return "api/order/luggage-out/calculate"
-        case .createInsurance(let url, _, _, _, _, _, _, _, _):
+        case .createInsurance(let url, _, _, _, _, _, _, _, _, _, _):
             return "api/order/\(url)"
         case .checkOrder:
             return "api/order/check"
@@ -131,7 +131,7 @@ extension OrderProvider: TargetType {
             return .requestPlain
         case .click:
             return .requestPlain
-        case .createInsurance(_, let params, let amount, let startDate, let paymentType, let regionId, let mainFiles, let membersCount, let secondaryFils):
+        case .createInsurance(_, let params, let amount, let startDate, let paymentType, let regionId, let mainFiles, let membersCount, let secondaryFils, let long, let lat):
             var p = [MultipartFormData]()
             for key in params.keys {
                 let data = MultipartFormData(provider: .data(String(describing: params[key]!).data(using: .utf8) ?? Data()), name: key)
@@ -143,7 +143,8 @@ extension OrderProvider: TargetType {
             p.append(MultipartFormData(provider: .data(startDate.data(using: .utf8) ?? Data()), name: "start_date"))
             p.append(MultipartFormData(provider: .data(String(describing: paymentType).data(using: .utf8) ?? Data()), name: "payment_method"))
             p.append(MultipartFormData(provider: .data(String(describing: regionId).data(using: .utf8) ?? Data()), name: "region_id"))
-            
+            p.append(MultipartFormData(provider: .data(String(describing: long).data(using: .utf8) ?? Data()), name: "longitude"))
+            p.append(MultipartFormData(provider: .data(String(describing: lat).data(using: .utf8) ?? Data()), name: "latitude"))
             var index = 0
             for key in mainFiles.keys {
                 p.append(MultipartFormData(provider: .data(String(describing: mainFiles[key]?.id ?? 0).data(using: .utf8) ?? Data()), name: "files[0][\(index)][name]"))

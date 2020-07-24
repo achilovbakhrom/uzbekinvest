@@ -175,6 +175,7 @@ class SportsPresenterImpl: BaseInsurancePresenter, SportsPresenter {
     }
     
     func setTotalAmount(totalAmount: String) {
+        self.formatAmount = "\(totalAmount) \("sum".localized())"
         if let vc = self.view as? SportConfirmVC {
             vc.setTotalAmount(totalAmount: totalAmount)
         }
@@ -190,6 +191,6 @@ class SportsPresenterImpl: BaseInsurancePresenter, SportsPresenter {
     }
     
     override func confirmButtonClicked() {
-        self.sportInteractor?.createInsurance(type: .sport, params: sport.dictionary!, amount: nil, startDate: startDate, paymentMethod: paymentType, regionId: regionId, mainFiles: mainFiles, membersCount: membersCount, secondaryFils: secondaryFiles)
+        self.sportInteractor?.createInsurance(type: .sport, params: sport.dictionary!, amount: nil, startDate: startDate, paymentMethod: paymentType, regionId: regionId, mainFiles: mainFiles, membersCount: membersCount, secondaryFils: secondaryFiles, long: self.longitude, lat: self.lattitude)
     }
 }

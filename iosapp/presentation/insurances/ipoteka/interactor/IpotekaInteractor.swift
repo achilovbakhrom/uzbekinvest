@@ -11,7 +11,7 @@ import Foundation
 protocol IpotekaInteractor {
     init(serviceFactory: ServiceFactoryProtocol, presenter: BasePresenter)
     func calculateIpoteka(ipoteka: PledgedProperty)
-    func createInsurance(type: InsuranceType, params: [String: Any], amount: Int?, startDate: String, paymentMethod: String, regionId: Int, mainFiles: [Int: UserFile], membersCount: Int, secondaryFils: [Int: [Int: UserFile]]?)
+    func createInsurance(type: InsuranceType, params: [String: Any], amount: Int?, startDate: String, paymentMethod: String, regionId: Int, mainFiles: [Int: UserFile], membersCount: Int, secondaryFils: [Int: [Int: UserFile]]?, long: Double, lat: Double)
     func prepareToOpenFinalVC(id: Int)
 }
 

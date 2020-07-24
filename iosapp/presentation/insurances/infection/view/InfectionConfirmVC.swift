@@ -19,7 +19,7 @@ class InfectionConfirmVC: BaseWithLeftCirclesVC {
     private lazy var infectionPresenter = self.presenter as? InfectionPresenter
     override func viewDidLoad() {
         super.viewDidLoad()
-        backButtonClicked = {}
+        backButtonClicked = { self.infectionPresenter?.goBack() }
     }
     
     @IBAction func confirmButtonClicked(_ sender: Any) {

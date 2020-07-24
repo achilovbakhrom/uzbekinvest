@@ -250,6 +250,6 @@ class OsagoPresenterImpl: BaseInsurancePresenter, OsagoPresenter {
     
     override func confirmButtonClicked() {
         osago.paymentMethod = paymentType
-        self.osagoInteractor.createInsurance(type: .osago, params: osago.dictionary!, amount: totalAmount, startDate: startDate, paymentMethod: self.paymentType, regionId: self.regionId, mainFiles: mainFiles, membersCount: membersCount, secondaryFils: secondaryFiles)
+        self.osagoInteractor.createInsurance(type: .osago, params: osago.dictionary!, amount: totalAmount, startDate: startDate, paymentMethod: self.paymentType, regionId: self.regionId, mainFiles: mainFiles, membersCount: membersCount, secondaryFils: secondaryFiles, long: self.longitude, lat: self.lattitude)
     }
 }

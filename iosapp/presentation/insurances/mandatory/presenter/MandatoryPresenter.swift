@@ -102,7 +102,7 @@ class MandatoryPresenterImpl: BaseInsurancePresenter, MandatoryPresenter {
     func setTotalAmount(formatAmount: String, totalAmount: Int) {
         let vc = self.view as? MandatoryConfirmVC
         self.totalAmount = totalAmount
-        self.formatAmount = formatAmount
+        self.formatAmount = "\(formatAmount) \("sum".localized())"
         vc?.setTotalAmount(amount: formatAmount)
     }
     
@@ -115,6 +115,6 @@ class MandatoryPresenterImpl: BaseInsurancePresenter, MandatoryPresenter {
     }
     
     override func confirmButtonClicked() {
-        self.mandatoryInteractor?.createInsurance(type: .pledgedTransport, params: pledgedTransport.dictionary!, amount: nil, startDate: startDate, paymentMethod: self.paymentType, regionId: regionId, mainFiles: mainFiles, membersCount: membersCount, secondaryFils: secondaryFiles)
+        self.mandatoryInteractor?.createInsurance(type: .pledgedTransport, params: pledgedTransport.dictionary!, amount: nil, startDate: startDate, paymentMethod: self.paymentType, regionId: regionId, mainFiles: mainFiles, membersCount: membersCount, secondaryFils: secondaryFiles, long: self.longitude, lat: self.lattitude)
     }
 }

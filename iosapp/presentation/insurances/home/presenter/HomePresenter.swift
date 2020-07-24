@@ -59,6 +59,7 @@ class HomePresenterImpl: BaseInsurancePresenter, HomePresenter {
     
     func setTotalAmount(amount: String) {
         let vc = self.view as? HomeConfirmVC
+        self.formatAmount = "\(amount) \("sum".localized())"
         vc?.setTotalAmount(amount: amount)
     }
     
@@ -81,7 +82,7 @@ class HomePresenterImpl: BaseInsurancePresenter, HomePresenter {
     }
     
     override func confirmButtonClicked() {
-        self.homeInteractor?.createInsurance(type: .myHome, params: home.dictionary!, amount: totalAmount, startDate: startDate, paymentMethod: self.paymentType, regionId: regionId, mainFiles: mainFiles, membersCount: membersCount, secondaryFils: secondaryFiles)
+        self.homeInteractor?.createInsurance(type: .myHome, params: home.dictionary!, amount: totalAmount, startDate: startDate, paymentMethod: self.paymentType, regionId: regionId, mainFiles: mainFiles, membersCount: membersCount, secondaryFils: secondaryFiles, long: self.longitude, lat: self.lattitude)
     }
     
 }

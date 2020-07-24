@@ -76,6 +76,7 @@ class RoadTechPresenterImpl: BaseInsurancePresenter, RoadTechPresenter {
     }
     
     func setTotalAmount(totalAmount: String) {
+        self.formatAmount = "\(totalAmount) \("sum".localized())"
         let vc = self.view as? RoadTechSupportConfirmVC
         vc?.setTotalAmount(totalAmount: totalAmount)
     }
@@ -90,6 +91,6 @@ class RoadTechPresenterImpl: BaseInsurancePresenter, RoadTechPresenter {
     }
     
     override func confirmButtonClicked() {
-        self.roadTechInteractor?.createInsurance(type: .technicalHelp, params: technicalSupport.dictionary!, amount: nil, startDate: startDate, paymentMethod: paymentType, regionId: regionId, mainFiles: mainFiles, membersCount: membersCount, secondaryFils: secondaryFiles)
+        self.roadTechInteractor?.createInsurance(type: .technicalHelp, params: technicalSupport.dictionary!, amount: nil, startDate: startDate, paymentMethod: paymentType, regionId: regionId, mainFiles: mainFiles, membersCount: membersCount, secondaryFils: secondaryFiles, long: self.longitude, lat: self.lattitude)
     }
 }

@@ -11,7 +11,7 @@ protocol KaskoInteractor {
     init(serviceFactory: ServiceFactoryProtocol, presenter: BaseInsurancePresenter)
     func calculateKasko(kasko: Kasko)
     func prepareToOpenFinalVC(id: Int)
-    func createInsurance(type: InsuranceType, params: [String: Any], amount: Int?, startDate: String, paymentMethod: String, regionId: Int, mainFiles: [Int: UserFile], membersCount: Int, secondaryFils: [Int: [Int: UserFile]]?)
+    func createInsurance(type: InsuranceType, params: [String: Any], amount: Int?, startDate: String, paymentMethod: String, regionId: Int, mainFiles: [Int: UserFile], membersCount: Int, secondaryFils: [Int: [Int: UserFile]]?, long: Double, lat: Double)
 }
 
 class KaskoInteractorImpl: BaseInsuranceInteractor, KaskoInteractor {
@@ -33,8 +33,8 @@ class KaskoInteractorImpl: BaseInsuranceInteractor, KaskoInteractor {
                 self.kaskoPresenter?.setLoading(isLoading: false)
                 do {
                     let decoder = JSONDecoder()
-                    let result = try decoder.decode(Response<InsuranceCalculatedResult>.self, from: resonse.data)
-                    self.kaskoPresenter?.setTotalAmount(amount: result.data?.totalAmount ?? 0)
+                    let result = try decoder.decode(Response<TravelInusranceResult>.self, from: resonse.data)
+                    self.kaskoPresenter?.setTotalAmount(amount: "\(result.data?.totalAmount.toDecimalFormat() ?? "0.0")", amoutnDouble: result.data?.totalAmount ?? 0.0)
                 } catch(let error) {
                     debugPrint(error.localizedDescription)
                 }

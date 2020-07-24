@@ -154,13 +154,13 @@ class BaseInsuranceInteractor: BaseInteractor {
         }
     }
     
-    func createInsurance(type: InsuranceType, params: [String: Any], amount: Int?, startDate: String, paymentMethod: String, regionId: Int, mainFiles: [Int: UserFile], membersCount: Int = 0, secondaryFils: [Int: [Int: UserFile]]? = nil) {
+    func createInsurance(type: InsuranceType, params: [String: Any], amount: Int?, startDate: String, paymentMethod: String, regionId: Int, mainFiles: [Int: UserFile], membersCount: Int = 0, secondaryFils: [Int: [Int: UserFile]]? = nil, long: Double, lat: Double) {
         self.insurancePresenter?.setConfirmButtonEnabled(isEnabled: false)
         self
             .serviceFactory
             .networkManager
             .orders
-            .request(.createInsurance(url: type.rawValue, params: params, amount: amount, startDate: startDate, paymentType: paymentMethod, regionId: regionId, mainFiles: mainFiles, membersCount: membersCount, secondaryFils: secondaryFils)) { [unowned self] result in
+            .request(.createInsurance(url: type.rawValue, params: params, amount: amount, startDate: startDate, paymentType: paymentMethod, regionId: regionId, mainFiles: mainFiles, membersCount: membersCount, secondaryFils: secondaryFils, long: long, lat: lat)) { [unowned self] result in
                 switch result {
                 case .success:
                     self.insurancePresenter?.openMyInsurances()

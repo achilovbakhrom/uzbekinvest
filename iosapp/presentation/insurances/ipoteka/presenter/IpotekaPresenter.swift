@@ -77,7 +77,8 @@ class IpotekaPresenterImpl: BaseInsurancePresenter, IpotekaPresenter {
     }
     
     func setTotalAmount(amount: String) {
-        let vc = self.view as? IpotekaConfirmVC
+        self.formatAmount = "\(amount) \("sum".localized())"
+        let vc = self.view as? IpotekaConfirmVC        
         vc?.setTotalAmount(totalAmount: amount)
     }
     
@@ -89,6 +90,6 @@ class IpotekaPresenterImpl: BaseInsurancePresenter, IpotekaPresenter {
     }
     
     override func confirmButtonClicked() {
-        self.ipotekaInteractor?.createInsurance(type: .pledgedProperty, params: ipoteka.dictionary!, amount: totalAmount, startDate: startDate, paymentMethod: paymentType, regionId: regionId, mainFiles: mainFiles, membersCount: membersCount, secondaryFils: secondaryFiles)
+        self.ipotekaInteractor?.createInsurance(type: .pledgedProperty, params: ipoteka.dictionary!, amount: totalAmount, startDate: startDate, paymentMethod: paymentType, regionId: regionId, mainFiles: mainFiles, membersCount: membersCount, secondaryFils: secondaryFiles, long: self.longitude, lat: self.lattitude)
     }
 }

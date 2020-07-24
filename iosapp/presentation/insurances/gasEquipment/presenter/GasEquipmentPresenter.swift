@@ -140,6 +140,7 @@ class GasEquipmentPresenterImpl: BaseInsurancePresenter, GasEquipmentPresenter {
     }
     
     func setTotalAmount(amount: Int) {
+        self.formatAmount = "\(amount.toDecimalFormat()) \("sum".localized())"
         self.totalAmount = amount
         if let vc = self.view as? GasEquipmentConfirmVC {
             vc.setTotalAmount(totalAmount: "\(amount.toDecimalFormat())")
@@ -147,6 +148,6 @@ class GasEquipmentPresenterImpl: BaseInsurancePresenter, GasEquipmentPresenter {
     }
     
     override func confirmButtonClicked() {        
-        self.gasEquipmentInteractor?.createInsurance(type: .gasAuto, params: gasAuto.dictionary!, amount: nil, startDate: startDate, paymentMethod: self.paymentType, regionId: self.regionId, mainFiles: mainFiles, membersCount: membersCount, secondaryFils: secondaryFiles)
+        self.gasEquipmentInteractor?.createInsurance(type: .gasAuto, params: gasAuto.dictionary!, amount: nil, startDate: startDate, paymentMethod: self.paymentType, regionId: self.regionId, mainFiles: mainFiles, membersCount: membersCount, secondaryFils: secondaryFiles, long: self.longitude, lat: self.lattitude)
     }
 }

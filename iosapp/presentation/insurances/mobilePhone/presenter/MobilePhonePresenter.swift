@@ -74,6 +74,7 @@ class MobilePhonePresenterImpl: BaseInsurancePresenter, MobilePhonePresenter {
     }
     
     func setTotalAmount(totalAmount: String) {
+        self.formatAmount = "\(totalAmount) \("sum".localized())"
         let vc = self.view as? MobilePhoneConfirmVC
         vc?.setTotalAmount(totalAmount: totalAmount)
     }
@@ -91,6 +92,6 @@ class MobilePhonePresenterImpl: BaseInsurancePresenter, MobilePhonePresenter {
     }
     
     override func confirmButtonClicked() {
-        self.mobilePhoneInteractor?.createInsurance(type: .phone, params: mobilePhone.dictionary!, amount: nil, startDate: startDate, paymentMethod: paymentType, regionId: regionId, mainFiles: mainFiles, membersCount: membersCount, secondaryFils: secondaryFiles)
+        self.mobilePhoneInteractor?.createInsurance(type: .phone, params: mobilePhone.dictionary!, amount: nil, startDate: startDate, paymentMethod: paymentType, regionId: regionId, mainFiles: mainFiles, membersCount: membersCount, secondaryFils: secondaryFiles, long: self.longitude, lat: self.lattitude)
     }
 }

@@ -107,6 +107,7 @@ class InfectionPresenterImpl: BaseInsurancePresenter, InfectionPresenter {
     }
     
     func setTotalAmount(totalAmount: String) {
+        self.formatAmount = "\(totalAmount) \("sum".localized())"
         let vc = self.view as? InfectionConfirmVC
         vc?.setTotalAmount(totalAmount: totalAmount)
     }
@@ -120,6 +121,6 @@ class InfectionPresenterImpl: BaseInsurancePresenter, InfectionPresenter {
     }
     
     override func confirmButtonClicked() {
-        self.infectionInteractor?.createInsurance(type: .infection, params: infection.dictionary!, amount: nil, startDate: startDate, paymentMethod: paymentType, regionId: regionId, mainFiles: mainFiles, membersCount: membersCount, secondaryFils: secondaryFiles)
+        self.infectionInteractor?.createInsurance(type: .infection, params: infection.dictionary!, amount: nil, startDate: startDate, paymentMethod: paymentType, regionId: regionId, mainFiles: mainFiles, membersCount: membersCount, secondaryFils: secondaryFiles, long: self.longitude, lat: self.lattitude)
     }
 }

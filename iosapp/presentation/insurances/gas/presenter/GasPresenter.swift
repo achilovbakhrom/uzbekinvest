@@ -103,6 +103,7 @@ class GasPresenterImpl: BaseInsurancePresenter, GasPresenter {
     }
     
     func setTotalAmount(totalAmount: String) {
+        self.formatAmount = "\(totalAmount) \("sum".localized())"
         let vc = self.view as? GasConfirmVC
         vc?.setTotalAmount(totalAmount: totalAmount)
     }
@@ -120,7 +121,7 @@ class GasPresenterImpl: BaseInsurancePresenter, GasPresenter {
     }
     
     override func confirmButtonClicked() {
-        self.gasInteractor?.createInsurance(type: .gasHome, params: gasHome.dictionary!, amount: nil, startDate: startDate, paymentMethod: paymentType, regionId: regionId, mainFiles: mainFiles, membersCount: membersCount, secondaryFils: secondaryFiles)
+        self.gasInteractor?.createInsurance(type: .gasHome, params: gasHome.dictionary!, amount: nil, startDate: startDate, paymentMethod: paymentType, regionId: regionId, mainFiles: mainFiles, membersCount: membersCount, secondaryFils: secondaryFiles, long: self.longitude, lat: self.lattitude)
     }
     
     

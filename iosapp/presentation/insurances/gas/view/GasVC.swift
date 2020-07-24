@@ -14,7 +14,7 @@ class GasVC: BaseWithLeftCirclesVC {
     private lazy var gasPresenter = self.presenter as? GasPresenter
     
     var product: Product!
-    
+        
     @IBOutlet weak var gasHomeTitle: UILabel!
     @IBOutlet weak var gasHomeDescription: UILabel!
     private lazy var noInternetView: NoInternetView = NoInternetView.fromNib()

@@ -23,7 +23,7 @@ class RoadTechSupport1VC: BaseWithLeftCirclesVC {
         insuranceAmount.onChange = {
             self.roadTechPresenter?.setInsuranceAmount(insuranceAmount: Int($0) ?? 0)
         }
-        insuranceAmount.text = "insurance_amount_title".localized()
+        insuranceAmount.placeholder = "insurance_amount_title".localized()
         nextButton.isEnabled = false
     }
     

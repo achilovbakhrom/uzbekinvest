@@ -219,7 +219,7 @@ class TravelPresenterImpl: BaseInsurancePresenter, TravelPresenter {
     }
     
     func setTravelStartDate(startDate: String) {
-        self.travel.startDate = startDate        
+        self.travel.startDate = startDate
         self.setEnabled(isEnabled: travel.startDate != nil && travel.endDate != nil && (travel.startDate!.toDate() ?? Date()).compare(travel.endDate!.toDate() ?? Date()) == ComparisonResult.orderedAscending)
     }
     
@@ -439,7 +439,8 @@ class TravelPresenterImpl: BaseInsurancePresenter, TravelPresenter {
         self.travelInteractor?.calculateTravel(travel: self.travel)
     }
     
-    func setTotalAmount(amount: Double) {        
+    func setTotalAmount(amount: Double) {
+        self.formatAmount = "\(amount.toDecimalFormat()) \("sum".localized())"
         if let vc = self.view as? TravelConfirm1VC {
             vc.setTotalAmount(amount: amount.toDecimalFormat())
         }
@@ -452,6 +453,7 @@ class TravelPresenterImpl: BaseInsurancePresenter, TravelPresenter {
         if let vc = self.view as? TravelConfirm2VC {
             vc.setTouristsList(list: touristList)
         }
+    
     }
     
     func setTouristName(at: Int, name: String) {
@@ -496,6 +498,6 @@ class TravelPresenterImpl: BaseInsurancePresenter, TravelPresenter {
             travelDict["countries[\(index)]"] = countryList[index].id
         }
         
-        self.travelInteractor?.createInsurance(type: .travel, params: travelDict, amount: nil, startDate: startDate, paymentMethod: self.paymentType, regionId: regionId, mainFiles: mainFiles, membersCount: membersCount, secondaryFils: secondaryFiles)
+        self.travelInteractor?.createInsurance(type: .travel, params: travelDict, amount: nil, startDate: startDate, paymentMethod: self.paymentType, regionId: regionId, mainFiles: mainFiles, membersCount: membersCount, secondaryFils: secondaryFiles, long: self.longitude, lat: self.lattitude)
     }
 }

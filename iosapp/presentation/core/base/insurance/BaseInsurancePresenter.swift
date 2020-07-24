@@ -28,6 +28,8 @@ class BaseInsurancePresenter: BasePresenter {
     internal var membersCount: Int = 0
     internal var paymentType: String = "online"
     internal var regions: [Region] = []
+    internal var longitude: Double = 0.0
+    internal var lattitude: Double = 0.0
     
     private lazy var insuranceInteractor = self.interactor as? BaseInsuranceInteractor
     private var baseInsuranceView: BaseInsuranceConfirmVC? {
@@ -179,7 +181,13 @@ class BaseInsurancePresenter: BasePresenter {
         self.insuranceInteractor?.fetchRegions()
     }
     
+    func setLatitude(lat: Double) {
+        self.lattitude = lat
+    }
     
+    func setLongitude(long: Double) {
+        self.longitude = long
+    }
     
 }
 

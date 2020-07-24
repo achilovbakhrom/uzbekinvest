@@ -491,15 +491,20 @@ class BaseInsuranceConfirmVC: BaseViewImpl, UICollectionViewDelegate, UICollecti
             self.popover = LCPopover<Int>(for: self.addressView.changeButton, title: "delivery_region".localized()) { tuple in
                 guard let key = tuple?.key else { return }
                 guard let value = tuple?.value else { return }
-                
+
                 let selectedRegion = self.regions.first { $0.id == key }
                 if selectedRegion?.children != nil && !(selectedRegion?.children?.isEmpty ?? false) {
-                    
+
                     self.popover = LCPopover<Int>(for: self.addressView.changeButton, title: "delivery_region".localized()) { tuple in
                         guard let key = tuple?.key else { return }
                         guard let value = tuple?.value else { return }
                         self.addressView.contentLabel.text = value
                         self.insurancePresenter?.setRegionId(regionId: key)
+                        self.navigationController?.pushViewController(self.locationPicker, animated: true)
+                        self.locationPicker.completion = { location in
+                            self.insurancePresenter?.setLatitude(lat: location?.coordinate.latitude ?? 0.0)
+                            self.insurancePresenter?.setLongitude(long: location?.coordinate.longitude ?? 0.0)
+                        }
                     }
                     self.popover.backgroundColor = Colors.primaryGreen
                     self.popover.borderWidth = 0.0
@@ -512,6 +517,11 @@ class BaseInsuranceConfirmVC: BaseViewImpl, UICollectionViewDelegate, UICollecti
                 } else {
                     self.addressView.contentLabel.text = value
                     self.insurancePresenter?.setRegionId(regionId: key)
+                    self.navigationController?.pushViewController(self.locationPicker, animated: true)
+                    self.locationPicker.completion = { location in
+                        self.insurancePresenter?.setLatitude(lat: location?.coordinate.latitude ?? 0.0)
+                        self.insurancePresenter?.setLongitude(long: location?.coordinate.longitude ?? 0.0)
+                    }
                 }
             }
             self.popover.backgroundColor = Colors.primaryGreen

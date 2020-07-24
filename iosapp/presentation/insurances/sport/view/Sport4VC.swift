@@ -21,7 +21,7 @@ class Sport4VC: BaseWithLeftCirclesVC {
     
     private lazy var periodData: ([Int], [String]) = {
         var ids: [Int] = [0, 1, 2, 3]
-        var array: [String] = ["До 10 дней", "До 15 дней", "До 30 дней", "До 1-го года"]
+        var array: [String] = ["sport_10".localized(), "sport_15".localized(), "sport_30".localized(), "sport_1_year".localized()]
         
         return (ids, array)
     }()

@@ -12,7 +12,7 @@ protocol HealthInteractor {
     init(serviceFactory: ServiceFactoryProtocol, presenter: BasePresenter)
     func calculate(health: MedicalInsurance)
     func prepareToOpenFinalVC(id: Int)
-    func createInsurance(type: InsuranceType, params: [String: Any], amount: Int?, startDate: String, paymentMethod: String, regionId: Int, mainFiles: [Int: UserFile], membersCount: Int, secondaryFils: [Int: [Int: UserFile]]?)
+    func createInsurance(type: InsuranceType, params: [String: Any], amount: Int?, startDate: String, paymentMethod: String, regionId: Int, mainFiles: [Int: UserFile], membersCount: Int, secondaryFils: [Int: [Int: UserFile]]?, long: Double, lat: Double)
     
 }
 

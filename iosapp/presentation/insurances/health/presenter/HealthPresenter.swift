@@ -98,6 +98,7 @@ class HealthPresenterImpl: BaseInsurancePresenter, HealthPresenter {
     }
     
     func setTotalAmount(totalAmount: String) {
+        self.formatAmount = "\(totalAmount) \("sum".localized())"
         let vc = self.view as? HealthConfirmVC
         vc?.setTotalAmount(totalAmount: Double(totalAmount)?.toDecimalFormat() ?? "0")
     }
@@ -111,7 +112,7 @@ class HealthPresenterImpl: BaseInsurancePresenter, HealthPresenter {
     }
     
     override func confirmButtonClicked() {
-        self.healthInteractor?.createInsurance(type: .medical, params: health.dictionary!, amount: nil, startDate: startDate, paymentMethod: paymentType, regionId: regionId, mainFiles: mainFiles, membersCount: membersCount, secondaryFils: secondaryFiles)
+        self.healthInteractor?.createInsurance(type: .medical, params: health.dictionary!, amount: nil, startDate: startDate, paymentMethod: paymentType, regionId: regionId, mainFiles: mainFiles, membersCount: membersCount, secondaryFils: secondaryFiles, long: self.longitude, lat: self.lattitude)
     }
     
 }
