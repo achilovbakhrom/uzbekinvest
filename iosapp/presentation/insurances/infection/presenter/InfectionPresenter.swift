@@ -99,7 +99,7 @@ class InfectionPresenterImpl: BaseInsurancePresenter, InfectionPresenter {
     
     func fillConfirmData() {
         let vc = self.view as? InfectionConfirmVC
-        vc?.setInsuranceAmount(insuranceAmount: "\(self.infection.insuranceAmount) sum")
+        vc?.setInsuranceAmount(insuranceAmount: "\(self.infection.insuranceAmount) \("sum".localized())")
     }
     
     func calculateInfection() {

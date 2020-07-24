@@ -23,9 +23,15 @@ class OsagoVC: BaseWithLeftCirclesVC {
         super.viewDidLoad()
         backButtonClicked = { self.osagoPresenter?.goBack() }
         self.setTabBarHidden(true)
-        insuranceTitleLabel.text = product?.translates?[translatePosition]?.name
+        self.product?.translates?.forEach({ t in
+            if t?.lang == translateCode {
+                self.insuranceTitleLabel.text = t?.name
+                self.insuranceContentLabel.text = t?.text?.htmlToString
+            }
+        })
+//        insuranceTitleLabel.text = product?.translates?[translatePosition]?.name
         insuranceContentLabel.textAlignment = .justified
-        insuranceContentLabel.text = product?.translates?[translatePosition]?.text?.htmlToString
+//        insuranceContentLabel.text = product?.translates?[translatePosition]?.text?.htmlToString
         self.view.bringSubviewToFront(nextButton)
         self.osagoPresenter?.setProduct(product: product!)
         self.setupNoInternetView()

@@ -150,7 +150,11 @@ class CategoriesCell: UICollectionViewCell {
     
     func setData(category: Category, isFirst: Bool, isSelected: Bool, isLast: Bool) {
         self.leadingConstraint.constant = isFirst ? 31 : 0
-        titleLabel.text = category.translates?[translatePosition]?.name
+        category.translates?.forEach({ t in
+            if t?.lang == translateCode {                
+                titleLabel.text = t?.name
+            }
+        })
         self.category = category
         let color: UIColor = isSelected ? Colors.primaryGreen : Colors.pageIndicatorGray
         titleLabel.textColor = color

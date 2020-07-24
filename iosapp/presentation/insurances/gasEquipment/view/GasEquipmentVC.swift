@@ -22,8 +22,14 @@ class GasEquipmentVC: BaseWithLeftCirclesVC {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.gasEquipmentTitle.text = product.translates?[translatePosition]?.name
-        self.gasEquipmentDescription.text = product.translates?[translatePosition]?.text?.htmlToString
+        self.product.translates?.forEach({ t in
+            if t?.lang == translateCode {
+                self.gasEquipmentTitle.text = t?.name
+                self.gasEquipmentDescription.text = t?.text?.htmlToString
+            }
+        })
+//        self.gasEquipmentTitle.text = product.translates?[translatePosition]?.name
+//        self.gasEquipmentDescription.text = product.translates?[translatePosition]?.text?.htmlToString
         self.gasEquipmentDescription.textAlignment = .justified
         backButtonClicked = {
             self.gasEquipmentPresenter?.goBack()

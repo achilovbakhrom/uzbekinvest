@@ -23,8 +23,14 @@ class HomeVC: BaseWithLeftCirclesVC {
         backButtonClicked = {
             self.homePresenter?.goBack()
         }
-        productTitle.text = product?.translates?[translatePosition]?.name
-        productDescription.text = product?.translates?[translatePosition]?.text?.htmlToString
+        self.product.translates?.forEach({ t in
+            if t?.lang == translateCode {
+                self.productTitle.text = t?.name
+                self.productDescription.text = t?.text?.htmlToString
+            }
+        })
+//        productTitle.text = product?.translates?[translatePosition]?.name
+//        productDescription.text = product?.translates?[translatePosition]?.text?.htmlToString
         productDescription.textAlignment = .justified
         self.homePresenter?.setProduct(product: product)
         self.setTabBarHidden(true)

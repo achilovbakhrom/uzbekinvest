@@ -27,7 +27,7 @@ class OrderCheck2View: UIView {
     }
     
     @IBAction func backButtonClicked(_ sender: Any) {
-        onBack?()        
+        onBack?()
     }
     
     @IBAction func toMainPageClicked(_ sender: Any) {

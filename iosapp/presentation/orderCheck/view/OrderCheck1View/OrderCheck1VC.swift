@@ -44,13 +44,7 @@ class OrderCheck1VC: BaseWithLeftCirclesVC {
             self.orderCheckPresenter?.goBack()
             self.setTabBarHidden(false)
         }
-        self.orderCheck1View.onCheckClicked = { self.orderCheckPresenter?.check() }
-        self.setTabBarHidden(true)
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        self.setTabBarHidden(false)
+        self.orderCheck1View.onCheckClicked = { self.orderCheckPresenter?.check() }        
     }
     
     func setLoading(isLoading: Bool) {

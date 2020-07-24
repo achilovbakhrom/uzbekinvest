@@ -26,10 +26,18 @@ class AccidentVC: BaseWithLeftCirclesVC {
             self.accidentPresenter?.goBack()
             self.setTabBarHidden(false)
         }
-        accidentTitle.text = product.translates?[translatePosition]?.name
-        accidentDescription.textAlignment = .justified
-        accidentDescription.text
-            = product.translates?[translatePosition]?.text?.htmlToAttributedString?.string
+        
+        self.product.translates?.forEach({ t in
+            if t?.lang == translateCode {
+                self.accidentTitle.text = t?.name
+                self.accidentDescription.text = t?.text?.htmlToString
+            }
+        })
+//        accidentTitle.text = product.translates?[translatePosition]?.name
+        
+//        accidentDescription.text
+//            = product.translates?[translatePosition]?.text?.htmlToAttributedString?.string
+        self.accidentDescription.textAlignment = .justified
         self.accidentPresenter?.setProduct(product: product)
         self.setTabBarHidden(true)
         self.setupNoInternetView()

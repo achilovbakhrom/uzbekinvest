@@ -28,6 +28,7 @@ class MyDocumentsVC: BaseViewImpl {
         ])
         
         self.view.addSubview(loadingView)
+        loadingView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             self.loadingView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
             self.loadingView.topAnchor.constraint(equalTo: self.view.topAnchor),

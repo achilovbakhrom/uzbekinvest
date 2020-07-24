@@ -134,6 +134,7 @@ class UserFilesPicker: UIViewController, UICollectionViewDelegate, UICollectionV
         ])
                 
         self.view.addSubview(self.loadingView)
+        self.loadingView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             self.loadingView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
             self.loadingView.topAnchor.constraint(equalTo: self.view.topAnchor),

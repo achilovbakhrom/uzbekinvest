@@ -22,23 +22,28 @@ class Travel5VC: BaseWithLeftCirclesVC {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        dobPicker.floatText = "birthdate".localized()
         dobPicker.onChange = {
             let formatter = DateFormatter()
             formatter.dateFormat = "yyyy-MM-dd"
             self.travelPresenter?.setDob(at: 0, dob: formatter.string(from: $0))
         }
         backButtonClicked = { self.travelPresenter?.goBack() }
-        self.selectIndividual()
+        
         nextButton.isEnabled = false
         
         self.nextButton.setTitle("next".localized(), for: .normal)
         self.goalType.text = "tourist_count".localized()
         
         self.individualButton.setTitle("tourist_count_single".localized(), for: .normal)
+        self.individualButton.titleLabel?.numberOfLines = 2
         
         self.familyButton.setTitle("tourist_count_family".localized(), for: .normal)
+        self.familyButton.titleLabel?.numberOfLines = 2
         
         self.groupButton.setTitle("tourist_count_group".localized(), for: .normal)
+        self.groupButton.titleLabel?.numberOfLines = 2
+        self.selectIndividual()
     }
     
     private func selectIndividual() {

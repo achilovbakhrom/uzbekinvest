@@ -45,7 +45,7 @@
 "citizenship" = "Гражданство";
 "citizen_of_the_republic_of_uzbekistan" = "Гражданин Республики Узбекистан";
 "foreign_citizen" = "Иностранный гражданин";
-"delivery_region" = "Регион доставки";
+"delivery_region" = "Адрес доставки";
 "vehicle_details" = "Сведения о транспортном средстве";
 "authorized_persons_to_control_the_vehicle" = "Допущенных лиц к управлению ТС";
 "number" = "Количество";
@@ -142,7 +142,7 @@
 "about_standart" = "О тарифе “Стандарт”";
 "about_comfort" = "О тарифе “Комфорт”";
 "about_premium" = "О тарифе “Приемиум”";
-"total_insurance_amount" = "Обшая страхования сумма";
+"total_insurance_amount" = "Обшая страховочная сумма";
 "medical_expenses" = "Медицинские расходы, включая стоматологическую помощь";
 "repatriation" = "Репатриация  и транспортировка останков, включая";
 "accomodation" = "Ночлег для сопровождающего лица";
@@ -226,9 +226,9 @@
 
 "car_price_kasko" = "Приблизительная стоимость авто";
 
-"to_pay" = "Сумма к оплате";
+"to_pay" = "Стоимость полиса";
 
-"form_of_pay" = "Способ оплаты";
+"form_of_pay" = "Выберите способ оплаты";
 
 "loading_confirm" = "Загружается";
 
@@ -273,8 +273,8 @@
 "tourist_count" = "Количество туристов";
 
 "tourist_count_single" = "Я еду один";
-"tourist_count_family" = "Семья";
-"tourist_count_group" = "Группа";
+"tourist_count_family" = "Я еду с семей";
+"tourist_count_group" = "Я еду с группой";
 
 "tourist_list" = "Список туристов";
 
@@ -294,3 +294,63 @@
 
 "all_button" = "Все";
 "pinfl_button" = "Все ранее купленные";
+
+"delivery_place" = "Регион доставки";
+
+"members_count_desc" = "Укажите количество водителей, допущенных к управлению авто";
+
+"accident_title_osago" = "Попадали ли вы до этого в ДТП?";
+
+"policy_date_label" = "Период страхования";
+
+"for_20_days" = "20 дней";
+"for_6_months" = "6 месяцев";
+"for_12_months" = "12 месяцев";
+
+"for_15_days" = "20 дней";
+"for_2_months" = "6 месяцев";
+
+
+"kasko_3_months" = "3 месяца";
+
+"kasko_6_months" = "6 месяцев";
+
+"kasko_9_months" = "9 месяцев";
+
+"kasko_1_year" = "1 год";
+
+"kasko_2_years" = "2 года";
+
+"kasko_3_years" = "3 года";
+
+"kasko_4_years" = "4 года";
+
+"kasko_5_years" = "5 лет";
+
+"change" = "Изменить";
+
+"birthdate" = "Дата рождения";
+
+"passport_seria" = "Серия паспорта";
+
+"fio" = "ФИО";
+
+"active" = "Активный";
+
+"not_active" = "Не активный";
+
+"order_seria" = "Серия полиса";
+
+"order_number" = "Номер полиса";
+
+"until_25_euro" = "до 25 000€";
+
+"until_12_euro" = "до 12 000€";
+
+"until_1_euro" = "до 1 000€";
+
+"until_10_euro" = "до 10 000€";
+
+"until_13_euro" = "до 13 000€";
+
+"until_2_euro" = "до 2 000€";

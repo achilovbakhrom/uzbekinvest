@@ -52,7 +52,12 @@ class MyInsuranceCategoryCell: UICollectionViewCell {
     }
     
     func setData(category: Category, isSelected: Bool, isFirst: Bool) {
-        self.button.setTitle(category.translates?[translatePosition]?.name, for: .normal)
+        
+        category.translates?.forEach({ t in
+            if t?.lang == translateCode {
+                self.button.setTitle(t?.name, for: .normal)
+            }
+        })
         self.button.isChecked = isSelected
         self.leadingConstraint.constant = isFirst ? 31 : 0        
     }

@@ -75,7 +75,13 @@ class ReasonView: UIView, UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: IncidentMetaDataCell.self)) as! IncidentMetaDataCell
-        cell.setData(text: metaDataList.types[indexPath.row].translates[translatePosition].name ?? "", isSelected: indexPath.row == self.selected)
+        
+        metaDataList.types[indexPath.row].translates.forEach({ t in
+            if t.lang == translateCode {
+                cell.setData(text: t.name ?? "", isSelected: indexPath.row == self.selected)
+            }
+        })
+        
         
         cell.selectionStyle = .none
         

@@ -64,7 +64,7 @@ class IpotekaPresenterImpl: BaseInsurancePresenter, IpotekaPresenter {
     func fillConfirmData() {
         let vc = self.view as? IpotekaConfirmVC
         vc?.setYears(years: "\(ipoteka.years)")
-        vc?.setAmount(amount: "\(ipoteka.insuranceAmount.toDecimalFormat()) сум")
+        vc?.setAmount(amount: "\(ipoteka.insuranceAmount.toDecimalFormat()) \("sum".localized())")
     }
     
     func setLoading(isLoading: Bool) {

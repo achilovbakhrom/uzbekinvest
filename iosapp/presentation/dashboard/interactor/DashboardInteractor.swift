@@ -80,9 +80,9 @@ class DashboardInteractorImpl: DashboardInteractor {
                         var allCats = Category()
                         allCats.id = -1
                         allCats.translates = [
-                            Translate(name: "Все", lang: "", text: nil, description: nil),
-                            Translate(name: "Barcha bo'limlar", lang: "", text: nil, description: nil),
-                            Translate(name: "Барча булимлар", lang: "", text: nil, description: nil)
+                            Translate(name: "Все", lang: "ru", text: nil, description: nil),
+                            Translate(name: "Barcha bo'limlar", lang: "uz", text: nil, description: nil),
+                            Translate(name: "Барча булимлар", lang: "oz", text: nil, description: nil)
                         ]
                         categoryList.insert(allCats, at: 0)
                         self.dashboardPresenter?.setCategoryList(categoryList: categoryList)

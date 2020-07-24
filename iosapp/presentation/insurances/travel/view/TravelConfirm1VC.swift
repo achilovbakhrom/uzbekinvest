@@ -33,11 +33,10 @@ class TravelConfirm1VC: BaseWithRightGreenCirclesVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         backButtonClicked = { self.travelPresenter?.goBack() }
-        self.travelPresenter?.fillConfirm1VC()
-        self.travelPresenter?.calculate()
+        
         
         self.titleLabel.text = "travel1_title".localized();
-        self.titleLabel.text = "tourist_country_confirm".localized();
+        self.countryLabel.text = "tourist_country_confirm".localized();
         self.amountLabel.text = "amount_of_covered_cost".localized()
         self.tariff.text = "program".localized()
         self.typeLabel.text = "travel3_type".localized()
@@ -45,6 +44,9 @@ class TravelConfirm1VC: BaseWithRightGreenCirclesVC {
         self.touristCountLabel.text = "tourist_count".localized()
         
         self.confirmButton.setTitle("checkout".localized(), for: .normal)
+        
+        self.travelPresenter?.fillConfirm1VC()
+        self.travelPresenter?.calculate()
     }
     
     func setTotalAmount(amount: String) {

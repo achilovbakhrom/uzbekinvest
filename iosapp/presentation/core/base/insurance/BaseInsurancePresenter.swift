@@ -168,8 +168,12 @@ class BaseInsurancePresenter: BasePresenter {
     
     func confirmButtonClicked() {}
     
-    func setupFinalVC() {        
-        self.baseInsuranceView?.setInsuranceName(name: self.product?.translates?[0]?.name ?? "")
+    func setupFinalVC() {
+        self.product?.translates?.forEach({ t in
+            if t?.lang == translateCode {
+                self.baseInsuranceView?.setInsuranceName(name: t?.name ?? "")
+            }
+        })        
         self.baseInsuranceView?.setInsuranceAmount(amount: self.formatAmount)
         self.baseInsuranceView?.setup(totalAmount: self.formatAmount, documents: self.documents, secondary: self.secondary, userFiles: self.userFiles, membersCount: self.membersCount)
         self.insuranceInteractor?.fetchRegions()

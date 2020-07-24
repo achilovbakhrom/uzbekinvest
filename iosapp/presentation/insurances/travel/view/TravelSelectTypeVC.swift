@@ -17,6 +17,7 @@ class TravelSelectTypeVC: BaseWithLeftCirclesVC, UITableViewDelegate, UITableVie
     private lazy var travelPresenter = self.presenter as? TravelPresenter
     
     var group: [TravelTypeGroup] = []
+    var allList: [TravelTypeGroup] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,9 +29,21 @@ class TravelSelectTypeVC: BaseWithLeftCirclesVC, UITableViewDelegate, UITableVie
         typeTableView.sectionHeaderHeight = 44.0
         typeTableView.register(TravelTypeCell.self, forCellReuseIdentifier: String(describing: TravelTypeCell.self))
         typeTableView.register(TravelTypeCellHeader.self, forHeaderFooterViewReuseIdentifier: String(describing: TravelTypeCellHeader.self))
-        self.backButtonClicked = { self.travelPresenter?.goBack() }
+        self.backButtonClicked = { self.travelPresenter?.goBack() }        
+        self.searchTextField.placeholder = "search_field".localized()
         travelPresenter?.fetchTypes()
-        self.searchTextField.text = "search_field".localized()
+        searchTextField.onChange = { searchKey in
+            if searchKey.isEmpty {
+                self.group = self.allList
+            } else {
+                self.group = self.allList.filter({ g in
+                    return g.types[0].name.lowercased().contains(searchKey.lowercased())
+                })
+            }
+            UIView.transition(with: self.typeTableView, duration: 0.3, options: .transitionCrossDissolve, animations: {
+                self.typeTableView.reloadData()
+            }, completion: nil)
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -56,6 +69,7 @@ class TravelSelectTypeVC: BaseWithLeftCirclesVC, UITableViewDelegate, UITableVie
     }
     
     func setTravelGroup(group: [TravelTypeGroup]) {
+        self.allList = group
         self.group = group
         UIView.transition(with: typeTableView, duration: 0.3, options: .transitionCrossDissolve, animations: {
             self.typeTableView.reloadData()
@@ -84,7 +98,7 @@ class TravelTypeCellHeader: UITableViewHeaderFooterView {
             titleLabel.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 31),
             titleLabel.centerYAnchor.constraint(equalTo: self.contentView.centerYAnchor)
         ])
-        self.backgroundColor = UIColor.lightGray
+        self.backgroundColor = Colors.primaryGreen.withAlphaComponent(0.4)
     }
     
     required init?(coder: NSCoder) {

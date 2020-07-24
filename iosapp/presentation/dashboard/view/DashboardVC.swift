@@ -357,7 +357,12 @@ class DashboardVC: BaseViewImpl, BottomViewControllerScrollDelegate, UICollectio
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TopMenuCell", for: indexPath) as! TopMenuCell
-        cell.setTitle(title: categories[indexPath.item].translates?[translatePosition]?.name ?? "", isFirst: indexPath.row == 0, isLast: indexPath.row == categories.count - 1)
+        categories[indexPath.item].translates?.forEach({ t in
+            if t?.lang == translateCode {
+                cell.setTitle(title: t?.name ?? "", isFirst: indexPath.row == 0, isLast: indexPath.row == categories.count - 1)
+            }
+        })
+        
         if indexPath.row == selected {
             cell.select()
         } else {

@@ -3,7 +3,7 @@
 "5lL-21-t7x.text" = "0 сум";
 
 /* Class = "UILabel"; text = "Сумма полиса"; ObjectID = "6SE-y1-tvw"; */
-"6SE-y1-tvw.text" = "Сумма полиса";
+"6SE-y1-tvw.text" = "Дата начала поездки";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "DzR-4N-mFe"; */
 "DzR-4N-mFe.text" = "Label";

@@ -215,8 +215,12 @@ class BaseInsuranceConfirmVC: BaseViewImpl, UICollectionViewDelegate, UICollecti
                     self.insurancePresenter?.uploadFile(data: image.pngData()!, documentId: document.id, name: fileName, isMain: true)
                 }
             }
+            document.translates?.forEach({ t in
+                if t?.lang == translateCode {
+                    v.titleLabel.text = t?.name
+                }
+            })
             
-            v.titleLabel.text = document.translates?[0]?.name
             
             var found: UserFile? = nil
             
@@ -285,7 +289,7 @@ class BaseInsuranceConfirmVC: BaseViewImpl, UICollectionViewDelegate, UICollecti
             var lastSecondaryDocument: Document!
             
             (0..<membersCount).forEach { i in
-                let header = createHeader(number: i+1, contentView: self.propertiesView, lastElement: i == 0  ? lastDiv! : lastElement!)
+                let header = createHeader(number: i+1, contentView: self.propertiesView, lastElement: i == 0  ? (lastDiv ?? UIView.init()) : lastElement!)
                 index = 0
                 secondary.forEach { document in
                      
@@ -333,7 +337,12 @@ class BaseInsuranceConfirmVC: BaseViewImpl, UICollectionViewDelegate, UICollecti
                             self.insurancePresenter?.uploadFile(data: image.pngData()!, documentId: document.id, name: fileName, isMain: false, sequence: i)
                         }
                     }
-                    v.titleLabel.text = document.translates?[0]?.name
+                    document.translates?.forEach({ t in
+                        if t?.lang == translateCode {
+                            v.titleLabel.text = t?.name
+                        }
+                    })
+//                    v.titleLabel.text = document.translates?[0]?.name
                     
                     var found: UserFile? = nil
                     

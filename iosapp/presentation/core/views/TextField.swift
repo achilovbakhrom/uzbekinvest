@@ -62,8 +62,8 @@ class TextField: AKMaskField, AKMaskFieldDelegate {
         super.layoutSubviews()
         if underscoreLayer == nil {
             underscoreLayer = CALayer()
-            underscoreLayer.backgroundColor = UIColor.init(red: 216.0/255.0, green: 216.0/255.0, blue: 216.0/255.0, alpha: 1.0).cgColor
-            underscoreLayer.frame = CGRect(x: 0, y: self.frame.height + 4.0, width: self.frame.width, height: 2.0)
+            underscoreLayer.backgroundColor = UIColor.init(red: 216.0/255.0, green: 216.0/255.0, blue: 216.0/255.0, alpha: 0.6).cgColor
+            underscoreLayer.frame = CGRect(x: 0, y: self.frame.height + 4.0, width: self.frame.width, height: 1.0)
             self.layer.addSublayer(underscoreLayer)
         }
         

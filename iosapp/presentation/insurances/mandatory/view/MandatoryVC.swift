@@ -29,9 +29,15 @@ class MandatoryVC: BaseWithLeftCirclesVC {
             self.mandatoryPresenter?.goBack()
             self.setTabBarHidden(false)
         }
-        self.mandatoryTitle.text = product?.translates?[translatePosition]?.name
+        self.product.translates?.forEach({ t in
+            if t?.lang == translateCode {
+                self.mandatoryTitle.text = t?.name
+                self.mandatoryDescription.text = t?.text?.htmlToString
+            }
+        })
+//        self.mandatoryTitle.text = product?.translates?[translatePosition]?.name
         self.mandatoryDescription.textAlignment = .justified
-        self.mandatoryDescription.text = product?.translates?[translatePosition]?.text?.htmlToString
+//        self.mandatoryDescription.text = product?.translates?[translatePosition]?.text?.htmlToString
         
         self.mandatoryPresenter?.setProduct(product: product)
         self.setupNoInternetView()

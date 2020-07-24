@@ -20,6 +20,9 @@ class MobilePhone1VC: BaseWithLeftCirclesVC {
         super.viewDidLoad()
         backButtonClicked = {}
         self.nextButton.isEnabled = false
+        backButtonClicked = {
+            self.mobilePhonePresenter?.goBack()
+        }
         mobilePhone.onChange = {
             self.mobilePhonePresenter?.setMobilePrice(price: Int($0) ?? 0)
         }

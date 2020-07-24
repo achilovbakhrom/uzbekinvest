@@ -154,7 +154,12 @@ class MyDocumentsCell: UICollectionViewCell {
     
     func setData(document: Document, isFirst: Bool, isSelected: Bool, isLast: Bool) {
         self.leadingConstraint.constant = isFirst ? 31 : 5
-        titleLabel.text = document.translates?[translatePosition]?.name
+        
+        document.translates?.forEach({ t in
+            if t?.lang == translateCode {
+                titleLabel.text = t?.name
+            }
+        })
         self.myDocument = document
         let color: UIColor = isSelected ? Colors.primaryGreen : Colors.pageIndicatorGray
         titleLabel.textColor = color

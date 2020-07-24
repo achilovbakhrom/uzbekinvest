@@ -361,8 +361,12 @@ class NotificationCell: UICollectionViewCell {
     }
     
     func setData(notification: NotificationModel, isFirst: Bool) {
-        titleLabel.text = notification.translates?[translatePosition]?.title
-        descriptionLabel.text = notification.translates?[translatePosition]?.description
+        notification.translates?.forEach({ t in
+            if t?.lang == translateCode {
+                titleLabel.text = t?.title
+                descriptionLabel.text = t?.description
+            }
+        })
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSSSS'Z'"
         let date = formatter.date(from: notification.createdAt)

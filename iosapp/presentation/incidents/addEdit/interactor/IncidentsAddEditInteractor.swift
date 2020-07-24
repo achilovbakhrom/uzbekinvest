@@ -103,7 +103,11 @@ class IncidentsAddEditInteractorImpl: IncidentsAddEditInteractor {
                         let r = try decoder.decode(Response<IncidentMetaItem>.self, from: response.data)
                         var instruction = ""
                         if (r.data?.instructions.count ?? 0) > translatePosition {
-                            instruction = r.data?.instructions[translatePosition].instructions ?? ""
+                            r.data?.instructions.forEach({ t in
+                                if t.lang == translateCode {
+                                    instruction = t.instructions ?? ""
+                                }
+                            })                            
                         } else if (r.data?.instructions.count ?? 0) > 0 {
                             instruction = r.data?.instructions[0].instructions ?? ""
                         }                        

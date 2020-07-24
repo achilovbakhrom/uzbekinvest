@@ -21,8 +21,14 @@ class IpotekaVC: BaseWithLeftCirclesVC {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        ipotekaTitle.text = product.translates?[translatePosition]?.name
-        ipotekaDescription.text = product.translates?[translatePosition]?.text?.htmlToString
+        self.product.translates?.forEach({ t in
+            if t?.lang == translateCode {
+                self.ipotekaTitle.text = t?.name
+                self.ipotekaDescription.text = t?.text?.htmlToString
+            }
+        })
+//        ipotekaTitle.text = product.translates?[translatePosition]?.name
+//        ipotekaDescription.text = product.translates?[translatePosition]?.text?.htmlToString
         ipotekaDescription.textAlignment = .justified
         backButtonClicked = {
             self.ipotekaPresenter?.goBack()

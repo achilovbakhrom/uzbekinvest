@@ -20,6 +20,7 @@ class Travel3VC: BaseWithLeftCirclesVC {
     @IBOutlet weak var endDate: DatePicker!
     @IBOutlet weak var multiDropDown: DDown!
     
+    
     @IBOutlet weak var travelTitle: UILabel!
     @IBOutlet weak var typeLabel: UILabel!
     
@@ -39,12 +40,25 @@ class Travel3VC: BaseWithLeftCirclesVC {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        self.nextButton.setTitle("next".localized(), for: .normal)
+        self.travelTitle.text = "travel1_title".localized()
+        self.typeLabel.text = "travel3_type".localized()
+        
+        singleButton.setTitle("travel3_single".localized(), for: .normal)
+        multipleButton.setTitle("travel3_multiple".localized(), for: .normal)
+        multiDropDown.placeholder = "multi_type".localized()
+        nextButton.setTitle("next".localized(), for: .normal)
+        
         backButtonClicked = { self.travelPresenter?.goBack() }
+        startDate.floatText = "start_period".localized()
         startDate.onChange = {
             let formatter = DateFormatter()
             formatter.dateFormat = "yyyy-MM-dd"
             self.travelPresenter?.setTravelStartDate(startDate: formatter.string(from: $0))
         }
+        endDate.floatText = "end_period".localized()
         endDate.onChange = {
             let formatter = DateFormatter()
             formatter.dateFormat = "yyyy-MM-dd"
@@ -54,14 +68,6 @@ class Travel3VC: BaseWithLeftCirclesVC {
         multiDropDown.optionArray = multiData.1
         nextButton.isEnabled = false
         self.selectSingle()
-        
-        self.nextButton.setTitle("next".localized(), for: .normal)
-        self.travelTitle.text = "travel1_title".localized()
-        self.typeLabel.text = "travel3_type".localized()
-        
-        singleButton.setTitle("travel3_single".localized(), for: .normal)
-        multipleButton.setTitle("travel3_multiple".localized(), for: .normal)
-        multiDropDown.placeholder = "multi_type".localized()
     }
     
     func setEnabled(isEnabled: Bool) {

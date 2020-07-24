@@ -41,8 +41,8 @@ class MandatoryPresenterImpl: BaseInsurancePresenter, MandatoryPresenter {
     
     override init() {
         super.init()
-        self.experienceString = "Меньше 2х лет"
-        self.ageString = "Меньше 22"
+        self.experienceString = "less_than_22".localized()
+        self.ageString = "less_than_22".localized()
         self.membersCount = 0
     }
     

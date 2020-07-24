@@ -94,7 +94,7 @@ class HealthPresenterImpl: BaseInsurancePresenter, HealthPresenter {
         let vc = self.view as? HealthConfirmVC
         vc?.setType(type: typeString)
         vc?.setAge(age: ageString)
-        vc?.setInsuranceAmount(insuranceAmount: "\(self.health.insuranceAmount?.toDecimalFormat() ?? "0") сум")
+        vc?.setInsuranceAmount(insuranceAmount: "\(self.health.insuranceAmount?.toDecimalFormat() ?? "0") \("sum".localized())")
     }
     
     func setTotalAmount(totalAmount: String) {

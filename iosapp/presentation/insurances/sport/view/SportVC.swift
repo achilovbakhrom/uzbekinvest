@@ -25,8 +25,14 @@ class SportVC: BaseWithLeftCirclesVC {
             self.setTabBarHidden(false)
         }
         self.setTabBarHidden(true)
-        sportTitle.text = self.product?.translates?[translatePosition]?.name
-        sportDescription.text = self.product?.translates?[translatePosition]?.text?.htmlToString
+        self.product.translates?.forEach({ t in
+            if t?.lang == translateCode {
+                self.sportTitle.text = t?.name
+                self.sportDescription.text = t?.text?.htmlToString
+            }
+        })
+//        sportTitle.text = self.product?.translates?[translatePosition]?.name
+//        sportDescription.text = self.product?.translates?[translatePosition]?.text?.htmlToString
         sportDescription.textAlignment = .justified
         self.sportsPresenter?.setProduct(product: product)
         self.setupNoInternetView()

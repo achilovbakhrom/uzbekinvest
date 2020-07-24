@@ -167,7 +167,7 @@ class SportsPresenterImpl: BaseInsurancePresenter, SportsPresenter {
     func fillConfirmData() {
         if let vc = self.view as? SportConfirmVC {
             vc.setSport(sport: sportString)
-            vc.setInsuranceAmount(insuranceAmount: "\(self.sport.insuranceAmount.toDecimalFormat()) сум")
+            vc.setInsuranceAmount(insuranceAmount: "\(self.sport.insuranceAmount.toDecimalFormat()) \("sum".localized())")
             let membersCount = sport.quantityLt15 + sport.quantityLt18 + sport.quantityLt30 + sport.quantityMte30
             vc.setMemebersCount(membersCount: "\(membersCount)")
             vc.setPeriod(period: periodString)

@@ -25,8 +25,14 @@ class MobilePhoneVC: BaseWithLeftCirclesVC {
             self.mobilePhonePresenter?.goBack()
             self.setTabBarHidden(false)
         }
-        self.titleLabel.text = product?.translates?[translatePosition]?.name
-        self.descriptionLabel.text = product?.translates?[translatePosition]?.text?.htmlToString
+        self.product.translates?.forEach({ t in
+            if t?.lang == translateCode {
+                self.titleLabel.text = t?.name
+                self.descriptionLabel.text = t?.text?.htmlToString
+            }
+        })
+//        self.titleLabel.text = product?.translates?[translatePosition]?.name
+//        self.descriptionLabel.text = product?.translates?[translatePosition]?.text?.htmlToString
         self.descriptionLabel.textAlignment = .justified
         self.mobilePhonePresenter?.setProduct(product: product)
         self.setTabBarHidden(true)

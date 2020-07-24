@@ -16,6 +16,7 @@ class Osago1VC: BaseWithLeftCirclesVC {
     @IBOutlet weak var regionList: DDown!
     
     @IBOutlet weak var nextButton: Button!
+    @IBOutlet weak var textFieldHeadLabel: UILabel!
     
     private lazy var osagoPresenter: OsagoPresenter = self.presenter as! OsagoPresenter
     
@@ -33,6 +34,7 @@ class Osago1VC: BaseWithLeftCirclesVC {
         self.backButtonClicked = {
             self.osagoPresenter.goBack()
         }
+        textFieldHeadLabel.text = "delivery_place".localized()
     }
     
     @IBAction func uzbCitizenClicked(_ sender: Any) {

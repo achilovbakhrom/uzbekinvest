@@ -25,8 +25,13 @@ class InfectionVC: BaseWithLeftCirclesVC {
             self.infectionPresenter?.goBack()
             self.setTabBarHidden(false)
         }
-        self.infectionTitle.text = self.product.translates?[translatePosition]?.name
-        self.infectionDescription.text = self.product.translates?[translatePosition]?.text?.htmlToString
+        self.product.translates?.forEach({ t in
+            if t?.lang == translateCode {
+                self.infectionTitle.text = t?.name
+                self.infectionDescription.text = t?.text?.htmlToString
+            }
+        })
+        
         self.infectionDescription.textAlignment = .justified
         self.infectionPresenter?.setProduct(product: product)
         self.setTabBarHidden(true)

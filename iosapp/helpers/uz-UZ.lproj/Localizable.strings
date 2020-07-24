@@ -43,7 +43,7 @@
 "citizenship" = "Fuqarolik";
 "citizen_of_the_republic_of_uzbekistan" = "O'zbekiston Respublikasi Fuqarosi";
 "foreign_citizen" = "Chet el fuqarosi";
-"delivery_region" = "Yetkazib berish mintaqasi";
+"delivery_region" = "Yetkazib berish manzili";
 "vehicle_details" = "Avtomobil haqida ma'lumnot";
 "authorized_persons_to_control_the_vehicle" = "Foydalanish huquqiga ega shaxslar";
 "number" = "Soni";
@@ -182,7 +182,7 @@
 "one_incident" = "Bitta xodisa";
 "two_incidents" = "Ikkita xodisa";
 "three_or_more" = "Uch va undan ortiq xodisalar";
-"notification" = "Xabarnome";
+"notification" = "Xabarnoma";
 "collapse" = "Qisqartirish";
 "about_us_text" = "«O‘zbekinvest» eksport-import milliy sug‘urta kompaniyasi umumiy sug‘urta bozorida o‘z faoliyatini olib boradi va sug‘urta faoliyati klassifikatoriga ko‘ra mavjud 17 turdagi sug‘urtaning barchasi bilan shug‘ullanadi.
 
@@ -274,7 +274,7 @@ Kelajakda rivojlanish strategiyasi - korporativ va xususiy sug‘urta bozorida o
 
 "offer_text" = "Oferta shartlariga roziman";
 
-"next" = "Далее";
+"next" = "Keyingi";
 
 "my_incidents_sub_desc" = "Sizning sugʻurta hodisalaringiz ro'yxati";
 
@@ -298,7 +298,7 @@ Kelajakda rivojlanish strategiyasi - korporativ va xususiy sug‘urta bozorida o
 
 "to_pay" = "Polis narxi";
 
-"form_of_pay" = "To’lov usuli";
+"form_of_pay" = "To’lov usuli tanlang";
 
 "loading_confirm" = "Yuklanmoqda";
 
@@ -366,3 +366,63 @@ Kelajakda rivojlanish strategiyasi - korporativ va xususiy sug‘urta bozorida o
 
 "all_button" = "Hammasi";
 "pinfl_button" = "Ilgari olinganlar";
+
+"delivery_place" = "Polisni qayerga yetkazaylik?";
+
+"members_count_desc" = "Avtotransport vositasini boshqarishga vakolatli shaxslar sonini ko’rsating";
+
+"accident_title_osago" = "Oldin yo'l-transport hodisasida bo'lganmisiz?";
+
+"policy_date_label" = "Sug’urta polisi muddati";
+
+"for_20_days" = "20 kun";
+"for_6_months" = "6 oy";
+"for_12_months" = "12 oy";
+
+"for_15_days" = "20 kun";
+"for_2_months" = "6 oy";
+
+
+"kasko_3_months" = "3 oy";
+
+"kasko_6_months" = "6 oy";
+
+"kasko_9_months" = "9 oy";
+
+"kasko_1_year" = "1 yil";
+
+"kasko_2_years" = "2 yil";
+
+"kasko_3_years" = "3 yil";
+
+"kasko_4_years" = "4 yil";
+
+"kasko_5_years" = "5 yil";
+
+"change" = "Tanlash";
+
+"birthdate" = "Tug'ilgan kun";
+
+"passport_seria" = "Passport seriyasi";
+
+"fio" = "Familiya Ism";
+
+"active" = "Aktiv";
+
+"not_active" = "Aktiv emas";
+
+"order_seria" = "Sug'urta seriyasi";
+
+"order_number" = "Sug'urta raqami";
+
+"until_25_euro" = "25 000€ gacha";
+
+"until_12_euro" = "12 000€ gacha";
+
+"until_1_euro" = "1 000€ gacha";
+
+"until_10_euro" = "10 000€ gacha";
+
+"until_13_euro" = "13 000€ gacha";
+
+"until_2_euro" = "2 000€ gacha";

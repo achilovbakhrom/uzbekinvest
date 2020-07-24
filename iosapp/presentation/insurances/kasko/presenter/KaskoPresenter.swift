@@ -77,7 +77,7 @@ class KaskoPresenterImpl: BaseInsurancePresenter, KaskoPresenter {
     
     func setCarPrice(price: Int) {
         self.kasko.carPrice = price
-        carPriceString = "\(price.toDecimalFormat()) сум"
+        carPriceString = "\(price.toDecimalFormat()) \("sum".localized())"
         let vc = self.view as? Kasko2VC
         vc?.setEnabled(isEnabled: kasko.period != 0)
     }
@@ -94,7 +94,7 @@ class KaskoPresenterImpl: BaseInsurancePresenter, KaskoPresenter {
         let vc = self.view as? KaskoConfirmVC
         vc?.setTotalAmount(amount: amount.toDecimalFormat())
         self.totalAmount = amount
-        self.formatAmount = "\(amount.toDecimalFormat()) сум"
+        self.formatAmount = "\(amount.toDecimalFormat()) \("sum".localized())"
     }
     
     func fillConfirmVC() {
@@ -123,11 +123,20 @@ class KaskoPresenterImpl: BaseInsurancePresenter, KaskoPresenter {
     func setup2VC() {
         let vc = self.view as? Kasko2VC
         if kasko.type == 3 {
-            vc?.setTitles(titles: ["1 год"])
+            vc?.setTitles(titles: ["kasko_1_year".localized()])
             vc?.setPeriodValues(periodValues: [1.0])
             vc?.setIds(ids: [0])
         } else {
-            vc?.setTitles(titles: ["3 месяца", "6 месяцев", "9 месяцев", "1 год", "2 года", "3 года", "4 года", "5 лет"])
+            vc?.setTitles(titles: [
+                "kasko_3_months".localized(),
+                "kasko_6_months".localized(),
+                "kasko_9_months".localized(),
+                "kasko_1_year".localized(),
+                "kasko_2_years".localized(),
+                "kasko_3_years".localized(),
+                "kasko_4_years".localized(),
+                "kasko_5_years".localized()
+            ])
             vc?.setPeriodValues(periodValues: [0.25, 0.5, 0.75, 1.0, 2.0, 3.0, 4.0, 5.0])
             vc?.setIds(ids: [0, 1, 2, 3, 4, 5, 6])
         }

@@ -99,7 +99,7 @@ class GasPresenterImpl: BaseInsurancePresenter, GasPresenter {
         let vc = self.view as? GasConfirmVC
         vc?.setType(type: typeString)
         vc?.setService(service: self.franchiseString)
-        vc?.setInsuranceAmount(insuranceAmount: "\(self.gasHome.insuranceAmount) sum")
+        vc?.setInsuranceAmount(insuranceAmount: "\(self.gasHome.insuranceAmount) \("sum".localized())")
     }
     
     func setTotalAmount(totalAmount: String) {

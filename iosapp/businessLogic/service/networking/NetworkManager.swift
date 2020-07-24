@@ -30,18 +30,18 @@ struct NetworkManager {
     
     var tokenFactory: TokenFactory
     var authPlugin: AuthPlugin
-    var auth: MoyaProvider<AuthProvider>
-    var insurance: MoyaProvider<InsuranceProvider>
-    var user: MoyaProvider<UserProvider>
-    var incident: MoyaProvider<IncidentsProvider>
-    var callRequest: MoyaProvider<CallRequestProvider>
-    var exportOperation: MoyaProvider<ExportOperationsProvider>
-    var insuranceReminder: MoyaProvider<InsuranceReminderProvider>
-    var regions: MoyaProvider<RegionsProvider>
-    var others: MoyaProvider<OthersProvider>
-    var orders: MoyaProvider<OrderProvider>
-    var transport: MoyaProvider<TransportProvider>
-    var product: MoyaProvider<ProductProvider>    
+    var auth: MyMoyaProvider<AuthProvider>
+    var insurance: MyMoyaProvider<InsuranceProvider>
+    var user: MyMoyaProvider<UserProvider>
+    var incident: MyMoyaProvider<IncidentsProvider>
+    var callRequest: MyMoyaProvider<CallRequestProvider>
+    var exportOperation: MyMoyaProvider<ExportOperationsProvider>
+    var insuranceReminder: MyMoyaProvider<InsuranceReminderProvider>
+    var regions: MyMoyaProvider<RegionsProvider>
+    var others: MyMoyaProvider<OthersProvider>
+    var orders: MyMoyaProvider<OrderProvider>
+    var transport: MyMoyaProvider<TransportProvider>
+    var product: MyMoyaProvider<ProductProvider>
     var networkLoggingPlugin: NetworkLoggerPlugin
     
     init(tokenFactory: TokenFactory) {
@@ -54,18 +54,18 @@ struct NetworkManager {
         authPlugin = AuthPlugin(tokenClosure: { () -> String? in tokenFactory.getToken() })
         networkLoggingPlugin = NetworkLoggerPlugin()
         
-        auth = MoyaProvider(manager: manager, plugins: [networkLoggingPlugin])
-        insurance = MoyaProvider(manager: manager, plugins: [authPlugin, networkLoggingPlugin])
-        user = MoyaProvider(manager: manager, plugins: [authPlugin, networkLoggingPlugin])
-        incident = MoyaProvider(manager: manager, plugins: [authPlugin, networkLoggingPlugin])
-        callRequest = MoyaProvider(manager: manager, plugins: [authPlugin, networkLoggingPlugin])
-        exportOperation = MoyaProvider(manager: manager, plugins: [authPlugin, networkLoggingPlugin])
-        insuranceReminder = MoyaProvider(manager: manager, plugins: [authPlugin, networkLoggingPlugin])
-        regions = MoyaProvider(manager: manager, plugins: [authPlugin, networkLoggingPlugin])
-        others = MoyaProvider(manager: manager, plugins: [authPlugin, networkLoggingPlugin])
-        orders = MoyaProvider(manager: manager, plugins: [authPlugin, networkLoggingPlugin])
-        transport = MoyaProvider(manager: manager, plugins: [authPlugin, networkLoggingPlugin])
-        product = MoyaProvider(manager: manager, plugins: [networkLoggingPlugin])
+        auth = MyMoyaProvider(manager: manager, plugins: [networkLoggingPlugin])
+        insurance = MyMoyaProvider(manager: manager, plugins: [authPlugin, networkLoggingPlugin])
+        user = MyMoyaProvider(manager: manager, plugins: [authPlugin, networkLoggingPlugin])
+        incident = MyMoyaProvider(manager: manager, plugins: [authPlugin, networkLoggingPlugin])
+        callRequest = MyMoyaProvider(manager: manager, plugins: [authPlugin, networkLoggingPlugin])
+        exportOperation = MyMoyaProvider(manager: manager, plugins: [authPlugin, networkLoggingPlugin])
+        insuranceReminder = MyMoyaProvider(manager: manager, plugins: [authPlugin, networkLoggingPlugin])
+        regions = MyMoyaProvider(manager: manager, plugins: [authPlugin, networkLoggingPlugin])
+        others = MyMoyaProvider(manager: manager, plugins: [authPlugin, networkLoggingPlugin])
+        orders = MyMoyaProvider(manager: manager, plugins: [authPlugin, networkLoggingPlugin])
+        transport = MyMoyaProvider(manager: manager, plugins: [authPlugin, networkLoggingPlugin])
+        product = MyMoyaProvider(manager: manager, plugins: [networkLoggingPlugin])
     }
 }
 

@@ -117,7 +117,7 @@ class IncidentViewController: BaseViewImpl {
         }
         
         self.view.addSubview(loadingView)
-        
+        self.loadingView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             loadingView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
             loadingView.topAnchor.constraint(equalTo: self.view.topAnchor),

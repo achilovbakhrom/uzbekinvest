@@ -62,7 +62,7 @@ class AccidentPresenterImpl: BaseInsurancePresenter, AccidentPresenter {
     
     func fillConfirmData() {
         let vc = self.view as? AccidentConfirmVC
-        vc?.setAmount(amount: "\(((myHealth.type + 1)*1000000).toDecimalFormat()) сум")
+        vc?.setAmount(amount: "\(((myHealth.type + 1)*1000000).toDecimalFormat()) \("sum".localized())")
     }
     
     func calculateAccident() {

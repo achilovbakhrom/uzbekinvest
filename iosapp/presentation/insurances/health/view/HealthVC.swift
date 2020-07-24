@@ -25,8 +25,14 @@ class HealthVC: BaseWithLeftCirclesVC {
             self.healthPresenter?.goBack()
             self.setTabBarHidden(false)
         }
-        healthTitle.text = product?.translates?[translatePosition]?.name
-        healthDescription.text = product?.translates?[translatePosition]?.text?.htmlToString
+        self.product.translates?.forEach({ t in
+            if t?.lang == translateCode {
+                self.healthTitle.text = t?.name
+                self.healthDescription.text = t?.text?.htmlToString
+            }
+        })
+//        healthTitle.text = product?.translates?[translatePosition]?.name
+//        healthDescription.text = product?.translates?[translatePosition]?.text?.htmlToString
         healthDescription.textAlignment = .justified
         healthPresenter?.setProduct(product: product)
         self.setTabBarHidden(true)

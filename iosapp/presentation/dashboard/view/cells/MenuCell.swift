@@ -235,8 +235,12 @@ class MenuCell: UICollectionViewCell {
             break
         }
         
-        self.title.text = model.translates?[translatePosition]?.name
-        self.modelDescription.text = model.translates?[translatePosition]?.description
+        model.translates?.forEach({ t in
+            if t?.lang == translateCode {
+                self.title.text = t?.name
+                self.modelDescription.text = t?.description
+            }
+        })
         
         if (index == 0 || index == 1) && isFromDashboard {
             if isIPhone4OrNewer() {

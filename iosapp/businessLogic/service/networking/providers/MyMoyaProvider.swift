@@ -14,16 +14,44 @@ import Alamofire
 
 class MyMoyaProvider<Target>: MoyaProvider<Target> where Target: TargetType {
     
-    
-    
-    
     @discardableResult
-    override func request(_ target: Target, callbackQueue queue: DispatchQueue? = .main, progress: ProgressBlock? = nil, completion: @escaping Completion) -> Cancellable {
-        return super.request(target, callbackQueue: queue, progress: progress, completion: { result in
+    override func request(_ target: Target,
+                      callbackQueue: DispatchQueue? = .none,
+                      progress: ProgressBlock? = .none,
+                      completion: @escaping Completion) -> Cancellable {
+        return super.request(target, callbackQueue: callbackQueue, progress: progress, completion: { result in
             switch result {
             case let .success(moyaResponse):
-                completion(result)
+                if (moyaResponse.statusCode == 401) {
+                    if moyaResponse.response?.allHeaderFields.index(forKey: "Authorization") != nil {
+                        let token = (moyaResponse.response?.allHeaderFields["Authorization"] as? String)?.split(separator: " ")[1] ?? ""
+                        UserDefaults.standard.set(token, forKey: "token")
+                        let _ = self.request(target, callbackQueue: callbackQueue, progress: progress) { result in
+                            completion(result)
+                        }
+                    } else {
+                        completion(result)
+                    }
+                } else {
+                    completion(result)
+                }
                 break
+            case let .failure(error):
+                completion(result)
+                debugPrint(error)
+                break
+            }
+        })
+    }
+    
+    
+//    @discardableResult
+//    override func request(_ target: Target, callbackQueue queue: DispatchQueue? = .main, progress: ProgressBlock? = nil, completion: @escaping Completion) -> Cancellable {
+//        return super.request(target, callbackQueue: queue, progress: progress, completion: { result in
+//            switch result {
+//            case let .success(moyaResponse):
+//
+//
 //                if (moyaResponse.statusCode == 401) {
 //                    if moyaResponse.request?.allHTTPHeaderFields?.index(forKey: "Authorization") != nil {
 ////                        let token = UserDefaults.standard.string(forKey: "refresh") ?? ""
@@ -48,14 +76,15 @@ class MyMoyaProvider<Target>: MoyaProvider<Target> where Target: TargetType {
 //                else {
 //                    completion(result)
 //                }
-            case let .failure(error):
-                print(error)
-                break
-            }
-            completion(result)
-        })
-
-    }
+//                        break
+//            case let .failure(error):
+//                print(error)
+//                break
+//            }
+//            completion(result)
+//        })
+//
+//    }
     
 }
 

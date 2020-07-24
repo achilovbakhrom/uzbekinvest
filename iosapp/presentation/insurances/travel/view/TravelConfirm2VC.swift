@@ -86,21 +86,21 @@ class TouristList2Cell: UITableViewCell {
     private lazy var nameTextField: SimpleTextField = {
         let textField = SimpleTextField(frame: .zero)
         textField.translatesAutoresizingMaskIntoConstraints = false
-        textField.placeholder = "ФИО"
+        textField.placeholder = "fio".localized()
         return textField
     }()
 
     private lazy var datePicker: DatePicker = {
         let datePicker = DatePicker(frame: .zero)
         datePicker.translatesAutoresizingMaskIntoConstraints = false
-        datePicker.placeholder = "Дата рождения"
+        datePicker.placeholder = "birthdate".localized()
         return datePicker
     }()
     
     private lazy var passportTextField: SimpleTextField = {
         let textField = SimpleTextField(frame: .zero)
         textField.translatesAutoresizingMaskIntoConstraints = false
-        textField.placeholder = "Серия паспорта"
+        textField.placeholder = "passport_seria".localized()
         return textField
     }()
     
@@ -116,7 +116,7 @@ class TouristList2Cell: UITableViewCell {
         
         let touristNoView = UIView(frame: .zero)
         touristNoView.translatesAutoresizingMaskIntoConstraints = false
-        touristNoView.backgroundColor = .lightGray
+        touristNoView.backgroundColor = Colors.primaryGreen.withAlphaComponent(0.3)
         self.contentView.addSubview(touristNoView)
         NSLayoutConstraint.activate([
             touristNoView.topAnchor.constraint(equalTo: self.contentView.topAnchor),
@@ -134,7 +134,7 @@ class TouristList2Cell: UITableViewCell {
         self.contentView.addSubview(nameTextField)
         NSLayoutConstraint.activate([
             nameTextField.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 31),
-            nameTextField.topAnchor.constraint(equalTo: touristNoView.bottomAnchor, constant: 20),
+            nameTextField.topAnchor.constraint(equalTo: touristNoView.bottomAnchor, constant: 35),
             nameTextField.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -31),
         ])
         nameTextField.onChange = { self.onNameChange?($0) }
@@ -142,7 +142,7 @@ class TouristList2Cell: UITableViewCell {
         self.contentView.addSubview(datePicker)
         NSLayoutConstraint.activate([
             datePicker.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 31),
-            datePicker.topAnchor.constraint(equalTo: self.nameTextField.bottomAnchor, constant: 14),
+            datePicker.topAnchor.constraint(equalTo: self.nameTextField.bottomAnchor, constant: 22),
             datePicker.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -31)
         ])
         datePicker.onChange = { self.onDatePick?($0) }
@@ -150,7 +150,7 @@ class TouristList2Cell: UITableViewCell {
         self.contentView.addSubview(passportTextField)
         NSLayoutConstraint.activate([
             passportTextField.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 31),
-            passportTextField.topAnchor.constraint(equalTo: self.datePicker.bottomAnchor, constant: 14),
+            passportTextField.topAnchor.constraint(equalTo: self.datePicker.bottomAnchor, constant: 22),
             passportTextField.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -31)
         ])
         self.passportTextField.onChange = { self.onPassportChange?($0) }

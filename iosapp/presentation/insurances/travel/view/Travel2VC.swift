@@ -24,6 +24,10 @@ class Travel2VC: BaseWithLeftCirclesVC {
     @IBOutlet weak var tariffTitle: UILabel!
     
     @IBOutlet weak var nextButton: Button!
+    
+    @IBOutlet weak var tariffDescriptionLabel: UILabel!
+    
+    
     private lazy var travelPresenter = self.presenter as? TravelPresenter
     
     private var amount1: Int = 0
@@ -33,13 +37,132 @@ class Travel2VC: BaseWithLeftCirclesVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         backButtonClicked = { self.travelPresenter?.goBack() }
-        self.travelPresenter?.setupTravel2VC()
-        self.select25()
-        self.selectStandart1()
+        self.standart1.setTitle("rate_standart".localized(), for: .normal)
+        self.standart2.setTitle("rate_comfort".localized(), for: .normal)
+        self.standart3.setTitle("rate_premium".localized(), for: .normal)
+        
         self.travel2desc.text = "travel1_title".localized()
         self.travel2AmountTitle.text = "travel2_amount_title".localized()
         self.tariffTitle.text = "tarif".localized()
         self.nextButton.setTitle("next".localized(), for: .normal)
+        
+        self.travelPresenter?.setupTravel2VC()
+        self.select25()
+        self.selectStandart1()
+        
+        self.setStandartDescription()
+    }
+    
+    
+    private func setStandartDescription() {
+        let boldAttribute: [NSAttributedString.Key : Any] = [ NSAttributedString.Key.font: UIFont.init(name: "Roboto-Medium", size: 15)! ]
+        let simpleAttribute: [NSAttributedString.Key : Any] = [ NSAttributedString.Key.font: UIFont.init(name: "Roboto-Regular", size: 14)! ]
+        
+        let s = NSMutableAttributedString.init(string: "about_standart".localized(), attributes: boldAttribute)
+        
+        s.append(NSMutableAttributedString.init(string: "\n\n"))
+        s.append(NSMutableAttributedString.init(string: "total_insurance_amount".localized(),
+                                                attributes: simpleAttribute))
+        s.append(NSMutableAttributedString.init(string: "\n"))
+        s.append(NSMutableAttributedString.init(string: "until_25_euro".localized(),
+        attributes: simpleAttribute))
+        
+        s.append(NSMutableAttributedString.init(string: "\n\n"))
+        s.append(NSMutableAttributedString.init(string: "medical_expenses".localized(),
+        attributes: simpleAttribute))
+        s.append(NSMutableAttributedString.init(string: "\n"))
+        s.append(NSMutableAttributedString.init(string: "until_10_euro".localized(),
+        attributes: simpleAttribute))
+        
+        s.append(NSMutableAttributedString.init(string: "\n\n"))
+        s.append(NSMutableAttributedString.init(string: "repatriation".localized(),
+        attributes: simpleAttribute))
+        s.append(NSMutableAttributedString.init(string: "\n"))
+        s.append(NSMutableAttributedString.init(string: "until_13_euro".localized(),
+        attributes: simpleAttribute))
+        
+        s.append(NSMutableAttributedString.init(string: "\n\n"))
+        s.append(NSMutableAttributedString.init(string: "accident_title".localized(),
+        attributes: simpleAttribute))
+        s.append(NSMutableAttributedString.init(string: "\n"))
+        s.append(NSMutableAttributedString.init(string: "until_2_euro".localized(),
+        attributes: simpleAttribute))
+        
+        self.tariffDescriptionLabel.attributedText = s
+    }
+    
+    private func setComfortDescription() {
+        let boldAttribute: [NSAttributedString.Key : Any] = [ NSAttributedString.Key.font: UIFont.init(name: "Roboto-Medium", size: 15)! ]
+        let simpleAttribute: [NSAttributedString.Key : Any] = [ NSAttributedString.Key.font: UIFont.init(name: "Roboto-Regular", size: 14)! ]
+        
+        let s = NSMutableAttributedString.init(string: "about_comfort".localized(), attributes: boldAttribute)
+        
+        s.append(NSMutableAttributedString.init(string: "\n\n"))
+        s.append(NSMutableAttributedString.init(string: "total_insurance_amount".localized(),
+                                                attributes: simpleAttribute))
+        s.append(NSMutableAttributedString.init(string: "\n"))
+        s.append(NSMutableAttributedString.init(string: "until_25_euro".localized(),
+        attributes: simpleAttribute))
+        
+        s.append(NSMutableAttributedString.init(string: "\n\n"))
+        s.append(NSMutableAttributedString.init(string: "medical_expenses".localized(),
+        attributes: simpleAttribute))
+        s.append(NSMutableAttributedString.init(string: "\n"))
+        s.append(NSMutableAttributedString.init(string: "until_10_euro".localized(),
+        attributes: simpleAttribute))
+        
+        s.append(NSMutableAttributedString.init(string: "\n\n"))
+        s.append(NSMutableAttributedString.init(string: "repatriation".localized(),
+        attributes: simpleAttribute))
+        s.append(NSMutableAttributedString.init(string: "\n"))
+        s.append(NSMutableAttributedString.init(string: "until_13_euro".localized(),
+        attributes: simpleAttribute))
+        
+        s.append(NSMutableAttributedString.init(string: "\n\n"))
+        s.append(NSMutableAttributedString.init(string: "accident_title".localized(),
+        attributes: simpleAttribute))
+        s.append(NSMutableAttributedString.init(string: "\n"))
+        s.append(NSMutableAttributedString.init(string: "until_2_euro".localized(),
+        attributes: simpleAttribute))
+        
+        self.tariffDescriptionLabel.attributedText = s
+    }
+    
+    private func setPremiumDescription() {
+        let boldAttribute: [NSAttributedString.Key : Any] = [ NSAttributedString.Key.font: UIFont.init(name: "Roboto-Medium", size: 15)! ]
+        let simpleAttribute: [NSAttributedString.Key : Any] = [ NSAttributedString.Key.font: UIFont.init(name: "Roboto-Regular", size: 14)! ]
+        
+        let s = NSMutableAttributedString.init(string: "about_premium".localized(), attributes: boldAttribute)
+        
+        s.append(NSMutableAttributedString.init(string: "\n\n"))
+        s.append(NSMutableAttributedString.init(string: "total_insurance_amount".localized(),
+                                                attributes: simpleAttribute))
+        s.append(NSMutableAttributedString.init(string: "\n"))
+        s.append(NSMutableAttributedString.init(string: "until_25_euro".localized(),
+        attributes: simpleAttribute))
+        
+        s.append(NSMutableAttributedString.init(string: "\n\n"))
+        s.append(NSMutableAttributedString.init(string: "medical_expenses".localized(),
+        attributes: simpleAttribute))
+        s.append(NSMutableAttributedString.init(string: "\n"))
+        s.append(NSMutableAttributedString.init(string: "until_10_euro".localized(),
+        attributes: simpleAttribute))
+        
+        s.append(NSMutableAttributedString.init(string: "\n\n"))
+        s.append(NSMutableAttributedString.init(string: "repatriation".localized(),
+        attributes: simpleAttribute))
+        s.append(NSMutableAttributedString.init(string: "\n"))
+        s.append(NSMutableAttributedString.init(string: "until_13_euro".localized(),
+        attributes: simpleAttribute))
+        
+        s.append(NSMutableAttributedString.init(string: "\n\n"))
+        s.append(NSMutableAttributedString.init(string: "accident_title".localized(),
+        attributes: simpleAttribute))
+        s.append(NSMutableAttributedString.init(string: "\n"))
+        s.append(NSMutableAttributedString.init(string: "until_2_euro".localized(),
+        attributes: simpleAttribute))
+        
+        self.tariffDescriptionLabel.attributedText = s
     }
     
     private func select25() {
@@ -68,6 +191,7 @@ class Travel2VC: BaseWithLeftCirclesVC {
         self.standart2.inactive()
         self.standart3.inactive()
         self.travelPresenter?.setPlan(plan: 0, planString: standart1.titleLabel?.text ?? "")
+        self.setStandartDescription()
     }
     
     private func selectStandart2() {
@@ -75,6 +199,7 @@ class Travel2VC: BaseWithLeftCirclesVC {
         self.standart2.active()
         self.standart3.inactive()
         self.travelPresenter?.setPlan(plan: 1, planString: standart2.titleLabel?.text ?? "")
+        self.setComfortDescription()
     }
     
     private func selectStandart3() {
@@ -82,6 +207,7 @@ class Travel2VC: BaseWithLeftCirclesVC {
         self.standart2.inactive()
         self.standart3.active()
         self.travelPresenter?.setPlan(plan: 2, planString: standart3.titleLabel?.text ?? "")
+        self.setPremiumDescription()
     }
     
     

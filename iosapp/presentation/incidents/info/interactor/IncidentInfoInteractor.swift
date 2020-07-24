@@ -38,7 +38,12 @@ class IncidentInfoInteractorImpl: IncidentInfoInteractor {
                         let decoder = JSONDecoder.init()
                         let r = try decoder.decode(Response<Metadata>.self, from: response.data)
                         if (r.data?.contacts?.count ?? 0) > 0 {
-                            self.incidentsPresenter?.setDescription(desc: r.data?.contacts?[translatePosition]?.contacts ?? "")
+                            r.data?.contacts?.forEach({ t in
+                                if t?.lang == translateCode {
+                                    self.incidentsPresenter?.setDescription(desc: t?.contacts ?? "")
+                                }
+                            })
+                            
                         }
                     } catch(let error) {
                         debugPrint(error.localizedDescription)

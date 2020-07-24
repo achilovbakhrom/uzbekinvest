@@ -26,11 +26,11 @@ extension Int {
     func toForeignPeriodTitle() -> String {
         switch self {
         case 0:
-            return "15 дней"
+            return "for_15_days".localized()
         case 1:
-            return "2 месяца"
+            return "for_2_months".localized()
         case 2:
-            return "12 месяцев"
+            return "for_12_months".localized()
         default:
             return ""
         }
@@ -53,11 +53,11 @@ extension Int {
     func toUzbCitizenPeriodTitle() -> String {
         switch self {
         case 0:
-            return "20 дней"
+            return "for_20_days".localized()
         case 1:
-            return "6 месяцев"
+            return "for_6_months".localized()
         case 2:
-            return "12 месяцев"
+            return "for_12_months".localized()
         default:
             return ""
         }

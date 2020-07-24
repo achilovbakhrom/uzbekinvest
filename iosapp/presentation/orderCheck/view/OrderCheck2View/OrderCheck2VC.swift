@@ -29,15 +29,26 @@ class OrderCheck2VC: BaseViewImpl {
         ])
         self.orderCheck2View.onBack = { self.orderCheckPresenter?.goBack() }
         self.orderCheckPresenter?.fillData()
-        self.orderCheck2View.onToMainPage = { self.orderCheckPresenter?.goToMain() }
+        self.orderCheck2View.onToMainPage = {
+            self.orderCheckPresenter?.goToMain()
+            self.setTabBarHidden(true)
+        }
     }
     
     func setData(checkOrder: CheckOrder) {
-        self.orderCheck2View.insuranceName.text = checkOrder.product?.translates?[0]?.name
-        self.orderCheck2View.paymentStatus.text = "New"
-        self.orderCheck2View.polisAmount.text = "1 000 000 сум"
-        self.orderCheck2View.leftDays.text = "100 дней"
-        self.orderCheck2View.insuranceAmount.text = "1 000 000 сум"
+        checkOrder.product?.translates?.forEach({ t in
+            if t?.lang == translateCode {
+                self.orderCheck2View.insuranceName.text = t?.name
+            }
+        })
+        
+        
+        self.orderCheck2View.paymentStatus.text = checkOrder.isActive == 0 ? "not_active".localized() : "active".localized()
+        
+        self.orderCheck2View.polisAmount.text = checkOrder.startDate
+        self.orderCheck2View.leftDays.text = checkOrder.endDate
+        self.orderCheck2View.insuranceAmount.text = ""
+        
     }
     
 }

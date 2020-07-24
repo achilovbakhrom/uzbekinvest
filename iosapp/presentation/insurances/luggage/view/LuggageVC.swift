@@ -26,8 +26,13 @@ class LuggageVC: BaseWithLeftCirclesVC {
             self.luggagePresenter?.goBack()
             self.setTabBarHidden(false)
         }
-        self.titleLabel.text = self.product.translates?[translatePosition]?.name
-        self.descriptionLabel.text = self.product.translates?[translatePosition]?.text?.htmlToString
+        self.product.translates?.forEach({ t in
+            if t?.lang == translateCode {
+                self.titleLabel.text = t?.name
+                self.descriptionLabel.text = t?.text?.htmlToString
+            }
+        })
+        
         self.descriptionLabel.textAlignment = .justified
         self.luggagePresenter?.setProduct(product: product)
         self.setTabBarHidden(true)

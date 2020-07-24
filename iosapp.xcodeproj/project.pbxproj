@@ -132,6 +132,7 @@
 		29335E98242E754C0074658A /* SportInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29335E97242E754C0074658A /* SportInteractor.swift */; };
 		29335E9B242E7D8B0074658A /* SportAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29335E9A242E7D8B0074658A /* SportAssembly.swift */; };
 		29335EA0242E7F7A0074658A /* RoadTechPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29335E9F242E7F7A0074658A /* RoadTechPresenter.swift */; };
+		2934FBDA24CB0BDC00AB5604 /* FaqView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2934FBDC24CB0BDC00AB5604 /* FaqView.xib */; };
 		2938F6F624C3FFF2006EEBB7 /* InfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2938F6F524C3FFF2006EEBB7 /* InfoVC.swift */; };
 		2938F6F724C4131E006EEBB7 /* InsuranceListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2938F6F924C4131E006EEBB7 /* InsuranceListView.xib */; };
 		2938F70424C4F311006EEBB7 /* MyMoyaProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2938F70324C4F311006EEBB7 /* MyMoyaProvider.swift */; };
@@ -172,7 +173,6 @@
 		29490F0124938825008F5ABA /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29490F0024938825008F5ABA /* Question.swift */; };
 		29490F0924938E00008F5ABA /* FaqVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29490F0824938E00008F5ABA /* FaqVC.swift */; };
 		29490F0B24938E28008F5ABA /* FaqView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29490F0A24938E28008F5ABA /* FaqView.swift */; };
-		29490F0D24938E3D008F5ABA /* FaqView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 29490F0C24938E3D008F5ABA /* FaqView.xib */; };
 		29490F0F24939826008F5ABA /* FaqPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29490F0E24939826008F5ABA /* FaqPresenter.swift */; };
 		29492D66249F822E00FAAAC3 /* OfferPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29492D65249F822E00FAAAC3 /* OfferPresenter.swift */; };
 		29492D68249F85CD00FAAAC3 /* OfferInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29492D67249F85CD00FAAAC3 /* OfferInteractor.swift */; };
@@ -696,6 +696,10 @@
 		29335E97242E754C0074658A /* SportInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportInteractor.swift; sourceTree = "<group>"; };
 		29335E9A242E7D8B0074658A /* SportAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportAssembly.swift; sourceTree = "<group>"; };
 		29335E9F242E7F7A0074658A /* RoadTechPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoadTechPresenter.swift; sourceTree = "<group>"; };
+		2934FBDB24CB0BDC00AB5604 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/FaqView.xib; sourceTree = "<group>"; };
+		2934FBDE24CB0BED00AB5604 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/FaqView.strings; sourceTree = "<group>"; };
+		2934FBE024CB0BF100AB5604 /* uz-Cyrl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "uz-Cyrl"; path = "uz-Cyrl.lproj/FaqView.strings"; sourceTree = "<group>"; };
+		2934FBE224CB0BF300AB5604 /* uz-UZ */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "uz-UZ"; path = "uz-UZ.lproj/FaqView.strings"; sourceTree = "<group>"; };
 		2938F6F524C3FFF2006EEBB7 /* InfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoVC.swift; sourceTree = "<group>"; };
 		2938F6F824C4131E006EEBB7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/InsuranceListView.xib; sourceTree = "<group>"; };
 		2938F6FB24C41325006EEBB7 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InsuranceListView.strings; sourceTree = "<group>"; };
@@ -739,7 +743,6 @@
 		29490F0024938825008F5ABA /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		29490F0824938E00008F5ABA /* FaqVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaqVC.swift; sourceTree = "<group>"; };
 		29490F0A24938E28008F5ABA /* FaqView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaqView.swift; sourceTree = "<group>"; };
-		29490F0C24938E3D008F5ABA /* FaqView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FaqView.xib; sourceTree = "<group>"; };
 		29490F0E24939826008F5ABA /* FaqPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaqPresenter.swift; sourceTree = "<group>"; };
 		29492D65249F822E00FAAAC3 /* OfferPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferPresenter.swift; sourceTree = "<group>"; };
 		29492D67249F85CD00FAAAC3 /* OfferInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferInteractor.swift; sourceTree = "<group>"; };
@@ -2115,7 +2118,7 @@
 			children = (
 				29490F0824938E00008F5ABA /* FaqVC.swift */,
 				29490F0A24938E28008F5ABA /* FaqView.swift */,
-				29490F0C24938E3D008F5ABA /* FaqView.xib */,
+				2934FBDC24CB0BDC00AB5604 /* FaqView.xib */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -4471,7 +4474,7 @@
 				2955F260247B3B7600F217CB /* NoMapView.xib in Resources */,
 				2955F257247B3B2100F217CB /* MapListDialogView.xib in Resources */,
 				29CBABA3245ECA7D004E894C /* OrderCheck2View.xib in Resources */,
-				29490F0D24938E3D008F5ABA /* FaqView.xib in Resources */,
+				2934FBDA24CB0BDC00AB5604 /* FaqView.xib in Resources */,
 				292E51B22467B5BB00465A1B /* NoInternetView.xib in Resources */,
 				2987C467248AEA8C00F07923 /* ReasonView.xib in Resources */,
 				2955F1F7247B2F1800F217CB /* MyInsuranceView.xib in Resources */,
@@ -5268,6 +5271,17 @@
 				292ED16624968CB300D4E3AE /* uz-UZ */,
 			);
 			name = SettingsView.xib;
+			sourceTree = "<group>";
+		};
+		2934FBDC24CB0BDC00AB5604 /* FaqView.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2934FBDB24CB0BDC00AB5604 /* Base */,
+				2934FBDE24CB0BED00AB5604 /* ru */,
+				2934FBE024CB0BF100AB5604 /* uz-Cyrl */,
+				2934FBE224CB0BF300AB5604 /* uz-UZ */,
+			);
+			name = FaqView.xib;
 			sourceTree = "<group>";
 		};
 		2938F6F924C4131E006EEBB7 /* InsuranceListView.xib */ = {

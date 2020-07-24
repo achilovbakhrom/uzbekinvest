@@ -79,9 +79,9 @@ class OsagoPresenterImpl: BaseInsurancePresenter, OsagoPresenter {
     func setIsForeigner(isForeigner: Bool) {
         self.osago.isForeigner = isForeigner
         if isForeigner {
-            self.citizen = "Иностранный гражданин"
+            self.citizen = "foreign_citizen".localized()
         } else {
-            self.citizen = "Гражданин Узбекистана"
+            self.citizen = "citizen_of_the_republic_of_uzbekistan".localized()
         }
     }
     
@@ -116,7 +116,7 @@ class OsagoPresenterImpl: BaseInsurancePresenter, OsagoPresenter {
         self.osago.isUnlim = isUnlim
         self.osago.accident = isUnlim ? nil : 0
         self.osago.membersCount = nil
-        self.membersCountString = "Без ограничения"
+        self.membersCountString = "unlim".localized()
         let vc = self.view as? Osage3VC
         vc?.setEnabled(isEnabled: true)
     }
@@ -174,6 +174,14 @@ class OsagoPresenterImpl: BaseInsurancePresenter, OsagoPresenter {
     func setTransportList(list: [Transport]) {
         let vc = self.view as? Osago2VC
         vc?.setTransportList(list: list)
+        if list.count > 0  {
+            let ti = list[0]
+            ti.translates.forEach({ t in
+                if t.lang == translateCode {
+                    self.setTransportId(transportId: ti.id, transportName: t.name ?? "")
+                }
+            })            
+        }
     }
     
     func setEnabled(isEnabled: Bool) {
@@ -213,6 +221,7 @@ class OsagoPresenterImpl: BaseInsurancePresenter, OsagoPresenter {
         } else {
             vc?.setPeriod(ids: periodList, strings: periodList.map{$0.toUzbCitizenPeriodTitle()})
         }
+        
     }
     
     func calculate() {
@@ -221,7 +230,8 @@ class OsagoPresenterImpl: BaseInsurancePresenter, OsagoPresenter {
     
     func setAmount(amount: Int) {
         let vc = self.view as? OsagoConfirm
-        self.totalAmount = amount        
+        self.totalAmount = amount
+        self.formatAmount = "\(amount.toDecimalFormat()) \("sum".localized())"
         vc?.setAmount(amount: amount.toDecimalFormat())
     }
     

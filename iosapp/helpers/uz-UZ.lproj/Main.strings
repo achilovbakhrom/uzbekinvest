@@ -285,7 +285,7 @@
 "H1N-GN-1ej.placeholder" = "Summa";
 
 /* Class = "UILabel"; text = "Последний шаг"; ObjectID = "H2b-cj-dbD"; */
-"H2b-cj-dbD.text" = "So'nggi qadan";
+"H2b-cj-dbD.text" = "So'nggi qadam";
 
 /* Class = "UIButton"; normalTitle = "Оформить"; ObjectID = "HHW-OE-kgP"; */
 "HHW-OE-kgP.normalTitle" = "Tekshirib ko'rish";
@@ -426,7 +426,7 @@
 "QDR-bw-NPX.text" = "XUSH KELIBSIZ";
 
 /* Class = "UILabel"; text = "Данные о лицах, допущенные \nк управлению"; ObjectID = "QIR-l1-dhq"; */
-"QIR-l1-dhq.text" = "Transport egasi quyidagi shaxslar \nkategoriyasiga mansubmi?";
+"QIR-l1-dhq.text" = "Avtotransport vositasini boshqarishga vakolatli \nshaxslar sonini ko’rsating";
 
 /* Class = "UILabel"; text = "До 29 лет"; ObjectID = "Qbb-Fd-Cts"; */
 "Qbb-Fd-Cts.text" = "29 yoshgacha";

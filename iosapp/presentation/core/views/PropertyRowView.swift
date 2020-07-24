@@ -82,7 +82,7 @@ class PropertyRowView: UIView {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitleColor(Colors.primaryGreen, for: .normal)
         button.titleLabel?.font = UIFont.init(name: "Roboto-Regular", size: 14)
-        button.setTitle("Изменить", for: .normal)
+        button.setTitle("change".localized(), for: .normal)
         return button
     }()
     

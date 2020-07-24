@@ -76,6 +76,22 @@ public var translatePosition: Int {
     }
 }
 
+public var translateCode: String {
+    get {
+        let lang = UserDefaults.standard.string(forKey: "language") ?? "ru"
+        switch lang {
+        case "ru":
+            return "ru"
+        case "uz-UZ":
+            return "uz"
+        case "uz-Cyrl":
+            return "oz";
+        default:
+            return "ru"
+        }
+    }
+}
+
 
 // constants
 let APPLE_LANGUAGE_KEY = "AppleLanguages"

@@ -23,8 +23,6 @@ class Travel4VC: BaseWithLeftCirclesVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         backButtonClicked = { self.travelPresenter?.goBack() }
-        self.selectTravel()
-        
         travel4Desc.text = "travel1_title".localized()
         goalType.text = "goal_type".localized()
         
@@ -33,6 +31,9 @@ class Travel4VC: BaseWithLeftCirclesVC {
         sportButton.setTitle("sport_type".localized(), for: .normal)
         
         nextButton.setTitle("next".localized(), for: .normal)
+        self.selectTravel()
+        
+        
     }
     
     private func selectTravel() {

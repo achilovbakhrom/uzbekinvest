@@ -106,8 +106,15 @@ class MyInsurancesDetailVC: BaseViewImpl {
             self.new.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
             self.new.widthAnchor.constraint(equalTo: scrollView.widthAnchor)
         ])
-        self.new.insuranceName.text = myInsurance.product?.translates?[translatePosition]?.name
-        self.new.insuranceAmount.text = "\(myInsurance.insuranceAmount?.toDecimalFormat() ?? "0") \("sum".localized())"
+        
+        myInsurance.product?.translates?.forEach({ t in
+            if t?.lang == translateCode {
+                self.new.insuranceName.text = t?.name
+            }
+        })
+        
+//        self.new.insuranceName.text = myInsurance.product?.translates?[translatePosition]?.name
+        self.new.insuranceAmount.text = "\(myInsurance.totalAmount?.toDecimalFormat() ?? "0") \("sum".localized())"
         self.new.startDateLabel.text = myInsurance.startDate
         self.new.endDateLabel.text = myInsurance.endDate
         self.new.setProperties(property: self.properties)
@@ -160,7 +167,7 @@ class MyInsurancesDetailVC: BaseViewImpl {
         self.paid.statusLabel.text = myInsurance.status == "canceled" ? "my_canceled".localized() : "paid".localized()
         self.paid.statusContainer.backgroundColor = myInsurance.status == "canceled" ? UIColor.init(red: 255.0/255.0, green: 140.0/255.0, blue: 140.0/255.0, alpha: 1.0) : Colors.primaryGreen
         self.paid.insuranceName.text = myInsurance.product?.translates?[0]?.name
-        self.paid.insuranceAmount.text = "\(myInsurance.premiumAmount.toDecimalFormat()) \("sum".localized())"
+        self.paid.insuranceAmount.text = "\((myInsurance.totalAmount ?? 0).toDecimalFormat()) \("sum".localized())"
         let formatter = DateFormatter.init()
         formatter.dateFormat = "yyyy-MM-dd"
         let date = formatter.date(from: myInsurance.endDate ?? "") ?? Date()
@@ -219,7 +226,7 @@ class MyInsurancesDetailVC: BaseViewImpl {
             self.unpaid.widthAnchor.constraint(equalTo: scrollView.widthAnchor)
         ])
         self.unpaid.insuranceAmount.text = myInsurance.product?.translates?[0]?.name
-        self.unpaid.amount.text = "\(myInsurance.insuranceAmount?.toDecimalFormat() ?? "0") \("sum".localized())"
+        self.unpaid.amount.text = "\(myInsurance.totalAmount?.toDecimalFormat() ?? "0") \("sum".localized())"
         self.unpaid.transactionNumber.text = myInsurance.startDate
         
         self.unpaid.subject.text = myInsurance.endDate

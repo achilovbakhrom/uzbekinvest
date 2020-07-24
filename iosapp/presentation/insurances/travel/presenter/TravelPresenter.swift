@@ -122,6 +122,7 @@ class TravelPresenterImpl: BaseInsurancePresenter, TravelPresenter {
             self.countryList.append(country)
             self.defineZone()
         }
+        self.setEnabled(isEnabled: !self.countryList.isEmpty)
     }
     
     func removeCountry(country: Country) {
@@ -138,6 +139,7 @@ class TravelPresenterImpl: BaseInsurancePresenter, TravelPresenter {
         }
         self.countryList.remove(at: counter)
         self.defineZone()
+        self.setEnabled(isEnabled: !self.countryList.isEmpty)
     }
     
     private func defineZone() {
@@ -213,12 +215,12 @@ class TravelPresenterImpl: BaseInsurancePresenter, TravelPresenter {
     
     func setTravelEndDate(endDate: String) {
         self.travel.endDate = endDate
-        self.setEnabled(isEnabled: travel.startDate != nil && travel.endDate != nil)
+        self.setEnabled(isEnabled: travel.startDate != nil && travel.endDate != nil && (travel.startDate!.toDate() ?? Date()).compare(travel.endDate!.toDate() ?? Date()) == ComparisonResult.orderedAscending)
     }
     
     func setTravelStartDate(startDate: String) {
-        self.travel.startDate = startDate
-        self.setEnabled(isEnabled: travel.startDate != nil && travel.endDate != nil)
+        self.travel.startDate = startDate        
+        self.setEnabled(isEnabled: travel.startDate != nil && travel.endDate != nil && (travel.startDate!.toDate() ?? Date()).compare(travel.endDate!.toDate() ?? Date()) == ComparisonResult.orderedAscending)
     }
     
     func setPurpose(purpose: Int, purposeString: String) {
@@ -285,25 +287,45 @@ class TravelPresenterImpl: BaseInsurancePresenter, TravelPresenter {
     
     func fetchTypes() {
         if travel.purpose == 1 { // work
+            if let vc = self.view as? TravelSelectTypeVC {
+                vc.titleLabel.text = "work_type".localized()
+            }
             self.travelInteractor?.fetchWork()
         } else if travel.purpose == 2 { //sport
+            if let vc = self.view as? TravelSelectTypeVC {
+                vc.titleLabel.text = "sport_type".localized()
+            }
             self.travelInteractor?.fetchSports()
         }
     }
     
     func setSport(sports: [SportModel]) {
+        
         let filtered = sports.filter({ $0.group != nil })
         var result: [TravelTypeGroup] = []
         filtered.forEach { sport in
             var found = false
             for i in (0..<result.count) {
                 if result[i].group == sport.group {
+                    
+//                    var name = ""
+//                    sport.translates?.forEach({ t in
+//                        if t?.lang == translateCode {
+//                            name = t?.name ?? ""
+//                        }
+//                    })
                     result[i].types.append(TravelType(id: sport.id, name: sport.name ?? ""))
                     found = true
                     break
                 }
             }
             if !found {
+//                var name = ""
+//                sport.translates?.forEach({ t in
+//                    if t?.lang == translateCode {
+//                        name = t?.name ?? ""
+//                    }
+//                })
                 result.append(TravelTypeGroup(group: sport.group ?? "", types: [TravelType(id: sport.id, name: sport.name ?? "")]))
             }
         }
@@ -318,6 +340,7 @@ class TravelPresenterImpl: BaseInsurancePresenter, TravelPresenter {
     
     
     func setWork(work: [Work]) {
+        
         let filtered = work.filter({ $0.group != nil })
         var result: [TravelTypeGroup] = []
         filtered.forEach { work in
@@ -383,7 +406,17 @@ class TravelPresenterImpl: BaseInsurancePresenter, TravelPresenter {
     
     func fillConfirm1VC() {
         if let vc = self.view as? TravelConfirm1VC {
-            let c = self.countryList.map({ $0.translates?[translatePosition]?.name ?? "" }).joined(separator: ", ")
+            
+            
+            let c = self.countryList.map({ c in
+                var result = ""
+                c.translates?.forEach({ t in
+                    if t?.lang == translateCode {
+                        result = t?.name ?? ""
+                    }
+                })
+                return result
+            }).joined(separator: ", ")
             vc.setCountry(country: c)
             
             vc.setAmount(amount: "\(self.travel.insuranceAmount.toDecimalFormat()) €")

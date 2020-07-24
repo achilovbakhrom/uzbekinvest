@@ -26,8 +26,14 @@ class GasVC: BaseWithLeftCirclesVC {
             self.setTabBarHidden(false)
         }
         self.gasPresenter?.setProduct(product: product)
-        gasHomeTitle.text = product?.translates?[translatePosition]?.name ?? ""
-        gasHomeDescription.text = product?.translates?[0]?.text?.htmlToString
+        self.product.translates?.forEach({ t in
+            if t?.lang == translateCode {
+                self.gasHomeTitle.text = t?.name
+                self.gasHomeDescription.text = t?.text?.htmlToString
+            }
+        })
+//        gasHomeTitle.text = product?.translates?[translatePosition]?.name ?? ""
+//        gasHomeDescription.text = product?.translates?[0]?.text?.htmlToString
         gasHomeDescription.textAlignment = .justified
         self.setTabBarHidden(true)
         self.setupNoInternetView()

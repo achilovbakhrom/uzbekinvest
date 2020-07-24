@@ -165,7 +165,12 @@ class MyInsuranceCell: UITableViewCell {
     
     func setData(data: MyInsurance, isLast: Bool) {
         self.myInsurance = data
-        self.titleLabel.text = data.product?.translates?[translatePosition]?.name
+        data.product?.translates?.forEach({ t in
+            if t?.lang == translateCode {
+                self.titleLabel.text = t?.name
+            }
+        })
+//        self.titleLabel.text = data.product?.translates?[translatePosition]?.name
         let (title, color) = getTitleForStatus(status: data.status ?? "")
         self.statusContainer.backgroundColor = color
         self.statusLabel.text = title

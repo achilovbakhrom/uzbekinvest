@@ -141,7 +141,7 @@ class TouristList1Cell: UITableViewCell {
     private lazy var datePicker: DatePicker = {
         let datePicker = DatePicker(frame: .zero)
         datePicker.translatesAutoresizingMaskIntoConstraints = false
-        datePicker.placeholder = "".localized()
+        datePicker.placeholder = "birthdate".localized()
         return datePicker
     }()
     

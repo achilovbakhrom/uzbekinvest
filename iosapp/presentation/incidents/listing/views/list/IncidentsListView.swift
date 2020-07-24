@@ -198,7 +198,13 @@ class IncidentsListCell: UITableViewCell {
     }
     
     func setData(incident: Incident, isLast: Bool) {
-        self.orderNameLabel.text = (incident.order?.product?.translates?.isEmpty ?? false) ? "" :  incident.order?.product?.translates?[translatePosition]?.name
+        
+        incident.order?.product?.translates?.forEach({ t in
+            if t?.lang == translateCode {
+                self.orderNameLabel.text = t?.name
+            }
+        })
+        
         switch incident.status ?? "" {
         case "new":
             self.statusLabel.text = "incident_new".localized()

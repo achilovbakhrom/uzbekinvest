@@ -78,8 +78,27 @@ class Osago2VC: BaseWithLeftCirclesVC {
     }
     
     func setTransportList(list: [Transport]) {
-        carDropDown.optionArray = list.map { $0.name }
+        
+        
+        
+        carDropDown.optionArray = list.map { ti in
+            var result: String? = ""
+            ti.translates.forEach({ t in
+                if t.lang == translateCode {
+                    result = t.name
+                }
+            })
+            return result ?? ""
+        }
         carDropDown.optionIds = list.map { $0.id }
+        if list.count > 0  {
+            let t = list[0]
+            t.translates.forEach({ t in
+                if t.lang == translateCode {
+                    carDropDown.text = t.name
+                }
+            })            
+        }
     }
 }
 

@@ -12,11 +12,13 @@ class TravelVC: BaseWithLeftCirclesVC {
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var descripttionLabel: UILabel!
+    @IBOutlet weak var nextButton: Button!
     
     var product: Product!
     
     private lazy var travelPresenter = self.presenter as? TravelPresenter
     private lazy var noInternetView: NoInternetView = NoInternetView.fromNib()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,11 +26,16 @@ class TravelVC: BaseWithLeftCirclesVC {
             self.travelPresenter?.goBack()
             self.setTabBarHidden(false)
         }
-        self.titleLabel.text = self.product.translates?[translatePosition]?.name
-        self.descripttionLabel.text = self.product.translates?[translatePosition]?.text?.htmlToString
+        self.setTabBarHidden(true)
+        self.product.translates?.forEach({ t in
+            if t?.lang == translateCode {
+                self.titleLabel.text = t?.name
+                self.descripttionLabel.text = t?.text?.htmlToString
+            }
+        })
         self.descripttionLabel.textAlignment = .justified
         self.travelPresenter?.setProduct(product: product)
-        self.setTabBarHidden(true)
+        
         self.setupNoInternetView()
         let status = appDelegate.reach.connectionStatus()
         switch status {
@@ -38,6 +45,7 @@ class TravelVC: BaseWithLeftCirclesVC {
         case .online(.wwan), .online(.wiFi):
             break
         }
+        self.nextButton.setTitle("calculate_the_cost".localized(), for: .normal)
     }
     
     func setupNoInternetView() {
