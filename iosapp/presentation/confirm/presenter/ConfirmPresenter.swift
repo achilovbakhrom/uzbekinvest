@@ -18,6 +18,7 @@ protocol ConfirmPresenter: BasePresenter {
     func setLoading(isLoading: Bool)
     func openMainPage()
     func showError(msg: String)
+    func checkAndSetPhone(phoneMasked: String)
 }
 
 class ConfirmPresenterImpl: ConfirmPresenter {
@@ -35,16 +36,33 @@ class ConfirmPresenterImpl: ConfirmPresenter {
         self.phone = phone
     }
     
+    func checkAndSetPhone(phoneMasked: String) {
+        let p = phoneMasked.digits
+        let i = p.index(p.startIndex, offsetBy: 3)
+        let finalPhone = p.suffix(from: i)
+        self.phone = String(finalPhone)
+        
+        var isEnabled = self.confirmInteractor.checkConfirmCode(code: String(confirmCode))
+        
+        if self.phone.count != 9 {
+            isEnabled = false
+        }
+        setEnabled(isEnabled: isEnabled)
+    }
+    
     func confirmButtonClicked() {
         self.confirmInteractor.sendConfirmCode(phone: phone, code: confirmCode)
     }
     
     func setConfirmCode(code: String) {
-        let isEnabled = self.confirmInteractor.checkConfirmCode(code: code)
+        var isEnabled = self.confirmInteractor.checkConfirmCode(code: code)
         if isEnabled {
             confirmCode = Int(code) ?? 0
         } else {
             confirmCode = 0
+        }
+        if self.phone.count != 9 {
+            isEnabled = false
         }
         setEnabled(isEnabled: isEnabled)
     }

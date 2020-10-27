@@ -33,8 +33,8 @@ class RoadTechInteractorImpl: BaseInsuranceInteractor, RoadTechInteractor {
             .serviceFactory
             .networkManager
             .orders
-            .request(.technicalSupportCalculate(technicalSupport: technicalSupport)) {
-                switch $0 {
+            .request(.technicalSupportCalculate(technicalSupport: technicalSupport)) { [unowned self] result in
+                switch result {
                 case .success(let response):
                     self.roadTechPresenter?.setLoading(isLoading: false)
                     do {
@@ -54,7 +54,7 @@ class RoadTechInteractorImpl: BaseInsuranceInteractor, RoadTechInteractor {
     }
     
     func prepareToOpenFinalVC(id: Int) {
-        self.fetchDocumentsByProductid(id: id) { isLoading in
+        self.fetchDocumentsByProductid(id: id) { [unowned self] isLoading in
             self.roadTechPresenter?.setLoading(isLoading: isLoading)
             if !isLoading {
                 self.roadTechPresenter?.openTechRoadFinalVC()

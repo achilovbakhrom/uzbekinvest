@@ -279,6 +279,7 @@
 		297654CD2459EF02005C52EF /* CommentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297654CC2459EF02005C52EF /* CommentsView.swift */; };
 		297654CF2459F172005C52EF /* CommentsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297654CE2459F172005C52EF /* CommentsVC.swift */; };
 		297654D12459F406005C52EF /* IncidentsAddEditInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297654D02459F406005C52EF /* IncidentsAddEditInteractor.swift */; };
+		297AB16F2532E9D000CDAA50 /* OutlinedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297AB16E2532E9D000CDAA50 /* OutlinedButton.swift */; };
 		297CB461240309F9001CAD02 /* WhiteCircledBackVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297CB460240309F9001CAD02 /* WhiteCircledBackVC.swift */; };
 		297CB46424036C20001CAD02 /* FirstVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297CB46324036C20001CAD02 /* FirstVC.swift */; };
 		297CB46624037127001CAD02 /* SecondVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297CB46524037127001CAD02 /* SecondVC.swift */; };
@@ -931,6 +932,7 @@
 		297654CC2459EF02005C52EF /* CommentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsView.swift; sourceTree = "<group>"; };
 		297654CE2459F172005C52EF /* CommentsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsVC.swift; sourceTree = "<group>"; };
 		297654D02459F406005C52EF /* IncidentsAddEditInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncidentsAddEditInteractor.swift; sourceTree = "<group>"; };
+		297AB16E2532E9D000CDAA50 /* OutlinedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutlinedButton.swift; sourceTree = "<group>"; };
 		297CB460240309F9001CAD02 /* WhiteCircledBackVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhiteCircledBackVC.swift; sourceTree = "<group>"; };
 		297CB46324036C20001CAD02 /* FirstVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstVC.swift; sourceTree = "<group>"; };
 		297CB46524037127001CAD02 /* SecondVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondVC.swift; sourceTree = "<group>"; };
@@ -1000,7 +1002,7 @@
 		2987C46A248AF19800F07923 /* ReasonVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReasonVC.swift; sourceTree = "<group>"; };
 		298CD9E9241BC6140033865C /* Decodable+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Decodable+Extensions.swift"; sourceTree = "<group>"; };
 		2994A5E02419552500D5CDD0 /* TopMenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopMenuCell.swift; sourceTree = "<group>"; };
-		299B520D23FBBB430072ABD6 /* iosapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iosapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		299B520D23FBBB430072ABD6 /* Uzbekinvest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Uzbekinvest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		299B521023FBBB430072ABD6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		299B521423FBBB430072ABD6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		299B521A23FBBB430072ABD6 /* iosapp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = iosapp.xcdatamodel; sourceTree = "<group>"; };
@@ -2967,7 +2969,7 @@
 		299B520E23FBBB430072ABD6 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				299B520D23FBBB430072ABD6 /* iosapp.app */,
+				299B520D23FBBB430072ABD6 /* Uzbekinvest.app */,
 				299B522623FBBB450072ABD6 /* iosappTests.xctest */,
 				299B523123FBBB450072ABD6 /* iosappUITests.xctest */,
 			);
@@ -3281,6 +3283,7 @@
 				2950CE1F2432593E0083DAD7 /* SimpleTextField.swift */,
 				29AEEF972438B06E00617CE2 /* Popover.swift */,
 				29F64B9E243F985E00E49E4B /* OrangeButton.swift */,
+				297AB16E2532E9D000CDAA50 /* OutlinedButton.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -4355,6 +4358,7 @@
 				299B520A23FBBB430072ABD6 /* Frameworks */,
 				299B520B23FBBB430072ABD6 /* Resources */,
 				0BEAB0336D6E8B851D96A7E0 /* [CP] Embed Pods Frameworks */,
+				295B5DE72517C503007F0D3D /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -4362,7 +4366,7 @@
 			);
 			name = iosapp;
 			productName = iosapp;
-			productReference = 299B520D23FBBB430072ABD6 /* iosapp.app */;
+			productReference = 299B520D23FBBB430072ABD6 /* Uzbekinvest.app */;
 			productType = "com.apple.product-type.application";
 		};
 		299B522523FBBB450072ABD6 /* iosappTests */ = {
@@ -4567,6 +4571,23 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
+		};
+		295B5DE72517C503007F0D3D /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"${PODS_ROOT}/FirebaseCrashlytics/run\"\n";
 		};
 		37A25D24286C973444A84A86 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -4971,6 +4992,7 @@
 				293AB032240FD8FF00030506 /* MandatoryVC.swift in Sources */,
 				29A2A16D2402B9070032F2E9 /* BaseGreenVC.swift in Sources */,
 				297E4A07242076890044CA3B /* DashboardAssembly.swift in Sources */,
+				297AB16F2532E9D000CDAA50 /* OutlinedButton.swift in Sources */,
 				29846BE824724D5000287817 /* Travel.swift in Sources */,
 				299B52C823FBF8120072ABD6 /* CAGradientLayer+extensions.swift in Sources */,
 				292714FD242C6B2900641FEB /* HomeVC.swift in Sources */,
@@ -5638,21 +5660,23 @@
 			baseConfigurationReference = CC4297D93BA92A08D371F132 /* Pods-iosapp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_ASSET_PATHS = "";
-				DEVELOPMENT_TEAM = A5ZV3NG643;
+				DEVELOPMENT_TEAM = TU689LF48G;
 				INFOPLIST_FILE = iosapp/helpers/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.7;
-				PRODUCT_BUNDLE_IDENTIFIER = uz.einsurance.iosapp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				MARKETING_VERSION = 1.0.5;
+				PRODUCT_BUNDLE_IDENTIFIER = uz.mailbak.einsurance;
+				PRODUCT_NAME = Uzbekinvest;
+				PROVISIONING_PROFILE_SPECIFIER = uzbekinvestdevprovision;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -5666,19 +5690,19 @@
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_ASSET_PATHS = "";
-				DEVELOPMENT_TEAM = A5ZV3NG643;
+				DEVELOPMENT_TEAM = TU689LF48G;
 				INFOPLIST_FILE = iosapp/helpers/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.7;
-				PRODUCT_BUNDLE_IDENTIFIER = uz.einsurance.iosapp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "Uzbekinvest-app";
+				MARKETING_VERSION = 1.0.5;
+				PRODUCT_BUNDLE_IDENTIFIER = uz.mailbak.einsurance;
+				PRODUCT_NAME = Uzbekinvest;
+				PROVISIONING_PROFILE_SPECIFIER = uzbekinvestprodprovision;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

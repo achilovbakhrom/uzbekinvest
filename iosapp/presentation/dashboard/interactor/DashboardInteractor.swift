@@ -107,7 +107,7 @@ class DashboardInteractorImpl: DashboardInteractor {
             .serviceFactory
             .networkManager
             .others
-            .request(.fetchCarouselData) { result in
+            .request(.fetchCarouselData) { [unowned self] result in
                 switch result {
                 case .success(let response):
                     self.dashboardPresenter?.setCarouselLoading(isLoading: false)
@@ -129,7 +129,7 @@ class DashboardInteractorImpl: DashboardInteractor {
     }
     
     func setFCMToken(token: String) {
-        serviceFactory.networkManager.user.request(.sendFCMToken(token: token)) { result in
+        serviceFactory.networkManager.user.request(.sendFCMToken(token: token)) { [unowned self] result in
             switch result {
             case .success(let response):
                 debugPrint(String(data: response.data, encoding: .utf8) ?? "")

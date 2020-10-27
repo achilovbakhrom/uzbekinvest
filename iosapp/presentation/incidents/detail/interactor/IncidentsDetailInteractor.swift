@@ -44,7 +44,7 @@ class IncidentsDetailInteractorImpl: IncidentsDetailInteractor {
                         do {
                             let decoder = JSONDecoder.init()
                             let r = try decoder.decode(ArrayResponse<MyInsurance>.self, from: response.data)
-                            self.incidentsPresenter?.setInsurances(insurances: r.data ?? [])
+                            self.incidentsPresenter?.setInsurances(insurances: (r.data ?? []).filter{ $0.status == "paid" })
                         } catch (let error) {
                             debugPrint(error.localizedDescription)
                         }

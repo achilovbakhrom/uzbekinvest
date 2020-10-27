@@ -26,6 +26,8 @@ class IncidentHeaderView: UIView {
     @IBOutlet weak var callBackImageView: UIImageView!
     @IBOutlet weak var chatImageView: UIImageView!
     
+    @IBOutlet weak var toChatLabel: UILabel!
+    
     var onSupportCall: (() -> Void)? = nil
     var onCallback: (() -> Void)? = nil
     var onChat: (() -> Void)? = nil
@@ -69,7 +71,7 @@ class IncidentHeaderView: UIView {
             callbackLabel.fontSize = 13.0
             messageLabel.fontSize = 13.0
         }
-        
+        toChatLabel.text = "to_chat".localized()
         
         supportCallImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.supportCallAction(_:))))
         

@@ -32,7 +32,7 @@ class OfferInteractorImpl: OfferInteractor {
             .serviceFactory
             .networkManager
             .others
-            .request(.fetchOffer) { result in
+            .request(.fetchOffer) { [unowned self] result in
                 self.offerPresenter.setLoading(isLoading: false)
                 switch result {
                 case .success(let response):

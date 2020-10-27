@@ -49,6 +49,7 @@ class Travel3VC: BaseWithLeftCirclesVC {
         singleButton.setTitle("travel3_single".localized(), for: .normal)
         multipleButton.setTitle("travel3_multiple".localized(), for: .normal)
         multiDropDown.placeholder = "multi_type".localized()
+        multiDropDown.font = UIFont.init(name: "Roboto-Regular", size: 13.0)
         nextButton.setTitle("next".localized(), for: .normal)
         
         backButtonClicked = { self.travelPresenter?.goBack() }

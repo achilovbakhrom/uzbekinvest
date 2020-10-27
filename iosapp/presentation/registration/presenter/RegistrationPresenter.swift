@@ -37,9 +37,9 @@ class RegistrationPresenterImpl: RegistrationPresenter {
     var interactor: BaseInteractor?
     var router: BaseRouter?
     var view: UIViewController?
-    var user: User!
+    var user: UserRequest!
     
-    init() { user = User() }
+    init() { user = UserRequest() }
     
     private lazy var registrationInteractor: RegistrationInteractor = self.interactor as! RegistrationInteractor
     
@@ -58,26 +58,20 @@ class RegistrationPresenterImpl: RegistrationPresenter {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
         user.dob = dateFormatter.string(from: dob)
-        v?.setButtonEnabled(enabled: !(user?.name.isEmpty ?? false) && !(user?.dob?.isEmpty ?? false))
+        v?.setButtonEnabled(enabled: !(user?.name?.isEmpty ?? false) && !(user?.dob?.isEmpty ?? false))
     }
     
     func setRegion(region: Int) {
-        if user?.region != nil {
-            user?.region?.id = region
-        } else {
-            var r = Region()
-            r.id = region
-            user?.region = r
-        }
-//        user.region = region
+        user.region_id = region
+
         let vc = self.view as? Registration2VC
-        vc?.setEnabled(enabled: user?.region != nil && !(user?.address?.isEmpty ?? false))
+        vc?.setEnabled(enabled: user?.region_id != nil && !(user?.address?.isEmpty ?? false))
     }
     
     func setAddress(address: String) {
         user.address = address
         let vc = self.view as? Registration2VC
-        vc?.setEnabled(enabled: user.region != nil && !(user?.address?.isEmpty ?? false))
+        vc?.setEnabled(enabled: user.region_id != nil && !(user?.address?.isEmpty ?? false))
     }
     
     func setPhoneNumber(phone: String) {
@@ -95,10 +89,6 @@ class RegistrationPresenterImpl: RegistrationPresenter {
         }
         let vc = self.view as? Registration3VC
         vc?.setEnabled(isEnabled: confirmCodeIsValid)
-    }
-    
-    func accept() {
-        
     }
     
     func acceptOffer() {
@@ -132,8 +122,8 @@ class RegistrationPresenterImpl: RegistrationPresenter {
     func setup1() {
         if let pn = self.registrationInteractor.getInitPhoneNumber() { user.phone = Int(pn) }
         registrationView.setDob(date: user?.dob ?? "")
-        registrationView.setName(name: user.name)
-        registrationView.setButtonEnabled(enabled: !(user?.dob?.isEmpty ?? false) && !(user?.name.isEmpty ?? false))
+        registrationView.setName(name: user?.name ?? "")
+        registrationView.setButtonEnabled(enabled: !(user?.dob?.isEmpty ?? false) && !(user?.name?.isEmpty ?? false))
     }
     
     func setup2() {
@@ -153,8 +143,8 @@ class RegistrationPresenterImpl: RegistrationPresenter {
     }
     
     func setLoading3(enabled: Bool) {
-        let vc = self.view as! OfferVC
-        vc.setLoading(isLoading: enabled)
+        let vc = self.view as! Registration3VC
+        vc.setLoading3(isLoading: enabled)
     }
     
     func setEnabled2(enabled: Bool) {

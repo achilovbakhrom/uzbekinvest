@@ -120,7 +120,7 @@ extension OthersProvider: TargetType {
         case .fetchCategoryList:
             return .requestPlain
         case .fetchCarouselData:
-            return .requestPlain
+            return .requestParameters(parameters: ["device" : "app"], encoding: URLEncoding.default)
         case .fetchOffer:
             return .requestPlain
         case .fetchMetadata(let productCode):

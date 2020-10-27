@@ -95,7 +95,7 @@ class IncidentsAddEditInteractorImpl: IncidentsAddEditInteractor {
         .serviceFactory
         .networkManager
         .incident
-            .request(.fetchIncidentMeta(productCode: productCode)) { result in
+            .request(.fetchIncidentMeta(productCode: productCode)) { [unowned self] result in
                 switch result {
                 case .success(let response):
                     do {

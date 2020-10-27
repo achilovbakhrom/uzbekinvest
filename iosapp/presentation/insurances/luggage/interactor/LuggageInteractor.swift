@@ -52,7 +52,7 @@ class LuggageInteractorImpl: BaseInsuranceInteractor, LuggageInteractor {
     }
     
     func prepareToOpenFinalVC(id: Int) {
-        self.fetchDocumentsByProductid(id: id) { isLoading in
+        self.fetchDocumentsByProductid(id: id) { [unowned self] isLoading in
             self.luggagePresenter?.setLoading(isLoading: isLoading)
             if !isLoading {
                 self.luggagePresenter?.openLuggageFinalVC()

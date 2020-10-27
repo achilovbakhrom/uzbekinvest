@@ -15,6 +15,9 @@ class HomeConfirmVC: BaseWithRightGreenCirclesVC {
     @IBOutlet weak var totalAmount: UILabel!
     @IBOutlet weak var type: UILabel!
     @IBOutlet weak var confirmButton: Button!
+    @IBOutlet weak var premiumAmountLabel: UILabel!
+    @IBOutlet weak var premiumAmountSumLabel: UILabel!
+    @IBOutlet weak var premiumAmountBottomConstraint: NSLayoutConstraint!
     
     private lazy var homePresenter = self.presenter as? HomePresenter
     
@@ -23,7 +26,7 @@ class HomeConfirmVC: BaseWithRightGreenCirclesVC {
         self.homePresenter?.fillConfirmData()
         self.homePresenter?.calculateHome()
         backButtonClicked = { self.homePresenter?.goBack() }
-        
+        self.premiumAmountLabel.text = "sum".localized()
         
     }
     

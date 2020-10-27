@@ -26,6 +26,8 @@ target 'iosapp' do
   pod 'TagListView', '~> 1.0'
   pod 'MessengerKit', :git => 'https://github.com/steve228uk/MessengerKit.git'  
   pod 'Firebase/Messaging'
+  pod 'Firebase/Crashlytics'
+  pod 'Firebase/Analytics'
   
   target 'iosappTests' do
     inherit! :search_paths

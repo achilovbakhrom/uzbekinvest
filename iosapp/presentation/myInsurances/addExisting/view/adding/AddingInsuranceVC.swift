@@ -55,7 +55,7 @@ class AddingInsuranceVC: BaseWithLeftCirclesVC {
             self.addingPreseinter?.goBack()
         }
         self.addingView.addButton.isEnabled = false
-        self.setTabBarHidden(true)
+
     }
     
     @objc

@@ -14,11 +14,12 @@ protocol ConfirmRouter: BaseRouter {
 }
 
 class ConfirmRouterImpl: ConfirmRouter {
+    
     var factory: AssemblyFactoryProtocol?
     var viewController: UIViewController?
     
     func openMainPage() {
-        let vc = factory?.offerModule.assembleViewController() ?? UIViewController()
+        let vc = factory?.mainModule.assembleViewController() ?? UIViewController()
         self.viewController?.navigationController?.pushViewController(vc, animated: true)
     }
     

@@ -38,7 +38,7 @@ class ChatInteractorImpl: ChatInteractor {
             .serviceFactory
             .networkManager
             .user
-            .request(.createChat) { result in
+            .request(.createChat) { [unowned self] result in
                 switch result {
                 case .success(let response):
                     do {
@@ -73,7 +73,7 @@ class ChatInteractorImpl: ChatInteractor {
             .serviceFactory
             .networkManager
             .user
-            .request(.fetchChatList(chatId: chatId)) { result in
+            .request(.fetchChatList(chatId: chatId)) { [unowned self] result in
                 switch result {
                 case .success(let response):
                     self.chatPresenter?.setLoading(isLoading: false)

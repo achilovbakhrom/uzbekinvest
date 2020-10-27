@@ -38,9 +38,9 @@ class HealthInteractorImpl: BaseInsuranceInteractor, HealthInteractor {
     
     func calculate(health: MedicalInsurance) {
         self
-            .serviceFactory?.networkManager.orders.request(.medicalCalculate(medical: health), completion: {
+            .serviceFactory?.networkManager.orders.request(.medicalCalculate(medical: health), completion: { [unowned self] result in
                 self.healthPresenter?.setLoading(isLoading: true)
-                switch $0 {
+                switch result {
                 case .success(let response):
                     self.healthPresenter?.setLoading(isLoading: false)
                     do {
@@ -61,7 +61,7 @@ class HealthInteractorImpl: BaseInsuranceInteractor, HealthInteractor {
     }
     
     func prepareToOpenFinalVC(id: Int) {
-        self.fetchDocumentsByProductid(id: id) { isLoading in
+        self.fetchDocumentsByProductid(id: id) { [unowned self] isLoading in
             self.healthPresenter?.setLoading(isLoading: isLoading)
             if !isLoading {
                 self.healthPresenter?.openHealthFinalVC()

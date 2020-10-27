@@ -75,13 +75,14 @@ class CenterMenuView: UIView {
             
             self.centerMenus.addSubview(self.centerMenuConent)
             
-            self.centerMenuConent.backgroundColor = .green
+            self.centerMenuConent.backgroundColor = .white
             NSLayoutConstraint.activate([
                 self.centerMenuConent.leadingAnchor.constraint(equalTo: self.centerMenus.leadingAnchor),
                 self.centerMenuConent.topAnchor.constraint(equalTo: self.centerMenus.topAnchor),
                 self.centerMenuConent.widthAnchor.constraint(equalTo: self.centerMenus.widthAnchor),
                 self.centerMenuConent.heightAnchor.constraint(equalTo: self.centerMenus.heightAnchor)
             ])
+            centerMenuConent.layer.cornerRadius = 8
 
             let viewHeight = self.bounds.height
             let viewWidth = self.bounds.width/3

@@ -28,7 +28,7 @@ class ChatVC: MSGMessengerViewController, MSGDataSource {
         style.inputPlaceholder = "Введите текст"
         style.alwaysDisplayTails = true
         style.outgoingBubbleColor = Colors.primaryGreen
-        style.outgoingTextColor = .black
+        style.outgoingTextColor = .white        
         style.incomingBubbleColor = .lightGray
         style.incomingTextColor = .black
         style.backgroundColor = Colors.primaryGreen.withAlphaComponent(0.1)

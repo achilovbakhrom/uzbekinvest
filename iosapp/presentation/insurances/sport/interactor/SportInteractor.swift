@@ -33,8 +33,8 @@ class SportInteractorImpl: BaseInsuranceInteractor, SportInteractor {
             .serviceFactory
             .networkManager
             .orders
-            .request(.sportCalculate(sport: sport)) {
-                switch $0 {
+            .request(.sportCalculate(sport: sport)) { [unowned self] result in
+                switch result {
                 case .success(let response):
                     self.sportPresenter?.setLoading(isLoading: false)
                     do {
@@ -59,8 +59,8 @@ class SportInteractorImpl: BaseInsuranceInteractor, SportInteractor {
             .serviceFactory
             .networkManager
             .others
-            .request(.sports) {
-                switch($0) {
+            .request(.sports) { [unowned self] result in
+                switch(result) {
                 case .success(let response):
                     self.sportPresenter?.setLoading(isLoading: false)
                     do {
@@ -80,7 +80,7 @@ class SportInteractorImpl: BaseInsuranceInteractor, SportInteractor {
     }
     
     func prepareToOpenFinalVC(id: Int) {
-        self.fetchDocumentsByProductid(id: id) { isLoading in
+        self.fetchDocumentsByProductid(id: id) { [unowned self] isLoading in
             self.sportPresenter?.setLoading(isLoading: isLoading)
             if !isLoading {
                 self.sportPresenter?.openSportFinalVC()

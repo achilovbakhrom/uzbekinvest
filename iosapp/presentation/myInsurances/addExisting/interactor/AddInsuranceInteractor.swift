@@ -41,7 +41,7 @@ class AddingInsuranceInteractorImpl: AddInsuranceInteractor {
             .serviceFactory?
             .networkManager
             .user
-            .request(.addPinfl(pinfl: pinfl), completion: { result in
+            .request(.addPinfl(pinfl: pinfl), completion: { [unowned self] result in
                 switch result {
                 case .success(let response):
                     if response.statusCode < 300 {

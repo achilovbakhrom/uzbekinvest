@@ -122,24 +122,37 @@ class KaskoPresenterImpl: BaseInsurancePresenter, KaskoPresenter {
     
     func setup2VC() {
         let vc = self.view as? Kasko2VC
-        if kasko.type == 3 {
-            vc?.setTitles(titles: ["kasko_1_year".localized()])
-            vc?.setPeriodValues(periodValues: [1.0])
-            vc?.setIds(ids: [0])
-        } else {
-            vc?.setTitles(titles: [
-                "kasko_3_months".localized(),
-                "kasko_6_months".localized(),
-                "kasko_9_months".localized(),
-                "kasko_1_year".localized(),
-                "kasko_2_years".localized(),
-                "kasko_3_years".localized(),
-                "kasko_4_years".localized(),
-                "kasko_5_years".localized()
-            ])
-            vc?.setPeriodValues(periodValues: [0.25, 0.5, 0.75, 1.0, 2.0, 3.0, 4.0, 5.0])
-            vc?.setIds(ids: [0, 1, 2, 3, 4, 5, 6])
-        }
+        
+        vc?.setTitles(titles: [
+            "kasko_3_months".localized(),
+            "kasko_6_months".localized(),
+            "kasko_9_months".localized(),
+            "kasko_1_year".localized(),
+            "kasko_2_years".localized(),
+            "kasko_3_years".localized(),
+            "kasko_4_years".localized(),
+            "kasko_5_years".localized()
+        ])
+        vc?.setPeriodValues(periodValues: [0.25, 0.5, 0.75, 1.0, 2.0, 3.0, 4.0, 5.0])
+        vc?.setIds(ids: [0, 1, 2, 3, 4, 5, 6])
+//        if kasko.type == 3 {
+//            vc?.setTitles(titles: ["kasko_1_year".localized()])
+//            vc?.setPeriodValues(periodValues: [1.0])
+//            vc?.setIds(ids: [0])
+//        } else {
+//            vc?.setTitles(titles: [
+//                "kasko_3_months".localized(),
+//                "kasko_6_months".localized(),
+//                "kasko_9_months".localized(),
+//                "kasko_1_year".localized(),
+//                "kasko_2_years".localized(),
+//                "kasko_3_years".localized(),
+//                "kasko_4_years".localized(),
+//                "kasko_5_years".localized()
+//            ])
+//            vc?.setPeriodValues(periodValues: [0.25, 0.5, 0.75, 1.0, 2.0, 3.0, 4.0, 5.0])
+//            vc?.setIds(ids: [0, 1, 2, 3, 4, 5, 6])
+//        }
     }
     
 }

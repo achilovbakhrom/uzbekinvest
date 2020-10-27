@@ -26,9 +26,9 @@ class KaskoInteractorImpl: BaseInsuranceInteractor, KaskoInteractor {
     }
     
     func calculateKasko(kasko: Kasko) {
-        self.serviceFactory.networkManager.orders.request(.kaskoCalculate(kasko: kasko), completion: {
+        self.serviceFactory.networkManager.orders.request(.kaskoCalculate(kasko: kasko), completion: { [unowned self] result in
             self.kaskoPresenter?.setLoading(isLoading: true)
-            switch $0 {
+            switch result {
             case .success(let resonse):
                 self.kaskoPresenter?.setLoading(isLoading: false)
                 do {
@@ -48,7 +48,7 @@ class KaskoInteractorImpl: BaseInsuranceInteractor, KaskoInteractor {
     }
     
     func prepareToOpenFinalVC(id: Int) {
-        self.fetchDocumentsByProductid(id: id) { isLoading in
+        self.fetchDocumentsByProductid(id: id) { [unowned self] isLoading in
             self.kaskoPresenter?.setLoading(isLoading: isLoading)
             if !isLoading {
                 self.kaskoPresenter?.openKaskoFinal()

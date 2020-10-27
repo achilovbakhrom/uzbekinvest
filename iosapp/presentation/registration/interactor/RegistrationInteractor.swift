@@ -17,7 +17,7 @@ protocol RegistrationInteractor: BaseInteractor {
     func sendCode(phone: String)
     func checkConfirmCode(code: String) -> Bool
     func getInitPhoneNumber() -> String?
-    func register(user: User)
+    func register(user: UserRequest)
 }
 
 
@@ -36,7 +36,7 @@ class RegistrationInteractorImpl: RegistrationInteractor {
         self.registrationPresenter.setLoading2(enabled: true)
         self
             .serviceFactory
-            .networkManager.regions.request(.getAllRegions) { result in
+            .networkManager.regions.request(.getAllRegions) { [unowned self] result in
                 switch result {
                 case .success(let res):
                     self.registrationPresenter.setLoading2(enabled: false)
@@ -64,7 +64,7 @@ class RegistrationInteractorImpl: RegistrationInteractor {
             .serviceFactory
             .networkManager
             .auth
-            .request(.sendCodeToPhone(phone: phone)) { result in
+            .request(.sendCodeToPhone(phone: phone)) { [unowned self] result in
                 switch result {
                 case .success:
                     self.registrationPresenter.setLoading2(enabled: false)
@@ -88,19 +88,20 @@ class RegistrationInteractorImpl: RegistrationInteractor {
         return serviceFactory.storage.fetch(key: "phone", type: String.self)
     }
     
-    func register(user: User) {
+    func register(user: UserRequest) {
         self.registrationPresenter.setLoading3(enabled: true)
         self
             .serviceFactory
-            .networkManager.auth.request(.registerUser(user: user)) { result in
+            .networkManager.auth.request(.registerUser(user: user)) { [unowned self] result in
                 switch result {
                 case .success(let response):
                     self.registrationPresenter.setLoading3(enabled: false)
                     let decoder = JSONDecoder()
                     do {
-                        let json = try decoder.decode(RegisterResponse.self, from: response.data)
-                        self.serviceFactory.tokenFactory.saveToken(token: json.token)
-                        self.registrationPresenter.openDashboard()
+                        let r = try decoder.decode(Response<RegisterResponse>.self, from: response.data)
+                        let json = r.data
+                        self.serviceFactory.tokenFactory.saveToken(token: json?.token ?? "")
+                        self.registrationPresenter.openOfferVC()
                     } catch(let error) {
                         debugPrint(error.localizedDescription)
                     }

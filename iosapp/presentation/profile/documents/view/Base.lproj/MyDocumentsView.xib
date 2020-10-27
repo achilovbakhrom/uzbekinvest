@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -30,51 +30,61 @@
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Мои документы" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U1t-JX-VRe">
-                    <rect key="frame" x="31" y="124" width="138" height="21.5"/>
+                    <rect key="frame" x="31" y="124" width="138" height="24"/>
                     <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="18"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f6p-Ml-swY">
-                    <rect key="frame" x="31" y="151.5" width="303" height="56.5"/>
+                    <rect key="frame" x="31" y="154" width="303" height="63.5"/>
                     <string key="text">Для удобства все ранее использованные документы сохраняются для дальнейшего использования. В этом разделе вы можете управлять своими документами.</string>
                     <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="12"/>
                     <color key="textColor" red="0.51372549020000002" green="0.52549019610000003" blue="0.55294117649999996" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Ucq-uc-zSh">
-                    <rect key="frame" x="0.0" y="214" width="414" height="42"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RcK-Rz-mkM">
+                    <rect key="frame" x="0.0" y="282.5" width="414" height="579.5"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JGt-S5-ABO">
+                    <rect key="frame" x="0.0" y="232.5" width="414" height="50"/>
+                    <subviews>
+                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" contentInsetAdjustmentBehavior="never" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Ucq-uc-zSh">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="zil-4G-tV9">
+                                <size key="itemSize" width="128" height="128"/>
+                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            </collectionViewFlowLayout>
+                        </collectionView>
+                    </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="42" id="fWu-2M-Tsc"/>
+                        <constraint firstAttribute="trailing" secondItem="Ucq-uc-zSh" secondAttribute="trailing" id="AwO-oo-VvO"/>
+                        <constraint firstAttribute="height" constant="50" id="EVC-D8-G17"/>
+                        <constraint firstItem="Ucq-uc-zSh" firstAttribute="leading" secondItem="JGt-S5-ABO" secondAttribute="leading" id="OSF-cA-neq"/>
+                        <constraint firstItem="Ucq-uc-zSh" firstAttribute="top" secondItem="JGt-S5-ABO" secondAttribute="top" id="bmR-yK-xZO"/>
+                        <constraint firstAttribute="bottom" secondItem="Ucq-uc-zSh" secondAttribute="bottom" id="dgK-8v-WNs"/>
                     </constraints>
-                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="zil-4G-tV9">
-                        <size key="itemSize" width="128" height="128"/>
-                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                    </collectionViewFlowLayout>
-                </collectionView>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RcK-Rz-mkM">
-                    <rect key="frame" x="0.0" y="256" width="414" height="606"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                 </view>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Ucq-uc-zSh" secondAttribute="trailing" id="3cV-Wt-Lre"/>
                 <constraint firstItem="RcK-Rz-mkM" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="CHK-H8-FsV"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="RcK-Rz-mkM" secondAttribute="trailing" id="EZQ-mK-HiT"/>
                 <constraint firstItem="1aX-Ew-TsJ" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="40" id="FHI-la-Vd6"/>
-                <constraint firstItem="Ucq-uc-zSh" firstAttribute="top" secondItem="f6p-Ml-swY" secondAttribute="bottom" constant="6" id="HHd-kq-yFe"/>
+                <constraint firstItem="RcK-Rz-mkM" firstAttribute="top" secondItem="JGt-S5-ABO" secondAttribute="bottom" id="Ihq-vE-LiY"/>
+                <constraint firstItem="JGt-S5-ABO" firstAttribute="top" secondItem="f6p-Ml-swY" secondAttribute="bottom" constant="15" id="LeB-jA-FtX"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="RcK-Rz-mkM" secondAttribute="bottom" id="Qmt-wa-aW3"/>
                 <constraint firstItem="U1t-JX-VRe" firstAttribute="top" secondItem="1aX-Ew-TsJ" secondAttribute="bottom" constant="18" id="Vcf-Ok-P32"/>
-                <constraint firstItem="Ucq-uc-zSh" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="clr-fH-aZ2"/>
+                <constraint firstItem="JGt-S5-ABO" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="WO8-Pt-QWa"/>
                 <constraint firstItem="1aX-Ew-TsJ" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="31" id="lHz-PO-Nwh"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="JGt-S5-ABO" secondAttribute="trailing" id="ms4-Ru-F0k"/>
                 <constraint firstItem="U1t-JX-VRe" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="31" id="ppG-iB-WMY"/>
                 <constraint firstItem="f6p-Ml-swY" firstAttribute="top" secondItem="U1t-JX-VRe" secondAttribute="bottom" constant="6" id="ptB-eh-n07"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="f6p-Ml-swY" secondAttribute="trailing" constant="80" id="qst-u2-1zV"/>
-                <constraint firstItem="RcK-Rz-mkM" firstAttribute="top" secondItem="Ucq-uc-zSh" secondAttribute="bottom" id="sR9-xU-FfL"/>
                 <constraint firstItem="f6p-Ml-swY" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="31" id="zph-bm-5w7"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
@@ -82,7 +92,7 @@
                 <outlet property="categoriesCollectionView" destination="Ucq-uc-zSh" id="20b-XY-Nl9"/>
                 <outlet property="contentView" destination="RcK-Rz-mkM" id="ToC-AD-iAQ"/>
             </connections>
-            <point key="canvasLocation" x="139" y="133"/>
+            <point key="canvasLocation" x="137.68115942028987" y="132.58928571428572"/>
         </view>
     </objects>
     <resources>

@@ -38,8 +38,7 @@ class AddingInstructionVC: BaseWithLeftCirclesVC {
             self.addExistingPresenter?.setShowAgain(isShowAgain: checked)
         }        
         
-        self.addExistingPresenter?.setupInstructionPage()
-        self.setTabBarHidden(true)
+        self.addExistingPresenter?.setupInstructionPage()        
     }
     
     func setShowAgainButtonChecked(isChecked: Bool) {

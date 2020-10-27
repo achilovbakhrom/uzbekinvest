@@ -21,6 +21,7 @@ public struct Osago: Codable {
     var membersCount: Int?
     var paymentMethod: String?
     var startDate: String?
+    var promocode: String?
     
     
     init() {
@@ -33,6 +34,7 @@ public struct Osago: Codable {
         isInvalid = false
         isRetired = false
         membersCount = nil
+        promocode = nil
     }
     
     enum CodingKeys: String, CodingKey {
@@ -44,6 +46,7 @@ public struct Osago: Codable {
         case isUnlim = "is_unlim"
         case isInvalid = "is_invalid"
         case isRetired = "is_retired"
-        case membersCount = "members_count"        
+        case membersCount = "members_count"
+        case promocode
     }
 }

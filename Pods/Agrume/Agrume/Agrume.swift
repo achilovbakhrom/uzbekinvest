@@ -304,16 +304,19 @@ public final class Agrume: UIViewController {
       self.containerView.transform = CGAffineTransform(scaleX: scale, y: scale)
 
       viewController.present(self, animated: false) {
-        UIView.animate(withDuration: .transitionAnimationDuration,
-                       delay: 0,
-                       options: .beginFromCurrentState,
-                       animations: {
-                        self.containerView.alpha = 1
-                        self.containerView.transform = .identity
-                        self.addOverlayView()
-        }, completion: { _ in
-          self.view.isUserInteractionEnabled = true
-        })
+        UIView.animate(
+          withDuration: .transitionAnimationDuration,
+          delay: 0,
+          options: .beginFromCurrentState,
+          animations: {
+            self.containerView.alpha = 1
+            self.containerView.transform = .identity
+            self.addOverlayView()
+          },
+          completion: { _ in
+            self.view.isUserInteractionEnabled = true
+          }
+        )
       }
     }
   }
@@ -456,7 +459,16 @@ extension Agrume: UICollectionViewDataSource {
 
 }
 
-extension Agrume: UICollectionViewDelegate {
+extension Agrume: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+  public func collectionView(_ collectionView: UICollectionView,
+                             layout collectionViewLayout: UICollectionViewLayout,
+                             insetForSectionAt section: Int) -> UIEdgeInsets {
+    // Center cells horizontally
+    let cellWidth = view.bounds.width
+    let totalWidth = cellWidth * CGFloat(numberOfImages)
+    let leftRightEdgeInset = max(0, (collectionView.bounds.width - totalWidth) / 2)
+    return UIEdgeInsets(top: 0, left: leftRightEdgeInset, bottom: 0, right: leftRightEdgeInset)
+  }
 
   public func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
     didScroll?(currentlyVisibleCellIndex())
@@ -499,41 +511,50 @@ extension Agrume: AgrumeCellDelegate {
 
   func dismissAfterFlick() {
     self.willDismiss?()
-    UIView.animate(withDuration: .transitionAnimationDuration,
-                   delay: 0,
-                   options: .beginFromCurrentState,
-                   animations: {
-                    self.collectionView.alpha = 0
-                    self.blurContainerView.alpha = 0
-                    self.overlayView?.alpha = 0
-    }, completion: dismissCompletion)
+    UIView.animate(
+      withDuration: .transitionAnimationDuration,
+      delay: 0,
+      options: .beginFromCurrentState,
+      animations: {
+        self.collectionView.alpha = 0
+        self.blurContainerView.alpha = 0
+        self.overlayView?.alpha = 0
+      },
+      completion: dismissCompletion
+    )
   }
   
   func dismissAfterTap() {
     view.isUserInteractionEnabled = false
 
     self.willDismiss?()
-    UIView.animate(withDuration: .transitionAnimationDuration,
-                   delay: 0,
-                   options: .beginFromCurrentState,
-                   animations: {
-                    self.collectionView.alpha = 0
-                    self.blurContainerView.alpha = 0
-                    self.overlayView?.alpha = 0
-                    let scale: CGFloat = .maxScaleForExpandingOffscreen
-                    self.collectionView.transform = CGAffineTransform(scaleX: scale, y: scale)
-    }, completion: dismissCompletion)
+    UIView.animate(
+      withDuration: .transitionAnimationDuration,
+      delay: 0,
+      options: .beginFromCurrentState,
+      animations: {
+        self.collectionView.alpha = 0
+        self.blurContainerView.alpha = 0
+        self.overlayView?.alpha = 0
+        let scale: CGFloat = .maxScaleForExpandingOffscreen
+        self.collectionView.transform = CGAffineTransform(scaleX: scale, y: scale)
+      },
+      completion: dismissCompletion
+    )
   }
 
   func toggleOverlayVisibility() {
-    UIView.animate(withDuration: .transitionAnimationDuration,
-                   delay: 0,
-                   options: .beginFromCurrentState,
-                   animations: {
-                    if let overlayView = self.overlayView {
-                      overlayView.alpha = overlayView.alpha < 0.5 ? 1 : 0
-                    }
-    }, completion: nil)
+    UIView.animate(
+      withDuration: .transitionAnimationDuration,
+      delay: 0,
+      options: .beginFromCurrentState,
+      animations: {
+        if let overlayView = self.overlayView {
+          overlayView.alpha = overlayView.alpha < 0.5 ? 1 : 0
+        }
+      },
+      completion: nil
+    )
   }
 }
 

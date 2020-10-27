@@ -127,7 +127,12 @@ class IncidentDetailListingCell: UITableViewCell {
     }
     
     func setData(insurance: MyInsurance, isLast: Bool) {
-        self.titleLabel.text = insurance.product?.translates?[0]?.name
+        insurance.product?.translates?.forEach({ (t) in
+            if t?.lang == translateCode {
+                self.titleLabel.text = t?.name
+            }
+        })
+        
         self.polisAmount.text = "\(insurance.id)"
         self.polisSum.text = "\(insurance.insuranceAmount?.toDecimalFormat() ?? "0") \("sum".localized())"
         bottomConstraint.constant = isLast ? -80 : 0        

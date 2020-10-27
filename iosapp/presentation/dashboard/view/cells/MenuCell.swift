@@ -83,10 +83,12 @@ class MenuCell: UICollectionViewCell {
     var titleTrailing: NSLayoutConstraint!
     var descTrailing: NSLayoutConstraint!
     var salesTop: NSLayoutConstraint!
+    var cellHeightAnchor: NSLayoutConstraint!
+    
+    
     
     private func setupView() {
-        let width = UIScreen.main.bounds.width*0.96
-        
+        let width = UIScreen.main.bounds.width * 0.96
         self.contentView.addSubview(self.cView)
         NSLayoutConstraint.activate([
             self.cView.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor),
@@ -153,13 +155,30 @@ class MenuCell: UICollectionViewCell {
         moreButtonTopConstraint = more.topAnchor.constraint(equalTo: self.saleLabel.bottomAnchor, constant: 18)
         NSLayoutConstraint.activate([
             moreLeading,
-            moreButtonTopConstraint,
-            more.bottomAnchor.constraint(equalTo: self.cView.bottomAnchor, constant: 10)
+            moreButtonTopConstraint
         ])
-        
         self.bottomConstraint = more.bottomAnchor.constraint(equalTo: self.cView.bottomAnchor, constant: -20)
         self.bottomConstraint.isActive = true
-        self.cView.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor).isActive = true
+        
+        var height = UIScreen.main.bounds.height
+
+        if isIPhone4OrNewer() {
+            height = height/2
+        } else if isIPhoneSE() {
+            height = height/2
+        } else if isIPhonePlus() {
+            height = height/2.4
+        } else if isIPhoneX() {
+            height = height/2.6
+        } else {
+            height = height/3
+        }
+
+        self.cellHeightAnchor = self.contentView.heightAnchor.constraint(equalToConstant: height)
+        self.cellHeightAnchor.isActive = true
+
+        self.cView.bottomAnchor.constraint(lessThanOrEqualTo: self.contentView.bottomAnchor).isActive = true
+        
         self.contentView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(cellTapped)))
     }
     
@@ -178,9 +197,8 @@ class MenuCell: UICollectionViewCell {
     }
     
     public func setData(model: Product, index: Int, isLast: Bool, isFromDashboard: Bool = true) {
-        
-
         self.product = model
+        
         
         switch product?.name {
         case "osago":
@@ -232,6 +250,7 @@ class MenuCell: UICollectionViewCell {
             self.icon.image = UIImage(named: "luggage")
             break
         default:
+            self.icon.image = UIImage(named: "unknown_insurance")
             break
         }
         
@@ -242,17 +261,41 @@ class MenuCell: UICollectionViewCell {
             }
         })
         
+        var height = UIScreen.main.bounds.height
+
+        if isIPhone4OrNewer() {
+            height = height/2
+        } else if isIPhoneSE() {
+            height = height/2
+        } else if isIPhonePlus() {
+            height = height/2.4
+        } else if isIPhoneX() {
+            height = height/2.6
+        } else {
+            height = height/3
+        }
+        
+        
+        
         if (index == 0 || index == 1) && isFromDashboard {
             if isIPhone4OrNewer() {
                 self.topConstraint.constant = 35
+                height = height + 35
             } else if isIPhoneSE() {
                 self.topConstraint.constant = 45
+                height = height + 45
             } else if isIPhonePlus() {
+                self.topConstraint.constant = 55
+                height = height + 75
+            } else if isIPhoneX() {
                 self.topConstraint.constant = 75
+                height = height + 75
             } else {
+                height = height + 75
                 self.topConstraint.constant = 75
             }
         } else {
+            height = height + 15
             self.topConstraint.constant = 15
         }
         
@@ -260,9 +303,18 @@ class MenuCell: UICollectionViewCell {
         
         if isIPhone4OrNewer() {
             self.bottomConstraint.constant = isLast ? -110 : -15
+            self.cellHeightAnchor.constant = isLast ? 110 + height : height
         } else if isIPhoneSE() {
+            self.bottomConstraint.constant = isLast ? -125 : -15
+            self.cellHeightAnchor.constant = isLast ? 125 + height : height
+        } else if isIPhonePlus() {
             self.bottomConstraint.constant = isLast ? -135 : -15
+            self.cellHeightAnchor.constant = isLast ? 135 + height : height
+        } else if isIPhoneX() {
+            self.bottomConstraint.constant = isLast ? -135 : -15
+            self.cellHeightAnchor.constant = isLast ? 135 + height : height
         } else if isIPhoneXOrHigher() {
+            self.cellHeightAnchor.constant = isLast ? 205 + height : height
             self.bottomConstraint.constant = isLast ? -205 : -15
         }
 

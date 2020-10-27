@@ -136,8 +136,8 @@ class BaseInsuranceInteractor: BaseInteractor {
             .serviceFactory
             .networkManager
             .regions
-            .request(.getAllRegions) {
-                switch $0 {
+            .request(.getAllRegions) { [unowned self] result in
+                switch result {
                 case .success(let response):
                     do {
                         let decoder = JSONDecoder.init()

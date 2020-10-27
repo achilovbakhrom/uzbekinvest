@@ -14,7 +14,10 @@ class MyInsurancesPaidView: UIView {
     @IBOutlet weak var backButton: UIImageView!
     @IBOutlet weak var statusContainer: UIView!
     @IBOutlet weak var insuranceAmount: UILabel!
+    @IBOutlet weak var leftDaysTitle: UILabel!
     @IBOutlet weak var leftDays: UILabel!
+    @IBOutlet weak var leftDaysConstraint: NSLayoutConstraint!
+    @IBOutlet weak var leftDaysDivider: UIView!
     @IBOutlet weak var paymentType: UILabel!
     @IBOutlet weak var transactionNumber: UILabel!
     
@@ -25,6 +28,8 @@ class MyInsurancesPaidView: UIView {
     @IBOutlet weak var startDateLabel: UILabel!
     @IBOutlet weak var endDateLabel: UILabel!
     
+    @IBOutlet weak var startDateTitle: UILabel!
+    @IBOutlet weak var endDateTitle: UILabel!
     
     
     var onBackClicked: (() -> Void)? = nil
@@ -36,7 +41,11 @@ class MyInsurancesPaidView: UIView {
         backButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(onBackButtonClicked)))
         incidentsButton.addTarget(self, action: #selector(onIncidentsButtonClicekd), for: .touchUpInside)
         statusContainer.layer.cornerRadius = statusContainer.bounds.height/2
+        incidentsButton.translatesAutoresizingMaskIntoConstraints = false
         incidentsButton.makeRedColor()
+        
+        startDateTitle.text = "start_period".localized()
+        endDateTitle.text = "end_period".localized()
     }
     
     @objc
@@ -58,10 +67,11 @@ class MyInsurancesPaidView: UIView {
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         titleLabel.text = title
         titleLabel.font = UIFont.init(name: "Roboto-Regular", size: 14.0)
+        titleLabel.textColor = .lightGray
         view.addSubview(titleLabel)
         NSLayoutConstraint.activate([
             titleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 31),
-            titleLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 23),
+            titleLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 12),
             titleLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -31),
         ])
         
@@ -74,9 +84,17 @@ class MyInsurancesPaidView: UIView {
             valueLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 31),
             valueLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 12),
             valueLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -31),
-            valueLabel.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -23)
+            valueLabel.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -12)
         ])
+        
         return view
+    }
+    
+    func hideDays() {
+        self.leftDaysTitle.isHidden = true
+        self.leftDays.isHidden = true
+        self.leftDaysConstraint.constant = 0
+        self.leftDaysDivider.layer.opacity = 0
     }
     
     func setProperties(property: [String: String]) {        

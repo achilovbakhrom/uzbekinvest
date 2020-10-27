@@ -31,7 +31,7 @@ class NotificationInteractorImpl: NotificationInteractor {
             .serviceFactory
             .networkManager
             .user
-            .request(.fetchNotification) { result in
+            .request(.fetchNotification) { [unowned self] result in
                 switch result {
                 case .success(let response):
                     if response.statusCode == 401 {
@@ -79,7 +79,7 @@ class NotificationInteractorImpl: NotificationInteractor {
             .serviceFactory
             .networkManager
             .user
-            .request(.news(lang: lang)) { result in
+            .request(.news(lang: lang)) { [unowned self] result in
                 switch result {
                 case .success(let response):
                     self.notificationPresenter?.setLoading(isLoading: false)

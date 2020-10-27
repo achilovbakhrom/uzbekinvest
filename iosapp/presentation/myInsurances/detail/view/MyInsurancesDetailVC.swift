@@ -47,6 +47,9 @@ class MyInsurancesDetailVC: BaseViewImpl {
             self.myInsurancePresenter?.goBack()
             self.setTabBarHidden(false)
         }
+        paid.onIncidentsClicked = {
+            self.myInsurancePresenter?.openIncidents()
+        }
         unpaid.onBackButton = {
             self.myInsurancePresenter?.goBack()
             self.setTabBarHidden(false)
@@ -133,10 +136,10 @@ class MyInsurancesDetailVC: BaseViewImpl {
             self.new.statusName.text = "paid".localized()
             break
         case "my_paid":
-            self.new.statusName.text = "completed".localized()
+            self.new.statusName.text = "paid".localized()
             break
         case "completed":
-            self.new.statusName.text = "completed".localized()
+            self.new.statusName.text = "paid".localized()
             break
         default:
             self.new.statusName.text = ""
@@ -166,7 +169,13 @@ class MyInsurancesDetailVC: BaseViewImpl {
         ])
         self.paid.statusLabel.text = myInsurance.status == "canceled" ? "my_canceled".localized() : "paid".localized()
         self.paid.statusContainer.backgroundColor = myInsurance.status == "canceled" ? UIColor.init(red: 255.0/255.0, green: 140.0/255.0, blue: 140.0/255.0, alpha: 1.0) : Colors.primaryGreen
-        self.paid.insuranceName.text = myInsurance.product?.translates?[0]?.name
+        
+        myInsurance.product?.translates?.forEach({ (t) in
+            if t?.lang == translateCode {
+                self.paid.insuranceName.text = t?.name
+            }
+        })
+        
         self.paid.insuranceAmount.text = "\((myInsurance.totalAmount ?? 0).toDecimalFormat()) \("sum".localized())"
         let formatter = DateFormatter.init()
         formatter.dateFormat = "yyyy-MM-dd"
@@ -185,6 +194,7 @@ class MyInsurancesDetailVC: BaseViewImpl {
             self.paid.statusLabel.text = "my_new".localized()
             break
         case "canceled":
+            self.paid.hideDays()
             self.paid.statusLabel.text = "my_canceled".localized()
             break
         case "confirmed":
@@ -194,10 +204,11 @@ class MyInsurancesDetailVC: BaseViewImpl {
             self.paid.statusLabel.text = "paid".localized()
             break
         case "my_paid":
-            self.paid.statusLabel.text = "completed".localized()
+            self.paid.statusLabel.text = "paid".localized()
             break
         case "completed":
-            self.paid.statusLabel.text = "completed".localized()
+            self.paid.hideDays()
+            self.paid.statusLabel.text = "paid".localized()
             break
         default:
             self.paid.statusLabel.text = ""
@@ -225,7 +236,13 @@ class MyInsurancesDetailVC: BaseViewImpl {
             self.unpaid.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
             self.unpaid.widthAnchor.constraint(equalTo: scrollView.widthAnchor)
         ])
-        self.unpaid.insuranceAmount.text = myInsurance.product?.translates?[0]?.name
+        
+        myInsurance.product?.translates?.forEach({ (t) in
+            if t?.lang == translateCode {
+                self.unpaid.insuranceAmount.text = t?.name
+            }
+        })
+                
         self.unpaid.amount.text = "\(myInsurance.totalAmount?.toDecimalFormat() ?? "0") \("sum".localized())"
         self.unpaid.transactionNumber.text = myInsurance.startDate
         
@@ -253,10 +270,10 @@ class MyInsurancesDetailVC: BaseViewImpl {
             self.unpaid.statusName.text = "paid".localized()
             break
         case "my_paid":
-            self.unpaid.statusName.text = "completed".localized()
+            self.unpaid.statusName.text = "paid".localized()
             break
         case "completed":
-            self.unpaid.statusName.text = "completed".localized()
+            self.unpaid.statusName.text = "paid".localized()
             break
         default:
             self.unpaid.statusName.text = ""

@@ -39,7 +39,7 @@ class BaseInsuranceConfirmVC: BaseViewImpl, UICollectionViewDelegate, UICollecti
     lazy var confirmButton: Button = {
         let button = Button(frame: .zero)
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("checkout".localized(), for: .normal)
+        button.setTitle("apply".localized(), for: .normal)
         return button
     }()
     

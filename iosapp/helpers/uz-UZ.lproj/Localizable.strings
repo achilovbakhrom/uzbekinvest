@@ -118,11 +118,11 @@
 "travel_individual" = "Yakka";
 "travel_family" = "Oila";
 "travel_gorup" = "Guruh";
-"travel_multiple_type0_text" = "92 kun 30 kundan ko'p emas";
-"travel_multiple_type1_text" = "183 kun 90 kundan ko'p emas";
-"travel_multiple_type2_text" = "365 kun 90 kundan ko'p emas";
-"travel_multiple_type3_text" = "365 kun 180 kundan ko'p emas";
-"travel_multiple_type4_text" = "365 kun har bir tashriv 60 kundan ko'p emas";
+"travel_multiple_type0_text" = "92 kun, chet-elda sayohat 30 kundan ko'p emas";
+"travel_multiple_type1_text" = "183 kun, chet-elda sayohat 90 kundan ko'p emas";
+"travel_multiple_type2_text" = "365 kun, chet-elda sayohat 90 kundan ko'p emas";
+"travel_multiple_type3_text" = "365 kun, chet-elda sayohat 180 kundan ko'p emas";
+"travel_multiple_type4_text" = "365 kun har bir tashrif 60 kundan ko'p emas";
 "choose_a_sport" = "Sport turini tanlang";
 "search_sports" = "Izlash";
 "sports_name" = "Sport turi";
@@ -284,6 +284,8 @@ Kelajakda rivojlanish strategiyasi - korporativ va xususiy sug‘urta bozorida o
 
 "document_desc" = "Sug'urta qoplamasini to'lash to'g'risida qaror qabul qilindi, sug'urta hodisasi to'g'risida dalolatnoma imzolanishi kutilmoqda";
 
+"decided_desc_done" = "Sug'urta qoplamasini to'lash to'g'risida qaror qabul qilindi, sug'urta hodisasi to'g'risida dalolatnoma imzolanishi kutilmoqda";
+
 "decided_desc" = "Sug'urta tovonini to'lashdan bosh tortish to'g'risidagi qaror";
 
 "done_desc1" = "Sizning bank hisob raqamingizga";
@@ -317,6 +319,8 @@ Kelajakda rivojlanish strategiyasi - korporativ va xususiy sug‘urta bozorida o
 "policy_begin_time" = "Boshlash vaqti";
 
 "checkout" = "Buyurtma bermoq";
+
+"apply"= "Tasdiqlash";
 
 "travel1_title" = "Harajatni hisoblang";
 
@@ -426,3 +430,9 @@ Kelajakda rivojlanish strategiyasi - korporativ va xususiy sug‘urta bozorida o
 "until_13_euro" = "13 000€ gacha";
 
 "until_2_euro" = "2 000€ gacha";
+
+"to_chat" = "Chat";
+
+"promocode" = "Promokod";
+
+"prmocode_desc" = "В страховых продуктах, где уже имеются скидки, преобладает наивысшая скидка";

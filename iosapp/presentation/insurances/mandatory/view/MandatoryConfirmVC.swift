@@ -15,15 +15,25 @@ class MandatoryConfirmVC: BaseWithRightGreenCirclesVC {
     @IBOutlet weak var experience: UILabel!
     @IBOutlet weak var age: UILabel!
     @IBOutlet weak var insuranceAmount: UILabel!
+    @IBOutlet weak var amountSumLabel: UILabel!
     @IBOutlet weak var confirmButton: Button!
     
     private lazy var mandatoryPresenter = self.presenter as? MandatoryPresenter
     
+    @IBOutlet weak var premiumAmountLabel: UILabel!
+    @IBOutlet weak var premiumAmountSumLabel: UILabel!
+    @IBOutlet weak var bottomConstraint: UIView!
+    @IBOutlet weak var promocodeButton: OutlinedButton!
+    @IBOutlet weak var stripeConstraint: NSLayoutConstraint!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        backButtonClicked = { self.mandatoryPresenter?.goBack() }
+        self.backButtonClicked = { self.mandatoryPresenter?.goBack() }
         self.mandatoryPresenter?.fillConfirmVC()
-        self.mandatoryPresenter?.calculateMandatory()
+        self.mandatoryPresenter?.calculateMandatory(promocode: "")
+        self.promocodeButton.setTitle("promocode".localized(), for: .normal)
+        self.premiumAmountSumLabel.text = "sum".localized()
         
     }
     
@@ -35,8 +45,24 @@ class MandatoryConfirmVC: BaseWithRightGreenCirclesVC {
         self.confirmButton.isLoading = isLoading
     }
     
-    func setTotalAmount(amount: String) {
+    func setTotalAmount(amount: String, premiumAmount: String) {
         totalAmount.text = amount
+        
+        self.premiumAmountLabel.text = premiumAmount
+        
+        if (premiumAmount == amount) {
+            self.totalAmount.removeStrikeThrough()
+            self.amountSumLabel.removeStrikeThrough(forAbbr: true)
+            self.premiumAmountSumLabel.isHidden = true
+            self.premiumAmountLabel.isHidden = true
+            self.stripeConstraint.constant = -20
+        } else {
+            self.totalAmount.strikeThrough()
+            self.amountSumLabel.strikeThrough(forAbbr: true)
+            self.premiumAmountSumLabel.isHidden = false
+            self.premiumAmountLabel.isHidden = false
+            self.stripeConstraint.constant = 15
+        }
     }
     
     func setExperience(exp: String) {
@@ -49,6 +75,14 @@ class MandatoryConfirmVC: BaseWithRightGreenCirclesVC {
     
     func setInsuranceAmount(amount: String) {
         self.insuranceAmount.text = amount
+    }
+    
+    @IBAction func promocodeButtonClick(_ sender: Any) {
+        self.showPromocodeDialog()
+    }
+    
+    override func onPromocodeAccept(promocode: String) {
+        self.mandatoryPresenter?.calculateMandatory(promocode: promocode)
     }
     
 }

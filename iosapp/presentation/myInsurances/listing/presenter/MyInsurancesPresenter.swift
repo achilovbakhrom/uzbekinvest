@@ -361,7 +361,7 @@ class MyInsurancesPresenterImpl: MyInsurancesPresenter {
             }
             
             if let lt30 = p["quantity_lt_30"] as? Int {
-                prop["\("number_of_participants".localized()) \("quantity_lt_30".localized())"] = lt30.toDecimalFormat()
+                prop["\("number_of_participants".localized()) \("up_to_29_years".localized())"] = lt30.toDecimalFormat()
             }
             
             if let mt30 = p["quantity_lt_30"] as? Int {

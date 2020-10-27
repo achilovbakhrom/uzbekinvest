@@ -39,7 +39,17 @@ class Paper: UIView {
     override func layoutSubviews() {
         super.layoutSubviews()        
         self.theShadowLayer.frame = self.bounds
-        self.theShadowLayer.path = UIBezierPath.init(roundedRect: bounds, cornerRadius: self.radius).cgPath
+        self.theShadowLayer.fillColor = UIColor.white.cgColor
+//        let mask = CAShapeLayer()
+//        let path = UIBezierPath.init(
+//            roundedRect: self.bounds,
+//            byRoundingCorners: [.topLeft, .topRight, .bottomLeft, .bottomRight],
+//            cornerRadii: CGSize.init(width: radius, height: radius)
+//        )
+
+        self.theShadowLayer.path = UIBezierPath.init(roundedRect: frame, cornerRadius: self.radius).cgPath
+//        self.theShadowLayer.path = path.cgPath
+//        self.theShadowLayer.mask = mask
         self.theShadowLayer.fillColor = UIColor.white.cgColor
         self.theShadowLayer.shadowColor = UIColor.black.cgColor
         self.theShadowLayer.shadowRadius = 6

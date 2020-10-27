@@ -50,13 +50,14 @@ public struct User: Codable {
     }
 }
 
-struct UserRequest: Codable {
+public struct UserRequest: Codable {
     var id: Int?
     var phone: Int?
     var name: String?
     var address: String?
     var dob: String?
     var region_id: Int?
+    var code: Int?
     
     init() {
         id = nil
@@ -65,5 +66,6 @@ struct UserRequest: Codable {
         address = nil
         dob = nil
         region_id = nil
+        code = nil
     }
 }

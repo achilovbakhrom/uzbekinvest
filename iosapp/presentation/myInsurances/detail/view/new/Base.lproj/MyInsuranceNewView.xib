@@ -18,7 +18,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="fzD-np-aZ0" customClass="MyInsuranceNewView" customModule="iosapp" customModuleProvider="target">
+        <view contentMode="scaleToFill" id="fzD-np-aZ0" customClass="MyInsuranceNewView" customModule="Uzbekinvest" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
@@ -29,17 +29,17 @@
                         <constraint firstAttribute="height" constant="25" id="bTd-Dk-Hme"/>
                     </constraints>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E3l-8D-NaN">
-                    <rect key="frame" x="31" y="110" width="42" height="21"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E3l-8D-NaN">
+                    <rect key="frame" x="31" y="110" width="352" height="20.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4ek-RW-XoE">
-                    <rect key="frame" x="31" y="139" width="89.5" height="28"/>
+                    <rect key="frame" x="31" y="138.5" width="89.5" height="28"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Не оплачено" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZgO-BN-oG8">
-                            <rect key="frame" x="10" y="7" width="69.5" height="14"/>
+                            <rect key="frame" x="10" y="6.5" width="69.5" height="15.5"/>
                             <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="11.600000381469727"/>
                             <color key="textColor" red="0.98431372549999996" green="0.98431372549999996" blue="0.98431372549999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <nil key="highlightedColor"/>
@@ -54,51 +54,51 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9jh-96-pXE">
-                    <rect key="frame" x="0.0" y="192" width="414" height="1"/>
+                    <rect key="frame" x="0.0" y="191.5" width="414" height="1"/>
                     <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="1" id="IWL-bh-ilv"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Inn-0U-Dl6">
-                    <rect key="frame" x="0.0" y="468.5" width="414" height="1"/>
+                    <rect key="frame" x="0.0" y="472" width="414" height="1"/>
                     <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="1" id="JmF-pT-ElV"/>
                     </constraints>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Сумма полиса" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0TR-OE-gKI">
-                    <rect key="frame" x="31" y="216" width="95" height="16.5"/>
+                    <rect key="frame" x="31" y="215.5" width="95" height="18.5"/>
                     <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
                     <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 сум" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RqF-v4-ZNa">
-                    <rect key="frame" x="31" y="244.5" width="44" height="20"/>
+                    <rect key="frame" x="31" y="246" width="44" height="20"/>
                     <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wN6-ml-w4W">
-                    <rect key="frame" x="31" y="521" width="7" height="20"/>
+                    <rect key="frame" x="31" y="526.5" width="7" height="20"/>
                     <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5w5-yZ-meR">
-                    <rect key="frame" x="31" y="426.5" width="7" height="20"/>
+                    <rect key="frame" x="31" y="430" width="7" height="20"/>
                     <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wuK-oU-Ma0">
-                    <rect key="frame" x="0.0" y="289.5" width="414" height="1"/>
+                    <rect key="frame" x="0.0" y="291" width="414" height="1"/>
                     <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="1" id="XSM-tY-Xeu"/>
                     </constraints>
                 </view>
-                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="trc-D1-cES" customClass="Button" customModule="iosapp" customModuleProvider="target">
+                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="trc-D1-cES" customClass="Button" customModule="Uzbekinvest" customModuleProvider="target">
                     <rect key="frame" x="31" y="786" width="352" height="45"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="45" id="PwZ-gd-jOC"/>
@@ -106,7 +106,7 @@
                     <state key="normal" title="Оплатить"/>
                 </button>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" keyboardDismissMode="interactive" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="faO-HU-BZq">
-                    <rect key="frame" x="0.0" y="290.5" width="414" height="85"/>
+                    <rect key="frame" x="0.0" y="292" width="414" height="85"/>
                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="85" id="oFC-oq-yZg"/>
@@ -119,30 +119,30 @@
                     </collectionViewFlowLayout>
                 </collectionView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ePj-7a-2kt">
-                    <rect key="frame" x="0.0" y="374" width="414" height="1"/>
+                    <rect key="frame" x="0.0" y="375.5" width="414" height="1"/>
                     <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="1" id="PuJ-c5-VLt"/>
                     </constraints>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Начальный период" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ukh-Pb-tjr">
-                    <rect key="frame" x="31" y="398" width="126.5" height="16.5"/>
+                    <rect key="frame" x="31" y="399.5" width="126.5" height="18.5"/>
                     <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
                     <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Конечный период" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U8z-kg-hir">
-                    <rect key="frame" x="31" y="492.5" width="118" height="16.5"/>
+                    <rect key="frame" x="31" y="496" width="118" height="18.5"/>
                     <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
                     <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EQc-Ne-w7A">
-                    <rect key="frame" x="0.0" y="564" width="414" height="212"/>
+                    <rect key="frame" x="0.0" y="569.5" width="414" height="206.5"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NuQ-9b-Oxy">
-                    <rect key="frame" x="-4" y="563" width="414" height="1"/>
+                    <rect key="frame" x="-4" y="568.5" width="414" height="1"/>
                     <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="1" id="vHP-hc-gv4"/>
@@ -200,6 +200,7 @@
                 <constraint firstItem="RqF-v4-ZNa" firstAttribute="top" secondItem="0TR-OE-gKI" secondAttribute="bottom" constant="12" id="ikD-te-SEM"/>
                 <constraint firstItem="uQo-tL-4fZ" firstAttribute="leading" secondItem="fzD-np-aZ0" secondAttribute="leading" constant="31" id="kco-TU-9Il"/>
                 <constraint firstItem="ePj-7a-2kt" firstAttribute="top" secondItem="faO-HU-BZq" secondAttribute="bottom" constant="-1.5" id="kii-mH-mSM"/>
+                <constraint firstItem="lqB-sD-Xpf" firstAttribute="trailing" secondItem="E3l-8D-NaN" secondAttribute="trailing" constant="31" id="l0D-7l-GlL"/>
                 <constraint firstItem="9jh-96-pXE" firstAttribute="leading" secondItem="fzD-np-aZ0" secondAttribute="leading" id="m2s-Gf-7tw"/>
                 <constraint firstItem="U8z-kg-hir" firstAttribute="top" secondItem="Inn-0U-Dl6" secondAttribute="bottom" constant="23" id="m9Y-Oi-teH"/>
                 <constraint firstItem="trc-D1-cES" firstAttribute="top" secondItem="EQc-Ne-w7A" secondAttribute="bottom" constant="10" id="oTv-KI-iwD"/>

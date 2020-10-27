@@ -23,6 +23,8 @@ class MyInsurancesUnpaidView: UIView {
     @IBOutlet weak var endDate: UILabel!
     @IBOutlet weak var statusName: UILabel!
     
+    @IBOutlet weak var startDateTitle: UILabel!
+    @IBOutlet weak var endDateTitle: UILabel!
     
     
     var onBackButton: (() -> Void)? = nil
@@ -51,6 +53,9 @@ class MyInsurancesUnpaidView: UIView {
         self.clickClicked.layer.borderWidth = 0.0
         self.clickClicked.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(onClickClicked(gesture:))))
         
+        
+        startDateTitle.text = "start_period".localized()
+        endDateTitle.text = "end_period".localized()
     }
     
     @objc
@@ -87,10 +92,11 @@ class MyInsurancesUnpaidView: UIView {
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         titleLabel.text = title
         titleLabel.font = UIFont.init(name: "Roboto-Regular", size: 14.0)
+        titleLabel.textColor = .lightGray
         view.addSubview(titleLabel)
         NSLayoutConstraint.activate([
             titleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 31),
-            titleLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 23),
+            titleLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 12),
             titleLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -31),
         ])
         
@@ -103,7 +109,7 @@ class MyInsurancesUnpaidView: UIView {
             valueLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 31),
             valueLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 12),
             valueLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -31),
-            valueLabel.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -23)
+            valueLabel.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -12)
         ])
         return view
     }

@@ -192,16 +192,16 @@ class MyInsuranceCell: UITableViewCell {
         switch status {
         case "new":
             return ("my_new".localized(), UIColor.init(red: 255.0/255.0, green: 197.0/255.0, blue: 47.0/255.0, alpha: 1.0))
-        case "canceled":
-            return ("my_canceled".localized(), UIColor.init(red: 255.0/255.0, green: 140.0/255.0, blue: 140.0/255.0, alpha: 1.0))
         case "confirmed":
             return ("my_confirmed".localized(), UIColor.init(red: 100.0/255.0, green: 196.0/255.0, blue: 254.0/255.0, alpha: 1.0))
+        case "canceled":
+            return ("my_canceled".localized(), UIColor.init(red: 255.0/255.0, green: 140.0/255.0, blue: 140.0/255.0, alpha: 1.0))
         case "paid":
             return ("paid".localized(), Colors.primaryGreen)
         case "my_paid":
-            return ("completed".localized(), Colors.primaryGreen)
+            return ("paid".localized(), Colors.primaryGreen)
         case "completed":
-            return ("completed".localized(), Colors.primaryGreen)
+            return ("paid".localized(), Colors.primaryGreen)
         default:
             return ("", .black)
         }

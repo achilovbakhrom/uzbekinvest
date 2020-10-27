@@ -111,7 +111,7 @@ class SettingsInteractorImpl: SettingsInteractor {
         self.serviceFactory?
             .networkManager
             .user
-            .request(.getPinflList, completion: { result in
+            .request(.getPinflList, completion: { [unowned self] result in
                 switch result {
                 case .success(let response):
                     self.settingsPresenter?.setLoading(isLoading: false)
@@ -139,7 +139,7 @@ class SettingsInteractorImpl: SettingsInteractor {
         self.serviceFactory?
             .networkManager
             .user
-            .request(.removePinfl(id: id), completion: { result in                
+            .request(.removePinfl(id: id), completion: { [unowned self] result in                
                 switch result {
                 case .success:
                     self.settingsPresenter?.setLoading(isLoading: false)

@@ -21,7 +21,9 @@ class MyDocumentsView: UIView, UICollectionViewDelegate, UICollectionViewDataSou
     
     var documents: [Document] = [] {
         didSet {
-            UIView.transition(with: categoriesCollectionView, duration: 0.4, options: .transitionCrossDissolve, animations: {
+            UIView.transition(with: self.categoriesCollectionView, duration: 0.2, options: .transitionCrossDissolve, animations: {
+                self.categoriesCollectionView.collectionViewLayout.invalidateLayout()
+                self.categoriesCollectionView.layoutSubviews()
                 self.categoriesCollectionView.reloadData()
             }, completion: nil)
             self.myDocsViewPager.setDocuments(documents: documents)
@@ -38,11 +40,18 @@ class MyDocumentsView: UIView, UICollectionViewDelegate, UICollectionViewDataSou
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        let flowLayout = (categoriesCollectionView.collectionViewLayout as? UICollectionViewFlowLayout)
+        flowLayout?.scrollDirection = .horizontal
+        flowLayout?.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
+        flowLayout?.sectionInset = .zero
+        
         categoriesCollectionView.register(MyDocumentsCell.self, forCellWithReuseIdentifier: String(describing: MyDocumentsCell.self))
         categoriesCollectionView.showsHorizontalScrollIndicator = false
-        let flowLayout = (categoriesCollectionView.collectionViewLayout as? UICollectionViewFlowLayout)
-        flowLayout?.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
-        flowLayout?.scrollDirection = .horizontal
+        categoriesCollectionView.contentInset = .zero
+        categoriesCollectionView.scrollIndicatorInsets = .zero
+        categoriesCollectionView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        
         categoriesCollectionView.delegate = self
         categoriesCollectionView.dataSource = self
         
@@ -58,7 +67,12 @@ class MyDocumentsView: UIView, UICollectionViewDelegate, UICollectionViewDataSou
         self.myDocsViewPager.onPageChanged = { page in
             self.selected = page
             self.categoriesCollectionView.scrollToItem(at: IndexPath(item: page, section: 0), at: .centeredHorizontally, animated: true)
-            self.categoriesCollectionView.reloadData()
+            
+            UIView.transition(with: self.categoriesCollectionView, duration: 0.2, options: .transitionCrossDissolve, animations: {
+                self.categoriesCollectionView.collectionViewLayout.invalidateLayout()
+                self.categoriesCollectionView.layoutSubviews()
+                self.categoriesCollectionView.reloadData()
+            }, completion: nil)
         }
         
         self.myDocsViewPager.onRemove = {
@@ -84,7 +98,12 @@ class MyDocumentsView: UIView, UICollectionViewDelegate, UICollectionViewDataSou
             self.onDocumentChanged?($0, indexPath.row)
             self.selected = indexPath.row
             collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
-            self.categoriesCollectionView.reloadData()
+            UIView.transition(with: self.categoriesCollectionView, duration: 0.2, options: .transitionCrossDissolve, animations: {
+                self.categoriesCollectionView.collectionViewLayout.invalidateLayout()
+                self.categoriesCollectionView.layoutSubviews()
+                self.categoriesCollectionView.reloadData()
+            }, completion: nil)
+            
             let vc = self.myDocsViewPager.vcs[indexPath.row]
             self.myDocsViewPager.setViewControllers([vc], direction: .forward, animated: true, completion: nil)
         }
@@ -123,6 +142,7 @@ class MyDocumentsCell: UICollectionViewCell {
     var myDocument: Document!
     var onDocClick: ((Document) -> Void)? = nil
     func setupUI() {
+        self.contentView.heightAnchor.constraint(equalToConstant: 40).isActive = true
         self.contentView.addSubview(borderView)
         self.leadingConstraint = self.borderView.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 5)
         NSLayoutConstraint.activate([

@@ -32,6 +32,7 @@ class Accident1VC: BaseWithLeftCirclesVC {
         super.viewDidLoad()
         amount.optionIds = amountValues.0
         amount.optionArray = amountValues.1
+        amount.placeholder = "insurance_amount_title".localized()
         amount.didSelect {
             self.accidentPresenter?.setInsuranceAmount(amount: $2-1)
         }

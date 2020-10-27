@@ -33,7 +33,7 @@ class Registration3VC: BaseWithLeftCirclesVC {
     }
     
     @IBAction func nextButtonClicked(_ sender: Any) {
-        self.registrationPresenter.openOfferVC()
+        self.registrationPresenter.acceptOffer()
     }
     
     func setPhoneNumber(phone: String) {
@@ -42,6 +42,10 @@ class Registration3VC: BaseWithLeftCirclesVC {
     
     func setEnabled(isEnabled: Bool) {
         nextButton.isEnabled = isEnabled
+    }
+    
+    func setLoading3(isLoading: Bool) {
+        nextButton.isLoading = isLoading
     }
     
 }

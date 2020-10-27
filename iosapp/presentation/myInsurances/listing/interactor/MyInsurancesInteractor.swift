@@ -81,7 +81,7 @@ class MyInsranceInteractorImpl: MyInsurancesInteractor {
             .serviceFactory
             .networkManager
             .user
-            .request(.fetchOrders) { result in
+            .request(.fetchOrders) { [unowned self] result in
                 switch result {
                 case .success(let response):
                     do {
@@ -104,7 +104,7 @@ class MyInsranceInteractorImpl: MyInsurancesInteractor {
             .serviceFactory
             .networkManager
             .user
-            .request(.getPinflList) { result in
+            .request(.getPinflList) { [unowned self] result in
                 switch result {
                 case .success(let response):
                     do {
@@ -169,7 +169,7 @@ class MyInsranceInteractorImpl: MyInsurancesInteractor {
         self.serviceFactory?
         .networkManager
         .user
-        .request(.getPinflList, completion: { result in
+        .request(.getPinflList, completion: { [unowned self] result in
             switch result {
             case .success(let response):
                 

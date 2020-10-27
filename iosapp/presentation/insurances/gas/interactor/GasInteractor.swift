@@ -31,8 +31,8 @@ class GasInteractorImpl: BaseInsuranceInteractor, GasInteractor {
         self.gasPresenter?.setLoading(isLoading: true)
         self
             .serviceFactory.networkManager
-            .orders.request(.gasHomeCalculate(gasHome: gasHome)) {
-                switch $0 {
+            .orders.request(.gasHomeCalculate(gasHome: gasHome)) { [unowned self] result in
+                switch result {
                 case .success(let response):
                     self.gasPresenter?.setLoading(isLoading: false)
                     do {
@@ -54,7 +54,7 @@ class GasInteractorImpl: BaseInsuranceInteractor, GasInteractor {
     
     
     func prepareToOpenFinalVC(id: Int) {
-        self.fetchDocumentsByProductid(id: id) { isLoading in
+        self.fetchDocumentsByProductid(id: id) { [unowned self] isLoading in
             self.gasPresenter?.setLoading(isLoading: isLoading)
             if !isLoading {
                 self.gasPresenter?.openGasFinalVC()

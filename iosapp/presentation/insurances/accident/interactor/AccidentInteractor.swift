@@ -32,8 +32,8 @@ class AccidentInteractorImpl: BaseInsuranceInteractor, AccidentInteractor {
         self
             .serviceFactory?.networkManager
             .orders
-            .request(.myHealth(health: myHealth), completion: {
-                switch $0 {
+            .request(.myHealth(health: myHealth), completion: { [unowned self] result in
+                switch result {
                 case .success(let response):
                     self.accidentPresenter?.setLoading(isLoading: false)
                     do {
@@ -52,7 +52,7 @@ class AccidentInteractorImpl: BaseInsuranceInteractor, AccidentInteractor {
     }
     
     func prepareToOpenFinalVC(id: Int) {
-        self.fetchDocumentsByProductid(id: id) { isLoading in
+        self.fetchDocumentsByProductid(id: id) { [unowned self] isLoading in
             self.accidentPresenter?.setLoading(isLoading: isLoading)
             if !isLoading {
                 self.accidentPresenter?.openAccidentFinalVC()

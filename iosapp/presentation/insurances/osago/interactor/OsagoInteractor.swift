@@ -31,7 +31,7 @@ class OsagoInteractorImpl: BaseInsuranceInteractor, OsagoInteractor {
     
     
     func prepareToOpenFinalVC(id: Int) {
-        self.fetchDocumentsByProductid(id: id) { isLoading in
+        self.fetchDocumentsByProductid(id: id) { [unowned self] isLoading in
             self.osagoPresenter.setLoading(isLoading: isLoading)
             if !isLoading {
                 self.osagoPresenter.openOsagoFinal()
@@ -41,7 +41,7 @@ class OsagoInteractorImpl: BaseInsuranceInteractor, OsagoInteractor {
     
     func calculateOsago(osago: Osago) {
         
-        self.serviceFactory.networkManager.orders.request(.osagoCalculate(osago: osago)) { result in
+        self.serviceFactory.networkManager.orders.request(.osagoCalculate(osago: osago)) { [unowned self] result in
             self.osagoPresenter.setLoading(isLoading: true)
             switch result {
             case .success(let response):
@@ -49,7 +49,7 @@ class OsagoInteractorImpl: BaseInsuranceInteractor, OsagoInteractor {
                 do {
                     let decoder = JSONDecoder()
                     let r = try decoder.decode(Response<InsuranceCalculatedResult>.self, from: response.data)
-                    self.osagoPresenter.setAmount(amount: r.data?.totalAmount ?? 0)
+                    self.osagoPresenter.setAmount(amount: r.data?.totalAmount ?? 0, premiumAmount: r.data?.premiumAmount ?? 0)
                 } catch(let error) {
                     debugPrint(error.localizedDescription)
                 }
@@ -64,7 +64,7 @@ class OsagoInteractorImpl: BaseInsuranceInteractor, OsagoInteractor {
     
     func fetchRegionList() {
         self.osagoPresenter.setLoading(isLoading: true)
-        self.serviceFactory.networkManager.regions.request(.getAllRegions) { result in
+        self.serviceFactory.networkManager.regions.request(.getAllRegions) { [unowned self] result in
             switch result {
             case .success(let result):
                 self.osagoPresenter.setLoading(isLoading: false)
@@ -87,7 +87,7 @@ class OsagoInteractorImpl: BaseInsuranceInteractor, OsagoInteractor {
     
     func fetchTransportList() {
         self.osagoPresenter.setLoading(isLoading: true)
-        self.serviceFactory.networkManager.transport.request(.getAllTransports) { result in
+        self.serviceFactory.networkManager.transport.request(.getAllTransports) { [unowned self] result in
             switch result {
             case .success(let result):
                 self.osagoPresenter.setLoading(isLoading: false)

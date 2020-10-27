@@ -41,6 +41,9 @@ class ConfirmVC: BaseWithLeftCirclesVC {
         self.confirmTextField.onChange = { self.confirmPresenter?.setConfirmCode(code: $0) }
         self.confirmTextField.keyboardType = .phonePad
         self.phoneTextField.keyboardType = .phonePad
+        self.phoneTextField.onChange = { phone in
+            self.confirmPresenter?.checkAndSetPhone(phoneMasked:  phone)
+        }
         confirmButton.isEnabled = false
         backButton.isHidden = true
         if hasStarted {

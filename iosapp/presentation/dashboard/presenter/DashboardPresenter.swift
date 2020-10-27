@@ -72,7 +72,7 @@ class DashboardPresenterImpl: DashboardPresenter {
         case "pledged-transport":
             self.dashboardRouter?.openMandatory(product: product!)
             break
-        case "my-family":
+        case "my-family", "my-home":
             self.dashboardRouter?.openHome(product: product!)
             break
         case "pledged-property":
@@ -109,6 +109,7 @@ class DashboardPresenterImpl: DashboardPresenter {
             self.dashboardRouter?.openLuggage(product: product!)
             break
         default:
+            self.dashboardRouter?.openInsuranceWeb()
             break
         }
     }

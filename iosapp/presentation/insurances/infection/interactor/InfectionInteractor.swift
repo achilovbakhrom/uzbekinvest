@@ -27,8 +27,8 @@ class InfectionInteractorImpl: BaseInsuranceInteractor, InfectionInteractor {
     
     func calculateInfection(infection: Infection) {
         self.infectionPresenter?.setLoading(isLoading: true)
-        self.serviceFactory.networkManager.orders.request(.infectionCalculate(infection: infection)) {
-            switch $0 {
+        self.serviceFactory.networkManager.orders.request(.infectionCalculate(infection: infection)) { [unowned self] result in
+            switch result {
             case .success(let response):
                 self.infectionPresenter?.setLoading(isLoading: false)
                 do {
@@ -48,7 +48,7 @@ class InfectionInteractorImpl: BaseInsuranceInteractor, InfectionInteractor {
     }
     
     func prepareToOpenFinalVC(id: Int) {
-        self.fetchDocumentsByProductid(id: id) { isLoading in
+        self.fetchDocumentsByProductid(id: id) { [unowned self] isLoading in
             self.infectionPresenter?.setLoading(isLoading: isLoading)
             if !isLoading {
                 self.infectionPresenter?.openInfectionFinalVC()

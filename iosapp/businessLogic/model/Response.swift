@@ -39,11 +39,21 @@ struct InsuranceCalculatedResult: Codable {
     var totalAmount: Int
     var premiumAmount: Int
     var referer: Referer?
+    var promocode: Promocode?
+    
     enum CodingKeys: String, CodingKey {
         case totalAmount = "total_amount"
         case premiumAmount = "premium_amount"
         case referer
+        case promocode
     }
+}
+
+struct Promocode: Codable {
+    var id: Int?
+    var name: String?
+    var promocode: String?
+    var discount: Double?
 }
 
 struct Referer: Codable {

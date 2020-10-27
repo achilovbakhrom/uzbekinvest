@@ -41,16 +41,25 @@ class TopMenuCell: UICollectionViewCell {
     }
     
     private func setup() {
+
+        let height = UIScreen.main.bounds.height*0.05
+        self.contentView.heightAnchor.constraint(equalToConstant: height).isActive = true
         self.contentView.addSubview(cView)
+
+        var marginTop: CGFloat = 10.0
+        
+        if isIPhoneX() || isIPhoneXOrHigher() {
+            marginTop = 20.0
+        }
+        
+
         self.leadingConstraint = self.cView.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 6)
-        
         NSLayoutConstraint.activate([
-            self.contentView.heightAnchor.constraint(equalToConstant: UIScreen.main.bounds.height*0.05),
             leadingConstraint,
-            self.cView.heightAnchor.constraint(equalToConstant: 30),
-            self.cView.centerYAnchor.constraint(equalTo: self.contentView.centerYAnchor)
+            self.cView.heightAnchor.constraint(equalToConstant: height*0.8),
+            self.cView.centerYAnchor.constraint(equalTo: self.contentView.centerYAnchor, constant: marginTop)
         ])
-        
+
         
         self.cView.addSubview(self.titleLabel)
         NSLayoutConstraint.activate([
@@ -61,7 +70,7 @@ class TopMenuCell: UICollectionViewCell {
         self.trailingConstraint = self.cView.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -6)
         self.trailingConstraint.isActive = true
         self.contentView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(clicked)))
-        self.cView.layer.cornerRadius = 15
+        self.cView.layer.cornerRadius = height * 0.4
         self.cView.layer.masksToBounds = true
         self.cView.layer.borderWidth = 1.0
     }
@@ -80,7 +89,7 @@ class TopMenuCell: UICollectionViewCell {
         } else {
             leadingConstraint.constant = 6
         }
-        
+
         if isLast {
             self.trailingConstraint.constant = -31
         } else {
@@ -100,7 +109,7 @@ class TopMenuCell: UICollectionViewCell {
         UIView.animate(withDuration: 0.2) {
             self.titleLabel.textColor = Colors.pageIndicatorGray
             self.cView.layer.borderColor = Colors.pageIndicatorGray.cgColor
-        }        
+        }
     }
     
 }

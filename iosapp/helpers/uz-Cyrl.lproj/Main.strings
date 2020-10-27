@@ -6,7 +6,7 @@
 "0jN-18-Qya.normalTitle" = "Текшириб кўриш";
 
 /* Class = "UIButton"; normalTitle = "Далее"; ObjectID = "1Ky-by-D2X"; */
-"1Ky-by-D2X.normalTitle" = "Кейинги";
+"1Ky-by-D2X.normalTitle" = "Кейинги қадам";
 
 /* Class = "UIButton"; normalTitle = "O'zbekcha"; ObjectID = "1QL-OE-J8Q"; */
 "1QL-OE-J8Q.normalTitle" = "O'zbekcha";
@@ -406,7 +406,7 @@
 "NhX-bw-jcT.text" = "Label";
 
 /* Class = "UILabel"; text = "Обслуживание по международным \n стандартам качества и гибкость тарифных ставок"; ObjectID = "NtO-rN-0U8"; */
-"NtO-rN-0U8.text" = "Хизмат халқаро\nсифат стандартларига мувофиқ ва\nтариф ставкаларининг\nмослашувчанлиги";
+"NtO-rN-0U8.text" = "Сизнинг телефонингиздаги шахсий суғуртачингиз. Илова орқали суғурта полисларини бир неча дақиқаларда онлайн расмийлаштиринг.";
 
 /* Class = "UIButton"; normalTitle = "Gold"; ObjectID = "OJs-VP-Mhy"; */
 "OJs-VP-Mhy.normalTitle" = "Gold";
@@ -1006,7 +1006,7 @@
 "xba-YV-beL.text" = "Ҳайдовчилик тажриба";
 
 /* Class = "UILabel"; text = "Данные о лицах, допущенные \nк управлению"; ObjectID = "xbj-4g-IEK"; */
-"xbj-4g-IEK.text" = "Транспорт эгаси қуйидаги шахслар категориясига мансубми?";
+"xbj-4g-IEK.text" = "Авто эгаси қуйидаги шахслар тоифасига мансубми?";
 
 /* Class = "UILabel"; text = "сум"; ObjectID = "y1L-e9-Emc"; */
 "y1L-e9-Emc.text" = "сум";
@@ -1025,4 +1025,4 @@
 
 "ZtD-kz-lu4.text" = "24/7 Қўллаб-қувватлаш";
 
-"fxI-k3-JLd.text" =  "Суғурта 5 дақиқада";
+"fxI-k3-JLd.text" =  "5 дақиқада полис расмийлаштиринг";

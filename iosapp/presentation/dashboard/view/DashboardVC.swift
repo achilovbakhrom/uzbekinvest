@@ -45,12 +45,20 @@ class DashboardVC: BaseViewImpl, BottomViewControllerScrollDelegate, UICollectio
     
     private lazy var topMenuList: UICollectionView = {
         let flow = UICollectionViewFlowLayout()
+        flow.scrollDirection = .horizontal
         flow.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
+
+//        flow.minimumInteritemSpacing = 0
+//        flow.minimumLineSpacing = 0
+//        flow.itemSize = CGSize.init(width: 130, height: UIScreen.main.bounds.height*0.05)
+        
         let collection = UICollectionView(frame: .zero, collectionViewLayout: flow)
         collection.translatesAutoresizingMaskIntoConstraints = false
+        collection.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         collection.backgroundColor = .white
+        collection.contentInset = .zero
+        collection.scrollIndicatorInsets = .zero
         collection.showsHorizontalScrollIndicator = false
-        flow.scrollDirection = .horizontal
         return collection
     }()
     
@@ -82,6 +90,8 @@ class DashboardVC: BaseViewImpl, BottomViewControllerScrollDelegate, UICollectio
             self.topMenuList.scrollToItem(at: IndexPath(item: $0, section: 0), at: .left, animated: true)
             self.selected = $0
             UIView.transition(with: self.topMenuList, duration: 0.2, options: .transitionCrossDissolve, animations: {
+                self.topMenuList.collectionViewLayout.invalidateLayout()
+                self.topMenuList.layoutSubviews()
                 self.topMenuList.reloadData()
             }, completion: nil)
         }
@@ -91,6 +101,7 @@ class DashboardVC: BaseViewImpl, BottomViewControllerScrollDelegate, UICollectio
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.automaticallyAdjustsScrollViewInsets = false
         addViewController(bottomViewController, frame: CGRect(x: 0, y: topMenuHeight, width: view.frame.size.width, height: view.frame.size.height - topMenuHeight), completion: nil)
         addViewController(topViewController, frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: topViewHeight + topMenuHeight), completion: nil)
         topViewController.onBell = { self.dashboardPresenter?.openNotifications() }
@@ -238,6 +249,8 @@ class DashboardVC: BaseViewImpl, BottomViewControllerScrollDelegate, UICollectio
     
     func setCategoryList(categoryList: [Category]) {
         self.categories = categoryList
+        self.topMenuList.collectionViewLayout.invalidateLayout()
+        self.topMenuList.layoutSubviews()
         self.topMenuList.reloadData()
         self.bottomViewController.categories = categoryList
     }
@@ -283,10 +296,7 @@ class DashboardVC: BaseViewImpl, BottomViewControllerScrollDelegate, UICollectio
     
     func setupTopMenu() {
         self.view.addSubview(topMenu)
-        self.topMenu.addSubview(self.topMenuList)
-        self.topMenuList.register(TopMenuCell.self, forCellWithReuseIdentifier: "TopMenuCell")
-        self.topMenuList.delegate = self
-        self.topMenuList.dataSource = self
+        
         
         NSLayoutConstraint.activate([
             topMenu.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
@@ -295,11 +305,15 @@ class DashboardVC: BaseViewImpl, BottomViewControllerScrollDelegate, UICollectio
             topMenu.heightAnchor.constraint(equalToConstant: topMenuHeight)
         ])
         
+        self.topMenu.addSubview(self.topMenuList)
+        self.topMenuList.register(TopMenuCell.self, forCellWithReuseIdentifier: "TopMenuCell")
+        self.topMenuList.delegate = self
+        self.topMenuList.dataSource = self
         NSLayoutConstraint.activate([
+            self.topMenuList.topAnchor.constraint(equalTo: self.topMenu.topAnchor),
             self.topMenuList.leadingAnchor.constraint(equalTo: self.topMenu.leadingAnchor),
             self.topMenuList.bottomAnchor.constraint(equalTo: self.topMenu.bottomAnchor),
-            self.topMenuList.trailingAnchor.constraint(equalTo: self.topMenu.trailingAnchor),
-            self.topMenuList.heightAnchor.constraint(equalToConstant: 0.05*UIScreen.main.bounds.height)
+            self.topMenuList.trailingAnchor.constraint(equalTo: self.topMenu.trailingAnchor)
         ])
     }
 
@@ -357,6 +371,7 @@ class DashboardVC: BaseViewImpl, BottomViewControllerScrollDelegate, UICollectio
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TopMenuCell", for: indexPath) as! TopMenuCell
+        
         categories[indexPath.item].translates?.forEach({ t in
             if t?.lang == translateCode {
                 cell.setTitle(title: t?.name ?? "", isFirst: indexPath.row == 0, isLast: indexPath.row == categories.count - 1)
@@ -368,10 +383,12 @@ class DashboardVC: BaseViewImpl, BottomViewControllerScrollDelegate, UICollectio
         } else {
             cell.unselect()
         }
+        
         cell.onCellClick = {
             self.selected = indexPath.row
             self.topMenuList.reloadData()
         }
+        
         return cell
     }    
 //    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -499,9 +516,9 @@ class BottomViewController: UIViewController, UICollectionViewDataSource, UIColl
             self.productList = productList
         }
         if collectionView != nil {
-            self.collectionView.reloadData()
             self.collectionView.collectionViewLayout.invalidateLayout()
             self.collectionView.layoutSubviews()
+            self.collectionView.reloadData()            
         }
     }
     
@@ -509,9 +526,14 @@ class BottomViewController: UIViewController, UICollectionViewDataSource, UIColl
         super.viewDidLoad()
         
         view.backgroundColor = UIColor.white
+        
+        
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
         layout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
+        layout.minimumInteritemSpacing = 0
+        layout.minimumLineSpacing = 0
+        
         collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
@@ -519,7 +541,7 @@ class BottomViewController: UIViewController, UICollectionViewDataSource, UIColl
         collectionView.scrollIndicatorInsets.top = topViewHeight
         collectionView.alwaysBounceVertical = false
         collectionView.bounces = false
-        collectionView.showsVerticalScrollIndicator = false
+        collectionView.showsVerticalScrollIndicator = false        
         collectionView.backgroundColor = .clear
         collectionView.dataSource = self
         collectionView.delegate = self
@@ -533,6 +555,7 @@ class BottomViewController: UIViewController, UICollectionViewDataSource, UIColl
             collectionView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor)
         ])
     }
+    
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return productList.count >= 6 ? productList.count : 6
@@ -550,7 +573,7 @@ class BottomViewController: UIViewController, UICollectionViewDataSource, UIColl
             return cell
         }
     }
-    
+     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         delegate?.bottomViewScrollViewDidScroll(scrollView)
     }

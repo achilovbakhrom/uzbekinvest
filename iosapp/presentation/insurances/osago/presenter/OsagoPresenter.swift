@@ -33,9 +33,9 @@ protocol OsagoPresenter {
     func fetchTransportList()
     func setTransportList(list: [Transport])
     func checkOsagoPeriod()
-    func calculate()
+    func calculate(promocode: String)
     func fillConfirmVC()
-    func setAmount(amount: Int)
+    func setAmount(amount: Int, premiumAmount: Int)
     func applyInsuranceClicked()
     func setProduct(product: Product)
 }
@@ -224,15 +224,19 @@ class OsagoPresenterImpl: BaseInsurancePresenter, OsagoPresenter {
         
     }
     
-    func calculate() {
+    func calculate(promocode: String = "") {
+        if !promocode.isEmpty {
+            self.osago.promocode = promocode
+        }
         self.osagoInteractor.calculateOsago(osago: self.osago)
     }
     
-    func setAmount(amount: Int) {
+    func setAmount(amount: Int, premiumAmount: Int) {
         let vc = self.view as? OsagoConfirm
-        self.totalAmount = amount
-        self.formatAmount = "\(amount.toDecimalFormat()) \("sum".localized())"
-        vc?.setAmount(amount: amount.toDecimalFormat())
+        self.totalAmount = premiumAmount
+        self.formatAmount = "\(premiumAmount.toDecimalFormat()) \("sum".localized())"
+        
+        vc?.setAmount(amount: amount.toDecimalFormat(), premiumAmount: premiumAmount.toDecimalFormat())
     }
     
     func fillConfirmVC() {

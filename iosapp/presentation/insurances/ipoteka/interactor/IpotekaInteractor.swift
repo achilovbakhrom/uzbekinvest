@@ -30,8 +30,8 @@ class IpotekaInteractorImpl: BaseInsuranceInteractor, IpotekaInteractor {
         self
             .serviceFactory
             .networkManager
-            .orders.request(.ipotekaCalculate(pledgedProperty: ipoteka)) {
-                switch $0 {
+            .orders.request(.ipotekaCalculate(pledgedProperty: ipoteka)) { [unowned self] result in
+                switch result {
                 case .success(let resposne):
                     self.ipotekaPresenter?.setLoading(isLoading: false)
                     do {
@@ -51,7 +51,7 @@ class IpotekaInteractorImpl: BaseInsuranceInteractor, IpotekaInteractor {
     }
     
     func prepareToOpenFinalVC(id: Int) {
-        self.fetchDocumentsByProductid(id: id) { isLoading in
+        self.fetchDocumentsByProductid(id: id) { [unowned self] isLoading in
             self.ipotekaPresenter?.setLoading(isLoading: isLoading)
             if !isLoading {
                 self.ipotekaPresenter?.openIpotekaFinalVC()

@@ -18,6 +18,7 @@ class OfficesMapVC: BaseViewImpl {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        officesMapView.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(officesMapView)
         NSLayoutConstraint.activate([
             self.officesMapView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
@@ -26,7 +27,8 @@ class OfficesMapVC: BaseViewImpl {
             self.officesMapView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor)
         ])
         
-        self.view.addSubview(noMapView)
+        noMapView.translatesAutoresizingMaskIntoConstraints = false
+        self.view.addSubview(noMapView)        
         NSLayoutConstraint.activate([
             self.noMapView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
             self.noMapView.topAnchor.constraint(equalTo: self.view.topAnchor),

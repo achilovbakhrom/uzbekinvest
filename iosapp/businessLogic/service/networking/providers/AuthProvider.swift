@@ -10,7 +10,7 @@ import Moya
 public enum AuthProvider: TargetType {
         
     case registerPhone(phone: String)
-    case registerUser(user: User)
+    case registerUser(user: UserRequest)
     case sendCodeToPhone(phone: String)
     case login(auth: Auth)
     case checkPhoneNumber(phone: String)
@@ -24,7 +24,7 @@ public enum AuthProvider: TargetType {
         case .registerPhone:
             return "/api/v2/phone"
         case .registerUser:
-            return "/api/user"
+            return "/api/register"
         case .sendCodeToPhone:
             return "/api/code"
         case .login:

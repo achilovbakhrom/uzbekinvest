@@ -45,7 +45,7 @@ class IncidentsDetailRouterImpl: IncidentsDetailRouter {
     }
     
     func openInsuranceListVC() {
-        let vc = self.factory?.insuranceListModule.assembleViewController() ?? UIViewController()
+        let vc = self.factory?.addInsuranceModule.assembleViewController() ?? UIViewController()
         self.viewController?.navigationController?.pushViewController(vc, animated: true)
         
     }

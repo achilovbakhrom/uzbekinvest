@@ -18,7 +18,9 @@ enum Mode {
     let mode = Mode.production
 #endif
 
-var BASE_URL = mode == .development ? "http://62.209.128.56" : "http://62.209.128.56";
+//var BASE_URL = "https://test.insurance.uz"
+var BASE_URL = "https://api.insurance.uz"
+//var BASE_URL = "http://62.209.128.56"
 
 public func isIPhone4OrNewer() -> Bool {
     let deviceType = UIDevice.current.screenType;
@@ -50,10 +52,21 @@ public func isIPhonePlus() -> Bool {
     }
 }
 
+public func isIPhoneX() -> Bool {
+    let deviceType = UIDevice.current.screenType;
+    switch deviceType {
+    case .iPhones_X_XS:
+        return true
+    default:
+        return false
+    }
+}
+
+
 public func isIPhoneXOrHigher() -> Bool {
     let deviceType = UIDevice.current.screenType;
     switch deviceType {
-    case .iPhone_XR_11, .iPhones_X_XS, .iPhone_XSMax_ProMax, .iPhone_11Pro:
+    case .iPhone_XR_11, .iPhone_XSMax_ProMax, .iPhone_11Pro:
         return true
     default:
         return false

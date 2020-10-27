@@ -31,7 +31,7 @@ class IncidentsInteractorImpl: IncidentsInteractor {
             .serviceFactory
             .networkManager
             .incident
-            .request(.fetchAllIncidents) { result in
+            .request(.fetchAllIncidents) { [unowned self] result in
                 switch result {
                 case .success(let response):
                     
@@ -68,7 +68,7 @@ class IncidentsInteractorImpl: IncidentsInteractor {
         self
             .serviceFactory
             .networkManager
-            .user.request(.call(phone: phone)) { result in
+            .user.request(.call(phone: phone)) { [unowned self] result in
                 switch result {
                 case .success(let response):
                     self.incidentsPresenter?.setCallbackLoading(isLoading: false)

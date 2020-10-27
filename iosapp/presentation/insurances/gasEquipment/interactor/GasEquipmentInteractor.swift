@@ -53,7 +53,7 @@ class GasEquipmentInteractorImpl: BaseInsuranceInteractor, GasEquipmentInteracto
     }
     
     func prepareToOpenFinalVC(id: Int) {
-        self.fetchDocumentsByProductid(id: id) { isLoading in
+        self.fetchDocumentsByProductid(id: id) { [unowned self] isLoading in
             self.gasEquipmentPresenter?.setLoading(isLoading: isLoading)
             if !isLoading {
                 self.gasEquipmentPresenter?.openGasEquipmentFinalVC()

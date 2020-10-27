@@ -18,6 +18,7 @@ class MyDocumentsVC: BaseViewImpl {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.automaticallyAdjustsScrollViewInsets = false        
         myDocumentsView.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(myDocumentsView)
         NSLayoutConstraint.activate([

@@ -22,6 +22,8 @@ class MyInsuranceNewView: UIView, UICollectionViewDataSource, UISearchController
     @IBOutlet weak var propertiesView: UIView!
     @IBOutlet weak var statusName: UILabel!
     
+    
+    
     var onPaymentTypeSelected: ((Int) -> Void)? = nil
     var onBack: (() -> Void)? = nil
     
@@ -54,10 +56,11 @@ class MyInsuranceNewView: UIView, UICollectionViewDataSource, UISearchController
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         titleLabel.text = title
         titleLabel.font = UIFont.init(name: "Roboto-Regular", size: 14.0)
+        titleLabel.textColor = UIColor.lightGray
         view.addSubview(titleLabel)
         NSLayoutConstraint.activate([
             titleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 31),
-            titleLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 23),
+            titleLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 12),
             titleLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -31),
         ])
         
@@ -70,16 +73,16 @@ class MyInsuranceNewView: UIView, UICollectionViewDataSource, UISearchController
             valueLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 31),
             valueLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 12),
             valueLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -31),
-            valueLabel.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -23)
+            valueLabel.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -12)
         ])
         return view
     }
     
     private lazy var paymentTypesList: [PaymentTypeCellModel] = {
         return [
-            PaymentTypeCellModel(icon: "online-pay", title: "Онлайн \nоплата", selected: false, isFirst: true),
-            PaymentTypeCellModel(icon: "cash-pay", title: "Наличные", selected: false, isFirst: false),
-            PaymentTypeCellModel(icon: "card-pay", title: "Карта", selected: false, isFirst: false),
+            PaymentTypeCellModel(icon: "online-pay", title: "online_pay".localized(), selected: false, isFirst: true),
+            PaymentTypeCellModel(icon: "cash-pay", title: "cash_pay".localized(), selected: false, isFirst: false),
+            PaymentTypeCellModel(icon: "card-pay", title: "terminal_pay".localized(), selected: false, isFirst: false),
         ]
     }()
     

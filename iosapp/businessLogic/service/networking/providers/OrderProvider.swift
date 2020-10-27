@@ -145,6 +145,7 @@ extension OrderProvider: TargetType {
             p.append(MultipartFormData(provider: .data(String(describing: regionId).data(using: .utf8) ?? Data()), name: "region_id"))
             p.append(MultipartFormData(provider: .data(String(describing: long).data(using: .utf8) ?? Data()), name: "longitude"))
             p.append(MultipartFormData(provider: .data(String(describing: lat).data(using: .utf8) ?? Data()), name: "latitude"))
+            p.append(MultipartFormData(provider: .data("mobile".data(using: .utf8) ?? Data()), name: "platform"))
             var index = 0
             for key in mainFiles.keys {
                 p.append(MultipartFormData(provider: .data(String(describing: mainFiles[key]?.id ?? 0).data(using: .utf8) ?? Data()), name: "files[0][\(index)][name]"))

@@ -12,6 +12,7 @@ protocol MyInsuranceDetailRouter: BaseRouter {
     init(factory: AssemblyFactoryProtocol, viewController: UIViewController)
     func goBack()
     func openLoginVC(phone: String)
+    func openIncidents()
 }
 
 class MyInsuranceDetailRouterImpl: MyInsuranceDetailRouter {
@@ -34,6 +35,12 @@ class MyInsuranceDetailRouterImpl: MyInsuranceDetailRouter {
         vc.phone = phone
         let navigation = UINavigationController(rootViewController: vc)
         appDelegate.window!.rootViewController = navigation
+    }
+    
+    func openIncidents() {
+        self.viewController?.tabBarController?.selectedIndex = 1
+        let vc = self.viewController?.tabBarController?.viewControllers?[1]
+        vc?.navigationController?.pushViewController(factory?.incidentsDetailModule.assembleViewController() ?? UIViewController(), animated: true)
     }
     
 }

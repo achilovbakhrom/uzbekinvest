@@ -20,6 +20,7 @@ class OrderCheck2VC: BaseViewImpl {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.orderCheck2View.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(orderCheck2View)
         NSLayoutConstraint.activate([
             self.orderCheck2View.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),

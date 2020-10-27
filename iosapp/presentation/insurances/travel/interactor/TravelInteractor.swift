@@ -35,7 +35,7 @@ class TravelInteractorImpl: BaseInsuranceInteractor, TravelInteractor {
             .serviceFactory
             .networkManager
             .others
-            .request(.country) { result in
+            .request(.country) { [unowned self] result in
                 self.travelPresenter?.setLoading(isLoading: false)
                 switch result {
                 case .success(let response):
@@ -63,7 +63,7 @@ class TravelInteractorImpl: BaseInsuranceInteractor, TravelInteractor {
             .serviceFactory
             .networkManager
             .orders
-            .request(.travelCalculate(travel: travel)) { result in
+            .request(.travelCalculate(travel: travel)) { [unowned self] result in
                 self.travelPresenter?.setLoading(isLoading: false)
                 switch result {
                 case .success(let response):
@@ -87,7 +87,7 @@ class TravelInteractorImpl: BaseInsuranceInteractor, TravelInteractor {
     }
     
     func prepareToOpenFinalVC(id: Int) {
-        self.fetchDocumentsByProductid(id: id) { isLoading in
+        self.fetchDocumentsByProductid(id: id) { [unowned self] isLoading in
             self.travelPresenter?.setLoading(isLoading: isLoading)
             if !isLoading {
                 self.travelPresenter?.openTravelFinalVC()
@@ -101,7 +101,7 @@ class TravelInteractorImpl: BaseInsuranceInteractor, TravelInteractor {
             .serviceFactory
             .networkManager
             .others
-            .request(.sports) { result in
+            .request(.sports) { [unowned self] result in
                 self.travelPresenter?.setLoading(isLoading: false)
                 switch result {
                 case .success(let response):
@@ -129,7 +129,7 @@ class TravelInteractorImpl: BaseInsuranceInteractor, TravelInteractor {
             .serviceFactory
             .networkManager
             .others
-            .request(.work) { result in
+            .request(.work) { [unowned self] result in
                 self.travelPresenter?.setLoading(isLoading: false)
                 switch result {
                 case .success(let response):

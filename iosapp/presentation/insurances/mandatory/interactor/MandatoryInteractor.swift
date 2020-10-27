@@ -28,14 +28,14 @@ class MandatoryInteractorImpl: BaseInsuranceInteractor, MandatoryInteractor {
     
     func calculateMandatory(pledgedTransport: PledgedTransport) {
         self.mandatoryPresenter?.setLoading(isLoading: true)
-        self.serviceFactory.networkManager.orders.request(.pledgedTransportCalculate(pledgedTransport: pledgedTransport)) {
+        self.serviceFactory.networkManager.orders.request(.pledgedTransportCalculate(pledgedTransport: pledgedTransport)) { [unowned self] result in
             self.mandatoryPresenter?.setLoading(isLoading: false)
-            switch $0 {
+            switch result {
             case .success(let response):
                 do {
                     let decoder = JSONDecoder()
                     let r = try decoder.decode(Response<InsuranceCalculatedResult>.self, from: response.data)
-                    self.mandatoryPresenter?.setTotalAmount(formatAmount: self.serviceFactory.formatter.decimalFormat(number: r.data?.totalAmount ?? 0), totalAmount: r.data?.totalAmount ?? 0)
+                    self.mandatoryPresenter?.setTotalAmount(formatAmount: self.serviceFactory.formatter.decimalFormat(number: r.data?.totalAmount ?? 0), totalAmount: r.data?.totalAmount ?? 0, premiumAmount: r.data?.premiumAmount ?? 0)
                 } catch(let error) {
                     debugPrint(error.localizedDescription)
                 }
@@ -49,7 +49,7 @@ class MandatoryInteractorImpl: BaseInsuranceInteractor, MandatoryInteractor {
     }
     
     func prepareToOpenFinalVC(id: Int) {
-        self.fetchDocumentsByProductid(id: id) { isLoading in
+        self.fetchDocumentsByProductid(id: id) { [unowned self] isLoading in
             self.mandatoryPresenter?.setLoading(isLoading: isLoading)
             if !isLoading {
                 self.mandatoryPresenter?.openMandatoryFinalVC()                

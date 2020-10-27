@@ -77,4 +77,16 @@ class AddMyInsuranceVC: BaseViewImpl {
     private func onBackAction(_ sender: Any) {
         self.myInsurancePresenter?.goBack()
     }
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if let f = self.tabBarController?.tabBar.frame {
+            let tabBarHeight = f.height;
+            let screenHeight = UIScreen.main.bounds.height;
+            if f.origin.y + tabBarHeight < screenHeight {
+                self.tabBarController?.tabBar.frame = CGRect(x: f.origin.x, y: screenHeight - tabBarHeight, width: f.width, height: f.height)
+            }
+        }
+    }
 }

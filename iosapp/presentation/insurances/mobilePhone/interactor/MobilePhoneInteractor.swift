@@ -28,8 +28,8 @@ class MobilePhoneInteractorImpl: BaseInsuranceInteractor, MobilePhoneInteractor 
     
     func calculatePhone(mobilePhone: MobilePhone) {
         self.mobilePhonePresenter?.setLoading(isLoading: true)
-        self.serviceFactory.networkManager.orders.request(.phoneCalculate(mobilePhone: mobilePhone)) {
-            switch $0 {
+        self.serviceFactory.networkManager.orders.request(.phoneCalculate(mobilePhone: mobilePhone)) { [unowned self] result in
+            switch result {
             case .success(let response):
                 self.mobilePhonePresenter?.setLoading(isLoading: false)
                 do {
@@ -49,7 +49,7 @@ class MobilePhoneInteractorImpl: BaseInsuranceInteractor, MobilePhoneInteractor 
     }
     
     func prepareToOpenFinalVC(id: Int) {
-        self.fetchDocumentsByProductid(id: id) { isLoading in
+        self.fetchDocumentsByProductid(id: id) { [unowned self] isLoading in
             self.mobilePhonePresenter?.setLoading(isLoading: isLoading)
             if !isLoading {
                 self.mobilePhonePresenter?.openMobilePhoneFinalVC()

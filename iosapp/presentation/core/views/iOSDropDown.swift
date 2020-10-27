@@ -140,6 +140,7 @@ open class DropDown : UITextField {
     fileprivate var TableDidDisappearCompletion: () -> () = { }
 
     func setupUI () {
+        
         let size = self.frame.height
         let rightView = UIView(frame: CGRect(x: 0.0, y: 0.0, width: size, height: size))
         self.rightView = rightView

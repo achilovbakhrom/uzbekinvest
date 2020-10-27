@@ -11,17 +11,20 @@ struct PledgedTransport: Codable {
     var insuranceAmount: Int?
     var age: Int?
     var experience: Int?
+    var promocode: String?
     
     init() {
         insuranceAmount = 0
         age = 0
         experience = 0
+        promocode = nil
     }
     
     enum CodingKeys: String, CodingKey {
         case insuranceAmount = "insurance_amount"
         case age = "age"
         case experience = "experience"
+        case promocode = "promocode"
     }
     
 }

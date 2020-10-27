@@ -30,8 +30,8 @@ class ConfirmInteractorImpl: ConfirmInteractor {
     func sendConfirmCode(phone: String, code: Int) {
         let auth = Auth(phone: phone, code: code)
         self.confirmPresenter?.setLoading(isLoading: true)
-        self.serviceFactory.networkManager.auth.request(.login(auth: auth)) {
-            switch $0 {
+        self.serviceFactory.networkManager.auth.request(.login(auth: auth)) { [unowned self] result in
+            switch result {
             case .success(let response):
                 self.confirmPresenter?.setLoading(isLoading: false)
                 do {

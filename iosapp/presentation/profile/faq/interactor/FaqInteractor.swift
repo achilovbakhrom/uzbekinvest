@@ -31,7 +31,7 @@ class FaqInteractorImpl: FaqInteractor {
             .serviceFactory
             .networkManager
             .others
-            .request(.faq) { result in
+            .request(.faq) { [unowned self] result in
                 switch result {
                 case .success(let response):
                     self.faqPreseenter?.setLoading(isLoading: false)

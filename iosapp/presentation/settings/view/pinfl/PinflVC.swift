@@ -52,6 +52,16 @@ class PinflVC: BaseViewImpl {
         NotificationCenter.default.addObserver(self, selector: #selector(didReceiveUpdateSignal(_:)), name: Notification.Name("updatePinfl"), object: nil)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if let f = self.tabBarController?.tabBar.frame {
+            let screenHeight = UIScreen.main.bounds.height
+            if f.height < screenHeight {
+                self.tabBarController?.tabBar.frame = CGRect(x: f.origin.x, y: screenHeight, width: f.width, height: f.height)
+            }
+        }
+    }
+    
     func setupNoInternetView() {
         self.view.addSubview(self.noInternetView)
         self.noInternetView.translatesAutoresizingMaskIntoConstraints = false

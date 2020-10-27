@@ -215,11 +215,20 @@ class IncidentsListCell: UITableViewCell {
         case "confirmed":
             self.statusLabel.text = "incident_confirmed".localized()
             break
+        case "valid":
+            self.statusLabel.text = "incident_confirmed".localized()
+            break
         case "paid":
             self.statusLabel.text = "incident_paid".localized()
             break
         case "denied":
             self.statusLabel.text = "incident_completed".localized()
+            break
+        case "decided":
+            self.statusLabel.text = "incident_completed".localized()
+            break
+        case "unknown":
+            self.statusLabel.text = ""
             break
         default:
             break

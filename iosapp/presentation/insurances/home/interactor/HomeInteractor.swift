@@ -49,7 +49,7 @@ class HomeInteractorImpl: BaseInsuranceInteractor, HomeInteractor {
     }
     
     func prepareToOpenFinalVC(id: Int) {
-        self.fetchDocumentsByProductid(id: id) { isLoading in
+        self.fetchDocumentsByProductid(id: id) { [unowned self] isLoading in
             self.homePresenter?.setLoading(isLoading: isLoading)
             if !isLoading {
                 self.homePresenter?.openHomeFinalVC()

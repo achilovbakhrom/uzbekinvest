@@ -19,14 +19,21 @@ class IncidentsInfoVC: BaseViewImpl {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.addSubview(infoView)
+        
+        self.infoView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             self.infoView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
             self.infoView.topAnchor.constraint(equalTo: self.view.topAnchor),
             self.infoView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
             self.infoView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor)
         ])
-        infoView.incidentName.text = incident.order?.product?.translates?[0]?.name
-        infoView.incidentAmount.text = "\(incident.order?.totalAmount?.toDecimalFormat() ?? "0") \("sum".localized())"
+        incident.order?.product?.translates?.forEach({ (t) in
+            if t?.lang == translateCode {
+                self.infoView.incidentName.text = t?.name
+            }
+        })
+        
+        infoView.incidentAmount.text = "\(incident.order?.premiumAmount?.toDecimalFormat() ?? "0") \("sum".localized())"
         
         switch incident.status ?? "" {
         case "new":
@@ -77,19 +84,25 @@ class IncidentsInfoVC: BaseViewImpl {
             self.infoView.acceptedDescLabel.text = ""
             self.infoView.documentsDesc.text = ""
             self.infoView.decidedDescription.text = ""
-            self.infoView.doneDescription.text = "done_desc1".localized() + " \(incident.order?.totalAmount?.toDecimalFormat() ?? "0") " + "done_desc2".localized()
+            self.infoView.doneDescription.text = "done_desc1".localized() + " \(incident.paidAmount?.toDecimalFormat() ?? "0") \("sum".localized())" + "done_desc2".localized()
             
             break
         case "denied":
             self.infoView.statusLabel.text = "incident_completed".localized()
             self.infoView.stepView.currentStep = 4
-            
             self.infoView.requestSentDesc.text = ""
             self.infoView.acceptedDescLabel.text = ""
             self.infoView.documentsDesc.text = ""
             self.infoView.decidedDescription.text = "decided_desc".localized()
             self.infoView.doneDescription.text = ""
-            
+        case "decided":
+            self.infoView.statusLabel.text = "incident_completed".localized()
+            self.infoView.stepView.currentStep = 4
+            self.infoView.requestSentDesc.text = ""
+            self.infoView.acceptedDescLabel.text = ""
+            self.infoView.documentsDesc.text = ""
+            self.infoView.decidedDescription.text = "decided_desc_done".localized()
+            self.infoView.doneDescription.text = ""
             break
         default:
             break

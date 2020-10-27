@@ -178,7 +178,8 @@ class TopViewController: UIViewController {
     
     func setCarouselList(carouselList: [Carousel]) {
         self.carouselList = carouselList
-        if let url = URL(string: "\(BASE_URL)\(self.carouselList[0].image ?? "")") {
+        
+        if !self.carouselList.isEmpty, let url = URL(string: "\(BASE_URL)\(self.carouselList[0].image ?? "")") {
             self.carouselBgImageView.kf.setImage(with: url, placeholder: nil, options: [
                 .transition(.fade(0.3)),
                 .cacheOriginalImage,
@@ -208,17 +209,22 @@ class CarouselViewController: UIPageViewController, UIPageViewControllerDelegate
         vcs.removeAll()
         carouselList.forEach {
             let vc = TopContentViewController()
-            vc.topView.headerTitleLabel.text = ($0.translates?.count ?? 0) > 0 ? $0.translates?.reversed()[0]?.title : "-"
-            vc.topView.headerContentLabel.text = ($0.translates?.count ?? 0) > 0 ? $0.translates?.reversed()[0]?.description : "-"
+            $0.translates?.forEach({ t in
+                if t?.lang == translateCode {
+                    vc.topView.headerTitleLabel.text = t?.title
+                    vc.topView.headerContentLabel.text = t?.description
+                }
+            })
+//            vc.topView.headerTitleLabel.text = ($0.translates?.count ?? 0) > 0 ? $0.translates?.reversed()[0]?.title : "-"
+//            vc.topView.headerContentLabel.text = ($0.translates?.count ?? 0) > 0 ? $0.translates?.reversed()[0]?.description : "-"
             vc.topView.headerContentLabel.isUserInteractionEnabled = true
             let t = $0
             vc.topView.onHeaderClick = {
-                if !(t.translates?.isEmpty ?? true) {
-                    if let t = t.translates?[0], let u = t.url {
-                        self.onHeader?(u)
+                t.translates?.forEach({ (t) in
+                    if t?.lang == translateCode {
+                        self.onHeader?(t?.url ?? "")
                     }
-                }
-                
+                })                
             }
             vcs.append(vc)
         }

@@ -31,7 +31,7 @@ class IncidentInfoInteractorImpl: IncidentInfoInteractor {
             .serviceFactory
             .networkManager
             .others
-            .request(.fetchMetadata(productCode: code)) { result in
+            .request(.fetchMetadata(productCode: code)) { [unowned self] result in
                 switch result {
                 case .success(let response):
                     do {

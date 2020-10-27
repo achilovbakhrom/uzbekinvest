@@ -33,7 +33,7 @@ class MyDocumentsInteractorImpl: MyDocumentsInteractor {
         self.serviceFactory?
             .networkManager
             .user
-            .request(.fetchUserFiles, completion: { result in
+            .request(.fetchUserFiles, completion: { [unowned self] result in
                 switch result {
                 case .success(let response):
                     if response.statusCode == 401 {
@@ -101,7 +101,7 @@ class MyDocumentsInteractorImpl: MyDocumentsInteractor {
         self.serviceFactory?
             .networkManager
             .user
-            .request(.removeFile(id: id), completion: { result in
+            .request(.removeFile(id: id), completion: { [unowned self] result in
                 switch result {
                 case .success(let response):
                     
@@ -128,7 +128,7 @@ class MyDocumentsInteractorImpl: MyDocumentsInteractor {
         self.serviceFactory?
         .networkManager
         .user
-        .request(.fetchUserFiles, completion: { result in
+        .request(.fetchUserFiles, completion: { [unowned self] result in
             switch result {
             case .success(let response):
                 if response.statusCode == 401 {
@@ -161,7 +161,7 @@ class MyDocumentsInteractorImpl: MyDocumentsInteractor {
         self.serviceFactory?
             .networkManager
             .user
-            .request(.uploadFile(data: data, documentId: documentId, name: name), completion: { result in
+            .request(.uploadFile(data: data, documentId: documentId, name: name), completion: { [unowned self] result in
                 switch result {
                 case .success(let response):
                     

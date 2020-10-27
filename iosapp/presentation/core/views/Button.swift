@@ -93,7 +93,7 @@ class Button: UIButton {
         gr?.cornerRadius = self.frame.height/2
         gr?.masksToBounds = true
         
-        self.layer.insertSublayer(gr!, at: 1)
+        self.layer.insertSublayer(gr!, at: 0)
     }
     
     private func handleLoading() {

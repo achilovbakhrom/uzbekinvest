@@ -38,10 +38,40 @@ class AddInsuranceRouterImpl: AddInsuranceRouter {
     }
     
     func goBack() {
+//        let vcs = self.viewController?.navigationController?.viewControllers ?? []
+//        var pinflVCFound = false
+//        var instructionFound = false
+//        var insuranceFound = false
+//        vcs.forEach { vc in
+//            if vc is PinflVC {
+//                pinflVCFound = true
+//            }
+//            if vc is AddingInstructionVC {
+//                instructionFound = true
+//            }
+//            if vc is AddingInsuranceVC {
+//                insuranceFound = true
+//            }
+//        }
+//        if !pinflVCFound {
+//            self.viewController?.setTabBarHidden(false)
+//        }
+//
+//        if instructionFound || insuranceFound {
+//            let tempVCS = self.viewController?.navigationController?.viewControllers ?? []
+//            let vc = tempVCS[tempVCS.count - 2]
+//            self.viewController?.navigationController?.popViewController(animated: true)
+//            self.viewController = vc
+//        } else {
+//            self.viewController?.navigationController?.popViewController(animated: true)
+//        }
+        
         let vcs = self.viewController?.navigationController?.viewControllers ?? []
+        
         var pinflVCFound = false
         var instructionFound = false
         var insuranceFound = false
+        
         vcs.forEach { vc in
             if vc is PinflVC {
                 pinflVCFound = true
@@ -53,7 +83,12 @@ class AddInsuranceRouterImpl: AddInsuranceRouter {
                 insuranceFound = true
             }
         }
-        if !pinflVCFound {
+        
+        if insuranceFound && !instructionFound {
+            self.viewController?.setTabBarHidden(false)
+        }
+        
+        if !insuranceFound && instructionFound {
             self.viewController?.setTabBarHidden(false)
         }
         

@@ -31,7 +31,7 @@ class MyInsuranceDetailInteractorImpl: MyInsuranceDetailInteractor {
             .serviceFactory
             .networkManager
             .orders
-            .request(.click(orderId: orderId)) { result in
+            .request(.click(orderId: orderId)) { [unowned self] result in
                 switch result {
                 case .success(let response):
                     do {
@@ -64,7 +64,7 @@ class MyInsuranceDetailInteractorImpl: MyInsuranceDetailInteractor {
             .serviceFactory
             .networkManager
             .orders
-            .request(.payme(orderId: orderId)) { result in
+            .request(.payme(orderId: orderId)) { [unowned self] result in
                 switch result {
                 case .success(let response):
                     do {
@@ -76,7 +76,7 @@ class MyInsuranceDetailInteractorImpl: MyInsuranceDetailInteractor {
                         } else {
                             let decoder = JSONDecoder()
                             let r = try decoder.decode(Payme.self, from: response.data)
-                            let suffix = "m=\(r.merchantId!);ac.paymentld=\(r.orderId!);a=\(r.amount! * 100);cr=860;l=ru"
+                            let suffix = "m=\(r.merchantId!);ac.order_id=\(r.orderId!);ac.customer_id=\(r.customerId!);a=\(r.amount!);cr=860;l=ru"
                             let base64 = suffix.data(using: .utf8)?.base64EncodedString() ?? ""
                             let url = "https://checkout.paycom.uz/\(base64)"
                             self.insurancePresenter?.openUrl(urlString: url)
@@ -98,7 +98,7 @@ class MyInsuranceDetailInteractorImpl: MyInsuranceDetailInteractor {
         .serviceFactory
         .networkManager
             .user
-            .request(.updatePaymentType(orderId: orderId, paymentType: paymentType)) { result in
+            .request(.updatePaymentType(orderId: orderId, paymentType: paymentType)) { [unowned self] result in
                 switch result {
                 case .success:
                     self.insurancePresenter?.updateList()

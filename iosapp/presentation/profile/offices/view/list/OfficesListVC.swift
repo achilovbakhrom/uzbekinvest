@@ -70,9 +70,16 @@ class OfficesListVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
         dialogView.layer.cornerRadius = 12
         dialogView.layer.masksToBounds = true
         let office = officesList[indexPath.row]
-        dialogView.branchName.text = office.translates?[0]?.address
-        dialogView.branchAddress.text = office.translates?[0]?.address
-        dialogView.workTime.text = office.translates?[0]?.workTime
+        
+        office.translates?.forEach({ t in
+            if t?.lang == translateCode {
+                dialogView.branchName.text = t?.address
+                dialogView.branchAddress.text = t?.address
+                dialogView.workTime.text = t?.workTime
+            }
+        })
+        
+        
         dialogView.onRouteBuild = {
             self.dismiss(animated: true) {
                 let directionsVC = DirectionsVC()
@@ -172,7 +179,18 @@ class OfficeListCell: UITableViewCell {
     
     
     func setData(office: Office) {
-        self.name.text = office.region?.translates?.count ?? 0 > 0 ? office.region?.translates?[0]?.name : ""
-        self.address.text = office.translates?[0]?.address
+        
+        office.region?.translates?.forEach({ t in
+            if t?.lang == translateCode {
+                self.name.text = t?.name
+                
+            }
+        })
+        
+        office.translates?.forEach({ t in
+            if t?.lang == translateCode {
+                self.address.text = t?.address
+            }
+        })
     }
 }

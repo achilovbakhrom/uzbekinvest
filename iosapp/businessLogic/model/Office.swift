@@ -19,9 +19,11 @@ struct Office: Codable {
 struct OfficeTranslate: Codable {
     var address: String?
     var workTime: String?
+    var lang: String?
     
     enum CodingKeys: String, CodingKey {
         case address
         case workTime = "work_time"
+        case lang
     }
 }

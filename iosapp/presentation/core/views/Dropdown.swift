@@ -27,7 +27,7 @@ class DDown: DropDown {
     
     private func setup() {
         self.borderStyle = .none
-        self.font = UIFont.init(name: "Roboto-Regular", size: 20)
+        self.font = UIFont.init(name: "Roboto-Regular", size: 16)
         self.textColor = UIColor.init(red: 65.0/255.0, green: 65.0/255.0, blue: 65.0/255.0, alpha: 1.0)        
         self.rowHeight = 30
         self.selectedRowColor = Colors.primaryGreen.withAlphaComponent(0.5)

@@ -20,6 +20,7 @@ protocol MyInsurancesDetailPresenter: BasePresenter {
     func openUrl(urlString: String)
     func showError(msg: String)
     func updateList()
+    func openIncidents()
 }
 
 class MyInsurancesDetailPresenterImpl: MyInsurancesDetailPresenter {
@@ -79,6 +80,9 @@ class MyInsurancesDetailPresenterImpl: MyInsurancesDetailPresenter {
         if let n = nc?.viewControllers[0] as? MyInsuranceVC {
             n.reloadList()
         }
+    }
+    func openIncidents() {
+        self.myInsuranceDetailRouter?.openIncidents()
     }
 }
 

@@ -32,7 +32,7 @@ class MainInteractorImpl: MainInteractor {
             .serviceFactory
             .networkManager
             .product
-            .request(.fetchAllProduct) { result in
+            .request(.fetchAllProduct) { [unowned self] result in
                 switch result {
                 case .success(let response):
                     do {
@@ -60,7 +60,7 @@ class MainInteractorImpl: MainInteractor {
             .serviceFactory
             .networkManager
             .user
-            .request(.fetchOrderById(id: id)) { result in
+            .request(.fetchOrderById(id: id)) { [unowned self] result in
                 switch result {
                 case .success(let response):
                     do {
@@ -85,7 +85,7 @@ class MainInteractorImpl: MainInteractor {
             .serviceFactory
             .networkManager
             .incident
-            .request(.fetchIncidentById(id: id)) { result in
+            .request(.fetchIncidentById(id: id)) { [unowned self] result in
                 switch result {
                 case .success(let response):
                     do {

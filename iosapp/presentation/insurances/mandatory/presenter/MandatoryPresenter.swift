@@ -21,8 +21,8 @@ protocol MandatoryPresenter {
     func setAge(age: Int, ageString: String)
     func setInsuranceAmount(amount: Int, amountString: String)
     func fillConfirmVC()
-    func setTotalAmount(formatAmount: String, totalAmount: Int)
-    func calculateMandatory()
+    func setTotalAmount(formatAmount: String, totalAmount: Int, premiumAmount: Int)
+    func calculateMandatory(promocode: String)
     func setProduct(product: Product)
     func setDocuments(documents: DocsResponse)
     func applyInsuranceClicked()
@@ -99,14 +99,17 @@ class MandatoryPresenterImpl: BaseInsurancePresenter, MandatoryPresenter {
         vc?.setInsuranceAmount(amount: amountString)
     }
     
-    func setTotalAmount(formatAmount: String, totalAmount: Int) {
+    func setTotalAmount(formatAmount: String, totalAmount: Int, premiumAmount: Int) {
         let vc = self.view as? MandatoryConfirmVC
         self.totalAmount = totalAmount
         self.formatAmount = "\(formatAmount) \("sum".localized())"
-        vc?.setTotalAmount(amount: formatAmount)
+        vc?.setTotalAmount(amount: formatAmount, premiumAmount: premiumAmount.toDecimalFormat())
     }
     
-    func calculateMandatory() {
+    func calculateMandatory(promocode: String = "") {
+        if !promocode.isEmpty {
+            self.pledgedTransport.promocode = promocode
+        }
         self.mandatoryInteractor?.calculateMandatory(pledgedTransport: self.pledgedTransport)
     }
     

@@ -30,6 +30,7 @@ protocol DashboardRouter: BaseRouter {
     func openIncidentsVC()
     func openSupportVC()
     func openNotifications()
+    func openInsuranceWeb()
     init(factory: AssemblyFactoryProtocol, viewController: UIViewController)
 }
 
@@ -144,10 +145,23 @@ class DashboardRouterImpl: DashboardRouter {
         vc?.navigationController?.pushViewController(factory?.incidentsDetailModule.assembleViewController() ?? UIViewController(), animated: true)
     }
     
-    func openSupportVC() {}
+    func openSupportVC() {
+        if let url = URL(string: "tel://\(phoneNumber)"), UIApplication.shared.canOpenURL(url) {
+            if #available(iOS 10, *) {
+                UIApplication.shared.open(url)
+            } else {
+                UIApplication.shared.openURL(url)
+            }
+        }
+    }
     
     func openNotifications() {
         let vc = self.factory?.notificationModule.assembleViewController()
         self.viewController?.navigationController?.pushViewController(vc!, animated: true)
+    }
+    
+    func openInsuranceWeb() {
+        guard let url = URL(string: "https://www.insurance.uz") else { return }
+        UIApplication.shared.open(url)
     }
 }

@@ -18,4 +18,5 @@ class SwitcherVC: BaseViewImpl {
 //        self.setTabBarHidden(true)
         self.addExistingPresenter?.setupSwitcher()
     }
+    
 }

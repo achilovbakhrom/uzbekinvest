@@ -34,7 +34,7 @@ class LoginInteractor: LoginInteractorProtocol {
     
     func checkPhoneNumberForExistance(phone: String) {
         self.loginPresenter?.setLoading(loading: true)
-        self.networkManager.auth.request(.checkPhoneNumber(phone: phone)) { result in
+        self.networkManager.auth.request(.checkPhoneNumber(phone: phone)) { [unowned self] result in
             self.loginPresenter?.setLoading(loading: false)
             switch result {
             case .success:

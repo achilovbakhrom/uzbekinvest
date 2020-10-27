@@ -41,8 +41,13 @@ class OfficesMapView: UIView, CLLocationManagerDelegate, MKMapViewDelegate {
             if let long = office.longitude, !long.isEmpty, let lat = office.latitude, !lat.isEmpty {
                 let annotation = MKPointAnnotation()
                 annotation.coordinate = CLLocationCoordinate2D(latitude: Double(lat) ?? 0.0, longitude: Double(long) ?? 0.0)
-                annotation.title = office.translates?[0]?.address
-                annotation.subtitle = office.translates?[0]?.workTime
+                office.translates?.forEach({ t in
+                    if t?.lang == translateCode {
+                        annotation.title = t?.address
+                        annotation.subtitle = t?.workTime
+                    }
+                })
+                
                 mapView.addAnnotation(annotation)
             }
         }
